@@ -33,19 +33,22 @@ const lastUpdated = songsData.updatedAt;
 
     <main id="songs" class="pb-16">
 
-      <!-- Featured pick -->
-      <section id="featuredSection" class="mb-8">
+      <!-- New videos slider -->
+      <section id="newSection" class="mb-8">
         <div class="flex items-center justify-between mb-3">
-          <h2 class="font-display text-sm font-bold text-slate-500 tracking-wide">PICK UP</h2>
-          <button id="shuffleBtn" type="button"
-                  class="chip text-xs">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h5l2 3m9 13h-5l-2-3m7-13l-3 3m3-3v3m0 0h-3M4 20l3-3m-3 3v-3m0 0h3"/>
-            </svg>
-            シャッフル
-          </button>
+          <h2 class="font-display text-sm font-bold text-slate-500 tracking-wide">新着</h2>
+          <div class="flex items-center gap-1">
+            <button id="newPrev" type="button" aria-label="前へ"
+                    class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+            <button id="newNext" type="button" aria-label="次へ"
+                    class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
         </div>
-        <div id="featuredCard" class="card overflow-hidden cursor-pointer"></div>
+        <div id="newSlider" class="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-1 px-1 new-slider"></div>
       </section>
 
       <!-- Search & Filter -->
@@ -233,8 +236,12 @@ const lastUpdated = songsData.updatedAt;
 <style>
   .player-wrap { aspect-ratio: 16/9; background: #0f172a; }
   .player-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
-  @keyframes featured-pop { 0% { opacity: 0; transform: scale(.985); } 100% { opacity: 1; transform: scale(1); } }
-  :global(.featured-anim) { animation: featured-pop .3s ease; }
+  /* 新着スライダー */
+  :global(.new-slider) { scrollbar-width: thin; scrollbar-color: #cbd5e1 transparent; }
+  :global(.new-slider::-webkit-scrollbar) { height: 6px; }
+  :global(.new-slider::-webkit-scrollbar-thumb) { background: #cbd5e1; border-radius: 9999px; }
+  :global(.new-slider::-webkit-scrollbar-track) { background: transparent; }
+  :global(.clamp-2) { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 
   /* プレーヤーのテーマ色（歌唱者で変化） */
   #player { --accent: #ff8184; --accent-grad: linear-gradient(90deg,#ff8184,#54a2e5); }
@@ -251,7 +258,6 @@ const lastUpdated = songsData.updatedAt;
   let filterMember = 'all';
   let filterCategory = 'all';
   let searchText = '';
-  let featuredId: string | null = null;
 
   const songsDataEl = document.getElementById('songs-data');
   const songs = songsDataEl ? JSON.parse(songsDataEl.getAttribute('data-songs') || '[]') : [];
@@ -266,13 +272,6 @@ const lastUpdated = songsData.updatedAt;
   }
   function memberChipClass(p: string) {
     return p === '水面まどか' ? 'text-[#ff8184] bg-[#ffeef0]' : 'text-[#54a2e5] bg-[#eaf4fc]';
-  }
-
-  function fmtTs(sec?: number) {
-    if (!sec && sec !== 0) return null;
-    if (sec === 0) return null;
-    const h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s = sec % 60;
-    return h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${m}:${String(s).padStart(2,'0')}`;
   }
 
   function getFiltered() {
@@ -559,41 +558,70 @@ const lastUpdated = songsData.updatedAt;
     markPlayingCard(null);
   }
 
-  function pickRandomSong(excludeId: string | null) {
-    const pool = songs.length > 1 ? songs.filter((s: any) => s.id !== excludeId) : songs;
-    return pool[Math.floor(Math.random() * pool.length)];
+  // ----- 新着スライダー（配信＝動画単位でまとめて新しい順） -----
+  function buildStreams() {
+    const map = new Map<string, any>();
+    for (const s of songs) {
+      const vid = s.youtube.videoId;
+      let g = map.get(vid);
+      if (!g) {
+        g = { videoId: vid, title: s.streamTitle || s.title, date: s.streamDate || '',
+              category: s.category, performers: new Set<string>(), songs: [] };
+        map.set(vid, g);
+      }
+      (s.performers || []).forEach((p: string) => g.performers.add(p));
+      g.songs.push(s);
+    }
+    return [...map.values()]
+      .map(g => ({ ...g, performers: orderPerformers([...g.performers]) }))
+      .sort((a, b) => b.date.localeCompare(a.date));
   }
 
-  function renderFeatured(song: any, animate: boolean) {
-    featuredId = song.id;
-    const ts = fmtTs(song.youtube.timestampSec);
-    const performerBadges = orderPerformers(song.performers).map((p: string) =>
-      `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
-
-    const card = document.getElementById('featuredCard');
-    if (!card) return;
-    card.onclick = () => playSong(song);
-    const catLabel = CAT_LABEL[song.category] || song.category;
-    const thumbUrl = `https://img.youtube.com/vi/${song.youtube.videoId}/mqdefault.jpg`;
-
-    card.innerHTML = `
-      <div class="flex flex-col sm:flex-row">
-        <div class="relative sm:w-2/5 shrink-0 aspect-video bg-slate-100 overflow-hidden">
-          <img src="${thumbUrl}" alt="${song.title}" onerror="this.style.opacity='0.3'" class="w-full h-full object-cover block">
-          ${ts ? `<span class="absolute bottom-2 right-2 bg-slate-900/80 text-white text-[11px] font-semibold px-2 py-0.5 rounded">${ts}</span>` : ''}
-        </div>
-        <div class="p-5 flex flex-col justify-center min-w-0">
-          <span class="self-start text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full mb-2">${catLabel}</span>
-          <h3 class="font-display text-lg font-extrabold text-ink leading-snug">${song.title}</h3>
-          <p class="text-sm text-slate-400 mt-0.5">${song.artist}</p>
-          <div class="flex flex-wrap items-center gap-1.5 mt-3">
-            ${performerBadges}
-            <span class="text-[11px] text-slate-400 ml-1">${song.streamDate}</span>
+  function renderNewSlider() {
+    const slider = document.getElementById('newSlider');
+    if (!slider) return;
+    const streams = buildStreams();
+    slider.innerHTML = streams.map(g => {
+      const performerBadges = g.performers.map((p: string) =>
+        `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
+      const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
+      const catLabel = CAT_LABEL[g.category] || g.category;
+      return `
+        <button type="button" data-video-id="${g.videoId}"
+                class="new-card snap-start shrink-0 w-64 card overflow-hidden text-left hover:shadow-md transition">
+          <div class="relative aspect-video bg-slate-100 overflow-hidden">
+            <img src="${thumbUrl}" alt="" onerror="this.style.opacity='0.3'" class="w-full h-full object-cover block">
+            <span class="absolute bottom-2 left-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${catLabel}</span>
+            <span class="absolute bottom-2 right-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${g.songs.length}曲</span>
           </div>
-        </div>
-      </div>`;
+          <div class="p-3">
+            <p class="text-sm font-semibold text-ink leading-snug clamp-2 min-h-[2.5em]">${g.title}</p>
+            <div class="flex flex-wrap items-center gap-1.5 mt-2">
+              ${performerBadges}
+              <span class="text-[11px] text-slate-400 ml-auto">${g.date}</span>
+            </div>
+          </div>
+        </button>`;
+    }).join('');
+    updateSliderArrows();
+  }
 
-    if (animate) { card.classList.remove('featured-anim'); void card.offsetWidth; card.classList.add('featured-anim'); }
+  function playStream(videoId: string) {
+    const list = songs.filter((s: any) => s.youtube.videoId === videoId);
+    if (list.length === 0) return;
+    queue = list;
+    qIndex = 0;
+    current(queue[0]);
+  }
+
+  function updateSliderArrows() {
+    const slider = document.getElementById('newSlider');
+    const prev = document.getElementById('newPrev') as HTMLButtonElement | null;
+    const next = document.getElementById('newNext') as HTMLButtonElement | null;
+    if (!slider || !prev || !next) return;
+    const max = slider.scrollWidth - slider.clientWidth;
+    prev.disabled = slider.scrollLeft <= 1;
+    next.disabled = slider.scrollLeft >= max - 1;
   }
 
   function setPressed(ids: string[], activeId: string) {
@@ -601,12 +629,24 @@ const lastUpdated = songsData.updatedAt;
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    if (songs.length > 0) renderFeatured(pickRandomSong(null), false);
+    if (songs.length > 0) renderNewSlider();
+
+    // 新着スライダー操作
+    const slider = document.getElementById('newSlider');
+    const scrollByCard = (dir: number) => slider?.scrollBy({ left: dir * (slider.clientWidth * 0.8), behavior: 'smooth' });
+    document.getElementById('newPrev')?.addEventListener('click', () => scrollByCard(-1));
+    document.getElementById('newNext')?.addEventListener('click', () => scrollByCard(1));
+    slider?.addEventListener('scroll', updateSliderArrows, { passive: true });
+    window.addEventListener('resize', updateSliderArrows);
+    slider?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.new-card');
+      const vid = btn?.getAttribute('data-video-id');
+      if (vid) playStream(vid);
+    });
 
     document.getElementById('searchInput')?.addEventListener('input', filterSongs);
     document.getElementById('clearSearch')?.addEventListener('click', clearSearch);
     document.getElementById('resetSearchBtn')?.addEventListener('click', clearSearch);
-    document.getElementById('shuffleBtn')?.addEventListener('click', () => renderFeatured(pickRandomSong(featuredId), true));
     document.getElementById('closePlayerBtn')?.addEventListener('click', closePlayer);
 
     // 共有コントロール（下部バー＋展開シート）
