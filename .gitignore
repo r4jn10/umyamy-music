@@ -27,3 +27,13 @@ gemini.txt
 
 # jetbrains setting folder
 .idea/
+
+# VSCode 開発専用設定（公開リポジトリには含めない）
+.vscode/
+
+# 開発資産（手順書・モック・変換ツール）。ツールは別の非公開リポジトリで管理
+development/
+
+# ローカル確認用バッチ（開発専用）
+/ビルド_ローカル確認.bat
+/起動_ローカル確認.bat
