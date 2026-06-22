@@ -48,30 +48,6 @@ const lastUpdated = songsData.updatedAt;
         <div id="featuredCard" class="card overflow-hidden cursor-pointer"></div>
       </section>
 
-      <!-- Inline player (Phase 2 で下部プレーヤーに置換予定) -->
-      <div id="playerSection" class="hidden mb-8">
-        <div class="card overflow-hidden">
-          <div class="flex items-center justify-between p-4 border-b border-slate-100">
-            <div class="min-w-0">
-              <span class="text-[10px] font-bold uppercase tracking-widest text-madoka">Now Playing</span>
-              <h2 id="playerTitle" class="font-bold text-ink text-base leading-snug truncate mt-0.5">—</h2>
-              <p id="playerMeta" class="text-xs text-slate-400 truncate mt-0.5">—</p>
-            </div>
-            <button id="closePlayerBtn" type="button" aria-label="閉じる"
-              class="shrink-0 text-slate-400 hover:text-ink hover:bg-slate-100 p-2 rounded-lg transition">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
-          </div>
-          <div class="player-wrap">
-            <iframe id="ytPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="px-4 py-3 border-t border-slate-100 flex items-center justify-between gap-2 text-xs text-slate-400">
-            <span id="playerDate">—</span>
-            <span id="playerTags" class="flex gap-1.5 flex-wrap"></span>
-          </div>
-        </div>
-      </div>
-
       <!-- Search & Filter -->
       <div class="card p-5 mb-8" id="searchArea">
         <div class="relative mb-4">
@@ -120,6 +96,68 @@ const lastUpdated = songsData.updatedAt;
 
   <div id="songs-data" data-songs={JSON.stringify(songs)} class="hidden"></div>
 
+  <!-- Bottom music player -->
+  <div id="player" class="hidden">
+    <!-- Expanded sheet -->
+    <div id="playerSheet" class="hidden fixed inset-0 z-50 flex items-end justify-center">
+      <div id="sheetBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+      <div class="relative w-full max-w-2xl bg-white rounded-t-2xl shadow-2xl border border-b-0 border-slate-200 p-4 sm:p-5">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-[11px] font-bold tracking-widest text-madoka">NOW PLAYING</span>
+          <button id="collapseBtn" aria-label="閉じる" class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+        </div>
+        <div class="aspect-video bg-black rounded-xl overflow-hidden"><div id="ytFrame" class="w-full h-full"></div></div>
+        <div class="mt-3 flex items-center justify-between gap-3">
+          <div class="min-w-0">
+            <h3 id="sheetTitle" class="font-bold text-ink truncate">—</h3>
+            <p id="sheetMeta" class="text-xs text-slate-400 truncate">—</p>
+          </div>
+          <a id="sheetYoutube" href="#" target="_blank" rel="noopener noreferrer"
+             class="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#ff0000] px-3 py-2 rounded-lg">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini bar -->
+    <div class="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-4px_20px_rgba(15,23,42,0.06)]">
+      <div class="max-w-6xl mx-auto px-3 sm:px-4 h-16 flex items-center gap-2 sm:gap-3">
+        <button id="barExpand" class="flex items-center gap-3 min-w-0 flex-1 text-left" aria-label="プレーヤーを開く">
+          <img id="barThumb" src="" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+          <div class="min-w-0">
+            <p id="barTitle" class="text-sm font-semibold text-ink truncate">—</p>
+            <p id="barMeta" class="text-xs text-slate-400 truncate">—</p>
+          </div>
+        </button>
+        <div class="flex items-center gap-0.5 sm:gap-1 shrink-0 text-slate-600">
+          <button id="prevBtn" aria-label="前へ" class="p-2 rounded-full hover:bg-slate-100">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+          </button>
+          <button id="playPauseBtn" aria-label="再生/一時停止" class="p-2.5 rounded-full bg-ink text-white hover:opacity-90">
+            <svg id="iconPlay" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg id="iconPause" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+          </button>
+          <button id="nextBtn" aria-label="次へ" class="p-2 rounded-full hover:bg-slate-100">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+          </button>
+          <button id="shufflePlayBtn" aria-label="シャッフル" class="p-2 rounded-full hover:bg-slate-100 hidden sm:inline-flex">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h5l2 3m9 13h-5l-2-3m7-13l-3 3m3-3v3m0 0h-3M4 20l3-3m-3 3v-3m0 0h3"/></svg>
+          </button>
+          <a id="barYoutube" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで開く" class="p-2 rounded-full hover:bg-slate-100 hidden sm:inline-flex text-[#ff0000]">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+          </a>
+          <button id="closePlayerBtn" aria-label="閉じる" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <SiteFooter />
 </BaseLayout>
 
@@ -136,7 +174,6 @@ const lastUpdated = songsData.updatedAt;
   let filterMember = 'all';
   let filterCategory = 'all';
   let searchText = '';
-  let playingId: string | null = null;
   let featuredId: string | null = null;
 
   const songsDataEl = document.getElementById('songs-data');
@@ -161,39 +198,36 @@ const lastUpdated = songsData.updatedAt;
     return h > 0 ? `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}` : `${m}:${String(s).padStart(2,'0')}`;
   }
 
+  function getFiltered() {
+    let f = songs;
+    if (filterMember === 'ayane') f = f.filter((s: any) => s.performers.includes('白砂あやね'));
+    else if (filterMember === 'madoka') f = f.filter((s: any) => s.performers.includes('水面まどか'));
+    else if (filterMember === 'duet') f = f.filter((s: any) => s.performers.length > 1);
+    if (filterCategory !== 'all') f = f.filter((s: any) => s.category === filterCategory);
+    if (searchText) {
+      const m = new Set(fuse.search(searchText).map(r => (r.item as any).id));
+      f = f.filter((s: any) => m.has(s.id));
+    }
+    return f;
+  }
+
   function filterSongs() {
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
     searchText = searchInput ? searchInput.value.trim().toLowerCase() : '';
     document.getElementById('clearSearch')?.classList.toggle('hidden', !searchText);
-
-    let filtered = songs;
-    if (filterMember === 'ayane') filtered = filtered.filter((s: any) => s.performers.includes('白砂あやね'));
-    else if (filterMember === 'madoka') filtered = filtered.filter((s: any) => s.performers.includes('水面まどか'));
-    else if (filterMember === 'duet') filtered = filtered.filter((s: any) => s.performers.length > 1);
-
-    if (filterCategory !== 'all') filtered = filtered.filter((s: any) => s.category === filterCategory);
-
-    if (searchText) {
-      const matched = new Set(fuse.search(searchText).map(r => (r.item as any).id));
-      filtered = filtered.filter((s: any) => matched.has(s.id));
-    }
-
+    const filtered = getFiltered();
     const matchedIds = new Set(filtered.map((s: any) => s.id));
     document.querySelectorAll('.song-card-item').forEach(card => {
       card.classList.toggle('hidden', !matchedIds.has(card.getAttribute('data-id')));
     });
-
     const countEl = document.getElementById('resultCount');
     if (countEl) countEl.textContent = `${filtered.length} 曲`;
-
     const emptyState = document.getElementById('emptyState');
     const emptyQuery = document.getElementById('emptyQuery');
     if (filtered.length === 0) {
       emptyState?.classList.remove('hidden');
       if (emptyQuery) emptyQuery.textContent = searchText;
-    } else {
-      emptyState?.classList.add('hidden');
-    }
+    } else emptyState?.classList.add('hidden');
   }
 
   function clearSearch() {
@@ -202,50 +236,110 @@ const lastUpdated = songsData.updatedAt;
     filterSongs();
   }
 
-  function playVideo(song: any) {
-    playingId = song.id;
+  // ===== 下部音楽プレーヤー（YouTube IFrame API） =====
+  let ytPlayer: any = null, pending: any = null;
+  let queue: any[] = [], qIndex = -1, isPlaying = false;
 
-    document.querySelectorAll('.song-card-item').forEach(card => {
-      const isPlaying = card.getAttribute('data-id') === playingId;
-      card.classList.toggle('is-playing', isPlaying);
-      const playingBadge = card.querySelector('.playing-badge');
-      const standardTs = card.querySelector('.ts-badge:not(.playing-badge)');
-      if (playingBadge) playingBadge.classList.toggle('hidden', !isPlaying);
-      if (standardTs) standardTs.classList.toggle('hidden', isPlaying);
+  const apiTag = document.createElement('script');
+  apiTag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(apiTag);
+  (window as any).onYouTubeIframeAPIReady = () => {
+    ytPlayer = new (window as any).YT.Player('ytFrame', {
+      playerVars: { rel: 0, playsinline: 1, autoplay: 1 },
+      events: {
+        onReady: () => { if (pending) { loadVideo(pending); pending = null; } },
+        onStateChange: (e: any) => {
+          isPlaying = (e.data === 1);
+          updatePlayIcon();
+          if (e.data === 0) next(); // ENDED → 次の曲へ
+        },
+      },
     });
+  };
 
-    const title = document.getElementById('playerTitle');
-    const meta = document.getElementById('playerMeta');
-    const date = document.getElementById('playerDate');
-    const tagsEl = document.getElementById('playerTags');
-    const iframe = document.getElementById('ytPlayer') as HTMLIFrameElement;
+  function loadVideo(song: any) {
+    const start = song.youtube.timestampSec || 0;
+    if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById({ videoId: song.youtube.videoId, startSeconds: start });
+    else pending = song;
+  }
 
-    if (title) title.textContent = song.title;
-    if (meta) meta.textContent = `${song.artist}${song.streamTitle ? ' — ' + song.streamTitle : ''}`;
-    if (date) date.textContent = `配信日: ${song.streamDate}`;
-    if (tagsEl) {
-      tagsEl.innerHTML = (song.tags || []).map((t: string) =>
-        `<span class="text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded">#${t}</span>`).join('');
-    }
-    if (iframe) {
-      const start = song.youtube.timestampSec || 0;
-      iframe.src = `https://www.youtube.com/embed/${song.youtube.videoId}?start=${start}&autoplay=1&rel=0&enablejsapi=1`;
-    }
+  function saveHistory(song: any) {
+    try {
+      const k = 'umyamy:history';
+      const arr = JSON.parse(localStorage.getItem(k) || '[]');
+      if (arr[0] && arr[0].id === song.id) return;
+      arr.unshift({ id: song.id, title: song.title, artist: song.artist, videoId: song.youtube.videoId, at: Date.now() });
+      localStorage.setItem(k, JSON.stringify(arr.slice(0, 50)));
+    } catch (_) {}
+  }
 
-    document.getElementById('playerSection')?.classList.remove('hidden');
-    const target = document.getElementById('searchArea');
-    if (target) {
-      const y = target.getBoundingClientRect().top + window.pageYOffset - 90;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
+  function markPlayingCard(id: string | null) {
+    document.querySelectorAll('.song-card-item').forEach(card => {
+      const on = card.getAttribute('data-id') === id;
+      card.classList.toggle('is-playing', on);
+      const pb = card.querySelector('.playing-badge');
+      const ts = card.querySelector('.ts-badge:not(.playing-badge)');
+      if (pb) pb.classList.toggle('hidden', !on);
+      if (ts) ts.classList.toggle('hidden', on);
+    });
+  }
+
+  function updateBar(song: any) {
+    const yurl = song.youtube.url || `https://www.youtube.com/watch?v=${song.youtube.videoId}`;
+    const set = (id: string, fn: (el: any) => void) => { const el = document.getElementById(id); if (el) fn(el); };
+    set('barThumb', el => el.src = `https://img.youtube.com/vi/${song.youtube.videoId}/default.jpg`);
+    set('barTitle', el => el.textContent = song.title);
+    set('barMeta', el => el.textContent = song.artist);
+    set('sheetTitle', el => el.textContent = song.title);
+    set('sheetMeta', el => el.textContent = `${song.artist}${song.streamTitle ? ' — ' + song.streamTitle : ''}`);
+    set('barYoutube', el => el.href = yurl);
+    set('sheetYoutube', el => el.href = yurl);
+  }
+
+  function updatePlayIcon() {
+    document.getElementById('iconPlay')?.classList.toggle('hidden', isPlaying);
+    document.getElementById('iconPause')?.classList.toggle('hidden', !isPlaying);
+  }
+
+  function current(song: any) {
+    if (!song) return;
+    loadVideo(song);
+    updateBar(song);
+    saveHistory(song);
+    markPlayingCard(song.id);
+    document.getElementById('player')?.classList.remove('hidden');
+    document.body.style.paddingBottom = '4.5rem';
+  }
+
+  function playSong(song: any) {
+    queue = getFiltered();
+    if (queue.length === 0 || !queue.find((s: any) => s.id === song.id)) queue = songs;
+    qIndex = queue.findIndex((s: any) => s.id === song.id);
+    current(song);
+  }
+  function playIndex(i: number) {
+    if (queue.length === 0) return;
+    qIndex = ((i % queue.length) + queue.length) % queue.length;
+    current(queue[qIndex]);
+  }
+  function next() { if (queue.length) playIndex(qIndex + 1); }
+  function prev() { if (queue.length) playIndex(qIndex - 1); }
+  function shufflePlay() {
+    const pool = queue.length ? queue : songs;
+    queue = pool;
+    playIndex(Math.floor(Math.random() * pool.length));
+  }
+  function togglePlay() {
+    if (!ytPlayer) return;
+    if (isPlaying) ytPlayer.pauseVideo(); else ytPlayer.playVideo();
   }
 
   function closePlayer() {
-    const iframe = document.getElementById('ytPlayer') as HTMLIFrameElement;
-    if (iframe) iframe.src = '';
-    document.getElementById('playerSection')?.classList.add('hidden');
-    playingId = null;
-    document.querySelectorAll('.song-card-item.is-playing').forEach(c => c.classList.remove('is-playing'));
+    if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
+    document.getElementById('player')?.classList.add('hidden');
+    document.getElementById('playerSheet')?.classList.add('hidden');
+    document.body.style.paddingBottom = '';
+    markPlayingCard(null);
   }
 
   function pickRandomSong(excludeId: string | null) {
@@ -261,7 +355,7 @@ const lastUpdated = songsData.updatedAt;
 
     const card = document.getElementById('featuredCard');
     if (!card) return;
-    card.onclick = () => playVideo(song);
+    card.onclick = () => playSong(song);
     const catLabel = CAT_LABEL[song.category] || song.category;
     const thumbUrl = `https://img.youtube.com/vi/${song.youtube.videoId}/mqdefault.jpg`;
 
@@ -297,6 +391,13 @@ const lastUpdated = songsData.updatedAt;
     document.getElementById('resetSearchBtn')?.addEventListener('click', clearSearch);
     document.getElementById('shuffleBtn')?.addEventListener('click', () => renderFeatured(pickRandomSong(featuredId), true));
     document.getElementById('closePlayerBtn')?.addEventListener('click', closePlayer);
+    document.getElementById('playPauseBtn')?.addEventListener('click', togglePlay);
+    document.getElementById('prevBtn')?.addEventListener('click', prev);
+    document.getElementById('nextBtn')?.addEventListener('click', next);
+    document.getElementById('shufflePlayBtn')?.addEventListener('click', shufflePlay);
+    document.getElementById('barExpand')?.addEventListener('click', () => document.getElementById('playerSheet')?.classList.remove('hidden'));
+    document.getElementById('collapseBtn')?.addEventListener('click', () => document.getElementById('playerSheet')?.classList.add('hidden'));
+    document.getElementById('sheetBackdrop')?.addEventListener('click', () => document.getElementById('playerSheet')?.classList.add('hidden'));
 
     const memberIds = ['btn-m-all', 'btn-m-madoka', 'btn-m-ayane', 'btn-m-duet'];
     const memberVal: Record<string, string> = { 'btn-m-all': 'all', 'btn-m-madoka': 'madoka', 'btn-m-ayane': 'ayane', 'btn-m-duet': 'duet' };
@@ -313,7 +414,7 @@ const lastUpdated = songsData.updatedAt;
     document.getElementById('songGrid')?.addEventListener('click', (e) => {
       const card = (e.target as HTMLElement).closest('.song-card-item');
       const songJson = card?.getAttribute('data-song');
-      if (songJson) playVideo(JSON.parse(songJson));
+      if (songJson) playSong(JSON.parse(songJson));
     });
   });
 </script>
