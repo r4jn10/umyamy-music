@@ -68,7 +68,7 @@ const lastUpdated = songsData.updatedAt;
             <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
             <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか</button>
             <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね</button>
-            <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">2人</button>
+            <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー</button>
           </div>
           <div class="flex flex-wrap gap-2 items-center">
             <span class="text-[11px] text-slate-400 font-semibold mr-1">カテゴリ</span>
@@ -99,33 +99,74 @@ const lastUpdated = songsData.updatedAt;
   <!-- Bottom music player -->
   <div id="player" class="hidden">
     <!-- Expanded sheet -->
-    <div id="playerSheet" class="hidden fixed inset-0 z-50 flex items-end justify-center">
+    <div id="playerSheet" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center">
       <div id="sheetBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
-      <div class="relative w-full max-w-2xl bg-white rounded-t-2xl shadow-2xl border border-b-0 border-slate-200 p-4 sm:p-5">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-[11px] font-bold tracking-widest text-madoka">NOW PLAYING</span>
+      <div class="relative w-full max-w-4xl bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-slate-200 max-h-[90vh] flex flex-col overflow-hidden">
+        <div class="accent-bar h-1 w-full shrink-0"></div>
+        <div class="flex items-center justify-between px-4 pt-3 pb-1">
+          <span class="accent-text text-[11px] font-bold tracking-widest text-madoka">NOW PLAYING</span>
           <button id="collapseBtn" aria-label="閉じる" class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
         </div>
-        <div class="aspect-video bg-black rounded-xl overflow-hidden"><div id="ytFrame" class="w-full h-full"></div></div>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <div class="min-w-0">
-            <h3 id="sheetTitle" class="font-bold text-ink truncate">—</h3>
-            <p id="sheetMeta" class="text-xs text-slate-400 truncate">—</p>
+        <div class="flex flex-col sm:flex-row gap-4 p-4 pt-1 min-h-0 overflow-hidden">
+          <div class="sm:w-3/5 shrink-0 flex flex-col">
+            <div class="aspect-video bg-black rounded-xl overflow-hidden"><div id="ytFrame" class="w-full h-full"></div></div>
+            <div class="mt-3 flex items-center justify-between gap-3">
+              <div class="min-w-0">
+                <h3 id="sheetTitle" class="font-bold text-ink truncate">—</h3>
+                <p id="sheetMeta" class="text-xs text-slate-400 truncate">—</p>
+              </div>
+              <a id="sheetYoutube" href="#" target="_blank" rel="noopener noreferrer"
+                 class="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#ff0000] px-3 py-2 rounded-lg">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                YouTube
+              </a>
+            </div>
+            <!-- Sheet controls -->
+            <div class="mt-3 flex items-center justify-center gap-1 text-slate-600">
+              <button class="ctl-prev p-2 rounded-full hover:bg-slate-100" aria-label="前へ">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+              </button>
+              <button class="ctl-play play-btn-themed p-3 rounded-full bg-ink text-white hover:opacity-90" aria-label="再生/一時停止">
+                <svg class="icon-play w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg class="icon-pause w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+              </button>
+              <button class="ctl-next p-2 rounded-full hover:bg-slate-100" aria-label="次へ">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+              </button>
+              <button class="ctl-repeat relative p-2 rounded-full hover:bg-slate-100" aria-label="リピート切替">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2l4 4-4 4M3 11V9a4 4 0 014-4h14M7 22l-4-4 4-4m14 1v2a4 4 0 01-4 4H3"/></svg>
+                <span class="repeat-one hidden absolute -top-0.5 -right-0.5 text-[9px] font-bold bg-madoka text-white rounded-full w-3.5 h-3.5 flex items-center justify-center">1</span>
+              </button>
+              <button class="ctl-shuffle p-2 rounded-full hover:bg-slate-100" aria-label="シャッフル再生">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.66 6.83l-1.41 1.41 3.13 3.13L14.5 16H20v-5.5l-2.04 2.04-2.8-2.71z"/></svg>
+              </button>
+              <div class="flex items-center gap-1 ml-2">
+                <button class="ctl-mute p-1.5 rounded-full hover:bg-slate-100" aria-label="ミュート">
+                  <svg class="icon-vol w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>
+                  <svg class="icon-mute w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm16.6 2l2.1-2.1-1.4-1.4-2.1 2.1-2.1-2.1-1.4 1.4 2.1 2.1-2.1 2.1 1.4 1.4 2.1-2.1 2.1 2.1 1.4-1.4-2.1-2.1z"/></svg>
+                </button>
+                <input type="range" min="0" max="100" value="100" aria-label="音量" class="volume-slider w-20 accent-[#ff8184]">
+              </div>
+            </div>
           </div>
-          <a id="sheetYoutube" href="#" target="_blank" rel="noopener noreferrer"
-             class="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#ff0000] px-3 py-2 rounded-lg">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-            YouTube
-          </a>
+          <div class="sm:w-2/5 min-h-0 flex flex-col">
+            <p class="text-xs font-bold text-slate-400 mb-2 shrink-0">次の曲</p>
+            <div id="upNext" class="flex-1 overflow-y-auto -mr-1 pr-1 space-y-1 min-h-[120px]"></div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Mini bar -->
     <div class="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-4px_20px_rgba(15,23,42,0.06)]">
-      <div class="max-w-6xl mx-auto px-3 sm:px-4 h-16 flex items-center gap-2 sm:gap-3">
+      <div class="accent-bar h-1 w-full"></div>
+      <button id="barHandle" aria-label="プレーヤーを開く" class="group w-full flex flex-col items-center pt-1.5 gap-0.5">
+        <span class="block w-9 h-1 rounded-full bg-slate-300 group-hover:bg-slate-400 transition"></span>
+        <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-slate-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" d="M5 15l7-7 7 7"/></svg>
+      </button>
+      <div class="max-w-6xl mx-auto px-3 sm:px-4 pb-2 flex items-center gap-2 sm:gap-3">
         <button id="barExpand" class="flex items-center gap-3 min-w-0 flex-1 text-left" aria-label="プレーヤーを開く">
           <img id="barThumb" src="" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
           <div class="min-w-0">
@@ -133,28 +174,56 @@ const lastUpdated = songsData.updatedAt;
             <p id="barMeta" class="text-xs text-slate-400 truncate">—</p>
           </div>
         </button>
-        <div class="flex items-center gap-0.5 sm:gap-1 shrink-0 text-slate-600">
-          <button id="prevBtn" aria-label="前へ" class="p-2 rounded-full hover:bg-slate-100">
+
+        <!-- volume (md+) -->
+        <div class="hidden md:flex items-center gap-1.5 shrink-0 text-slate-600">
+          <button class="ctl-mute p-1.5 rounded-full hover:bg-slate-100" aria-label="ミュート">
+            <svg class="icon-vol w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>
+            <svg class="icon-mute w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm16.6 2l2.1-2.1-1.4-1.4-2.1 2.1-2.1-2.1-1.4 1.4 2.1 2.1-2.1 2.1 1.4 1.4 2.1-2.1 2.1 2.1 1.4-1.4-2.1-2.1z"/></svg>
+          </button>
+          <input type="range" min="0" max="100" value="100" aria-label="音量" class="volume-slider w-20 accent-[#ff8184]">
+        </div>
+
+        <div class="flex items-center gap-0 sm:gap-1 shrink-0 text-slate-600">
+          <button class="ctl-prev p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="前へ">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
           </button>
-          <button id="playPauseBtn" aria-label="再生/一時停止" class="p-2.5 rounded-full bg-ink text-white hover:opacity-90">
-            <svg id="iconPlay" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <svg id="iconPause" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+          <button class="ctl-play play-btn-themed p-2 sm:p-2.5 rounded-full bg-ink text-white hover:opacity-90" aria-label="再生/一時停止">
+            <svg class="icon-play w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="icon-pause w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
           </button>
-          <button id="nextBtn" aria-label="次へ" class="p-2 rounded-full hover:bg-slate-100">
+          <button class="ctl-next p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="次へ">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
           </button>
-          <button id="shufflePlayBtn" aria-label="シャッフル" class="p-2 rounded-full hover:bg-slate-100 hidden sm:inline-flex">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h5l2 3m9 13h-5l-2-3m7-13l-3 3m3-3v3m0 0h-3M4 20l3-3m-3 3v-3m0 0h3"/></svg>
+          <button class="ctl-repeat relative p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="リピート切替">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2l4 4-4 4M3 11V9a4 4 0 014-4h14M7 22l-4-4 4-4m14 1v2a4 4 0 01-4 4H3"/></svg>
+            <span class="repeat-one hidden absolute -top-0.5 -right-0.5 text-[9px] font-bold bg-madoka text-white rounded-full w-3.5 h-3.5 flex items-center justify-center">1</span>
           </button>
-          <a id="barYoutube" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで開く" class="p-2 rounded-full hover:bg-slate-100 hidden sm:inline-flex text-[#ff0000]">
+          <button class="ctl-shuffle p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="シャッフル再生">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.66 6.83l-1.41 1.41 3.13 3.13L14.5 16H20v-5.5l-2.04 2.04-2.8-2.71z"/></svg>
+          </button>
+          <a id="barYoutube" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで開く" class="p-2 rounded-full hover:bg-slate-100 hidden lg:inline-flex text-[#ff0000]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
           </a>
-          <button id="closePlayerBtn" aria-label="閉じる" class="p-2 rounded-full hover:bg-slate-100 text-slate-400">
+          <button id="closePlayerBtn" aria-label="閉じる" class="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 text-slate-400">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- History modal（#player の外。再生前でも開けるように） -->
+  <div id="historyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="historyBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 max-h-[80vh] flex flex-col">
+      <div class="flex items-center justify-between p-4 border-b border-slate-100">
+        <h3 class="font-bold text-ink">再生履歴</h3>
+        <button id="historyClose" aria-label="閉じる" class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="historyList" class="overflow-y-auto p-2"></div>
     </div>
   </div>
 
@@ -166,6 +235,14 @@ const lastUpdated = songsData.updatedAt;
   .player-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
   @keyframes featured-pop { 0% { opacity: 0; transform: scale(.985); } 100% { opacity: 1; transform: scale(1); } }
   :global(.featured-anim) { animation: featured-pop .3s ease; }
+
+  /* プレーヤーのテーマ色（歌唱者で変化） */
+  #player { --accent: #ff8184; --accent-grad: linear-gradient(90deg,#ff8184,#54a2e5); }
+  :global(.accent-bar) { background: var(--accent-grad); }
+  :global(.accent-text) { color: var(--accent); }
+  :global(.volume-slider) { accent-color: var(--accent); }
+  :global(.repeat-one) { background: var(--accent) !important; }
+  :global(.repeat-active) { color: var(--accent); }
 </style>
 
 <script>
@@ -237,8 +314,11 @@ const lastUpdated = songsData.updatedAt;
   }
 
   // ===== 下部音楽プレーヤー（YouTube IFrame API） =====
+  type RepeatMode = 'all' | 'one' | 'off';
   let ytPlayer: any = null, pending: any = null;
   let queue: any[] = [], qIndex = -1, isPlaying = false;
+  let repeatMode: RepeatMode = 'all';   // 連続再生 → 1曲リピート → オフ
+  let lastVolume = 100, isMuted = false;
 
   const apiTag = document.createElement('script');
   apiTag.src = 'https://www.youtube.com/iframe_api';
@@ -247,11 +327,14 @@ const lastUpdated = songsData.updatedAt;
     ytPlayer = new (window as any).YT.Player('ytFrame', {
       playerVars: { rel: 0, playsinline: 1, autoplay: 1 },
       events: {
-        onReady: () => { if (pending) { loadVideo(pending); pending = null; } },
+        onReady: () => {
+          applyVolume();
+          if (pending) { loadVideo(pending); pending = null; }
+        },
         onStateChange: (e: any) => {
           isPlaying = (e.data === 1);
           updatePlayIcon();
-          if (e.data === 0) next(); // ENDED → 次の曲へ
+          if (e.data === 0) handleEnded(); // ENDED
         },
       },
     });
@@ -297,18 +380,113 @@ const lastUpdated = songsData.updatedAt;
   }
 
   function updatePlayIcon() {
-    document.getElementById('iconPlay')?.classList.toggle('hidden', isPlaying);
-    document.getElementById('iconPause')?.classList.toggle('hidden', !isPlaying);
+    document.querySelectorAll('.icon-play').forEach(el => el.classList.toggle('hidden', isPlaying));
+    document.querySelectorAll('.icon-pause').forEach(el => el.classList.toggle('hidden', !isPlaying));
+  }
+
+  // ----- テーマ色（歌唱者で変化） -----
+  function applyTheme(song: any) {
+    const p: string[] = song.performers || [];
+    const hasM = p.includes('水面まどか'), hasA = p.includes('白砂あやね');
+    let accent: string, grad: string;
+    if (hasM && hasA) { accent = '#b86fb0'; grad = 'linear-gradient(90deg,#ff8184,#54a2e5)'; }
+    else if (hasA) { accent = '#54a2e5'; grad = 'linear-gradient(90deg,#54a2e5,#88c4f1)'; }
+    else { accent = '#ff8184'; grad = 'linear-gradient(90deg,#ff8184,#ffb0b2)'; }
+    const root = document.getElementById('player');
+    if (root) {
+      root.style.setProperty('--accent', accent);
+      root.style.setProperty('--accent-grad', grad);
+    }
+    document.querySelectorAll('.play-btn-themed').forEach(b => (b as HTMLElement).style.background = grad);
+  }
+
+  // ----- 次の曲リスト（YouTube Music風・キューを巡回して表示） -----
+  function renderUpNext() {
+    const el = document.getElementById('upNext');
+    if (!el) return;
+    if (queue.length <= 1 || qIndex < 0) {
+      el.innerHTML = '<p class="text-xs text-slate-400 py-4 text-center">次の曲はありません</p>';
+      return;
+    }
+    // 現在の曲の次から、キューを一周ぶん並べる（末尾付近で再生開始しても十分な数が出る）
+    const items: { song: any; idx: number }[] = [];
+    for (let k = 1; k < queue.length; k++) {
+      const idx = (qIndex + k) % queue.length;
+      items.push({ song: queue[idx], idx });
+    }
+    el.innerHTML = items.map(({ song: s, idx }) => {
+      const thumb = `https://img.youtube.com/vi/${s.youtube.videoId}/default.jpg`;
+      return `
+        <button type="button" data-qindex="${idx}" class="upnext-item w-full flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100 text-left">
+          <img src="${thumb}" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+          <div class="min-w-0 flex-1">
+            <p class="text-xs font-semibold text-ink truncate">${s.title}</p>
+            <p class="text-[11px] text-slate-400 truncate">${s.artist}</p>
+          </div>
+        </button>`;
+    }).join('');
+  }
+
+  // ----- 音量 -----
+  function applyVolume() {
+    if (!ytPlayer || !ytPlayer.setVolume) return;
+    if (isMuted || lastVolume === 0) ytPlayer.mute?.();
+    else { ytPlayer.unMute?.(); ytPlayer.setVolume(lastVolume); }
+  }
+  function updateVolumeUI() {
+    const off = isMuted || lastVolume === 0;
+    document.querySelectorAll('.volume-slider').forEach(s => (s as HTMLInputElement).value = String(isMuted ? 0 : lastVolume));
+    document.querySelectorAll('.icon-vol').forEach(el => el.classList.toggle('hidden', off));
+    document.querySelectorAll('.icon-mute').forEach(el => el.classList.toggle('hidden', !off));
+  }
+  function setVolume(v: number) {
+    lastVolume = Math.max(0, Math.min(100, v));
+    isMuted = lastVolume === 0;
+    applyVolume();
+    updateVolumeUI();
+  }
+  function toggleMute() {
+    isMuted = !isMuted;
+    if (!isMuted && lastVolume === 0) lastVolume = 50;
+    applyVolume();
+    updateVolumeUI();
+  }
+
+  // ----- リピート -----
+  const REPEAT_CYCLE: RepeatMode[] = ['all', 'one', 'off'];
+  function cycleRepeat() {
+    repeatMode = REPEAT_CYCLE[(REPEAT_CYCLE.indexOf(repeatMode) + 1) % REPEAT_CYCLE.length];
+    updateRepeatUI();
+    renderUpNext();
+  }
+  function updateRepeatUI() {
+    document.querySelectorAll('.ctl-repeat').forEach(btn => {
+      btn.classList.toggle('repeat-active', repeatMode !== 'off');
+      btn.setAttribute('aria-label',
+        repeatMode === 'all' ? 'リピート: 連続再生' : repeatMode === 'one' ? 'リピート: 1曲' : 'リピート: オフ');
+    });
+    document.querySelectorAll('.repeat-one').forEach(el => el.classList.toggle('hidden', repeatMode !== 'one'));
+  }
+
+  function handleEnded() {
+    if (repeatMode === 'one') { playIndex(qIndex); return; }
+    if (qIndex >= queue.length - 1) {
+      if (repeatMode === 'all') playIndex(0);
+      return; // off → 末尾で停止
+    }
+    playIndex(qIndex + 1);
   }
 
   function current(song: any) {
     if (!song) return;
     loadVideo(song);
     updateBar(song);
+    applyTheme(song);
     saveHistory(song);
     markPlayingCard(song.id);
+    renderUpNext();
     document.getElementById('player')?.classList.remove('hidden');
-    document.body.style.paddingBottom = '4.5rem';
+    document.body.style.paddingBottom = '5.75rem';
   }
 
   function playSong(song: any) {
@@ -325,13 +503,52 @@ const lastUpdated = songsData.updatedAt;
   function next() { if (queue.length) playIndex(qIndex + 1); }
   function prev() { if (queue.length) playIndex(qIndex - 1); }
   function shufflePlay() {
-    const pool = queue.length ? queue : songs;
+    // 連続再生キューをリセットしてシャッフル（絞り込み中の曲を対象）
+    const base = getFiltered();
+    const pool = (base.length ? base : songs).slice();
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    if (pool.length === 0) return;
     queue = pool;
-    playIndex(Math.floor(Math.random() * pool.length));
+    qIndex = 0;
+    if (repeatMode === 'off') { repeatMode = 'all'; updateRepeatUI(); }
+    current(queue[0]);
   }
   function togglePlay() {
     if (!ytPlayer) return;
     if (isPlaying) ytPlayer.pauseVideo(); else ytPlayer.playVideo();
+  }
+
+  // ----- 再生履歴 -----
+  function openHistory() {
+    const list = document.getElementById('historyList');
+    if (list) {
+      let arr: any[] = [];
+      try { arr = JSON.parse(localStorage.getItem('umyamy:history') || '[]'); } catch (_) {}
+      if (arr.length === 0) {
+        list.innerHTML = '<p class="text-sm text-slate-400 py-10 text-center">まだ再生履歴はありません</p>';
+      } else {
+        list.innerHTML = arr.map((h: any) => {
+          const thumb = `https://img.youtube.com/vi/${h.videoId}/default.jpg`;
+          return `
+            <button type="button" data-hist-id="${h.id}" class="history-item w-full flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 text-left">
+              <img src="${thumb}" alt="" class="w-12 h-12 rounded object-cover bg-slate-100 shrink-0">
+              <div class="min-w-0 flex-1">
+                <p class="text-sm font-semibold text-ink truncate">${h.title}</p>
+                <p class="text-xs text-slate-400 truncate">${h.artist}</p>
+              </div>
+            </button>`;
+        }).join('');
+      }
+    }
+    document.getElementById('historyModal')?.classList.remove('hidden');
+  }
+  function closeHistory() { document.getElementById('historyModal')?.classList.add('hidden'); }
+  function playById(id: string) {
+    const song = songs.find((s: any) => s.id === id);
+    if (song) playSong(song);
   }
 
   function closePlayer() {
@@ -391,13 +608,45 @@ const lastUpdated = songsData.updatedAt;
     document.getElementById('resetSearchBtn')?.addEventListener('click', clearSearch);
     document.getElementById('shuffleBtn')?.addEventListener('click', () => renderFeatured(pickRandomSong(featuredId), true));
     document.getElementById('closePlayerBtn')?.addEventListener('click', closePlayer);
-    document.getElementById('playPauseBtn')?.addEventListener('click', togglePlay);
-    document.getElementById('prevBtn')?.addEventListener('click', prev);
-    document.getElementById('nextBtn')?.addEventListener('click', next);
-    document.getElementById('shufflePlayBtn')?.addEventListener('click', shufflePlay);
-    document.getElementById('barExpand')?.addEventListener('click', () => document.getElementById('playerSheet')?.classList.remove('hidden'));
-    document.getElementById('collapseBtn')?.addEventListener('click', () => document.getElementById('playerSheet')?.classList.add('hidden'));
-    document.getElementById('sheetBackdrop')?.addEventListener('click', () => document.getElementById('playerSheet')?.classList.add('hidden'));
+
+    // 共有コントロール（下部バー＋展開シート）
+    const on = (sel: string, fn: () => void) =>
+      document.querySelectorAll(sel).forEach(el => el.addEventListener('click', fn));
+    on('.ctl-play', togglePlay);
+    on('.ctl-prev', prev);
+    on('.ctl-next', next);
+    on('.ctl-shuffle', shufflePlay);
+    on('.ctl-repeat', cycleRepeat);
+    on('.ctl-mute', toggleMute);
+    document.querySelectorAll('.volume-slider').forEach(el =>
+      el.addEventListener('input', (e) => setVolume(Number((e.target as HTMLInputElement).value))));
+
+    const openSheet = () => { document.getElementById('playerSheet')?.classList.remove('hidden'); renderUpNext(); };
+    const closeSheet = () => document.getElementById('playerSheet')?.classList.add('hidden');
+    document.getElementById('barExpand')?.addEventListener('click', openSheet);
+    document.getElementById('barHandle')?.addEventListener('click', openSheet);
+    document.getElementById('collapseBtn')?.addEventListener('click', closeSheet);
+    document.getElementById('sheetBackdrop')?.addEventListener('click', closeSheet);
+
+    updateRepeatUI();
+    updateVolumeUI();
+
+    // 次の曲リスト → クリックでジャンプ
+    document.getElementById('upNext')?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.upnext-item');
+      const idx = btn?.getAttribute('data-qindex');
+      if (idx !== null && idx !== undefined) playIndex(Number(idx));
+    });
+
+    // 再生履歴
+    document.getElementById('historyBtn')?.addEventListener('click', openHistory);
+    document.getElementById('historyClose')?.addEventListener('click', closeHistory);
+    document.getElementById('historyBackdrop')?.addEventListener('click', closeHistory);
+    document.getElementById('historyList')?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.history-item');
+      const id = btn?.getAttribute('data-hist-id');
+      if (id) { closeHistory(); playById(id); }
+    });
 
     const memberIds = ['btn-m-all', 'btn-m-madoka', 'btn-m-ayane', 'btn-m-duet'];
     const memberVal: Record<string, string> = { 'btn-m-all': 'all', 'btn-m-madoka': 'madoka', 'btn-m-ayane': 'ayane', 'btn-m-duet': 'duet' };
