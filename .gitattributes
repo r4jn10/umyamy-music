@@ -1,0 +1,8 @@
+# 改行コードを正規化（リポジトリ内は LF で統一）
+* text=auto eol=lf
+
+# バイナリ（変換しない）
+*.ico binary
+*.png binary
+*.jpg binary
+*.exe binary

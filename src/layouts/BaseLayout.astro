@@ -1,0 +1,162 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "うみゃみーソングDB（非公式ファンサイト）", 
+  description = "白砂あやね 🩵 ＆ 水面まどか 💜 の歌枠・歌ってみた非公式まとめサイトです。" 
+} = Astro.props;
+
+// GitHub Pages で公開されたときに、base パスが自動で考慮されるようにします。
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  <link rel="icon" href={`${base}/favicon.ico`} />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- Google Fonts for cute rounded typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <style is:global>
+    body {
+      font-family: 'M PLUS Rounded 1c', 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 50%, #fff7ed 100%);
+      color: #334155;
+    }
+
+    /* Floating bubbles animation in background */
+    .bubble-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6) 0%, rgba(186, 230, 253, 0.25) 70%);
+      box-shadow: inset -3px -3px 8px rgba(125, 211, 252, 0.3), 0 5px 15px rgba(0, 0, 0, 0.03);
+      animation: floatUp 12s infinite ease-in-out;
+    }
+    .bubble-purple {
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6) 0%, rgba(233, 213, 255, 0.25) 70%);
+      box-shadow: inset -3px -3px 8px rgba(216, 180, 254, 0.3), 0 5px 15px rgba(0, 0, 0, 0.03);
+    }
+    
+    @keyframes floatUp {
+      0% { transform: translateY(110vh) translateX(0) scale(0.8); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) translateX(50px) scale(1.2); opacity: 0; }
+    }
+
+    .bubble-1 { left: 10%; width: 60px; height: 60px; animation-duration: 14s; }
+    .bubble-2 { left: 30%; width: 40px; height: 40px; animation-duration: 18s; animation-delay: 2s; }
+    .bubble-3 { left: 65%; width: 80px; height: 80px; animation-duration: 22s; animation-delay: 1s; }
+    .bubble-4 { left: 85%; width: 50px; height: 50px; animation-duration: 16s; animation-delay: 4s; }
+
+    /* Custom Header Wave */
+    .site-header {
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .header-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
+    .header-wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 25px;
+    }
+
+    /* Custom cute scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #faf5ff; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: #d8b4fe; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #c084fc; }
+
+    /* Demo ribbon */
+    .cute-ribbon {
+      background: linear-gradient(90deg, #ff9ebb, #fff4cc, #bae6fd, #ff9ebb);
+      background-size: 300% 100%;
+      animation: ribbonGlow 6s linear infinite;
+    }
+    @keyframes ribbonGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Background bubbles -->
+  <div class="bubble-container">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2 bubble-purple"></div>
+    <div class="bubble bubble-3"></div>
+    <div class="bubble bubble-4 bubble-purple"></div>
+  </div>
+
+  <!-- Pinned banner at top -->
+  <div class="cute-ribbon text-center py-1.5 text-slate-800 text-xs font-bold tracking-wider shadow-sm flex items-center justify-center gap-1 z-50">
+    <span>✨</span>
+    <span>うみゃみーソングDB 🎀 白砂あやね 🩵 ＆ 水面まどか 💜 非公式ファンサイト</span>
+    <span>✨</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header text-white shadow-md pb-8 pt-6">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-wider flex items-center justify-center md:justify-start gap-2 drop-shadow-md">
+          <span class="inline-block animate-bounce text-4xl" style="animation-duration: 2.5s">🌊</span>
+          うみゃみーソングDB
+        </h1>
+        <p class="text-sky-100 text-xs md:text-sm mt-1.5 font-bold tracking-wide flex items-center justify-center md:justify-start gap-2">
+          <span>白砂あやね 🩵 ＆ 水面まどか 💜</span>
+          <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px]">非公式ファンサイト</span>
+        </p>
+      </div>
+      
+      <nav class="flex gap-2 text-sm bg-white/10 p-1.5 rounded-2xl backdrop-blur-sm border border-white/20">
+        <a href={`${base}/`} class="px-4 py-1.5 rounded-xl font-bold bg-white text-purple-600 shadow-sm transition">うた一覧</a>
+        <a href="#" class="px-4 py-1.5 rounded-xl font-bold text-white hover:bg-white/10 transition">配信一覧</a>
+        <a href="#" class="px-4 py-1.5 rounded-xl font-bold text-white hover:bg-white/10 transition">About</a>
+      </nav>
+    </div>
+    
+    <!-- Wave decoration at bottom -->
+    <div class="header-wave">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.93,27.91,194,57.17,263.22,67.23,321.39,56.44Z" fill="#f0f9ff" opacity="0.4"></path>
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.93,27.91,194,57.17,263.22,67.23,321.39,56.44Z" fill="#f0f9ff" class="opacity-100"></path>
+      </svg>
+    </div>
+  </header>
+
+  <slot />
+
+</body>
+</html>

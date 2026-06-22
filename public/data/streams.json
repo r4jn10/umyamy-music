@@ -1,0 +1,104 @@
+{
+  "streams": [
+    {
+      "id": "20260130-ayane-debut",
+      "title": "白砂あやね 初配信 歌枠",
+      "date": "2026-01-30",
+      "performers": ["白砂あやね"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "debut",
+      "setlistSource": "comment",
+      "songIds": ["20260130-ayane-001", "20260130-ayane-002", "20260130-ayane-003"]
+    },
+    {
+      "id": "20260201-madoka-cover1",
+      "title": "【歌ってみた】ファントムセンセーション / 水面まどか",
+      "date": "2026-02-01",
+      "performers": ["水面まどか"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "cover",
+      "setlistSource": "comment",
+      "songIds": ["20260201-madoka-001"]
+    },
+    {
+      "id": "20260201-madoka-debut",
+      "title": "水面まどか 初配信 歌枠",
+      "date": "2026-02-01",
+      "performers": ["水面まどか"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "debut",
+      "setlistSource": "comment",
+      "songIds": ["20260201-madoka-002"]
+    },
+    {
+      "id": "20260210-both-cover1",
+      "title": "【うみゃみー】Palette / うみゃみー【歌ってみた】",
+      "date": "2026-02-10",
+      "performers": ["白砂あやね", "水面まどか"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "unit_cover",
+      "setlistSource": "comment",
+      "songIds": ["20260210-both-001"]
+    },
+    {
+      "id": "20260215-madoka-stream2",
+      "title": "水面まどか 歌枠 〜好きな歌を歌う回〜",
+      "date": "2026-02-15",
+      "performers": ["水面まどか"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "uta_waku",
+      "setlistSource": "comment",
+      "songIds": ["20260215-madoka-003"]
+    },
+    {
+      "id": "20260220-ayane-cover1",
+      "title": "【歌ってみみた】Say!ファンファーレ! / 白砂あやね",
+      "date": "2026-02-20",
+      "performers": ["白砂あやね"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "cover",
+      "setlistSource": "comment",
+      "songIds": ["20260220-ayane-004"]
+    },
+    {
+      "id": "20260301-both-cover2",
+      "title": "【うみゃみー】ドラマツルギー【歌ってみた】",
+      "date": "2026-03-01",
+      "performers": ["白砂あやね", "水面まどか"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "unit_cover",
+      "setlistSource": "comment",
+      "songIds": ["20260301-both-002"]
+    },
+    {
+      "id": "20260315-ayane-stream2",
+      "title": "白砂あやね 歌枠 〜春の歌〜",
+      "date": "2026-03-15",
+      "performers": ["白砂あやね"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "uta_waku",
+      "setlistSource": "comment",
+      "songIds": ["20260315-ayane-005"]
+    },
+    {
+      "id": "20260315-madoka-stream3",
+      "title": "水面まどか 歌枠 〜春の歌〜",
+      "date": "2026-03-15",
+      "performers": ["水面まどか"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "uta_waku",
+      "setlistSource": "comment",
+      "songIds": ["20260315-madoka-004"]
+    },
+    {
+      "id": "20260401-ayane-cover2",
+      "title": "【歌ってみた】花に嵐 / 白砂あやね",
+      "date": "2026-04-01",
+      "performers": ["白砂あやね"],
+      "youtubeVideoId": "dQw4w9WgXcQ",
+      "type": "cover",
+      "setlistSource": "comment",
+      "songIds": ["20260401-ayane-006"]
+    }
+  ]
+}
