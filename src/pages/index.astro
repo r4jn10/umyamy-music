@@ -566,7 +566,7 @@ const lastUpdated = songsData.updatedAt;
       let g = map.get(vid);
       if (!g) {
         g = { videoId: vid, title: s.streamTitle || s.title, date: s.streamDate || '',
-              category: s.category, performers: new Set<string>(), songs: [] };
+              category: s.category, streamType: s.streamType || '', performers: new Set<string>(), songs: [] };
         map.set(vid, g);
       }
       (s.performers || []).forEach((p: string) => g.performers.add(p));
@@ -586,11 +586,16 @@ const lastUpdated = songsData.updatedAt;
         `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
       const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
       const catLabel = CAT_LABEL[g.category] || g.category;
+      const typeLabel = g.streamType === 'solo' ? 'ソロ歌枠' : g.streamType === 'collab' ? 'コラボ歌枠' : '';
+      const typeBadge = typeLabel
+        ? `<span class="absolute top-2 left-2 text-[11px] font-semibold text-white bg-slate-900/70 px-1.5 py-0.5 rounded">${typeLabel}</span>`
+        : '';
       return `
         <button type="button" data-video-id="${g.videoId}"
                 class="new-card snap-start shrink-0 w-64 card overflow-hidden text-left hover:shadow-md transition">
           <div class="relative aspect-video bg-slate-100 overflow-hidden">
             <img src="${thumbUrl}" alt="" onerror="this.style.opacity='0.3'" class="w-full h-full object-cover block">
+            ${typeBadge}
             <span class="absolute bottom-2 left-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${catLabel}</span>
             <span class="absolute bottom-2 right-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${g.songs.length}曲</span>
           </div>
