@@ -8,11 +8,7 @@ interface Props {
     performers: string[];
     unit?: string;
     category: string;
-    youtube: {
-      videoId: string;
-      timestampSec?: number;
-      url: string;
-    };
+    youtube: { videoId: string; timestampSec?: number; url: string; };
     streamDate: string;
     streamTitle?: string;
     tags?: string[];
@@ -22,37 +18,22 @@ interface Props {
 
 const { song } = Astro.props;
 
-const CAT_LABEL: Record<string, string> = { 
-  uta_waku: '🎤 歌枠', 
-  cover: '🎬 歌ってみた', 
-  unit_cover: '💫 ユニット曲', 
-  short: '📱 ショート' 
+const CAT_LABEL: Record<string, string> = {
+  uta_waku: '歌枠',
+  cover: '歌ってみた',
 };
 
-const CAT_COLOR: Record<string, string> = {
-  uta_waku:   'bg-sky-50 text-sky-600 border border-sky-200',
-  cover:      'bg-purple-50 text-purple-600 border border-purple-200',
-  unit_cover: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
-  short:      'bg-pink-50 text-pink-600 border border-pink-200',
-};
+// 水面まどかを先に並べる
+const MEMBER_ORDER = ['水面まどか', '白砂あやね'];
+const performers = [...song.performers].sort(
+  (a, b) => MEMBER_ORDER.indexOf(a) - MEMBER_ORDER.indexOf(b)
+);
 
-// Border classes based on performers
-const getBorderClass = (performers: string[]) => {
-  if (performers.length > 1) return 'member-both-border';
-  if (performers.includes('白砂あやね')) return 'member-ayane-border';
-  if (performers.includes('水面まどか')) return 'member-madoka-border';
-  return '';
-};
+const memberChip = (p: string) =>
+  p === '水面まどか'
+    ? 'text-[#ff8184] bg-[#ffeef0]'
+    : 'text-[#54a2e5] bg-[#eaf4fc]';
 
-// Hover shadow class mapping
-const getHoverShadowClass = (performers: string[]) => {
-  if (performers.length > 1) return 'hover:shadow-emerald-100/50';
-  if (performers.includes('白砂あやね')) return 'hover:shadow-sky-100/50';
-  if (performers.includes('水面まどか')) return 'hover:shadow-purple-100/50';
-  return '';
-};
-
-// Format seconds into MM:SS or H:MM:SS
 const fmtTs = (sec?: number) => {
   if (!sec && sec !== 0) return null;
   if (sec === 0) return null;
@@ -65,61 +46,53 @@ const fmtTs = (sec?: number) => {
 };
 
 const tsString = fmtTs(song.youtube.timestampSec);
-const borderClass = getBorderClass(song.performers);
-const hoverShadowClass = getHoverShadowClass(song.performers);
 const thumbUrl = `https://img.youtube.com/vi/${song.youtube.videoId}/mqdefault.jpg`;
+const isDuet = performers.length > 1;
 ---
 
-<div 
-  class={`song-card-item song-card bg-white rounded-3xl overflow-hidden cursor-pointer shadow-cute hover:shadow-cute-hover ${borderClass} ${hoverShadowClass}`}
+<div
+  class="song-card-item card group cursor-pointer overflow-hidden"
   data-id={song.id}
   data-song={JSON.stringify(song)}
 >
   <div class="thumb-wrap">
-    <img 
-      src={thumbUrl} 
-      alt={song.title} 
-      loading="lazy"
-      decoding="async"
-    />
+    <img src={thumbUrl} alt={song.title} loading="lazy" decoding="async" />
     <div class="play-overlay">
       <div class="play-btn">
-        <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z"/>
-        </svg>
+        <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </div>
     </div>
     {tsString && <span class="ts-badge">{tsString}</span>}
-    <span class="playing-badge ts-badge hidden bg-[#ff9ebb] text-white border-[#ff9ebb]">🫧 再生中</span>
+    <span class="playing-badge ts-badge hidden">再生中</span>
   </div>
-  
+
   <div class="p-4">
-    <div class="flex items-start justify-between gap-2 mb-1.5">
-      <h3 class="font-extrabold text-slate-800 text-base leading-snug flex-1">{song.title}</h3>
-      <span class={`tag text-[10px] px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap ${CAT_COLOR[song.category] || 'bg-gray-100 text-gray-600'}`}>
+    <div class="flex items-start justify-between gap-2 mb-1">
+      <h3 class="font-bold text-slate-900 text-[15px] leading-snug flex-1">{song.title}</h3>
+      <span class="shrink-0 text-[11px] px-2 py-0.5 rounded-full font-semibold text-slate-500 bg-slate-100 whitespace-nowrap">
         {CAT_LABEL[song.category] || song.category}
       </span>
     </div>
-    
-    <p class="text-xs text-slate-400 font-bold mb-3">🎤 {song.artist}</p>
-    
-    <div class="flex items-center justify-between gap-2 border-t border-slate-50 pt-3">
+
+    <p class="text-xs text-slate-400 font-medium mb-3 truncate">{song.artist}</p>
+
+    <div class="flex items-center justify-between gap-2">
       <div class="flex gap-1 flex-wrap">
-        {song.performers.map(p => (
-          <span class={`tag text-[10px] px-2.5 py-0.5 rounded-full font-bold ${p === '白砂あやね' ? 'bg-sky-100 text-sky-700' : 'bg-purple-100 text-purple-700'}`}>
-            {p}
-          </span>
+        {isDuet && (
+          <span class="text-[10px] px-2 py-0.5 rounded-full font-semibold text-white"
+                style="background:linear-gradient(135deg,#ff8184,#54a2e5)">2人</span>
+        )}
+        {performers.map(p => (
+          <span class={`text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChip(p)}`}>{p}</span>
         ))}
       </div>
-      <span class="text-[10px] font-bold text-slate-400 whitespace-nowrap">📅 {song.streamDate}</span>
+      <span class="text-[11px] font-medium text-slate-400 whitespace-nowrap">{song.streamDate}</span>
     </div>
-    
+
     {song.tags && song.tags.length > 0 && (
-      <div class="flex gap-1 flex-wrap mt-2">
+      <div class="flex gap-1 flex-wrap mt-2.5">
         {song.tags.slice(0, 3).map(t => (
-          <span class="tag bg-slate-50 text-slate-400 border border-slate-100 px-2 py-0.5 rounded text-[10px]">
-            #{t}
-          </span>
+          <span class="text-[10px] text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded">#{t}</span>
         ))}
       </div>
     )}
@@ -127,81 +100,27 @@ const thumbUrl = `https://img.youtube.com/vi/${song.youtube.videoId}/mqdefault.j
 </div>
 
 <style>
-  .song-card {
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  .song-card:hover {
-    transform: translateY(-8px) scale(1.02);
-  }
+  .song-card-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,23,42,.08); border-color: #cbd5e1; }
+  .song-card-item.is-playing { border-color: #ff8184; box-shadow: 0 0 0 2px #ff8184; }
 
-  .song-card.is-playing {
-    box-shadow: 0 0 0 4px #ff9ebb, 0 10px 25px rgba(255, 158, 187, 0.4);
-  }
+  .thumb-wrap { position: relative; aspect-ratio: 16/9; background: #f1f5f9; overflow: hidden; }
+  .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+  .song-card-item:hover .thumb-wrap img { transform: scale(1.05); }
 
-  .member-ayane-border  { border: 3px solid #7dd3fc; }
-  .member-madoka-border { border: 3px solid #d8b4fe; }
-  .member-both-border   { border: 3px solid #a7f3d0; }
-
-  .thumb-wrap { 
-    position: relative; 
-    aspect-ratio: 16/9; 
-    background: #e0f2fe; 
-    overflow: hidden; 
-    border-radius: 1rem 1rem 0 0; 
-  }
-  .thumb-wrap img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    display: block; 
-    transition: transform 0.4s ease; 
-  }
-  .song-card:hover .thumb-wrap img { 
-    transform: scale(1.08); 
-  }
-  
   .play-overlay {
-    position: absolute; 
-    inset: 0;
-    background: rgba(14, 165, 233, 0.2);
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    opacity: 0; 
-    transition: all 0.3s ease;
-    backdrop-filter: blur(2px);
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    background: rgba(15,23,42,.25); opacity: 0; transition: opacity .2s ease;
   }
-  .song-card:hover .play-overlay { 
-    opacity: 1; 
-  }
-  
+  .song-card-item:hover .play-overlay { opacity: 1; }
   .play-btn {
-    background: #ff9ebb; 
-    border-radius: 50%; 
-    width: 52px; 
-    height: 52px;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    box-shadow: 0 6px 15px rgba(255, 158, 187, 0.5);
-    border: 3px solid #ffffff;
-    transition: all 0.2s;
-  }
-  .play-btn:hover {
-    transform: scale(1.15) rotate(5deg);
-    background: #ff789c;
+    width: 46px; height: 46px; border-radius: 9999px; display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.18); border: 2px solid #fff; backdrop-filter: blur(2px);
   }
 
   .ts-badge {
-    position: absolute; 
-    bottom: 8px; 
-    right: 8px;
-    background: rgba(255, 255, 255, 0.9);
-    color: #0369a1;
-    font-size: 0.75rem; 
-    font-weight: 700;
-    padding: 2px 8px; 
-    border-radius: 9999px;
-    border: 1.5px solid #bae6fd;
+    position: absolute; bottom: 8px; right: 8px;
+    background: rgba(15,23,42,.78); color: #fff; font-size: .7rem; font-weight: 600;
+    padding: 2px 7px; border-radius: 6px; font-variant-numeric: tabular-nums;
   }
+  .playing-badge { background: #ff8184; left: 8px; right: auto; }
 </style>

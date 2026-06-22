@@ -6,9 +6,9 @@ interface Props {
   description?: string;
 }
 
-const { 
-  title = "うみゃみーMusic（非公式ファンサイト）", 
-  description = "白砂あやね 🩵 ＆ 水面まどか 💜 の歌枠・歌ってみた非公式まとめサイトです。" 
+const {
+  title = "うみゃみーMusic",
+  description = "水面まどか・白砂あやねの歌枠・歌ってみたをまとめた非公式まとめサイトです。"
 } = Astro.props;
 
 // GitHub Pages で公開されたときに、base パスが自動で考慮されるようにします。
@@ -25,138 +25,81 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   <link rel="icon" href={`${base}/favicon.ico`} />
   <meta name="generator" content={Astro.generator} />
-  
-  <!-- Google Fonts for cute rounded typography -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
-  
-  <style is:global>
-    body {
-      font-family: 'M PLUS Rounded 1c', 'Hiragino Sans', 'Meiryo', sans-serif;
-      background: linear-gradient(135deg, #f0f9ff 0%, #faf5ff 50%, #fff7ed 100%);
-      color: #334155;
-    }
-
-    /* Floating bubbles animation in background */
-    .bubble-container {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-    .bubble {
-      position: absolute;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6) 0%, rgba(186, 230, 253, 0.25) 70%);
-      box-shadow: inset -3px -3px 8px rgba(125, 211, 252, 0.3), 0 5px 15px rgba(0, 0, 0, 0.03);
-      animation: floatUp 12s infinite ease-in-out;
-    }
-    .bubble-purple {
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6) 0%, rgba(233, 213, 255, 0.25) 70%);
-      box-shadow: inset -3px -3px 8px rgba(216, 180, 254, 0.3), 0 5px 15px rgba(0, 0, 0, 0.03);
-    }
-    
-    @keyframes floatUp {
-      0% { transform: translateY(110vh) translateX(0) scale(0.8); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.8; }
-      100% { transform: translateY(-10vh) translateX(50px) scale(1.2); opacity: 0; }
-    }
-
-    .bubble-1 { left: 10%; width: 60px; height: 60px; animation-duration: 14s; }
-    .bubble-2 { left: 30%; width: 40px; height: 40px; animation-duration: 18s; animation-delay: 2s; }
-    .bubble-3 { left: 65%; width: 80px; height: 80px; animation-duration: 22s; animation-delay: 1s; }
-    .bubble-4 { left: 85%; width: 50px; height: 50px; animation-duration: 16s; animation-delay: 4s; }
-
-    /* Custom Header Wave */
-    .site-header {
-      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .header-wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      line-height: 0;
-    }
-    .header-wave svg {
-      position: relative;
-      display: block;
-      width: calc(100% + 1.3px);
-      height: 25px;
-    }
-
-    /* Custom cute scrollbar */
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #faf5ff; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb { background: #d8b4fe; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #c084fc; }
-
-    /* Demo ribbon */
-    .cute-ribbon {
-      background: linear-gradient(90deg, #ff9ebb, #fff4cc, #bae6fd, #ff9ebb);
-      background-size: 300% 100%;
-      animation: ribbonGlow 6s linear infinite;
-    }
-    @keyframes ribbonGlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen flex flex-col justify-between">
-
-  <!-- Background bubbles -->
-  <div class="bubble-container">
-    <div class="bubble bubble-1"></div>
-    <div class="bubble bubble-2 bubble-purple"></div>
-    <div class="bubble bubble-3"></div>
-    <div class="bubble bubble-4 bubble-purple"></div>
-  </div>
-
-  <!-- Pinned banner at top -->
-  <div class="cute-ribbon text-center py-1.5 text-slate-800 text-xs font-bold tracking-wider shadow-sm flex items-center justify-center gap-1 z-50">
-    <span>✨</span>
-    <span>うみゃみーMusic 🎀 白砂あやね 🩵 ＆ 水面まどか 💜 非公式ファンサイト</span>
-    <span>✨</span>
-  </div>
+<body class="min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="site-header text-white shadow-md pb-8 pt-6">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-center md:text-left">
-        <h1 class="text-3xl md:text-4xl font-extrabold tracking-wider flex items-center justify-center md:justify-start gap-2 drop-shadow-md">
-          <span class="inline-block animate-bounce text-4xl" style="animation-duration: 2.5s">🌊</span>
-          うみゃみーMusic
-        </h1>
-        <p class="text-sky-100 text-xs md:text-sm mt-1.5 font-bold tracking-wide flex items-center justify-center md:justify-start gap-2">
-          <span>白砂あやね 🩵 ＆ 水面まどか 💜</span>
-          <span class="bg-white/20 px-2 py-0.5 rounded-full text-[10px]">非公式ファンサイト</span>
-        </p>
+  <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href={`${base}/`} class="flex items-baseline gap-2 group">
+        <span class="font-display text-xl font-extrabold tracking-tight text-ink">
+          うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
+        </span>
+        <span class="hidden sm:inline text-[11px] font-medium text-slate-400">
+          <span class="text-madoka">水面まどか</span> ・ <span class="text-ayane">白砂あやね</span>
+        </span>
+      </a>
+
+      <div class="flex items-center gap-1">
+        <a href={`${base}/`} class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">うた一覧</a>
+        <button id="aboutBtn" type="button" aria-label="このサイトについて"
+                class="ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full text-slate-500 hover:text-ink hover:bg-slate-100 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 11v5"/><circle cx="12" cy="7.8" r=".6" fill="currentColor"/>
+          </svg>
+        </button>
       </div>
-      
-      <nav class="flex gap-2 text-sm bg-white/10 p-1.5 rounded-2xl backdrop-blur-sm border border-white/20">
-        <a href={`${base}/`} class="px-4 py-1.5 rounded-xl font-bold bg-white text-purple-600 shadow-sm transition">うた一覧</a>
-        <a href="#" class="px-4 py-1.5 rounded-xl font-bold text-white hover:bg-white/10 transition">配信一覧</a>
-        <a href="#" class="px-4 py-1.5 rounded-xl font-bold text-white hover:bg-white/10 transition">About</a>
-      </nav>
-    </div>
-    
-    <!-- Wave decoration at bottom -->
-    <div class="header-wave">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.93,27.91,194,57.17,263.22,67.23,321.39,56.44Z" fill="#f0f9ff" opacity="0.4"></path>
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C26.9,8.75,57.05,18.3,90.93,27.91,194,57.17,263.22,67.23,321.39,56.44Z" fill="#f0f9ff" class="opacity-100"></path>
-      </svg>
     </div>
   </header>
 
   <slot />
 
+  <!-- About modal -->
+  <div id="aboutModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="aboutBackdrop" class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-lg card p-6 sm:p-7 max-h-[85vh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <button id="aboutClose" type="button" aria-label="閉じる"
+              class="absolute top-4 right-4 w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:text-ink hover:bg-slate-100 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <h2 id="aboutTitle" class="font-display text-lg font-extrabold text-ink">うみゃみーMusic について</h2>
+      <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+        にじさんじ所属「うみゃみー」（<span class="font-semibold text-madoka">水面まどか</span>・<span class="font-semibold text-ayane">白砂あやね</span>）の歌枠・歌ってみたを、タイムスタンプ付きでまとめた有志による非公式サイトです。
+      </p>
+
+      <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500 leading-relaxed">
+        本サイトは非公式です。ANYCOLOR株式会社およびにじさんじ公式とは一切関係ありません。掲載情報の正確性は保証しません。動画本体はホストせず、YouTube への埋め込み・リンクのみを掲載しています。問題がある場合はお問い合わせください。
+      </div>
+
+      <div class="mt-5">
+        <p class="text-xs font-semibold text-slate-400 mb-2">公式チャンネル</p>
+        <div class="flex flex-col sm:flex-row gap-2">
+          <a href="https://www.youtube.com/@MinamoMadoka" target="_blank" rel="noopener noreferrer"
+             class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
+             style="background:#ff8184">水面まどか ▸ YouTube</a>
+          <a href="https://www.youtube.com/@ShirasaAyane" target="_blank" rel="noopener noreferrer"
+             class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
+             style="background:#54a2e5">白砂あやね ▸ YouTube</a>
+        </div>
+      </div>
+
+      <p class="mt-5 text-[11px] text-slate-400 text-center">© 2026 ファン有志 / 非公式</p>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('aboutModal');
+    const open = () => modal?.classList.remove('hidden');
+    const close = () => modal?.classList.add('hidden');
+    document.getElementById('aboutBtn')?.addEventListener('click', open);
+    document.getElementById('aboutClose')?.addEventListener('click', close);
+    document.getElementById('aboutBackdrop')?.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  </script>
 </body>
 </html>

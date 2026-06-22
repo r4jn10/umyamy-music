@@ -2,35 +2,24 @@
 // SiteFooter.astro
 ---
 
-<footer class="border-t-2 border-sky-100 bg-white/70 backdrop-blur-md mt-16 w-full">
-  <div class="max-w-6xl mx-auto px-4 py-8">
-    <!-- Disclaimer -->
-    <div class="bg-orange-50 border-2 border-orange-100 rounded-3xl p-5 mb-8 text-xs md:text-sm text-amber-900 leading-relaxed shadow-inner">
-      <p class="font-extrabold mb-1.5 flex items-center gap-1.5">
-        <span class="text-lg">⚠️</span> 非公式ファンサイトについて
-      </p>
-      本サイトは、にじさんじ所属「うみゃみー」の歌枠・歌ってみた情報をファンが独自にまとめた非公式サイトです。
-      ANYCOLOR株式会社およびにじさんじ公式とは一切関係ありません。
-      掲載情報の正確性は保証しません。問題がある場合はお問い合わせください。
-    </div>
-
-    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6 text-sm text-slate-500 text-center md:text-left">
+<footer class="border-t border-slate-200 bg-white mt-20 w-full">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8">
       <div>
-        <p class="font-black text-slate-800 text-base mb-1.5 flex items-center justify-center md:justify-start gap-1">
-          <span>🌊</span> うみゃみーMusic（非公式）
+        <p class="font-display font-extrabold text-ink text-base">
+          うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
         </p>
-        <p class="text-xs">白砂あやね・水面まどかの歌枠・歌ってみた非公式まとめサイト</p>
-        <div class="flex gap-4 mt-3 justify-center md:justify-start">
-          <a href="https://www.youtube.com/@ShirasaAyane" target="_blank" rel="noopener noreferrer"
-             class="text-sky-500 hover:underline font-bold text-xs">🩵 白砂あやね YouTube</a>
+        <p class="text-xs text-slate-400 mt-1.5 leading-relaxed max-w-sm">
+          水面まどか・白砂あやねの歌枠・歌ってみたをまとめた非公式サイト。ANYCOLOR株式会社およびにじさんじ公式とは関係ありません。
+        </p>
+        <div class="flex gap-4 mt-4">
           <a href="https://www.youtube.com/@MinamoMadoka" target="_blank" rel="noopener noreferrer"
-             class="text-purple-500 hover:underline font-bold text-xs">💜 水面まどか YouTube</a>
+             class="text-xs font-semibold text-madoka hover:underline">水面まどか ▸ YouTube</a>
+          <a href="https://www.youtube.com/@ShirasaAyane" target="_blank" rel="noopener noreferrer"
+             class="text-xs font-semibold text-ayane hover:underline">白砂あやね ▸ YouTube</a>
         </div>
       </div>
-      <div class="md:text-right text-xs">
-        <a href="#" class="text-sky-500 hover:underline font-bold block mb-1">About / お問い合わせ ✉️</a>
-        <p class="mt-2 text-slate-400 font-bold font-mono">© 2026 ファン有志 | 非公式</p>
-      </div>
+      <p class="text-[11px] text-slate-400">© 2026 ファン有志 / 非公式</p>
     </div>
   </div>
 </footer>
