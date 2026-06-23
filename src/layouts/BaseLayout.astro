@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = "うみゃみーMusic",
-  description = "水面まどか・白砂あやねの歌枠・歌ってみたをまとめた非公式まとめサイトです。"
+  description = "水面まどかさん・白砂あやねさんの歌枠・歌ってみたをまとめた非公式まとめサイトです。"
 } = Astro.props;
 
 // GitHub Pages で公開されたときに、base パスが自動で考慮されるようにします。
@@ -73,13 +73,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             <path d="M37.6 18 C45.5 19 49.5 24 46.2 30.5 C47 25 43 21.8 37.6 22.8 Z"/>
           </g>
         </svg>
-        <span class="flex items-baseline gap-2">
-          <span class="font-display text-xl font-extrabold tracking-tight text-ink">
-            うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
-          </span>
-          <span class="hidden sm:inline text-[11px] font-medium text-slate-400">
-            <span class="text-madoka">水面まどか</span> ・ <span class="text-ayane">白砂あやね</span>
-          </span>
+        <span class="font-display text-xl font-extrabold tracking-tight text-ink">
+          うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
         </span>
       </a>
 
@@ -112,7 +107,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
       <h2 id="aboutTitle" class="font-display text-lg font-extrabold text-ink">うみゃみーMusic について</h2>
       <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-        にじさんじ所属「うみゃみー」（<span class="font-semibold text-madoka">水面まどか</span>・<span class="font-semibold text-ayane">白砂あやね</span>）の歌枠・歌ってみたを、タイムスタンプ付きでまとめた有志による非公式サイトです。
+        にじさんじ所属「うみゃみー」（<span class="font-semibold text-madoka">水面まどかさん</span>・<span class="font-semibold text-ayane">白砂あやねさん</span>）の歌枠・歌ってみたを、タイムスタンプ付きでまとめた有志による非公式サイトです。
       </p>
 
       <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500 leading-relaxed">
@@ -124,10 +119,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <div class="flex flex-col sm:flex-row gap-2">
           <a href="https://www.youtube.com/@MinamoMadoka" target="_blank" rel="noopener noreferrer"
              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
-             style="background:#ff8184">水面まどか ▸ YouTube</a>
+             style="background:#ff8184">水面まどかさん ▸ YouTube</a>
           <a href="https://www.youtube.com/@ShirasaAyane" target="_blank" rel="noopener noreferrer"
              class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white"
-             style="background:#54a2e5">白砂あやね ▸ YouTube</a>
+             style="background:#54a2e5">白砂あやねさん ▸ YouTube</a>
         </div>
       </div>
 
