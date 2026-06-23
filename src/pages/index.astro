@@ -827,8 +827,9 @@ const durationOf = (song: any): number | undefined => {
 
     document.getElementById('songGrid')?.addEventListener('click', (e) => {
       const card = (e.target as HTMLElement).closest('.song-card-item');
-      const songJson = card?.getAttribute('data-song');
-      if (songJson) playSong(JSON.parse(songJson));
+      const id = card?.getAttribute('data-id');
+      const song = id ? songs.find((s: any) => s.id === id) : null;
+      if (song) playSong(song);
     });
   });
 </script>
