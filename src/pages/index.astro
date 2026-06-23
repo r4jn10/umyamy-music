@@ -10,17 +10,14 @@ const utaWakuCount = songs.filter(s => s.category === 'uta_waku').length;
 const coverCount = songs.filter(s => s.category === 'cover').length;
 const lastUpdated = songsData.updatedAt;
 
-// 曲の尺 = 同一動画(videoId)で次に始まる曲の開始秒 - 自分の開始秒。最後の曲は不明(undefined)
-const startsByVideo: Record<string, number[]> = {};
-for (const s of songs) {
-  (startsByVideo[s.youtube.videoId] ||= []).push(s.youtube.timestampSec || 0);
-}
-for (const k in startsByVideo) startsByVideo[k].sort((a, b) => a - b);
+// 尺が正確なのは「1動画=1曲」の歌ってみた/ショートのみ。
+// 歌枠は開始秒だけで、曲間にMC・雑談が入り終了秒が不明なため尺は出さない（誤値を出さない）。
 const durationOf = (song: any): number | undefined => {
-  const start = song.youtube.timestampSec || 0;
-  if (song.youtube.endSec != null) return song.youtube.endSec - start; // 明示の終了秒（動画長）
-  const next = (startsByVideo[song.youtube.videoId] || []).find(t => t > start);
-  return next !== undefined ? next - start : undefined;
+  if (song.category !== 'cover' && song.category !== 'short') return undefined;
+  const end = song.youtube.endSec;
+  if (end == null) return undefined;
+  const d = end - (song.youtube.timestampSec || 0);
+  return d > 0 ? d : undefined;
 };
 ---
 
@@ -290,7 +287,7 @@ const durationOf = (song: any): number | undefined => {
 
   const fuse = new Fuse(songs, { keys: ['title', 'artist', 'tags'], threshold: 0.3 });
 
-  const CAT_LABEL: Record<string, string> = { uta_waku: '歌枠', cover: '歌ってみた' };
+  const CAT_LABEL: Record<string, string> = { uta_waku: '歌枠', cover: '歌ってみた', short: 'ショート' };
   const MEMBER_ORDER = ['水面まどか', '白砂あやね'];
 
   function orderPerformers(performers: string[]) {
@@ -692,7 +689,8 @@ const durationOf = (song: any): number | undefined => {
         `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
       const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
       const catLabel = CAT_LABEL[g.category] || g.category;
-      const typeLabel = g.streamType === 'solo' ? 'ソロ歌枠' : g.streamType === 'collab' ? 'コラボ歌枠' : '';
+      // ソロ/コラボ歌枠バッジは歌枠のみ（歌ってみた/ショートでは出さない）
+      const typeLabel = g.category !== 'uta_waku' ? '' : (g.streamType === 'solo' ? 'ソロ歌枠' : g.streamType === 'collab' ? 'コラボ歌枠' : '');
       const typeBadge = typeLabel
         ? `<span class="absolute top-2 left-2 text-[11px] font-semibold text-white bg-slate-900/70 px-1.5 py-0.5 rounded">${typeLabel}</span>`
         : '';

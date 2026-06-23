@@ -59,6 +59,24 @@
       "streamTitle": "【 初配信 】ヨシ、水分補給しよう！【水面まどか / にじさんじ】"
     },
     {
+      "id": "20260130-madoka-003",
+      "title": "阿修羅ちゃん",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "bXe1MhsdTMg",
+        "timestampSec": 0,
+        "endSec": 195,
+        "url": "https://www.youtube.com/watch?v=bXe1MhsdTMg"
+      },
+      "streamDate": "2026-01-30",
+      "streamTitle": "【歌ってみた】阿修羅ちゃん"
+    },
+    {
       "id": "20260130-both-002",
       "title": "エビカニクス",
       "artist": "ケロポンズ",
@@ -257,6 +275,26 @@
       },
       "streamDate": "2026-02-13",
       "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260214-both-001",
+      "title": "可不ちゃんのカレーうどん狂騒曲",
+      "artist": "南ノ南",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "lHKWzXShMUY",
+        "timestampSec": 0,
+        "endSec": 53,
+        "url": "https://www.youtube.com/watch?v=lHKWzXShMUY"
+      },
+      "streamDate": "2026-02-14",
+      "unit": "うみゃみー",
+      "streamTitle": "【Shorts】可不ちゃんのカレーうどん狂騒曲"
     },
     {
       "id": "20260215-ayane-001",
@@ -1027,6 +1065,24 @@
       "streamDate": "2026-03-10",
       "unit": "うみゃみー",
       "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260313-madoka-001",
+      "title": "リードコントロール",
+      "artist": "なるみや",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Stwe5FIi9BE",
+        "timestampSec": 0,
+        "endSec": 37,
+        "url": "https://www.youtube.com/watch?v=Stwe5FIi9BE"
+      },
+      "streamDate": "2026-03-13",
+      "streamTitle": "【Shorts】リードコントロール"
     },
     {
       "id": "20260326-madoka-001",
