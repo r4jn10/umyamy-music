@@ -1,110 +1,331 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-23",
+  "updatedAt": "2026-06-24",
   "songs": [
     {
-      "id": "20260621-madoka-001",
-      "title": "パプリカ",
-      "artist": "Foorin×米津玄師",
+      "id": "20260130-madoka-001",
+      "title": "明日の私に幸あれ",
+      "artist": "ナナヲアカリ",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 391,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=391"
+        "videoId": "U45dT7bgv2Q",
+        "timestampSec": 124,
+        "endSec": 1608,
+        "url": "https://www.youtube.com/watch?v=U45dT7bgv2Q&t=124"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-01-30",
+      "streamTitle": "【 初配信 】ヨシ、水分補給しよう！【水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-002",
-      "title": "偽顔",
-      "artist": "Yama",
+      "id": "20260130-madoka-002",
+      "title": "プライド革命",
+      "artist": "CHICO with HoneyWorks",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 897,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=897"
+        "videoId": "U45dT7bgv2Q",
+        "timestampSec": 1608,
+        "endSec": 1778,
+        "url": "https://www.youtube.com/watch?v=U45dT7bgv2Q&t=1608"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-01-30",
+      "streamTitle": "【 初配信 】ヨシ、水分補給しよう！【水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-003",
-      "title": "もうどうなってもいいや",
-      "artist": "星街すいせい",
+      "id": "20260213-madoka-001",
+      "title": "IRIS OUT",
+      "artist": "米津玄師",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 1146,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=1146"
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 121,
+        "endSec": 458,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=121"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-004",
-      "title": "新時代",
+      "id": "20260213-madoka-002",
+      "title": "春泥棒",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 458,
+        "endSec": 911,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=458"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260213-madoka-003",
+      "title": "仮装狂騒曲",
+      "artist": "初星学園",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 911,
+        "endSec": 1350,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=911"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260213-madoka-004",
+      "title": "ミッドナイト・リフレクション",
+      "artist": "NOMELON NOLEMON",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 1350,
+        "endSec": 1719,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=1350"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260213-madoka-005",
+      "title": "ギラギラ",
       "artist": "Ado",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 1579,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=1579"
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 1719,
+        "endSec": 2151,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=1719"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-005",
-      "title": "ブリキノダンス",
-      "artist": "日向電工",
+      "id": "20260213-madoka-006",
+      "title": "カヌレ",
+      "artist": "CHiCO with HoneyWorks",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 2151,
+        "endSec": 2527,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=2151"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260213-madoka-007",
+      "title": "霞がついてくる",
+      "artist": "ヰ世界情緒",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 2527,
+        "endSec": 2983,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=2527"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260213-madoka-008",
+      "title": "Fighting My Way",
+      "artist": "初星学園,花海咲季",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 2983,
+        "endSec": 3418,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=2983"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260213-madoka-009",
+      "title": "阿修羅ちゃん",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "KUFwkcIICJc",
+        "timestampSec": 3418,
+        "endSec": 3724,
+        "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=3418"
+      },
+      "streamDate": "2026-02-13",
+      "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260302-madoka-001",
+      "title": "ブルーバード",
+      "artist": "いきものがかり",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 2383,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=2383"
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 428,
+        "endSec": 723,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=428"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
       "tags": [
-        "倉持めると"
+        "緑仙"
       ]
     },
     {
-      "id": "20260621-madoka-006",
-      "title": "火星人",
+      "id": "20260302-madoka-002",
+      "title": "sweets parade",
+      "artist": "髏々宮カルタ(花澤香菜)",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 723,
+        "endSec": 1045,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=723"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-003",
+      "title": "かくしん的☆めたまるふぉ～ぜっ！",
+      "artist": "土間うまる(田中あいみ)",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 1045,
+        "endSec": 1359,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=1045"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260302-madoka-004",
+      "title": "藍ヨリ青ク",
+      "artist": "緑仙",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 1359,
+        "endSec": 1673,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=1359"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-005",
+      "title": "心拍数#0822",
+      "artist": "蝶々P",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 1673,
+        "endSec": 2052,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=1673"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-006",
+      "title": "chocolate box",
+      "artist": "Dezzy",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 2052,
+        "endSec": 2840,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=2052"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-007",
+      "title": "言って。",
       "artist": "ヨルシカ",
       "performers": [
         "水面まどか"
@@ -112,361 +333,1122 @@
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 2881,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=2881"
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 2840,
+        "endSec": 3218,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=2840"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260302-madoka-008",
+      "title": "修羅",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 3218,
+        "endSec": 3626,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=3218"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
       "tags": [
-        "倉持めると"
+        "緑仙"
       ]
     },
     {
-      "id": "20260621-madoka-007",
-      "title": "秒針を噛む",
+      "id": "20260302-madoka-009",
+      "title": "打上花火",
+      "artist": "DAOKO×米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 3626,
+        "endSec": 4444,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=3626"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-010",
+      "title": "コンテンポラリのダンス",
+      "artist": "篠澤広(川村玲奈)",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 4444,
+        "endSec": 4782,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=4444"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-011",
+      "title": "たばこ",
+      "artist": "コレサワ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 4782,
+        "endSec": 5290,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=4782"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260302-madoka-012",
+      "title": "swim",
+      "artist": "04 Limited Sazabys",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 5290,
+        "endSec": 6036,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=5290"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-013",
+      "title": "マリーゴールド",
+      "artist": "あいみょん",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 6036,
+        "endSec": 6472,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=6036"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-014",
+      "title": "初恋サイダー",
+      "artist": "Buono!",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 6472,
+        "endSec": 7112,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=6472"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260302-madoka-015",
+      "title": "水流のロック",
+      "artist": "日食なつこ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "M9sPdUnQTtY",
+        "timestampSec": 7112,
+        "endSec": 7618,
+        "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=7112"
+      },
+      "streamDate": "2026-03-02",
+      "streamTitle": "【 初！先輩コラボ 】緑仙先輩がいっしょに歌ってくださるって！！🎤supported by DAM【緑仙 / 水面まどか / にじさんじ】",
+      "tags": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20260310-both-001",
+      "title": "倍倍FIGHT!",
+      "artist": "CANDY TUNE",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 233,
+        "endSec": 882,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=233"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-madoka-001",
+      "title": "ハイド・アンド・シーク",
+      "artist": "NOMELON NOLEMON",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 882,
+        "endSec": 1222,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=882"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-both-002",
+      "title": "おこちゃま戦争",
+      "artist": "ギガP FEAT.鏡音リン、鏡音レン",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 1222,
+        "endSec": 1850,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1222"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-madoka-002",
+      "title": "シカ色デイズ",
+      "artist": "シカ部",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 1850,
+        "endSec": 2198,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1850"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-both-003",
+      "title": "UNDEAD",
+      "artist": "YOASOBI",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 2198,
+        "endSec": 2525,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2198"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-both-004",
+      "title": "unravel",
+      "artist": "TK from/凛として時雨",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 2525,
+        "endSec": 3200,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2525"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-madoka-003",
+      "title": "アポリア",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 3200,
+        "endSec": 3600,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=3200"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-both-005",
+      "title": "ムーンライト伝説",
+      "artist": "DALI",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 3600,
+        "endSec": 4135,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=3600"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-both-006",
+      "title": "恋は渾沌の隷也",
+      "artist": "後ろから這いより隊",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 4135,
+        "endSec": 5191,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=4135"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-madoka-004",
+      "title": "自己肯定感爆上げ↑↑しゅきしゅきソング",
+      "artist": "初星学園",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 5191,
+        "endSec": 5790,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=5191"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260310-both-007",
+      "title": "可不ちゃんのカレーうどん狂騒曲",
+      "artist": "南ノ南",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 5790,
+        "endSec": 6240,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=5790"
+      },
+      "streamDate": "2026-03-10",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260326-madoka-001",
+      "title": "修羅",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 208,
+        "endSec": 551,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=208"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-002",
+      "title": "第一夜",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 551,
+        "endSec": 890,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=551"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-003",
+      "title": "藍二乗",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 890,
+        "endSec": 1315,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=890"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-004",
+      "title": "アルジャーノン",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 1315,
+        "endSec": 1725,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=1315"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-005",
+      "title": "又三郎",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 1725,
+        "endSec": 2126,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=1725"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-006",
+      "title": "へび",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 2126,
+        "endSec": 2561,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=2126"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-007",
+      "title": "準透明少年",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 2561,
+        "endSec": 3035,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=2561"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-008",
+      "title": "ブレーメン",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 3035,
+        "endSec": 3656,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=3035"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-009",
+      "title": "都落ち",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 3656,
+        "endSec": 4075,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=3656"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-010",
+      "title": "ヒッチコック",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 4075,
+        "endSec": 4490,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=4075"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-011",
+      "title": "八月、某、月明かり",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 4490,
+        "endSec": 4931,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=4490"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-012",
+      "title": "晴る",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 4931,
+        "endSec": 5343,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=4931"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-013",
+      "title": "忘れてください",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 5343,
+        "endSec": 5747,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=5343"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-014",
+      "title": "雨とカプチーノ",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 5747,
+        "endSec": 6116,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=5747"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-015",
+      "title": "左右盲",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 6116,
+        "endSec": 6528,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=6116"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-016",
+      "title": "負け犬にアンコールはいらない",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 6528,
+        "endSec": 6862,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=6528"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-017",
+      "title": "斜陽",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 6862,
+        "endSec": 7290,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=6862"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260326-madoka-018",
+      "title": "だから僕は音楽を辞めた",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "919f0gO1N6I",
+        "timestampSec": 7290,
+        "endSec": 7652,
+        "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=7290"
+      },
+      "streamDate": "2026-03-26",
+      "streamTitle": "【 歌枠 】ヨルシカさんの曲をたくさん歌うよ～！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260409-both-001",
+      "title": "ロボキッス",
+      "artist": "W(ダブルユー)",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 4503,
+        "endSec": 4850,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=4503"
+      },
+      "streamDate": "2026-04-09",
+      "unit": "うみゃみー",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260409-both-002",
+      "title": "Dazzling Game",
+      "artist": "Liella!, 澁谷かのん (CV.伊達さゆり), ウィーン・マルガレーテ (CV.結那), 鬼塚冬毬 (CV.坂倉 花)",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 4850,
+        "endSec": 5350,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=4850"
+      },
+      "streamDate": "2026-04-09",
+      "unit": "うみゃみー",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260409-both-003",
+      "title": "鼓動",
+      "artist": "femme fatale",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 5350,
+        "endSec": 10812,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=5350"
+      },
+      "streamDate": "2026-04-09",
+      "unit": "うみゃみー",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260410-madoka-001",
+      "title": "KICK BACK",
+      "artist": "米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 266,
+        "endSec": 612,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=266"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-002",
+      "title": "ライラック",
+      "artist": "Mrs. GREEN APPLE",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 612,
+        "endSec": 1175,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=612"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-003",
+      "title": "コンテンポラリのダンス",
+      "artist": "篠澤広(川村玲奈)",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 1175,
+        "endSec": 1547,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=1175"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-004",
+      "title": "秒針を嚙む",
       "artist": "ずっと真夜中でいいのに。",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 3262,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=3262"
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 1547,
+        "endSec": 1990,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=1547"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-008",
-      "title": "蝶々結び",
+      "id": "20260410-madoka-005",
+      "title": "give it back",
+      "artist": "Cö shu Nie。",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 1990,
+        "endSec": 2471,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=1990"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-006",
+      "title": "ルバート",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 2471,
+        "endSec": 2903,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=2471"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-007",
+      "title": "Mela!",
+      "artist": "緑黄色社会",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 2903,
+        "endSec": 3328,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=2903"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-008",
+      "title": "ゴー・トゥ・ヘブン",
+      "artist": "NOMELON NOLEMON",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 3328,
+        "endSec": 3707,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=3328"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-009",
+      "title": "君色に染まる",
+      "artist": "TOKOTOKO(西沢さんP)feat.GUMI",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 3707,
+        "endSec": 4131,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=3707"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-010",
+      "title": "nem...",
+      "artist": "04 Limited Sazabys",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 4131,
+        "endSec": 4570,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=4131"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-011",
+      "title": "君じゃなきゃダメみたい",
+      "artist": "大石昌良",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 4570,
+        "endSec": 5053,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=4570"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-012",
+      "title": "春を告げる",
+      "artist": "yama",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 5053,
+        "endSec": 5432,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=5053"
+      },
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260410-madoka-013",
+      "title": "残響散歌",
       "artist": "Aimer",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 3992,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=3992"
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 5432,
+        "endSec": 5780,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=5432"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-009",
-      "title": "シャルル",
-      "artist": "バルーン",
+      "id": "20260410-madoka-014",
+      "title": "ずうっといっしょ！",
+      "artist": "キタニタツヤ",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 4663,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=4663"
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 5780,
+        "endSec": 6238,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=5780"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
     },
     {
-      "id": "20260621-madoka-010",
-      "title": "ギターと孤独と蒼い惑星",
-      "artist": "結束バンド",
+      "id": "20260410-madoka-015",
+      "title": "トウキョウ・シャンディ・ランデヴ",
+      "artist": "MAISONdes",
       "performers": [
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "Oz1XS2BmfXk",
-        "timestampSec": 5410,
-        "endSec": 6114,
-        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=5410"
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 6238,
+        "endSec": 6599,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=6238"
       },
-      "streamDate": "2026-06-21",
-      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
-      "tags": [
-        "倉持めると"
-      ]
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
     },
     {
-      "id": "20260516-both-001",
-      "title": "にじさんじ体操第一",
-      "artist": "にじさんじ",
+      "id": "20260410-madoka-016",
+      "title": "私は、私のことが好き",
+      "artist": "かぐや(cv.夏吉ゆうこ)from 超かぐや姫！",
       "performers": [
-        "白砂あやね",
         "水面まどか"
       ],
       "category": "uta_waku",
-      "streamType": "collab",
+      "streamType": "solo",
       "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 736,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=736"
+        "videoId": "Eu2SuyTTB6Y",
+        "timestampSec": 6599,
+        "endSec": 6934,
+        "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=6599"
       },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-002",
-      "title": "さくゆいたいそう",
-      "artist": "さくゆい",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 1497,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=1497"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-003",
-      "title": "相性×優勝ドロップス",
-      "artist": "Idios",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 2260,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=2260"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-004",
-      "title": "一旦ステイ TONIGHT",
-      "artist": "不破湊",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 3091,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=3091"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-005",
-      "title": "にぎにぎにじたうん！",
-      "artist": "にじさんじ",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 3605,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=3605"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-006",
-      "title": "くっきんどりーみんらんど",
-      "artist": "Speciale",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 4258,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=4258"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-007",
-      "title": "どきどきキュン!で大暴走♡",
-      "artist": "いずれ菖蒲か杜若",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 5085,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=5085"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-008",
-      "title": "にじさんじ体操第一",
-      "artist": "にじさんじ",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 5543,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=5543"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
-    },
-    {
-      "id": "20260516-both-009",
-      "title": "Hurrah!!",
-      "artist": "にじさんじ",
-      "performers": [
-        "白砂あやね",
-        "水面まどか"
-      ],
-      "category": "uta_waku",
-      "streamType": "collab",
-      "youtube": {
-        "videoId": "kZxsoR1BmPg",
-        "timestampSec": 6186,
-        "endSec": 6854,
-        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=6186"
-      },
-      "streamDate": "2026-05-16",
-      "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠",
-      "tags": [
-        "にじさんじオリジナル曲"
-      ]
+      "streamDate": "2026-04-10",
+      "streamTitle": "【 歌枠 】春！新生活！ハッピーな曲をたくさん歌う！🎤 supported by DAM【 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-001",
       "title": "行くぜっ！怪盗少女",
       "artist": "ももいろクローバー",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 123,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=123"
+        "timestampSec": 125,
+        "endSec": 735,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=125"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-002",
       "title": "おジャ魔女カーニバル!!",
       "artist": "MAHO堂",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 733,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=733"
+        "timestampSec": 735,
+        "endSec": 1246,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=735"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-003",
       "title": "魔性少女",
-      "artist": "ファントムシータ",
+      "artist": "ファントムシーター",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 1244,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1244"
+        "timestampSec": 1246,
+        "endSec": 1962,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1246"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-ayane-001",
@@ -499,107 +1481,97 @@
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 1955,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1955"
+        "timestampSec": 1962,
+        "endSec": 2583,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1962"
       },
       "streamDate": "2026-04-22",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-004",
       "title": "愛包ダンスホール",
       "artist": "HIMEHINA",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 2576,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=2576"
+        "timestampSec": 2583,
+        "endSec": 3001,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=2583"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-005",
       "title": "コットンキャンディえいえいおー!",
-      "artist": "黒澤ルビィ(降幡愛)from aqours",
+      "artist": "黒澤 ルビィ(降幡愛)",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 2993,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=2993"
+        "timestampSec": 3001,
+        "endSec": 3524,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3001"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-006",
       "title": "ハッピーミルフィーユ",
       "artist": "初星学園",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 3517,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3517"
+        "timestampSec": 3524,
+        "endSec": 3993,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3524"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-007",
       "title": "相思相愛",
       "artist": "aiko",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 3985,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3985"
+        "timestampSec": 3993,
+        "endSec": 4619,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3993"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-madoka-002",
       "title": "ラブリー☆えんじぇる!!",
-      "artist": "Ave;new feat.あべにゅうぷろじぇくと",
+      "artist": "ave;new feat.あべにゅうぷろじぇくと",
       "performers": [
         "水面まどか"
       ],
@@ -607,14 +1579,12 @@
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 4617,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=4617"
+        "timestampSec": 4619,
+        "endSec": 5318,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=4619"
       },
       "streamDate": "2026-04-22",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-ayane-002",
@@ -639,47 +1609,665 @@
     {
       "id": "20260422-both-008",
       "title": "めにしゅき♡ラッシュっしゅ!",
-      "artist": "ウマ娘 プリティーダービー",
+      "artist": "カレンチャン（CV.篠原侑）スティルインラブ（CV.宮下早紀）フサイチパンドラ（CV.佳原萌枝）アドマイヤグルーヴ（CV.鈴木日菜）ラッキーライラック（CV.中島由貴）ラヴズオンリーユー（CV.久保田未夢）ステイゴールド（CV.松田颯水）",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 5315,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5315"
+        "timestampSec": 5318,
+        "endSec": 5988,
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5318"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
-      "tags": [
-        "かわいい曲",
-        "ウマ娘"
-      ]
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
     },
     {
       "id": "20260422-both-009",
       "title": "最上級にかわいいの！",
       "artist": "超ときめき♡宣伝部",
       "performers": [
-        "白砂あやね",
-        "水面まどか"
+        "水面まどか",
+        "白砂あやね"
       ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
         "videoId": "TJiHLZDFz7g",
-        "timestampSec": 5977,
+        "timestampSec": 5988,
         "endSec": 6328,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5977"
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5988"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260429-madoka-001",
+      "title": "アイネクライネ",
+      "artist": "米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 377,
+        "endSec": 855,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=377"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】",
       "tags": [
-        "かわいい曲"
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20260429-madoka-002",
+      "title": "リードコントロール",
+      "artist": "なるみや",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 855,
+        "endSec": 1784,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=855"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260429-madoka-003",
+      "title": "君はロックを聴かない",
+      "artist": "あいみょん",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 1784,
+        "endSec": 2987,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=1784"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】",
+      "tags": [
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20260429-madoka-004",
+      "title": "マザーランド",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 2987,
+        "endSec": 3463,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=2987"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260429-madoka-005",
+      "title": "帝国少女",
+      "artist": "R Sound Design",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 3463,
+        "endSec": 4235,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=3463"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】",
+      "tags": [
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20260429-madoka-006",
+      "title": "HALO",
+      "artist": "NOMELON NOLEMON",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 4235,
+        "endSec": 4726,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=4235"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260429-madoka-007",
+      "title": "花に亡霊",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "o5s79crPzwo",
+        "timestampSec": 4726,
+        "endSec": 5282,
+        "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=4726"
+      },
+      "streamDate": "2026-04-29",
+      "streamTitle": "【コラボ歌枠】みかるん先輩初めまして！ということで一緒に歌いましょう♫🐌🪟🎤 supported by DAM【蝸堂みかる / 水面まどか / にじさんじ】",
+      "tags": [
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20260516-both-001",
+      "title": "にじさんじ体操第一",
+      "artist": "にじさんじ",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 735,
+        "endSec": 1499,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=735"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-002",
+      "title": "さくゆいたいそう",
+      "artist": "さくゆい",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 1499,
+        "endSec": 2260,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=1499"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-003",
+      "title": "相性×優勝ドロップス",
+      "artist": "Idios",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 2260,
+        "endSec": 3093,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=2260"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-004",
+      "title": "一旦ステイ TONIGHT",
+      "artist": "不破湊",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 3093,
+        "endSec": 3604,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=3093"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-005",
+      "title": "にぎにぎにじたうん！",
+      "artist": "にじさんじ",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 3604,
+        "endSec": 4256,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=3604"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-006",
+      "title": "くっきんどりーみんらんど",
+      "artist": "Speciale",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 4256,
+        "endSec": 5085,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=4256"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-007",
+      "title": "どきどきキュン!で大暴走♡",
+      "artist": "いずれ菖蒲か杜若",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 5085,
+        "endSec": 5543,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=5085"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-008",
+      "title": "にじさんじ体操第一",
+      "artist": "にじさんじ",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 5543,
+        "endSec": 6187,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=5543"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260516-both-009",
+      "title": "Hurrah!!",
+      "artist": "にじさんじ",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "kZxsoR1BmPg",
+        "timestampSec": 6187,
+        "endSec": 6854,
+        "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=6187"
+      },
+      "streamDate": "2026-05-16",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260529-madoka-001",
+      "title": "星降る海",
+      "artist": "Aqu3ra/月見ヤチヨ(cv.早見沙織) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 307,
+        "endSec": 900,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=307"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-002",
+      "title": "ワールドイズマイン CPK! Remix (かぐや&月見ヤチヨ ver.)",
+      "artist": "ryo (supercell) / from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 900,
+        "endSec": 1468,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=900"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-003",
+      "title": "Ex-Otogibanashi (Anime ver.)",
+      "artist": "ryo (supercell) / 月見ヤチヨ(cv.早見沙織) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 1468,
+        "endSec": 2003,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=1468"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-004",
+      "title": "トリノコシティ",
+      "artist": "40mP/covered by 月見ヤチヨ(cv.早見沙織) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 2003,
+        "endSec": 2529,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=2003"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-005",
+      "title": "瞬間、シンフォニー。",
+      "artist": "40mP/かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 2529,
+        "endSec": 3027,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=2529"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-006",
+      "title": "Reply / kz(livetune)",
+      "artist": "かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 3027,
+        "endSec": 3626,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=3027"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-007",
+      "title": "ray 超かぐや姫！Version",
+      "artist": "rかぐや (cv.夏吉ゆうこ)、月見ヤチヨ (cv.早見沙織) from #超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 3626,
+        "endSec": 4338,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=3626"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260529-madoka-008",
+      "title": "メルト CPK! Remix",
+      "artist": "ryo (supercell) feat. かぐや(cv.夏吉ゆうこ)",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ACjhatAmWXs",
+        "timestampSec": 4338,
+        "endSec": 4826,
+        "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=4338"
+      },
+      "streamDate": "2026-05-29",
+      "streamTitle": "【 超しばり歌枠 】🎋ハッピーエンド！大好きなあのアニメ映画の歌を歌うよ🌙🐰🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260621-madoka-001",
+      "title": "パプリカ",
+      "artist": "Foorin×米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 391,
+        "endSec": 1146,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=391"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "tags": [
+        "倉持めると"
+      ]
+    },
+    {
+      "id": "20260621-madoka-002",
+      "title": "もうどうなってもいいや",
+      "artist": "星街すいせい",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 1146,
+        "endSec": 1579,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=1146"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260621-madoka-003",
+      "title": "新時代",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 1579,
+        "endSec": 2383,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=1579"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "tags": [
+        "倉持めると"
+      ]
+    },
+    {
+      "id": "20260621-madoka-004",
+      "title": "ブリキノダンス",
+      "artist": "日向電工",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 2383,
+        "endSec": 2881,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=2383"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "tags": [
+        "倉持めると"
+      ]
+    },
+    {
+      "id": "20260621-madoka-005",
+      "title": "火星人",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 2881,
+        "endSec": 3992,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=2881"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260621-madoka-006",
+      "title": "蝶々結び",
+      "artist": "Aimer",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 3992,
+        "endSec": 4663,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=3992"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "tags": [
+        "倉持めると"
+      ]
+    },
+    {
+      "id": "20260621-madoka-007",
+      "title": "シャルル",
+      "artist": "バルーン",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 4663,
+        "endSec": 5410,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=4663"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "tags": [
+        "倉持めると"
+      ]
+    },
+    {
+      "id": "20260621-madoka-008",
+      "title": "ギターと孤独と蒼い惑星",
+      "artist": "結束バンド",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "Oz1XS2BmfXk",
+        "timestampSec": 5410,
+        "endSec": 6114,
+        "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=5410"
+      },
+      "streamDate": "2026-06-21",
+      "streamTitle": "【 コラボ歌枠 】最強拳＆ハッピーギャル2人による超かっこよくて爆アゲな歌枠🎤💕supported by DAM【倉持めると / 水面まどか / にじさんじ】",
+      "tags": [
+        "倉持めると"
       ]
     }
   ]
