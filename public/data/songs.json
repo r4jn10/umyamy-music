@@ -3,6 +3,26 @@
   "updatedAt": "2026-06-24",
   "songs": [
     {
+      "id": "20260130-both-001",
+      "title": "青空Jumping Heart",
+      "artist": "Aqours",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "RH1U7Qf7MSg",
+        "timestampSec": 0,
+        "endSec": 282,
+        "url": "https://www.youtube.com/watch?v=RH1U7Qf7MSg"
+      },
+      "streamDate": "2026-01-30",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌ってみた】青空Jumping Heart"
+    },
+    {
       "id": "20260130-madoka-001",
       "title": "明日の私に幸あれ",
       "artist": "ナナヲアカリ",
@@ -37,6 +57,44 @@
       },
       "streamDate": "2026-01-30",
       "streamTitle": "【 初配信 】ヨシ、水分補給しよう！【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260130-both-002",
+      "title": "エビカニクス",
+      "artist": "ケロポンズ",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "gaJ_RhiwBrY",
+        "timestampSec": 0,
+        "endSec": 149,
+        "url": "https://www.youtube.com/watch?v=gaJ_RhiwBrY"
+      },
+      "streamDate": "2026-01-30",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌ってみた】エビカニクス"
+    },
+    {
+      "id": "20260130-ayane-001",
+      "title": "青い珊瑚礁",
+      "artist": "松田聖子",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qEpmR9XVsa8",
+        "timestampSec": 0,
+        "endSec": 219,
+        "url": "https://www.youtube.com/watch?v=qEpmR9XVsa8"
+      },
+      "streamDate": "2026-01-30",
+      "streamTitle": "【歌ってみた】青い珊瑚礁"
     },
     {
       "id": "20260213-madoka-001",
@@ -199,6 +257,168 @@
       },
       "streamDate": "2026-02-13",
       "streamTitle": "【収益化記念】みんなのおかげで収益化❣好きな曲歌うぞ❣🎤supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-001",
+      "title": "初恋サイダー",
+      "artist": "Buono!",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 119,
+        "endSec": 506,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=119"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-002",
+      "title": "とくベチュ、して",
+      "artist": "",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 506,
+        "endSec": 950,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=506"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-003",
+      "title": "アララの呪文",
+      "artist": "ちびまる子ちゃん with 爆チュー問題",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 950,
+        "endSec": 1269,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=950"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-004",
+      "title": "MOON PRIDE",
+      "artist": "ももいろクローバーZ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 1269,
+        "endSec": 1647,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=1269"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-005",
+      "title": "GO!GO!MANIAC",
+      "artist": "放課後ティータイム",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 1647,
+        "endSec": 2082,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=1647"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-006",
+      "title": "MUGO・ん・・・色っぽい",
+      "artist": "工藤静香",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 2082,
+        "endSec": 2468,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=2082"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-007",
+      "title": "青空ラプソディ",
+      "artist": "fhána",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 2468,
+        "endSec": 3008,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=2468"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-008",
+      "title": "I WISH",
+      "artist": "AiM",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 3008,
+        "endSec": 3440,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=3008"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260215-ayane-009",
+      "title": "おさかな天国",
+      "artist": "柴矢裕美",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "qfMRqe6hhxs",
+        "timestampSec": 3440,
+        "endSec": 3846,
+        "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=3440"
+      },
+      "streamDate": "2026-02-15",
+      "streamTitle": "【収益化記念】初めての歌枠！収益化ありがとう🤍【白砂あやね / にじさんじ】"
     },
     {
       "id": "20260302-madoka-001",
@@ -505,6 +725,96 @@
       "tags": [
         "緑仙"
       ]
+    },
+    {
+      "id": "20260309-ayane-001",
+      "title": "大志を抱けカルビアンビシャス",
+      "artist": "アンジュルム",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 139,
+        "endSec": 1092,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=139"
+      },
+      "streamDate": "2026-03-09",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260309-ayane-002",
+      "title": "ハムカツ黙示録",
+      "artist": "カントリー・ガールズ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 1092,
+        "endSec": 1829,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1092"
+      },
+      "streamDate": "2026-03-09",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260309-ayane-003",
+      "title": "青春バスガイド",
+      "artist": "Berryz工房",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 1829,
+        "endSec": 3015,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1829"
+      },
+      "streamDate": "2026-03-09",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260309-ayane-004",
+      "title": "0-week-old",
+      "artist": "ファルル (CV. 佐藤あずさ)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 3015,
+        "endSec": 5906,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=3015"
+      },
+      "streamDate": "2026-03-09",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260309-ayane-005",
+      "title": "ひたむきシンデレラ",
+      "artist": "蓮ノ空女学院スクールアイドルクラブ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 5906,
+        "endSec": 7470,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=5906"
+      },
+      "streamDate": "2026-03-09",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
     },
     {
       "id": "20260310-both-001",
@@ -1101,6 +1411,24 @@
       "streamDate": "2026-04-09",
       "unit": "うみゃみー",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260409-ayane-001",
+      "title": "カルテNo.2222",
+      "artist": "きゅるりんってしてみて",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "YoAPHCZrpI0",
+        "timestampSec": 0,
+        "endSec": 211,
+        "url": "https://www.youtube.com/watch?v=YoAPHCZrpI0"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【歌ってみた】カルテNo.2222"
     },
     {
       "id": "20260410-madoka-001",
@@ -1963,6 +2291,276 @@
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
       "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+    },
+    {
+      "id": "20260522-ayane-001",
+      "title": "モエチャッカファイア",
+      "artist": "",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 420,
+        "endSec": 845,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=420"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-002",
+      "title": "POP IN 2",
+      "artist": "",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 845,
+        "endSec": 1427,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=845"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-003",
+      "title": "フォニイ",
+      "artist": "ツミキ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 1427,
+        "endSec": 1901,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=1427"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-004",
+      "title": "あいつら全員同窓会",
+      "artist": "ずっと真夜中でいいのに。",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 1901,
+        "endSec": 2494,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=1901"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-005",
+      "title": "神っぽいな",
+      "artist": "ピノキオピー",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 2494,
+        "endSec": 2885,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=2494"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-006",
+      "title": "アイドル",
+      "artist": "YOASOBI",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 2885,
+        "endSec": 3274,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=2885"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-007",
+      "title": "GO！GO！MANIAC",
+      "artist": "放課後ティータイム",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 3274,
+        "endSec": 3774,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=3274"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-008",
+      "title": "モエチャッカファイア",
+      "artist": "",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 3774,
+        "endSec": 4021,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=3774"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-009",
+      "title": "太陽系デスコ",
+      "artist": "ナユタン星人",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 4021,
+        "endSec": 4499,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=4021"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-010",
+      "title": "ブリキノダンス",
+      "artist": "日向電工",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 4499,
+        "endSec": 4870,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=4499"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-011",
+      "title": "ブリキノダンス",
+      "artist": "日向電工",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 4870,
+        "endSec": 5443,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=4870"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-012",
+      "title": "アイドル",
+      "artist": "YOASOBI",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 5443,
+        "endSec": 5886,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=5443"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-013",
+      "title": "あいつら全員同窓会",
+      "artist": "ずっと真夜中でいいのに。",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 5886,
+        "endSec": 6263,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=5886"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-014",
+      "title": "太陽系デスコ",
+      "artist": "ナユタン星人",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 6263,
+        "endSec": 6636,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=6263"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260522-ayane-015",
+      "title": "太陽系デスコ",
+      "artist": "ナユタン星人",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rVt9dqKp5No",
+        "timestampSec": 6636,
+        "endSec": 6960,
+        "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=6636"
+      },
+      "streamDate": "2026-05-22",
+      "streamTitle": "【歌枠】【挑戦】高めor早め？曲縛り歌枠！！！【白砂あやね / にじさんじ】"
     },
     {
       "id": "20260529-madoka-001",
