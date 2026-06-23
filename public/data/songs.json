@@ -194,6 +194,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 5410,
+        "endSec": 6114,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=5410"
       },
       "streamDate": "2026-06-21",
@@ -391,6 +392,7 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 6186,
+        "endSec": 6854,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=6186"
       },
       "streamDate": "2026-05-16",
@@ -670,6 +672,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 5977,
+        "endSec": 6328,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5977"
       },
       "streamDate": "2026-04-22",

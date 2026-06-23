@@ -9,6 +9,19 @@ const totalSongs = songs.length;
 const utaWakuCount = songs.filter(s => s.category === 'uta_waku').length;
 const coverCount = songs.filter(s => s.category === 'cover').length;
 const lastUpdated = songsData.updatedAt;
+
+// 曲の尺 = 同一動画(videoId)で次に始まる曲の開始秒 - 自分の開始秒。最後の曲は不明(undefined)
+const startsByVideo: Record<string, number[]> = {};
+for (const s of songs) {
+  (startsByVideo[s.youtube.videoId] ||= []).push(s.youtube.timestampSec || 0);
+}
+for (const k in startsByVideo) startsByVideo[k].sort((a, b) => a - b);
+const durationOf = (song: any): number | undefined => {
+  const start = song.youtube.timestampSec || 0;
+  if (song.youtube.endSec != null) return song.youtube.endSec - start; // 明示の終了秒（動画長）
+  const next = (startsByVideo[song.youtube.videoId] || []).find(t => t > start);
+  return next !== undefined ? next - start : undefined;
+};
 ---
 
 <BaseLayout title="うみゃみーMusic">
@@ -85,7 +98,7 @@ const lastUpdated = songsData.updatedAt;
 
       <!-- Song Grid -->
       <div id="songGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {songs.map(song => (<SongCard song={song} />))}
+        {songs.map(song => (<SongCard song={song} durationSec={durationOf(song)} />))}
       </div>
 
       <!-- Empty state -->
@@ -125,6 +138,12 @@ const lastUpdated = songsData.updatedAt;
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
                 YouTube
               </a>
+            </div>
+            <!-- Seek bar（曲内の再生位置） -->
+            <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-400 tabular-nums">
+              <span class="seek-cur">0:00</span>
+              <input type="range" min="0" max="1000" value="0" step="1" aria-label="再生位置" class="seek-range flex-1">
+              <span class="seek-dur">0:00</span>
             </div>
             <!-- Sheet controls -->
             <div class="mt-3 flex items-center justify-center gap-1 text-slate-600">
@@ -169,6 +188,12 @@ const lastUpdated = songsData.updatedAt;
         <span class="block w-9 h-1 rounded-full bg-slate-300 group-hover:bg-slate-400 transition"></span>
         <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-slate-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" d="M5 15l7-7 7 7"/></svg>
       </button>
+      <!-- Seek bar（折りたたみ時も表示） -->
+      <div class="max-w-6xl mx-auto px-3 sm:px-4 flex items-center gap-2 text-[10px] text-slate-400 tabular-nums">
+        <span class="seek-cur">0:00</span>
+        <input type="range" min="0" max="1000" value="0" step="1" aria-label="再生位置" class="seek-range flex-1">
+        <span class="seek-dur">0:00</span>
+      </div>
       <div class="max-w-6xl mx-auto px-3 sm:px-4 pb-2 flex items-center gap-2 sm:gap-3">
         <button id="barExpand" class="flex items-center gap-3 min-w-0 flex-1 text-left" aria-label="プレーヤーを開く">
           <img id="barThumb" src="" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
@@ -248,6 +273,7 @@ const lastUpdated = songsData.updatedAt;
   :global(.accent-bar) { background: var(--accent-grad); }
   :global(.accent-text) { color: var(--accent); }
   :global(.volume-slider) { accent-color: var(--accent); }
+  :global(.seek-range) { accent-color: var(--accent); cursor: pointer; }
   :global(.repeat-one) { background: var(--accent) !important; }
   :global(.repeat-active) { color: var(--accent); }
 </style>
@@ -318,6 +344,9 @@ const lastUpdated = songsData.updatedAt;
   let queue: any[] = [], qIndex = -1, isPlaying = false;
   let repeatMode: RepeatMode = 'all';   // 連続再生 → 1曲リピート → オフ
   let lastVolume = 100, isMuted = false;
+  // 曲は「動画内の [開始秒, 終了秒) 区間」。終了秒は同一動画の次曲の開始秒（最後の曲は動画終端=ENDEDに委譲）
+  let segStart = 0, segEnd = Infinity, segHandled = false, currentVideoId: string | null = null, watchTimer: any = null;
+  let isSeeking = false; // シークバーをドラッグ中はバー位置を上書きしない
 
   const apiTag = document.createElement('script');
   apiTag.src = 'https://www.youtube.com/iframe_api';
@@ -333,17 +362,91 @@ const lastUpdated = songsData.updatedAt;
         onStateChange: (e: any) => {
           isPlaying = (e.data === 1);
           updatePlayIcon();
-          if (e.data === 0) handleEnded(); // ENDED
+          // 動画自体の終端（＝最後の曲の区間終わり）。区間監視が拾えない最終曲のみここで処理
+          if (e.data === 0 && !segHandled) { segHandled = true; handleEnded(); }
         },
       },
     });
   };
 
+  // 同一動画で「この曲の開始秒より後にある最も近い曲の開始秒」＝この曲の終了秒。無ければ動画終端(Infinity)
+  function computeSegmentEnd(song: any): number {
+    if (song.youtube.endSec != null) return song.youtube.endSec; // 明示の終了秒（動画長）
+    const vid = song.youtube.videoId;
+    const start = song.youtube.timestampSec || 0;
+    const laterStarts = songs
+      .filter((s: any) => s.youtube.videoId === vid)
+      .map((s: any) => s.youtube.timestampSec || 0)
+      .filter((t: number) => t > start)
+      .sort((a: number, b: number) => a - b);
+    return laterStarts.length ? laterStarts[0] : Infinity;
+  }
+
   function loadVideo(song: any) {
     const start = song.youtube.timestampSec || 0;
-    if (ytPlayer && ytPlayer.loadVideoById) ytPlayer.loadVideoById({ videoId: song.youtube.videoId, startSeconds: start });
-    else pending = song;
+    segStart = start;
+    segEnd = computeSegmentEnd(song);
+    segHandled = false;
+    if (ytPlayer && ytPlayer.loadVideoById) {
+      if (currentVideoId === song.youtube.videoId && ytPlayer.seekTo) {
+        // 同じ動画内の移動は再読込せず seek（瞬時）
+        ytPlayer.seekTo(start, true);
+        ytPlayer.playVideo?.();
+      } else {
+        ytPlayer.loadVideoById({ videoId: song.youtube.videoId, startSeconds: start });
+        currentVideoId = song.youtube.videoId;
+      }
+      startWatch();
+    } else {
+      pending = song;
+    }
   }
+
+  // mm:ss 形式（曲の経過/尺の表示用）
+  function fmtClock(sec: number): string {
+    if (!isFinite(sec) || sec < 0) sec = 0;
+    const m = Math.floor(sec / 60), s = Math.floor(sec % 60);
+    return `${m}:${String(s).padStart(2, '0')}`;
+  }
+
+  // 実効の終了秒（最後の曲は動画長を使う）
+  function effectiveEnd(): number {
+    if (segEnd !== Infinity) return segEnd;
+    const d = ytPlayer && ytPlayer.getDuration ? ytPlayer.getDuration() : 0;
+    return d > 0 ? d : segStart; // 動画長が未取得なら尺0扱い
+  }
+
+  // シークバー・時間表示を更新（ミニバー／展開シートの両方）
+  function updateSeek(t: number) {
+    const end = effectiveEnd();
+    const dur = Math.max(0, end - segStart);
+    const cur = Math.max(0, Math.min(dur, t - segStart));
+    document.querySelectorAll('.seek-cur').forEach(el => (el.textContent = fmtClock(cur)));
+    document.querySelectorAll('.seek-dur').forEach(el => (el.textContent = fmtClock(dur)));
+    if (!isSeeking && dur > 0) {
+      const v = String(Math.round((cur / dur) * 1000));
+      document.querySelectorAll('.seek-range').forEach(el => ((el as HTMLInputElement).value = v));
+    }
+  }
+
+  // 曲内の指定位置へシーク（ratio: 0〜1）
+  function seekToRatio(ratio: number) {
+    if (!ytPlayer || !ytPlayer.seekTo) return;
+    const dur = Math.max(0, effectiveEnd() - segStart);
+    ytPlayer.seekTo(segStart + ratio * dur, true);
+  }
+
+  // 再生位置を監視: シークバー更新 ＋ 曲の終了秒に達したら handleEnded（区間境界での次へ/リピート）
+  function startWatch() {
+    if (watchTimer) return;
+    watchTimer = setInterval(() => {
+      if (!ytPlayer || !ytPlayer.getCurrentTime) return;
+      const t = ytPlayer.getCurrentTime();
+      updateSeek(t);
+      if (!segHandled && segEnd !== Infinity && t >= segEnd - 0.25) { segHandled = true; handleEnded(); }
+    }, 250);
+  }
+  function stopWatch() { if (watchTimer) { clearInterval(watchTimer); watchTimer = null; } }
 
   function saveHistory(song: any) {
     try {
@@ -551,6 +654,9 @@ const lastUpdated = songsData.updatedAt;
   }
 
   function closePlayer() {
+    stopWatch();
+    currentVideoId = null;
+    segEnd = Infinity;
     if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
     document.getElementById('player')?.classList.add('hidden');
     document.getElementById('playerSheet')?.classList.add('hidden');
@@ -665,6 +771,20 @@ const lastUpdated = songsData.updatedAt;
     on('.ctl-mute', toggleMute);
     document.querySelectorAll('.volume-slider').forEach(el =>
       el.addEventListener('input', (e) => setVolume(Number((e.target as HTMLInputElement).value))));
+
+    // 曲内シークバー（ミニバー＋展開シート共通）: ドラッグ中はバー位置を固定し、確定時にシーク
+    document.querySelectorAll('.seek-range').forEach(el => {
+      const bar = el as HTMLInputElement;
+      bar.addEventListener('input', () => {
+        isSeeking = true;
+        const ratio = Number(bar.value) / 1000;
+        const dur = Math.max(0, effectiveEnd() - segStart);
+        // 全シークバー・経過表示を同期（プレビュー）
+        document.querySelectorAll('.seek-range').forEach(o => ((o as HTMLInputElement).value = bar.value));
+        document.querySelectorAll('.seek-cur').forEach(o => (o.textContent = fmtClock(ratio * dur)));
+      });
+      bar.addEventListener('change', () => { seekToRatio(Number(bar.value) / 1000); isSeeking = false; });
+    });
 
     const openSheet = () => { document.getElementById('playerSheet')?.classList.remove('hidden'); renderUpNext(); };
     const closeSheet = () => document.getElementById('playerSheet')?.classList.add('hidden');
