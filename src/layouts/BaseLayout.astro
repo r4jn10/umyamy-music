@@ -59,12 +59,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-      <a href={`${base}/`} class="flex items-baseline gap-2 group">
-        <span class="font-display text-xl font-extrabold tracking-tight text-ink">
-          うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
-        </span>
-        <span class="hidden sm:inline text-[11px] font-medium text-slate-400">
-          <span class="text-madoka">水面まどか</span> ・ <span class="text-ayane">白砂あやね</span>
+      <a href={`${base}/`} class="flex items-center gap-2.5 group">
+        <svg class="w-8 h-8 shrink-0 transition group-hover:scale-105" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff8184"/><stop offset="1" stop-color="#54a2e5"/>
+            </linearGradient>
+          </defs>
+          <rect width="64" height="64" rx="16" fill="url(#logoGrad)"/>
+          <g fill="#fff">
+            <ellipse cx="26" cy="43" rx="10" ry="8" transform="rotate(-16 26 43)"/>
+            <rect x="34" y="18" width="3.6" height="25" rx="1.8"/>
+            <path d="M37.6 18 C45.5 19 49.5 24 46.2 30.5 C47 25 43 21.8 37.6 22.8 Z"/>
+          </g>
+        </svg>
+        <span class="flex items-baseline gap-2">
+          <span class="font-display text-xl font-extrabold tracking-tight text-ink">
+            うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
+          </span>
+          <span class="hidden sm:inline text-[11px] font-medium text-slate-400">
+            <span class="text-madoka">水面まどか</span> ・ <span class="text-ayane">白砂あやね</span>
+          </span>
         </span>
       </a>
 
