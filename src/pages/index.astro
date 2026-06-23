@@ -10,14 +10,22 @@ const utaWakuCount = songs.filter(s => s.category === 'uta_waku').length;
 const coverCount = songs.filter(s => s.category === 'cover').length;
 const lastUpdated = songsData.updatedAt;
 
-// 尺が正確なのは「1動画=1曲」の歌ってみた/ショートのみ。
-// 歌枠は開始秒だけで、曲間にMC・雑談が入り終了秒が不明なため尺は出さない（誤値を出さない）。
+// 曲の尺。endSec（明示の終了秒）または同一動画の次曲開始秒との差。
+// ※歌枠は曲間にMC等が入り尺が不正確なことがあるが、方針により表示する。
+const startsByVideo: Record<string, number[]> = {};
+for (const s of songs) {
+  (startsByVideo[s.youtube.videoId] ||= []).push(s.youtube.timestampSec || 0);
+}
+for (const k in startsByVideo) startsByVideo[k].sort((a, b) => a - b);
 const durationOf = (song: any): number | undefined => {
-  if (song.category !== 'cover' && song.category !== 'short') return undefined;
-  const end = song.youtube.endSec;
-  if (end == null) return undefined;
-  const d = end - (song.youtube.timestampSec || 0);
-  return d > 0 ? d : undefined;
+  const start = song.youtube.timestampSec || 0;
+  let d: number | undefined;
+  if (song.youtube.endSec != null) d = song.youtube.endSec - start;
+  else {
+    const next = (startsByVideo[song.youtube.videoId] || []).find(t => t > start);
+    d = next !== undefined ? next - start : undefined;
+  }
+  return d !== undefined && d > 0 ? d : undefined;
 };
 ---
 
@@ -88,6 +96,7 @@ const durationOf = (song: any): number | undefined => {
             <button id="btn-c-all" class="chip" aria-pressed="true">ぜんぶ</button>
             <button id="btn-c-uta_waku" class="chip" aria-pressed="false">歌枠</button>
             <button id="btn-c-cover" class="chip" aria-pressed="false">歌ってみた</button>
+            <button id="btn-c-short" class="chip" aria-pressed="false">ショート</button>
             <span id="resultCount" class="ml-auto text-[11px] font-medium text-slate-400">{totalSongs} 曲</span>
           </div>
         </div>
@@ -817,8 +826,8 @@ const durationOf = (song: any): number | undefined => {
       filterMember = memberVal[id]; setPressed(memberIds, id); filterSongs();
     }));
 
-    const catIds = ['btn-c-all', 'btn-c-uta_waku', 'btn-c-cover'];
-    const catVal: Record<string, string> = { 'btn-c-all': 'all', 'btn-c-uta_waku': 'uta_waku', 'btn-c-cover': 'cover' };
+    const catIds = ['btn-c-all', 'btn-c-uta_waku', 'btn-c-cover', 'btn-c-short'];
+    const catVal: Record<string, string> = { 'btn-c-all': 'all', 'btn-c-uta_waku': 'uta_waku', 'btn-c-cover': 'cover', 'btn-c-short': 'short' };
     catIds.forEach(id => document.getElementById(id)?.addEventListener('click', () => {
       filterCategory = catVal[id]; setPressed(catIds, id); filterSongs();
     }));
