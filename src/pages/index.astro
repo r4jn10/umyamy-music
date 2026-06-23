@@ -87,8 +87,8 @@ const durationOf = (song: any): number | undefined => {
           <div class="flex flex-wrap gap-2 items-center">
             <span class="text-[11px] text-slate-400 font-semibold mr-1">メンバー</span>
             <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
-            <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどかさん</button>
-            <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやねさん</button>
+            <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか</button>
+            <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね</button>
             <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー</button>
           </div>
           <div class="flex flex-wrap gap-2 items-center">
@@ -695,7 +695,7 @@ const durationOf = (song: any): number | undefined => {
     const streams = buildStreams();
     slider.innerHTML = streams.map(g => {
       const performerBadges = g.performers.map((p: string) =>
-        `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}さん</span>`).join('');
+        `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
       const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
       const catLabel = CAT_LABEL[g.category] || g.category;
       // ソロ/コラボ歌枠バッジは歌枠のみ（歌ってみた/ショートでは出さない）
