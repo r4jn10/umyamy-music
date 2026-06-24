@@ -63,6 +63,7 @@ const lastUpdated = songsData.updatedAt;
         <div class="flex items-center gap-1.5 mb-4">
           <button id="view-songs" class="chip" aria-pressed="true">🎵 曲</button>
           <button id="view-streams" class="chip" aria-pressed="false">📺 配信</button>
+          <button id="view-artists" class="chip" aria-pressed="false">🎤 アーティスト</button>
           <select id="streamSort" class="hidden ml-auto text-xs border border-slate-200 rounded-lg px-2 py-1.5 bg-white text-slate-500">
             <option value="date_desc">新着順</option>
             <option value="date_asc">古い順</option>
@@ -99,6 +100,12 @@ const lastUpdated = songsData.updatedAt;
         </div>
       </div>
 
+      <!-- アクティブなアーティスト絞り込み -->
+      <div id="artistFilterBar" class="hidden mb-4 flex items-center gap-2">
+        <span class="text-xs text-slate-400 font-semibold">アーティスト</span>
+        <button id="artistClear" type="button" class="chip" aria-pressed="true"><span id="artistFilterName"></span><span class="ml-1.5 text-slate-400">✕</span></button>
+      </div>
+
       <!-- Song Grid -->
       <div id="songGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {songs.map(song => (<SongCard song={song} />))}
@@ -120,6 +127,12 @@ const lastUpdated = songsData.updatedAt;
       <div id="streamGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
       <div id="streamEmpty" class="hidden py-20 text-center">
         <p class="font-semibold text-slate-500">該当する配信がありません</p>
+      </div>
+
+      <!-- Artist Grid（アーティストビュー） -->
+      <div id="artistGrid" class="hidden grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3"></div>
+      <div id="artistEmpty" class="hidden py-20 text-center">
+        <p class="font-semibold text-slate-500">該当するアーティストがいません</p>
       </div>
 
     </main>
@@ -299,7 +312,8 @@ const lastUpdated = songsData.updatedAt;
   let filterMember = 'all';
   let filterCategory = 'all';
   let searchText = '';
-  let viewMode: 'songs' | 'streams' = 'songs';
+  let filterArtist: string | null = null;
+  let viewMode: 'songs' | 'streams' | 'artists' = 'songs';
 
   const songsDataEl = document.getElementById('songs-data');
   const songs = songsDataEl ? JSON.parse(songsDataEl.getAttribute('data-songs') || '[]') : [];
@@ -316,12 +330,19 @@ const lastUpdated = songsData.updatedAt;
     return p === '水面まどか' ? 'text-[#ff8184] bg-[#ffeef0]' : 'text-[#54a2e5] bg-[#eaf4fc]';
   }
 
-  function getFiltered() {
+  // メンバー・カテゴリだけで絞った曲（アーティスト一覧の集計と曲一覧の土台に共用）
+  function memberCategoryFiltered() {
     let f = songs;
     if (filterMember === 'ayane') f = f.filter((s: any) => s.performers.includes('白砂あやね'));
     else if (filterMember === 'madoka') f = f.filter((s: any) => s.performers.includes('水面まどか'));
     else if (filterMember === 'duet') f = f.filter((s: any) => s.performers.length > 1);
     if (filterCategory !== 'all') f = f.filter((s: any) => s.category === filterCategory);
+    return f;
+  }
+
+  function getFiltered() {
+    let f = memberCategoryFiltered();
+    if (filterArtist) f = f.filter((s: any) => (s.artist || '').trim() === filterArtist);
     if (searchText) {
       const m = new Set(fuse.search(searchText).map(r => (r.item as any).id));
       f = f.filter((s: any) => m.has(s.id));
@@ -369,27 +390,43 @@ const lastUpdated = songsData.updatedAt;
   // 現在のビューに応じて一覧を再描画
   function refresh() {
     if (viewMode === 'streams') renderStreams();
+    else if (viewMode === 'artists') renderArtists();
     else applyDisplay();
   }
 
-  // ビュー切替（曲一覧 / 配信一覧）
-  function setView(mode: 'songs' | 'streams') {
+  // ビュー切替（曲 / 配信 / アーティスト）
+  function setView(mode: 'songs' | 'streams' | 'artists') {
     viewMode = mode;
-    const isStreams = mode === 'streams';
-    document.getElementById('view-songs')?.setAttribute('aria-pressed', String(!isStreams));
+    shownCount = PAGE_SIZE;
+    const isSongs = mode === 'songs', isStreams = mode === 'streams', isArtists = mode === 'artists';
+    document.getElementById('view-songs')?.setAttribute('aria-pressed', String(isSongs));
     document.getElementById('view-streams')?.setAttribute('aria-pressed', String(isStreams));
-    document.getElementById('songGrid')?.classList.toggle('hidden', isStreams);
+    document.getElementById('view-artists')?.setAttribute('aria-pressed', String(isArtists));
+    document.getElementById('songGrid')?.classList.toggle('hidden', !isSongs);
     document.getElementById('streamGrid')?.classList.toggle('hidden', !isStreams);
+    document.getElementById('artistGrid')?.classList.toggle('hidden', !isArtists);
     document.getElementById('streamSort')?.classList.toggle('hidden', !isStreams);
-    if (isStreams) {
+    if (!isSongs) {
       document.getElementById('moreWrap')?.classList.add('hidden');
       document.getElementById('emptyState')?.classList.add('hidden');
-    } else {
-      document.getElementById('streamEmpty')?.classList.add('hidden');
     }
+    if (!isStreams) document.getElementById('streamEmpty')?.classList.add('hidden');
+    if (!isArtists) document.getElementById('artistEmpty')?.classList.add('hidden');
+    updateArtistChip();
     const si = document.getElementById('searchInput') as HTMLInputElement | null;
-    if (si) si.placeholder = isStreams ? '配信タイトル・日付・曲名で検索' : '曲名・アーティスト・タグで検索';
+    if (si) si.placeholder = isStreams ? '配信タイトル・日付・曲名で検索'
+      : isArtists ? 'アーティスト名で検索'
+      : '曲名・アーティスト・タグで検索';
     refresh();
+  }
+
+  // アクティブなアーティスト絞り込みチップの表示更新（曲ビューでのみ表示）
+  function updateArtistChip() {
+    const bar = document.getElementById('artistFilterBar');
+    const nameEl = document.getElementById('artistFilterName');
+    const show = viewMode === 'songs' && !!filterArtist;
+    bar?.classList.toggle('hidden', !show);
+    if (show && nameEl) nameEl.textContent = filterArtist;
   }
 
   function loadMore() {
@@ -830,6 +867,41 @@ const lastUpdated = songsData.updatedAt;
     current(queue[0]);
   }
 
+  // ----- アーティストビュー -----
+  function escHtml(s: string) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // メンバー/カテゴリ絞り込みを反映しつつ、アーティスト名で集計（曲数が多い順）
+  function buildArtists() {
+    const base = memberCategoryFiltered();
+    const map = new Map<string, number>();
+    for (const s of base) {
+      const a = (s.artist || '').trim();
+      if (!a) continue; // アーティスト不明はリストから除外
+      map.set(a, (map.get(a) || 0) + 1);
+    }
+    let list = [...map.entries()].map(([name, count]) => ({ name, count }));
+    if (searchText) list = list.filter(g => g.name.toLowerCase().includes(searchText));
+    list.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'ja'));
+    return list;
+  }
+
+  function renderArtists() {
+    const grid = document.getElementById('artistGrid');
+    if (!grid) return;
+    const list = buildArtists();
+    const countEl = document.getElementById('resultCount');
+    if (countEl) countEl.textContent = `${list.length} 組`;
+    grid.innerHTML = list.map(g => `
+      <button type="button" data-artist="${escHtml(g.name)}"
+              class="artist-card card p-3 text-left hover:shadow-md transition">
+        <p class="text-sm font-semibold text-ink truncate">${escHtml(g.name)}</p>
+        <p class="text-[11px] text-slate-400 mt-0.5 tabular-nums">${g.count}曲</p>
+      </button>`).join('');
+    document.getElementById('artistEmpty')?.classList.toggle('hidden', list.length !== 0);
+  }
+
   function updateSliderArrows() {
     // ループするので矢印は常に有効。スクロールできない（全件が画面内）ときだけ隠す。
     const slider = document.getElementById('newSlider');
@@ -953,9 +1025,10 @@ const lastUpdated = songsData.updatedAt;
       if (song) playSong(song);
     });
 
-    // ビュー切替（曲 / 配信）
-    document.getElementById('view-songs')?.addEventListener('click', () => setView('songs'));
-    document.getElementById('view-streams')?.addEventListener('click', () => setView('streams'));
+    // ビュー切替（曲 / 配信 / アーティスト）。タブを直接押したらアーティスト絞り込みは解除
+    document.getElementById('view-songs')?.addEventListener('click', () => { filterArtist = null; setView('songs'); });
+    document.getElementById('view-streams')?.addEventListener('click', () => { filterArtist = null; setView('streams'); });
+    document.getElementById('view-artists')?.addEventListener('click', () => { filterArtist = null; setView('artists'); });
     document.getElementById('streamSort')?.addEventListener('change', renderStreams);
 
     // 配信カードをクリック → その配信まるごと再生キューへ
@@ -963,6 +1036,17 @@ const lastUpdated = songsData.updatedAt;
       const btn = (e.target as HTMLElement).closest('.stream-card');
       const vid = btn?.getAttribute('data-video-id');
       if (vid) playStream(vid);
+    });
+
+    // アーティストをクリック → そのアーティストの曲に絞り込み（曲ビューへ）
+    document.getElementById('artistGrid')?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.artist-card');
+      const a = btn?.getAttribute('data-artist');
+      if (a) { filterArtist = a; setView('songs'); }
+    });
+    // アーティスト絞り込みの解除
+    document.getElementById('artistClear')?.addEventListener('click', () => {
+      filterArtist = null; updateArtistChip(); shownCount = PAGE_SIZE; applyDisplay();
     });
   });
 </script>
