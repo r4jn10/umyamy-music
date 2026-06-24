@@ -8,25 +8,8 @@ const { songs } = songsData;
 const totalSongs = songs.length;
 const utaWakuCount = songs.filter(s => s.category === 'uta_waku').length;
 const coverCount = songs.filter(s => s.category === 'cover').length;
+const shortCount = songs.filter(s => s.category === 'short').length;
 const lastUpdated = songsData.updatedAt;
-
-// 曲の尺。endSec（明示の終了秒）または同一動画の次曲開始秒との差。
-// ※歌枠は曲間にMC等が入り尺が不正確なことがあるが、方針により表示する。
-const startsByVideo: Record<string, number[]> = {};
-for (const s of songs) {
-  (startsByVideo[s.youtube.videoId] ||= []).push(s.youtube.timestampSec || 0);
-}
-for (const k in startsByVideo) startsByVideo[k].sort((a, b) => a - b);
-const durationOf = (song: any): number | undefined => {
-  const start = song.youtube.timestampSec || 0;
-  let d: number | undefined;
-  if (song.youtube.endSec != null) d = song.youtube.endSec - start;
-  else {
-    const next = (startsByVideo[song.youtube.videoId] || []).find(t => t > start);
-    d = next !== undefined ? next - start : undefined;
-  }
-  return d !== undefined && d > 0 ? d : undefined;
-};
 ---
 
 <BaseLayout title="うみゃみーMusic">
@@ -46,6 +29,12 @@ const durationOf = (song: any): number | undefined => {
         <span class="font-display text-lg font-bold text-madoka tabular-nums">{coverCount}</span>
         <span class="text-slate-400 text-xs font-medium">歌ってみた</span>
       </div>
+      {shortCount > 0 && (
+        <div class="flex items-baseline gap-1.5">
+          <span class="font-display text-lg font-bold text-slate-600 tabular-nums">{shortCount}</span>
+          <span class="text-slate-400 text-xs font-medium">ショート</span>
+        </div>
+      )}
       <span class="ml-auto text-[11px] text-slate-400">最終更新 <span class="font-semibold text-slate-500">{lastUpdated}</span></span>
     </div>
 
@@ -71,6 +60,14 @@ const durationOf = (song: any): number | undefined => {
 
       <!-- Search & Filter -->
       <div class="card p-5 mb-8" id="searchArea">
+        <div class="flex items-center gap-1.5 mb-4">
+          <button id="view-songs" class="chip" aria-pressed="true">🎵 曲</button>
+          <button id="view-streams" class="chip" aria-pressed="false">📺 配信</button>
+          <select id="streamSort" class="hidden ml-auto text-xs border border-slate-200 rounded-lg px-2 py-1.5 bg-white text-slate-500">
+            <option value="date_desc">新着順</option>
+            <option value="date_asc">古い順</option>
+          </select>
+        </div>
         <div class="relative mb-4">
           <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -104,13 +101,25 @@ const durationOf = (song: any): number | undefined => {
 
       <!-- Song Grid -->
       <div id="songGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {songs.map(song => (<SongCard song={song} durationSec={durationOf(song)} />))}
+        {songs.map(song => (<SongCard song={song} />))}
+      </div>
+
+      <!-- さらに表示 -->
+      <div id="moreWrap" class="hidden mt-8 text-center">
+        <button id="loadMoreBtn" type="button"
+                class="chip px-5 py-2 text-sm font-semibold">さらに表示<span id="moreCount" class="text-slate-400 font-normal ml-1.5"></span></button>
       </div>
 
       <!-- Empty state -->
       <div id="emptyState" class="hidden py-20 text-center">
         <p class="font-semibold text-slate-500">「<span id="emptyQuery" class="text-madoka"></span>」に一致する曲がありません</p>
         <button id="resetSearchBtn" type="button" class="mt-4 chip text-xs">検索をリセット</button>
+      </div>
+
+      <!-- Stream Grid（配信ビュー） -->
+      <div id="streamGrid" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+      <div id="streamEmpty" class="hidden py-20 text-center">
+        <p class="font-semibold text-slate-500">該当する配信がありません</p>
       </div>
 
     </main>
@@ -154,26 +163,26 @@ const durationOf = (song: any): number | undefined => {
             <!-- Sheet controls -->
             <div class="mt-3 flex items-center justify-center gap-1 text-slate-600">
               <button class="ctl-prev p-2 rounded-full hover:bg-slate-100" aria-label="前へ">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4" fill="currentColor"/><line x1="19" x2="19" y1="5" y2="19"/></svg>
               </button>
               <button class="ctl-play play-btn-themed p-3 rounded-full bg-ink text-white hover:opacity-90" aria-label="再生/一時停止">
-                <svg class="icon-play w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                <svg class="icon-pause w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+                <svg class="icon-play w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>
+                <svg class="icon-pause w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>
               </button>
               <button class="ctl-next p-2 rounded-full hover:bg-slate-100" aria-label="次へ">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 4 9 12 19 20 19 4" fill="currentColor"/><line x1="5" x2="5" y1="5" y2="19"/></svg>
               </button>
               <button class="ctl-repeat relative p-2 rounded-full hover:bg-slate-100" aria-label="リピート切替">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2l4 4-4 4M3 11V9a4 4 0 014-4h14M7 22l-4-4 4-4m14 1v2a4 4 0 01-4 4H3"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
                 <span class="repeat-one hidden absolute -top-0.5 -right-0.5 text-[9px] font-bold bg-madoka text-white rounded-full w-3.5 h-3.5 flex items-center justify-center">1</span>
               </button>
               <button class="ctl-shuffle p-2 rounded-full hover:bg-slate-100" aria-label="シャッフル再生">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.66 6.83l-1.41 1.41 3.13 3.13L14.5 16H20v-5.5l-2.04 2.04-2.8-2.71z"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h4c2 0 4-1.2 6-6s4-6 6-6h4" /><path d="m18 2 4 4-4 4" /><path d="M2 6h4c2 0 4 1.2 6 6s4 6 6 6h4" /><path d="m18 14 4 4-4 4" /></svg>
               </button>
               <div class="flex items-center gap-1 ml-2">
                 <button class="ctl-mute p-1.5 rounded-full hover:bg-slate-100" aria-label="ミュート">
-                  <svg class="icon-vol w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>
-                  <svg class="icon-mute w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm16.6 2l2.1-2.1-1.4-1.4-2.1 2.1-2.1-2.1-1.4 1.4 2.1 2.1-2.1 2.1 1.4 1.4 2.1-2.1 2.1 2.1 1.4-1.4-2.1-2.1z"/></svg>
+                  <svg class="icon-vol w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  <svg class="icon-mute w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
                 </button>
                 <input type="range" min="0" max="100" value="100" aria-label="音量" class="volume-slider w-20 accent-[#ff8184]">
               </div>
@@ -212,35 +221,35 @@ const durationOf = (song: any): number | undefined => {
         <!-- volume (md+) -->
         <div class="hidden md:flex items-center gap-1.5 shrink-0 text-slate-600">
           <button class="ctl-mute p-1.5 rounded-full hover:bg-slate-100" aria-label="ミュート">
-            <svg class="icon-vol w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a4.5 4.5 0 00-2.5-4v8a4.5 4.5 0 002.5-4z"/></svg>
-            <svg class="icon-mute w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M3 10v4h4l5 5V5L7 10H3zm16.6 2l2.1-2.1-1.4-1.4-2.1 2.1-2.1-2.1-1.4 1.4 2.1 2.1-2.1 2.1 1.4 1.4 2.1-2.1 2.1 2.1 1.4-1.4-2.1-2.1z"/></svg>
+            <svg class="icon-vol w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+            <svg class="icon-mute w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
           </button>
           <input type="range" min="0" max="100" value="100" aria-label="音量" class="volume-slider w-20 accent-[#ff8184]">
         </div>
 
         <div class="flex items-center gap-0 sm:gap-1 shrink-0 text-slate-600">
           <button class="ctl-prev p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="前へ">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4" fill="currentColor"/><line x1="19" x2="19" y1="5" y2="19"/></svg>
           </button>
           <button class="ctl-play play-btn-themed p-2 sm:p-2.5 rounded-full bg-ink text-white hover:opacity-90" aria-label="再生/一時停止">
-            <svg class="icon-play w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <svg class="icon-pause w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+            <svg class="icon-play w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>
+            <svg class="icon-pause w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>
           </button>
           <button class="ctl-next p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="次へ">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 4 9 12 19 20 19 4" fill="currentColor"/><line x1="5" x2="5" y1="5" y2="19"/></svg>
           </button>
           <button class="ctl-repeat relative p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="リピート切替">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 2l4 4-4 4M3 11V9a4 4 0 014-4h14M7 22l-4-4 4-4m14 1v2a4 4 0 01-4 4H3"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
             <span class="repeat-one hidden absolute -top-0.5 -right-0.5 text-[9px] font-bold bg-madoka text-white rounded-full w-3.5 h-3.5 flex items-center justify-center">1</span>
           </button>
           <button class="ctl-shuffle p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="シャッフル再生">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.66 6.83l-1.41 1.41 3.13 3.13L14.5 16H20v-5.5l-2.04 2.04-2.8-2.71z"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h4c2 0 4-1.2 6-6s4-6 6-6h4" /><path d="m18 2 4 4-4 4" /><path d="M2 6h4c2 0 4 1.2 6 6s4 6 6 6h4" /><path d="m18 14 4 4-4 4" /></svg>
           </button>
           <a id="barYoutube" href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTubeで開く" class="p-2 rounded-full hover:bg-slate-100 hidden lg:inline-flex text-[#ff0000]">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
           </a>
           <button id="closePlayerBtn" aria-label="閉じる" class="p-1.5 sm:p-2 rounded-full hover:bg-slate-100 text-slate-400">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
       </div>
@@ -290,6 +299,7 @@ const durationOf = (song: any): number | undefined => {
   let filterMember = 'all';
   let filterCategory = 'all';
   let searchText = '';
+  let viewMode: 'songs' | 'streams' = 'songs';
 
   const songsDataEl = document.getElementById('songs-data');
   const songs = songsDataEl ? JSON.parse(songsDataEl.getAttribute('data-songs') || '[]') : [];
@@ -319,23 +329,72 @@ const durationOf = (song: any): number | undefined => {
     return f;
   }
 
-  function filterSongs() {
-    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-    searchText = searchInput ? searchInput.value.trim().toLowerCase() : '';
-    document.getElementById('clearSearch')?.classList.toggle('hidden', !searchText);
+  // 一覧の段階表示（多すぎてページ下部に行けない問題への対策）
+  const PAGE_SIZE = 24;
+  let shownCount = PAGE_SIZE;
+
+  // 現在の絞り込み結果のうち先頭 shownCount 件だけ表示し、残りは「さらに表示」に隠す
+  function applyDisplay() {
     const filtered = getFiltered();
-    const matchedIds = new Set(filtered.map((s: any) => s.id));
+    const visibleIds = new Set(filtered.slice(0, shownCount).map((s: any) => s.id));
     document.querySelectorAll('.song-card-item').forEach(card => {
-      card.classList.toggle('hidden', !matchedIds.has(card.getAttribute('data-id')));
+      card.classList.toggle('hidden', !visibleIds.has(card.getAttribute('data-id')));
     });
     const countEl = document.getElementById('resultCount');
     if (countEl) countEl.textContent = `${filtered.length} 曲`;
+
+    const remaining = filtered.length - shownCount;
+    const moreWrap = document.getElementById('moreWrap');
+    const moreCount = document.getElementById('moreCount');
+    moreWrap?.classList.toggle('hidden', remaining <= 0);
+    if (moreCount) moreCount.textContent = remaining > 0 ? `（残り${remaining}曲）` : '';
+
     const emptyState = document.getElementById('emptyState');
     const emptyQuery = document.getElementById('emptyQuery');
     if (filtered.length === 0) {
       emptyState?.classList.remove('hidden');
       if (emptyQuery) emptyQuery.textContent = searchText;
     } else emptyState?.classList.add('hidden');
+  }
+
+  // 絞り込み・検索が変わったときの入口（表示件数をリセットして先頭から）
+  function filterSongs() {
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    searchText = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    document.getElementById('clearSearch')?.classList.toggle('hidden', !searchText);
+    shownCount = PAGE_SIZE;
+    refresh();
+  }
+
+  // 現在のビューに応じて一覧を再描画
+  function refresh() {
+    if (viewMode === 'streams') renderStreams();
+    else applyDisplay();
+  }
+
+  // ビュー切替（曲一覧 / 配信一覧）
+  function setView(mode: 'songs' | 'streams') {
+    viewMode = mode;
+    const isStreams = mode === 'streams';
+    document.getElementById('view-songs')?.setAttribute('aria-pressed', String(!isStreams));
+    document.getElementById('view-streams')?.setAttribute('aria-pressed', String(isStreams));
+    document.getElementById('songGrid')?.classList.toggle('hidden', isStreams);
+    document.getElementById('streamGrid')?.classList.toggle('hidden', !isStreams);
+    document.getElementById('streamSort')?.classList.toggle('hidden', !isStreams);
+    if (isStreams) {
+      document.getElementById('moreWrap')?.classList.add('hidden');
+      document.getElementById('emptyState')?.classList.add('hidden');
+    } else {
+      document.getElementById('streamEmpty')?.classList.add('hidden');
+    }
+    const si = document.getElementById('searchInput') as HTMLInputElement | null;
+    if (si) si.placeholder = isStreams ? '配信タイトル・日付・曲名で検索' : '曲名・アーティスト・タグで検索';
+    refresh();
+  }
+
+  function loadMore() {
+    shownCount += PAGE_SIZE;
+    applyDisplay();
   }
 
   function clearSearch() {
@@ -678,10 +737,11 @@ const durationOf = (song: any): number | undefined => {
       let g = map.get(vid);
       if (!g) {
         g = { videoId: vid, title: s.streamTitle || s.title, date: s.streamDate || '',
-              category: s.category, streamType: s.streamType || '', performers: new Set<string>(), songs: [] };
+              category: s.category, streamType: s.streamType || '', performers: new Set<string>(), songs: [], views: 0 };
         map.set(vid, g);
       }
       (s.performers || []).forEach((p: string) => g.performers.add(p));
+      g.views = Math.max(g.views, s.youtube?.viewCount || 0);
       g.songs.push(s);
     }
     return [...map.values()]
@@ -689,39 +749,77 @@ const durationOf = (song: any): number | undefined => {
       .sort((a, b) => b.date.localeCompare(a.date));
   }
 
+  // 配信カードの中身（新着スライダー／配信ビューで共用）
+  function streamCardInner(g: any) {
+    const performerBadges = g.performers.map((p: string) =>
+      `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
+    const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
+    const catLabel = CAT_LABEL[g.category] || g.category;
+    // ソロ/コラボ歌枠バッジは歌枠のみ（歌ってみた/ショートでは出さない）
+    const typeLabel = g.category !== 'uta_waku' ? '' : (g.streamType === 'solo' ? 'ソロ歌枠' : g.streamType === 'collab' ? 'コラボ歌枠' : '');
+    const typeBadge = typeLabel
+      ? `<span class="absolute top-2 left-2 text-[11px] font-semibold text-white bg-slate-900/70 px-1.5 py-0.5 rounded">${typeLabel}</span>`
+      : '';
+    return `
+      <div class="relative aspect-video bg-slate-100 overflow-hidden">
+        <img src="${thumbUrl}" alt="" onerror="this.style.opacity='0.3'" class="w-full h-full object-cover block">
+        ${typeBadge}
+        <span class="absolute bottom-2 left-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${catLabel}</span>
+        <span class="absolute bottom-2 right-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${g.songs.length}曲</span>
+      </div>
+      <div class="p-3">
+        <p class="text-sm font-semibold text-ink leading-snug clamp-2 min-h-[2.5em]">${g.title}</p>
+        <div class="flex flex-wrap items-center gap-1.5 mt-2">
+          ${performerBadges}
+          <span class="text-[11px] text-slate-400 ml-auto">${g.date}</span>
+        </div>
+      </div>`;
+  }
+
+  // 新着は直近 NEW_LIMIT 件だけ（全件は「配信」ビューで見られる）
+  const NEW_LIMIT = 12;
   function renderNewSlider() {
     const slider = document.getElementById('newSlider');
     if (!slider) return;
-    const streams = buildStreams();
-    slider.innerHTML = streams.map(g => {
-      const performerBadges = g.performers.map((p: string) =>
-        `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
-      const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
-      const catLabel = CAT_LABEL[g.category] || g.category;
-      // ソロ/コラボ歌枠バッジは歌枠のみ（歌ってみた/ショートでは出さない）
-      const typeLabel = g.category !== 'uta_waku' ? '' : (g.streamType === 'solo' ? 'ソロ歌枠' : g.streamType === 'collab' ? 'コラボ歌枠' : '');
-      const typeBadge = typeLabel
-        ? `<span class="absolute top-2 left-2 text-[11px] font-semibold text-white bg-slate-900/70 px-1.5 py-0.5 rounded">${typeLabel}</span>`
-        : '';
-      return `
-        <button type="button" data-video-id="${g.videoId}"
-                class="new-card snap-start shrink-0 w-64 card overflow-hidden text-left hover:shadow-md transition">
-          <div class="relative aspect-video bg-slate-100 overflow-hidden">
-            <img src="${thumbUrl}" alt="" onerror="this.style.opacity='0.3'" class="w-full h-full object-cover block">
-            ${typeBadge}
-            <span class="absolute bottom-2 left-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${catLabel}</span>
-            <span class="absolute bottom-2 right-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${g.songs.length}曲</span>
-          </div>
-          <div class="p-3">
-            <p class="text-sm font-semibold text-ink leading-snug clamp-2 min-h-[2.5em]">${g.title}</p>
-            <div class="flex flex-wrap items-center gap-1.5 mt-2">
-              ${performerBadges}
-              <span class="text-[11px] text-slate-400 ml-auto">${g.date}</span>
-            </div>
-          </div>
-        </button>`;
-    }).join('');
+    slider.innerHTML = buildStreams().slice(0, NEW_LIMIT).map(g =>
+      `<button type="button" data-video-id="${g.videoId}"
+               class="new-card snap-start shrink-0 w-64 card overflow-hidden text-left hover:shadow-md transition">${streamCardInner(g)}</button>`
+    ).join('');
     updateSliderArrows();
+  }
+
+  // 配信ビュー: 絞り込み済みの配信一覧
+  function getFilteredStreams() {
+    let list = buildStreams();
+    if (filterMember === 'ayane') list = list.filter((g: any) => g.performers.includes('白砂あやね'));
+    else if (filterMember === 'madoka') list = list.filter((g: any) => g.performers.includes('水面まどか'));
+    else if (filterMember === 'duet') list = list.filter((g: any) => g.performers.length > 1);
+    if (filterCategory !== 'all') list = list.filter((g: any) => g.category === filterCategory);
+    if (searchText) {
+      list = list.filter((g: any) => {
+        const hay = [g.title, g.date, g.performers.join(' '),
+          g.songs.map((s: any) => `${s.title} ${s.artist || ''}`).join(' ')].join(' ').toLowerCase();
+        return hay.includes(searchText);
+      });
+    }
+    const sortVal = (document.getElementById('streamSort') as HTMLSelectElement)?.value || 'date_desc';
+    if (sortVal === 'date_asc') list.sort((a: any, b: any) => a.date.localeCompare(b.date));
+    else if (sortVal === 'views') list.sort((a: any, b: any) => (b.views || 0) - (a.views || 0));
+    else list.sort((a: any, b: any) => b.date.localeCompare(a.date));
+    return list;
+  }
+
+  function renderStreams() {
+    const grid = document.getElementById('streamGrid');
+    if (!grid) return;
+    const list = getFilteredStreams();
+    const countEl = document.getElementById('resultCount');
+    if (countEl) countEl.textContent = `${list.length} 配信`;
+    grid.innerHTML = list.map((g: any) =>
+      `<button type="button" data-video-id="${g.videoId}"
+               class="stream-card card overflow-hidden text-left hover:shadow-md transition">${streamCardInner(g)}</button>`
+    ).join('');
+    document.getElementById('streamEmpty')?.classList.toggle('hidden', list.length !== 0);
   }
 
   function playStream(videoId: string) {
@@ -733,13 +831,16 @@ const durationOf = (song: any): number | undefined => {
   }
 
   function updateSliderArrows() {
+    // ループするので矢印は常に有効。スクロールできない（全件が画面内）ときだけ隠す。
     const slider = document.getElementById('newSlider');
     const prev = document.getElementById('newPrev') as HTMLButtonElement | null;
     const next = document.getElementById('newNext') as HTMLButtonElement | null;
     if (!slider || !prev || !next) return;
-    const max = slider.scrollWidth - slider.clientWidth;
-    prev.disabled = slider.scrollLeft <= 1;
-    next.disabled = slider.scrollLeft >= max - 1;
+    const scrollable = slider.scrollWidth - slider.clientWidth > 1;
+    prev.disabled = false;
+    next.disabled = false;
+    prev.classList.toggle('hidden', !scrollable);
+    next.classList.toggle('hidden', !scrollable);
   }
 
   function setPressed(ids: string[], activeId: string) {
@@ -749,9 +850,22 @@ const durationOf = (song: any): number | undefined => {
   document.addEventListener('DOMContentLoaded', () => {
     if (songs.length > 0) renderNewSlider();
 
+    // 初期表示も段階表示にする（先頭 PAGE_SIZE 件のみ）
+    applyDisplay();
+    document.getElementById('loadMoreBtn')?.addEventListener('click', loadMore);
+
     // 新着スライダー操作
     const slider = document.getElementById('newSlider');
-    const scrollByCard = (dir: number) => slider?.scrollBy({ left: dir * (slider.clientWidth * 0.8), behavior: 'smooth' });
+    // 端まで来たら反対側へループ（末尾で「次」→先頭、先頭で「前」→末尾）
+    const scrollByCard = (dir: number) => {
+      if (!slider) return;
+      const max = slider.scrollWidth - slider.clientWidth;
+      const step = slider.clientWidth * 0.8;
+      let target = slider.scrollLeft + dir * step;
+      if (dir > 0 && slider.scrollLeft >= max - 1) target = 0;
+      else if (dir < 0 && slider.scrollLeft <= 1) target = max;
+      slider.scrollTo({ left: target, behavior: 'smooth' });
+    };
     document.getElementById('newPrev')?.addEventListener('click', () => scrollByCard(-1));
     document.getElementById('newNext')?.addEventListener('click', () => scrollByCard(1));
     slider?.addEventListener('scroll', updateSliderArrows, { passive: true });
@@ -837,6 +951,18 @@ const durationOf = (song: any): number | undefined => {
       const id = card?.getAttribute('data-id');
       const song = id ? songs.find((s: any) => s.id === id) : null;
       if (song) playSong(song);
+    });
+
+    // ビュー切替（曲 / 配信）
+    document.getElementById('view-songs')?.addEventListener('click', () => setView('songs'));
+    document.getElementById('view-streams')?.addEventListener('click', () => setView('streams'));
+    document.getElementById('streamSort')?.addEventListener('change', renderStreams);
+
+    // 配信カードをクリック → その配信まるごと再生キューへ
+    document.getElementById('streamGrid')?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.stream-card');
+      const vid = btn?.getAttribute('data-video-id');
+      if (vid) playStream(vid);
     });
   });
 </script>

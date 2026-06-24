@@ -35,7 +35,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <!-- ロード画面（読み込み完了でフェードアウト） -->
   <div id="siteLoader" class="site-loader" aria-hidden="true">
     <div class="loader-inner">
-      <span class="font-display loader-word">うみゃみー<span class="loader-accent">Music</span></span>
+      <div class="loader-lockup">
+        <img src={`${base}/logo.svg`} alt="うみゃみーMusic" class="loader-logo" />
+      </div>
       <span class="loader-bar"><span class="loader-bar-fill"></span></span>
     </div>
   </div>
@@ -47,44 +49,36 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       background: #ffffff; transition: opacity .4s ease, visibility .4s ease;
     }
     .site-loader.is-hidden { opacity: 0; visibility: hidden; }
-    .loader-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-    .loader-word { font-size: 1.5rem; font-weight: 800; color: #0f172a; letter-spacing: -.01em; }
-    .loader-accent { background: linear-gradient(90deg,#ff8184,#54a2e5); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .loader-inner { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .loader-lockup { display: flex; align-items: center; gap: 12px; }
+    .loader-logo { height: 44px; width: auto; filter: drop-shadow(0 4px 14px rgba(255,129,132,.18)); }
     .loader-bar { width: 160px; height: 4px; border-radius: 9999px; background: #eef2f7; overflow: hidden; }
     .loader-bar-fill { display: block; width: 40%; height: 100%; border-radius: 9999px; background: linear-gradient(90deg,#ff8184,#54a2e5); animation: loaderSlide 1s ease-in-out infinite; }
     @keyframes loaderSlide { 0% { transform: translateX(-120%); } 100% { transform: translateX(320%); } }
     @media (prefers-reduced-motion: reduce) { .loader-bar-fill { animation: none; width: 100%; } }
+    /* 日本語の不自然な改行を抑制（句読点・小書き仮名・閉じ括弧の行頭を避け、文節で折り返す） */
+    .jp-text { word-break: auto-phrase; line-break: strict; }
   </style>
 
   <!-- Header -->
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-      <a href={`${base}/`} class="flex items-center gap-2.5 group">
-        <svg class="w-8 h-8 shrink-0 transition group-hover:scale-105" viewBox="0 0 64 64" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#ff8184"/><stop offset="1" stop-color="#54a2e5"/>
-            </linearGradient>
-          </defs>
-          <rect width="64" height="64" rx="16" fill="url(#logoGrad)"/>
-          <g fill="#fff">
-            <ellipse cx="26" cy="43" rx="10" ry="8" transform="rotate(-16 26 43)"/>
-            <rect x="34" y="18" width="3.6" height="25" rx="1.8"/>
-            <path d="M37.6 18 C45.5 19 49.5 24 46.2 30.5 C47 25 43 21.8 37.6 22.8 Z"/>
-          </g>
-        </svg>
-        <span class="font-display text-xl font-extrabold tracking-tight text-ink">
-          うみゃみー<span class="bg-gradient-to-r from-[#ff8184] to-[#54a2e5] bg-clip-text text-transparent">Music</span>
-        </span>
+      <a href={`${base}/`} class="flex items-center group">
+        <img src={`${base}/logo.svg`} alt="うみゃみーMusic" class="h-8 w-auto transition group-hover:scale-[1.02]" />
       </a>
 
       <div class="flex items-center gap-1">
         <button id="historyBtn" type="button" aria-label="再生履歴"
                 class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 2m6-2a9 9 0 11-3.5-7.1M21 3v4h-4"/></svg>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
           <span class="hidden sm:inline">履歴</span>
         </button>
-        <button id="aboutBtn" type="button" aria-label="このサイトについて"
+        <button type="button" data-open="members" aria-label="うみゃみーについて"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="hidden sm:inline">うみゃみーについて</span>
+        </button>
+        <button type="button" data-open="about" aria-label="このサイトについて"
                 class="ml-1 inline-flex items-center justify-center w-9 h-9 rounded-full text-slate-500 hover:text-ink hover:bg-slate-100 transition">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8">
             <circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 11v5"/><circle cx="12" cy="7.8" r=".6" fill="currentColor"/>
@@ -96,25 +90,108 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   <slot />
 
-  <!-- About modal -->
-  <div id="aboutModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
-    <div id="aboutBackdrop" class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-lg card p-6 sm:p-7 max-h-[85vh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
-      <button id="aboutClose" type="button" aria-label="閉じる"
+  <!-- うみゃみーについて（メンバー紹介）modal -->
+  <div id="membersModal" class="modal-root hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" data-close></div>
+    <div class="jp-text relative w-full max-w-lg card p-6 sm:p-7 max-h-[85vh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="membersTitle">
+      <button type="button" aria-label="閉じる" data-close
               class="absolute top-4 right-4 w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:text-ink hover:bg-slate-100 transition">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
 
-      <h2 id="aboutTitle" class="font-display text-lg font-extrabold text-ink">うみゃみーMusic について</h2>
+      <h2 id="membersTitle" class="font-display text-lg font-extrabold text-ink">うみゃみーについて</h2>
       <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-        にじさんじ所属「うみゃみー」（<span class="font-semibold text-madoka">水面まどかさん</span>・<span class="font-semibold text-ayane">白砂あやねさん</span>）の歌枠・歌ってみたを、タイムスタンプ付きでまとめた有志による非公式サイトです。
+        「<span class="font-semibold text-ink">うみゃみー</span>」は、ANYCOLOR株式会社が運営するバーチャルライバーグループ「にじさんじ」より、2026年1月29日にデビューした、<span class="font-semibold text-madoka whitespace-nowrap">水面まどかさん</span>・<span class="font-semibold text-ayane whitespace-nowrap">白砂あやねさん</span>の女子高生の親友コンビによる同期ユニット。
       </p>
 
-      <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500 leading-relaxed">
-        本サイトは非公式です。ANYCOLOR株式会社およびにじさんじ公式とは一切関係ありません。掲載情報の正確性は保証しません。動画本体はホストせず、YouTube への埋め込み・リンクのみを掲載しています。問題がある場合はお問い合わせください。
+      <!-- 水面まどか -->
+      <div class="mt-5 rounded-xl border border-slate-200 overflow-hidden">
+        <div class="h-1.5" style="background:#ff8184"></div>
+        <div class="p-4">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-bold text-ink">水面まどか <span class="text-xs font-medium text-slate-400">みなも まどか</span></h3>
+            <div class="flex gap-2 shrink-0">
+              <a href="https://www.youtube.com/@MinamoMadoka" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-madoka hover:underline">YouTube</a>
+              <a href="https://x.com/Madoka_Minamo" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-madoka hover:underline">X</a>
+            </div>
+          </div>
+          <blockquote class="mt-2 text-sm text-slate-600 leading-relaxed border-l-2 border-[#ff8184] pl-3">
+            「流行りの服とメイクでキメてるけど、実は創作にかける情熱は誰にも負けないギャル。ファッションもメイクも、日常で目にするもの全部をイラストや表現のネタにしちゃう。いつか自分の作品をアニメにして、みんなに届けるのが夢。」
+          </blockquote>
+        </div>
       </div>
 
-      <div class="mt-5">
+      <!-- 白砂あやね -->
+      <div class="mt-4 rounded-xl border border-slate-200 overflow-hidden">
+        <div class="h-1.5" style="background:#54a2e5"></div>
+        <div class="p-4">
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="font-bold text-ink">白砂あやね <span class="text-xs font-medium text-slate-400">しらさ あやね</span></h3>
+            <div class="flex gap-2 shrink-0">
+              <a href="https://www.youtube.com/@ShirasaAyane" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-ayane hover:underline">YouTube</a>
+              <a href="https://x.com/shirasa_ayane" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-ayane hover:underline">X</a>
+            </div>
+          </div>
+          <blockquote class="mt-2 text-sm text-slate-600 leading-relaxed border-l-2 border-[#54a2e5] pl-3">
+            「いつも真面目で、授業も部活も完璧にこなす優等生。しかし実は、いつもノートの端には物語のワンシーンやキャラクターのスケッチが描かれている。いつか自分の声や描いた物語で、たくさんの人を楽しませたいと思っている。」
+          </blockquote>
+        </div>
+      </div>
+
+      <p class="mt-4 text-[11px] text-slate-400 leading-relaxed">
+        プロフィール文は
+        <a href="https://www.nijisanji.jp/news/1n2owk3cufgm" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">にじさんじ公式</a>
+        より引用。各種情報の参照元：
+        <a href="https://wikiwiki.jp/nijisanji/%E6%B0%B4%E9%9D%A2%E3%81%BE%E3%81%A9%E3%81%8B" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">にじさんじ非公式Wiki（水面まどか）</a>・<a href="https://wikiwiki.jp/nijisanji/%E7%99%BD%E7%A0%82%E3%81%82%E3%82%84%E3%81%AD" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">同（白砂あやね）</a>。
+      </p>
+    </div>
+  </div>
+
+  <!-- このサイトについて（ABOUT）modal -->
+  <div id="aboutModal" class="modal-root hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" data-close></div>
+    <div class="jp-text relative w-full max-w-lg card p-6 sm:p-7 max-h-[85vh] overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <button type="button" aria-label="閉じる" data-close
+              class="absolute top-4 right-4 w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:text-ink hover:bg-slate-100 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <h2 id="aboutTitle" class="font-display text-lg font-extrabold text-ink">このサイトについて</h2>
+      <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+        「うみゃみーMusic」は、にじさんじ所属「うみゃみー」（<span class="font-semibold text-madoka whitespace-nowrap">水面まどかさん</span>・<span class="font-semibold text-ayane whitespace-nowrap">白砂あやねさん</span>）の応援を目的とした非公式ファンサイトです。
+      </p>
+
+      <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4">
+        <p class="text-xs font-semibold text-slate-400 mb-2">注意書き</p>
+        <ul class="text-xs text-slate-500 leading-relaxed space-y-1.5 list-disc pl-4">
+          <li>本サイトは非公式です。ANYCOLOR株式会社およびにじさんじ公式とは一切関係ありません。</li>
+          <li>動画・楽曲などの権利は、ご本人および各権利者に帰属します。本サイトは動画をホストせず、YouTube 公式動画の埋め込み・リンクのみを掲載しています（再アップロード・転載はしていません）。</li>
+          <li>非営利・個人運営であり、収益化は行っていません。</li>
+          <li>掲載情報（曲名・タイムスタンプ等）は有志の手作業によるもので、正確性は保証できません。誤りのご報告は歓迎します。</li>
+          <li>ご本人・関係者の方からのご要望があれば、速やかに修正・削除いたします。</li>
+        </ul>
+      </div>
+
+      <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500 leading-relaxed">
+        <p class="font-semibold text-slate-400 mb-1">情報の参照元</p>
+        セットリスト等は、各動画の概要欄・固定コメント、および
+        <a href="https://wikiwiki.jp/nijisanji/" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">にじさんじ非公式Wiki</a>
+        を参照しています。リスナーの皆様、非公式Wiki様、いつもありがとうございます。
+      </div>
+
+      <div class="mt-4 rounded-xl border border-slate-200 p-4">
+        <p class="text-xs font-semibold text-slate-400 mb-1">お問い合わせ</p>
+        <p class="text-sm text-slate-600 leading-relaxed">
+          ご指摘・削除依頼・お問い合わせは下記までご連絡ください。
+        </p>
+        <a href="https://x.com/teleprompter0" target="_blank" rel="noopener noreferrer"
+           class="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @teleprompter0 ▸ X
+        </a>
+      </div>
+
+      <div class="mt-4">
         <p class="text-xs font-semibold text-slate-400 mb-2">公式チャンネル</p>
         <div class="flex flex-col sm:flex-row gap-2">
           <a href="https://www.youtube.com/@MinamoMadoka" target="_blank" rel="noopener noreferrer"
@@ -126,7 +203,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         </div>
       </div>
 
-      <p class="mt-5 text-[11px] text-slate-400 text-center">© 2026 ファン有志 / 非公式</p>
+      <p class="mt-5 text-[11px] text-slate-400 text-center">© 2026 navi</p>
     </div>
   </div>
 
@@ -138,13 +215,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     else window.addEventListener('load', hideLoader);
     setTimeout(hideLoader, 4000);
 
-    const modal = document.getElementById('aboutModal');
-    const open = () => modal?.classList.remove('hidden');
-    const close = () => modal?.classList.add('hidden');
-    document.getElementById('aboutBtn')?.addEventListener('click', open);
-    document.getElementById('aboutClose')?.addEventListener('click', close);
-    document.getElementById('aboutBackdrop')?.addEventListener('click', close);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    // モーダル開閉（うみゃみーについて / このサイトについて）。
+    // [data-open="about|members"] で開き、[data-close] と Esc で閉じる。
+    const aboutModal = document.getElementById('aboutModal');
+    const membersModal = document.getElementById('membersModal');
+    const openModal = (el: HTMLElement | null) => el?.classList.remove('hidden');
+    const closeAll = () => { aboutModal?.classList.add('hidden'); membersModal?.classList.add('hidden'); };
+    document.querySelectorAll('[data-open]').forEach(btn =>
+      btn.addEventListener('click', () => {
+        const which = btn.getAttribute('data-open');
+        openModal(which === 'members' ? membersModal : aboutModal);
+      }));
+    document.querySelectorAll('[data-close]').forEach(el =>
+      el.addEventListener('click', () => el.closest('.modal-root')?.classList.add('hidden')));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
   </script>
 </body>
 </html>

@@ -15,11 +15,9 @@ interface Props {
     tags?: string[];
     notes?: string;
   };
-  /** 曲の尺（秒）。同一動画の次曲開始秒との差。最後の曲は不明なため undefined */
-  durationSec?: number;
 }
 
-const { song, durationSec } = Astro.props;
+const { song } = Astro.props;
 
 const CAT_LABEL: Record<string, string> = {
   uta_waku: '歌枠',
@@ -38,18 +36,6 @@ const memberChip = (p: string) =>
     ? 'text-[#ff8184] bg-[#ffeef0]'
     : 'text-[#54a2e5] bg-[#eaf4fc]';
 
-const fmtTs = (sec?: number) => {
-  if (!sec && sec !== 0) return null;
-  if (sec === 0) return null;
-  const h = Math.floor(sec / 3600);
-  const m = Math.floor((sec % 3600) / 60);
-  const s = sec % 60;
-  return h > 0
-    ? `${h}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
-    : `${m}:${String(s).padStart(2, '0')}`;
-};
-
-const durString = fmtTs(durationSec); // 曲の尺（長さ）
 const thumbUrl = `https://img.youtube.com/vi/${song.youtube.videoId}/mqdefault.jpg`;
 const isDuet = performers.length > 1;
 ---
@@ -65,7 +51,6 @@ const isDuet = performers.length > 1;
         <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
       </div>
     </div>
-    {durString && <span class="ts-badge">{durString}</span>}
     <span class="playing-badge ts-badge hidden">再生中</span>
   </div>
 
