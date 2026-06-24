@@ -13,6 +13,14 @@ const {
 
 // GitHub Pages で公開されたときに、base パスが自動で考慮されるようにします。
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const siteOrigin = Astro.site ?? new URL("https://umyamy-music.com");
+const canonicalURL = new URL(Astro.url.pathname, siteOrigin);
+const ogImage = new URL(`${base}/og-image.png`, siteOrigin);
+
+// 外部サービスのID（取得後にここへ設定。空のうちは読み込まれません）
+const GA_ID = "";        // Google アナリティクス4 測定ID（例: G-XXXXXXXXXX）
+const GSC_VERIFY = "";   // Search Console 確認用メタ（DNS確認なら不要）
 ---
 
 <!DOCTYPE html>
@@ -29,9 +37,36 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   <meta name="theme-color" content="#ff8184" />
   <meta name="generator" content={Astro.generator} />
 
+  <link rel="canonical" href={canonicalURL} />
+  {GSC_VERIFY && <meta name="google-site-verification" content={GSC_VERIFY} />}
+
+  <!-- OGP / Twitter Card（SNS共有時の見え方） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="うみゃみーMusic" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  {GA_ID && (
+    <Fragment>
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+      <script is:inline define:vars={{ GA_ID }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      </script>
+    </Fragment>
+  )}
 </head>
 <body class="min-h-screen flex flex-col">
 
@@ -180,6 +215,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         セットリスト等は、各動画の概要欄・固定コメント、および
         <a href="https://wikiwiki.jp/nijisanji/" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">にじさんじ非公式Wiki</a>
         を参照しています。リスナーの皆様、非公式Wiki様、いつもありがとうございます。
+      </div>
+
+      <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500 leading-relaxed">
+        <p class="font-semibold text-slate-400 mb-1">アクセス解析について</p>
+        本サイトでは品質改善のため Google アナリティクス（GA4）を利用し、Cookie によってアクセス状況を匿名で収集します。氏名など、あなたを直接特定する情報は取得しません。ブラウザの設定で Cookie を無効化することで収集を拒否できます。詳しくは
+        <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">Google のポリシーとプライバシー</a>
+        をご覧ください。
       </div>
 
       <div class="mt-4 rounded-xl border border-slate-200 p-4">
