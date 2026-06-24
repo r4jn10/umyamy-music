@@ -1,0 +1,16 @@
+{
+  "name": "うみゃみーMusic",
+  "short_name": "うみゃみー",
+  "description": "水面まどかさん・白砂あやねさんの歌枠・歌ってみたをまとめた非公式まとめサイト",
+  "lang": "ja",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff8184",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
