@@ -161,11 +161,18 @@ const lastUpdated = songsData.updatedAt;
                 <h3 id="sheetTitle" class="font-bold text-ink truncate">—</h3>
                 <p id="sheetMeta" class="text-xs text-slate-400 truncate">—</p>
               </div>
-              <a id="sheetYoutube" href="#" target="_blank" rel="noopener noreferrer"
-                 class="shrink-0 inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#ff0000] px-3 py-2 rounded-lg">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
-                YouTube
-              </a>
+              <div class="shrink-0 flex items-center gap-2">
+                <button id="sheetShare" type="button" aria-label="Xで共有"
+                        class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 px-3 py-2 rounded-lg transition">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  共有
+                </button>
+                <a id="sheetYoutube" href="#" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-[#ff0000] px-3 py-2 rounded-lg">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                  YouTube
+                </a>
+              </div>
             </div>
             <!-- Seek bar（曲内の再生位置） -->
             <div class="mt-3 flex items-center gap-2 text-[11px] text-slate-400 tabular-nums">
@@ -176,14 +183,14 @@ const lastUpdated = songsData.updatedAt;
             <!-- Sheet controls -->
             <div class="mt-3 flex items-center justify-center gap-1 text-slate-600">
               <button class="ctl-prev p-2 rounded-full hover:bg-slate-100" aria-label="前へ">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4" fill="currentColor"/><line x1="19" x2="19" y1="5" y2="19"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 4 9 12 19 20 19 4" fill="currentColor"/><line x1="5" x2="5" y1="5" y2="19"/></svg>
               </button>
               <button class="ctl-play play-btn-themed p-3 rounded-full bg-ink text-white hover:opacity-90" aria-label="再生/一時停止">
                 <svg class="icon-play w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>
                 <svg class="icon-pause w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>
               </button>
               <button class="ctl-next p-2 rounded-full hover:bg-slate-100" aria-label="次へ">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 4 9 12 19 20 19 4" fill="currentColor"/><line x1="5" x2="5" y1="5" y2="19"/></svg>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4" fill="currentColor"/><line x1="19" x2="19" y1="5" y2="19"/></svg>
               </button>
               <button class="ctl-repeat relative p-2 rounded-full hover:bg-slate-100" aria-label="リピート切替">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
@@ -194,7 +201,8 @@ const lastUpdated = songsData.updatedAt;
               </button>
               <div class="flex items-center gap-1 ml-2">
                 <button class="ctl-mute p-1.5 rounded-full hover:bg-slate-100" aria-label="ミュート">
-                  <svg class="icon-vol w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  <svg class="icon-vol w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                  <svg class="icon-vol-low w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
                   <svg class="icon-mute w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
                 </button>
                 <input type="range" min="0" max="100" value="100" aria-label="音量" class="volume-slider w-20 accent-[#ff8184]">
@@ -234,22 +242,23 @@ const lastUpdated = songsData.updatedAt;
         <!-- volume (md+) -->
         <div class="hidden md:flex items-center gap-1.5 shrink-0 text-slate-600">
           <button class="ctl-mute p-1.5 rounded-full hover:bg-slate-100" aria-label="ミュート">
-            <svg class="icon-vol w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-            <svg class="icon-mute w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
+            <svg class="icon-vol w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <svg class="icon-vol-low w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  <svg class="icon-mute w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
           </button>
           <input type="range" min="0" max="100" value="100" aria-label="音量" class="volume-slider w-20 accent-[#ff8184]">
         </div>
 
         <div class="flex items-center gap-0 sm:gap-1 shrink-0 text-slate-600">
           <button class="ctl-prev p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="前へ">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4" fill="currentColor"/><line x1="19" x2="19" y1="5" y2="19"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 4 9 12 19 20 19 4" fill="currentColor"/><line x1="5" x2="5" y1="5" y2="19"/></svg>
           </button>
           <button class="ctl-play play-btn-themed p-2 sm:p-2.5 rounded-full bg-ink text-white hover:opacity-90" aria-label="再生/一時停止">
             <svg class="icon-play w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>
             <svg class="icon-pause w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>
           </button>
           <button class="ctl-next p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="次へ">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 4 9 12 19 20 19 4" fill="currentColor"/><line x1="5" x2="5" y1="5" y2="19"/></svg>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4" fill="currentColor"/><line x1="19" x2="19" y1="5" y2="19"/></svg>
           </button>
           <button class="ctl-repeat relative p-1.5 sm:p-2 rounded-full hover:bg-slate-100" aria-label="リピート切替">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
@@ -443,7 +452,7 @@ const lastUpdated = songsData.updatedAt;
   // ===== 下部音楽プレーヤー（YouTube IFrame API） =====
   type RepeatMode = 'all' | 'one' | 'off';
   let ytPlayer: any = null, pending: any = null;
-  let queue: any[] = [], qIndex = -1, isPlaying = false;
+  let queue: any[] = [], qIndex = -1, isPlaying = false, nowPlaying: any = null;
   let repeatMode: RepeatMode = 'all';   // 連続再生 → 1曲リピート → オフ
   let lastVolume = 100, isMuted = false;
   // 曲は「動画内の [開始秒, 終了秒) 区間」。終了秒は同一動画の次曲の開始秒（最後の曲は動画終端=ENDEDに委譲）
@@ -639,8 +648,11 @@ const lastUpdated = songsData.updatedAt;
   }
   function updateVolumeUI() {
     const off = isMuted || lastVolume === 0;
+    const low = !off && lastVolume <= 50;   // 小音量（1〜50）
+    const high = !off && lastVolume > 50;   // 大音量（51〜100）
     document.querySelectorAll('.volume-slider').forEach(s => (s as HTMLInputElement).value = String(isMuted ? 0 : lastVolume));
-    document.querySelectorAll('.icon-vol').forEach(el => el.classList.toggle('hidden', off));
+    document.querySelectorAll('.icon-vol').forEach(el => el.classList.toggle('hidden', !high));
+    document.querySelectorAll('.icon-vol-low').forEach(el => el.classList.toggle('hidden', !low));
     document.querySelectorAll('.icon-mute').forEach(el => el.classList.toggle('hidden', !off));
   }
   function setVolume(v: number) {
@@ -683,6 +695,7 @@ const lastUpdated = songsData.updatedAt;
 
   function current(song: any) {
     if (!song) return;
+    nowPlaying = song;
     loadVideo(song);
     updateBar(song);
     applyTheme(song);
@@ -691,6 +704,21 @@ const lastUpdated = songsData.updatedAt;
     renderUpNext();
     document.getElementById('player')?.classList.remove('hidden');
     document.body.style.paddingBottom = '5.75rem';
+  }
+
+  // ----- Xで共有（曲名・アーティスト・歌唱者を本文に、URLは該当のYouTube動画） -----
+  function shareSong(song: any) {
+    if (!song) return;
+    const performers = orderPerformers(song.performers || []).join('・');
+    const lines = ['#NowPlaying', `${song.title}${song.artist ? ' / ' + song.artist : ''}`];
+    if (performers) lines.push(`うた：${performers}`);
+    const text = lines.join('\n');
+    const sec = song.youtube?.timestampSec || 0;
+    const ytUrl = song.youtube?.url
+      || `https://www.youtube.com/watch?v=${song.youtube?.videoId}${sec ? '&t=' + sec : ''}`;
+    const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
+      + `&url=${encodeURIComponent(ytUrl)}`;
+    window.open(intent, '_blank', 'noopener,noreferrer');
   }
 
   function playSong(song: any) {
@@ -1019,11 +1047,22 @@ const lastUpdated = songsData.updatedAt;
     }));
 
     document.getElementById('songGrid')?.addEventListener('click', (e) => {
+      // 共有ボタンが押されたら再生せず共有
+      const share = (e.target as HTMLElement).closest('.card-share');
+      if (share) {
+        const sid = share.getAttribute('data-id');
+        const ss = sid ? songs.find((s: any) => s.id === sid) : null;
+        if (ss) shareSong(ss);
+        return;
+      }
       const card = (e.target as HTMLElement).closest('.song-card-item');
       const id = card?.getAttribute('data-id');
       const song = id ? songs.find((s: any) => s.id === id) : null;
       if (song) playSong(song);
     });
+
+    // プレーヤー（展開シート）の共有ボタン
+    document.getElementById('sheetShare')?.addEventListener('click', () => shareSong(nowPlaying));
 
     // ビュー切替（曲 / 配信 / アーティスト）。タブを直接押したらアーティスト絞り込みは解除
     document.getElementById('view-songs')?.addEventListener('click', () => { filterArtist = null; setView('songs'); });

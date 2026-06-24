@@ -52,6 +52,9 @@ const isDuet = performers.length > 1;
       </div>
     </div>
     <span class="playing-badge ts-badge hidden">再生中</span>
+    <button type="button" class="card-share" data-id={song.id} aria-label="Xで共有">
+      <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </button>
   </div>
 
   <div class="p-4">
@@ -111,4 +114,12 @@ const isDuet = performers.length > 1;
     padding: 2px 7px; border-radius: 6px; font-variant-numeric: tabular-nums;
   }
   .playing-badge { background: #ff8184; left: 8px; right: auto; }
+
+  .card-share {
+    position: absolute; top: 8px; right: 8px; z-index: 10;
+    width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff;
+    transition: background .2s, transform .2s;
+  }
+  .card-share:hover { background: rgba(15,23,42,.85); transform: scale(1.08); }
 </style>
