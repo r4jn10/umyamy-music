@@ -7,9 +7,14 @@ interface Props {
 }
 
 const {
-  title = "うみゃみーMusic",
-  description = "水面まどかさん・白砂あやねさんの歌枠・歌ってみたをまとめた非公式まとめサイトです。"
+  title,
+  description = "うみゃみー（水面まどかさん・白砂あやねさん）の歌枠・歌ってみたをまとめた非公式ファンサイトです。"
 } = Astro.props;
+
+// タイトル定型。ページ名があれば「ページ名 | サイト名」、無ければトップ用に「サイト名 | キャッチコピー」。
+const SITE_NAME = "うみゃみーMusic";
+const SITE_TAGLINE = "非公式ファンサイト";
+const pageTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | ${SITE_TAGLINE}`;
 
 // GitHub Pages で公開されたときに、base パスが自動で考慮されるようにします。
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -32,7 +37,7 @@ const NOINDEX = true;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{title}</title>
+  <title>{pageTitle}</title>
   <meta name="description" content={description}>
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   <link rel="icon" href={`${base}/favicon.ico`} />
@@ -48,12 +53,12 @@ const NOINDEX = true;
   <!-- OGP / Twitter Card（SNS共有時の見え方） -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="うみゃみーMusic" />
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={pageTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:image" content={ogImage} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
+  <meta name="twitter:title" content={pageTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
