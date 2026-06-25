@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-24",
+  "updatedAt": "2026-06-26",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -2923,6 +2923,24 @@
       "tags": [
         "倉持めると"
       ]
+    },
+    {
+      "id": "20260625-eYlfdUpEiNE-001",
+      "title": "とても素敵な六月でした",
+      "artist": "Eight",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "eYlfdUpEiNE",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=eYlfdUpEiNE",
+        "endSec": 52
+      },
+      "streamDate": "2026-06-25",
+      "streamTitle": "【 歌ってみた 】とても素敵な六月でした / Eight 【 水面まどか / にじさんじ】"
     }
   ]
 }
