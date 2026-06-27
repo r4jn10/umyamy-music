@@ -404,7 +404,7 @@ const lastUpdated = songsData.updatedAt;
   function cardHtml(song: any): string {
     const performers = orderPerformers(song.performers || []);
     const isDuet = performers.length > 1;
-    const thumb = `https://img.youtube.com/vi/${song.youtube.videoId}/mqdefault.jpg`;
+    const thumb = `https://img.youtube.com/vi/${encodeURIComponent(song.youtube.videoId)}/mqdefault.jpg`;
     const cat = CAT_LABEL[song.category] || song.category;
     const duetBadge = isDuet
       ? `<span class="text-[10px] px-2 py-0.5 rounded-full font-semibold text-white" style="background:linear-gradient(135deg,#ff8184,#54a2e5)">うみゃみー</span>`
@@ -732,7 +732,7 @@ const lastUpdated = songsData.updatedAt;
   // ----- 再生キュー表示（前の曲 / 再生中 / 次の曲） -----
   const QUEUE_PREV_MAX = 8, QUEUE_NEXT_MAX = 40;  // パネルに出す前後の上限（DOMを軽く保つ）
   function queueRowHtml(s: any, idx: number, dim: boolean) {
-    const thumb = `https://img.youtube.com/vi/${s.youtube.videoId}/default.jpg`;
+    const thumb = `https://img.youtube.com/vi/${encodeURIComponent(s.youtube.videoId)}/default.jpg`;
     return `
       <button type="button" data-qindex="${idx}" class="upnext-item w-full flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100 text-left${dim ? ' opacity-60' : ''}">
         <img src="${thumb}" alt="" loading="lazy" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
@@ -761,7 +761,7 @@ const lastUpdated = songsData.updatedAt;
     const cur = queue[qIndex];
     parts.push(`
       <div data-current class="flex items-center gap-2.5 p-1.5 my-1 rounded-lg bg-slate-50 border border-slate-200">
-        <img src="https://img.youtube.com/vi/${cur.youtube.videoId}/default.jpg" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+        <img src="https://img.youtube.com/vi/${encodeURIComponent(cur.youtube.videoId)}/default.jpg" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
         <div class="min-w-0 flex-1">
           <p class="text-[10px] font-bold accent-text">▶ 再生中</p>
           <p class="text-xs font-semibold text-ink truncate">${escHtml(cur.title)}</p>
@@ -929,13 +929,13 @@ const lastUpdated = songsData.updatedAt;
         list.innerHTML = '<p class="text-sm text-slate-400 py-10 text-center">まだ再生履歴はありません</p>';
       } else {
         list.innerHTML = arr.map((h: any) => {
-          const thumb = `https://img.youtube.com/vi/${h.videoId}/default.jpg`;
+          const thumb = `https://img.youtube.com/vi/${encodeURIComponent(h.videoId)}/default.jpg`;
           return `
-            <button type="button" data-hist-id="${h.id}" class="history-item w-full flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 text-left">
+            <button type="button" data-hist-id="${escHtml(h.id)}" class="history-item w-full flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 text-left">
               <img src="${thumb}" alt="" class="w-12 h-12 rounded object-cover bg-slate-100 shrink-0">
               <div class="min-w-0 flex-1">
-                <p class="text-sm font-semibold text-ink truncate">${h.title}</p>
-                <p class="text-xs text-slate-400 truncate">${h.artist}</p>
+                <p class="text-sm font-semibold text-ink truncate">${escHtml(h.title || '')}</p>
+                <p class="text-xs text-slate-400 truncate">${escHtml(h.artist || '')}</p>
               </div>
             </button>`;
         }).join('');
@@ -983,8 +983,8 @@ const lastUpdated = songsData.updatedAt;
   // 配信カードの中身（新着スライダー／配信ビューで共用）
   function streamCardInner(g: any) {
     const performerBadges = g.performers.map((p: string) =>
-      `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${p}</span>`).join('');
-    const thumbUrl = `https://img.youtube.com/vi/${g.videoId}/mqdefault.jpg`;
+      `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${escHtml(p)}</span>`).join('');
+    const thumbUrl = `https://img.youtube.com/vi/${encodeURIComponent(g.videoId)}/mqdefault.jpg`;
     const catLabel = CAT_LABEL[g.category] || g.category;
     // ソロ/コラボ歌枠バッジは歌枠のみ（歌ってみた/ショートでは出さない）
     const typeLabel = g.category !== 'uta_waku' ? '' : (g.streamType === 'solo' ? 'ソロ歌枠' : g.streamType === 'collab' ? 'コラボ歌枠' : '');
@@ -995,14 +995,14 @@ const lastUpdated = songsData.updatedAt;
       <div class="relative aspect-video bg-slate-100 overflow-hidden">
         <img src="${thumbUrl}" alt="" onerror="this.style.opacity='0.3'" class="w-full h-full object-cover block">
         ${typeBadge}
-        <span class="absolute bottom-2 left-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${catLabel}</span>
+        <span class="absolute bottom-2 left-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${escHtml(catLabel)}</span>
         <span class="absolute bottom-2 right-2 text-[11px] font-semibold text-white bg-slate-900/80 px-1.5 py-0.5 rounded">${g.songs.length}曲</span>
       </div>
       <div class="p-3">
-        <p class="text-sm font-semibold text-ink leading-snug clamp-2 min-h-[2.5em]">${g.title}</p>
+        <p class="text-sm font-semibold text-ink leading-snug clamp-2 min-h-[2.5em]">${escHtml(g.title || '')}</p>
         <div class="flex flex-wrap items-center gap-1.5 mt-2">
           ${performerBadges}
-          <span class="text-[11px] text-slate-400 ml-auto">${g.date}</span>
+          <span class="text-[11px] text-slate-400 ml-auto">${escHtml(g.date || '')}</span>
         </div>
       </div>`;
   }
@@ -1013,7 +1013,7 @@ const lastUpdated = songsData.updatedAt;
     const slider = document.getElementById('newSlider');
     if (!slider) return;
     slider.innerHTML = buildStreams().slice(0, NEW_LIMIT).map(g =>
-      `<button type="button" data-video-id="${g.videoId}"
+      `<button type="button" data-video-id="${escHtml(g.videoId)}"
                class="new-card snap-start shrink-0 w-64 card overflow-hidden text-left hover:shadow-md transition">${streamCardInner(g)}</button>`
     ).join('');
     updateSliderArrows();
@@ -1048,7 +1048,7 @@ const lastUpdated = songsData.updatedAt;
     const countEl = document.getElementById('resultCount');
     if (countEl) countEl.textContent = `${list.length} 配信`;
     grid.innerHTML = list.map((g: any) =>
-      `<button type="button" data-video-id="${g.videoId}"
+      `<button type="button" data-video-id="${escHtml(g.videoId)}"
                class="stream-card card overflow-hidden text-left hover:shadow-md transition">${streamCardInner(g)}</button>`
     ).join('');
     document.getElementById('streamEmpty')?.classList.toggle('hidden', list.length !== 0);
