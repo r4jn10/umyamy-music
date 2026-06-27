@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-27",
+  "updatedAt": "2026-06-28",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -1462,7 +1462,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 1547,
-        "endSec": 1990,
+        "endSec": 1803,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=1547"
       },
       "streamDate": "2026-04-10",
@@ -1480,7 +1480,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 1990,
-        "endSec": 2471,
+        "endSec": 2199,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=1990"
       },
       "streamDate": "2026-04-10",
@@ -1498,7 +1498,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 2471,
-        "endSec": 2903,
+        "endSec": 2702,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=2471"
       },
       "streamDate": "2026-04-10",
@@ -1516,7 +1516,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 2903,
-        "endSec": 3328,
+        "endSec": 3144,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=2903"
       },
       "streamDate": "2026-04-10",
@@ -1534,7 +1534,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 3328,
-        "endSec": 3707,
+        "endSec": 3511,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=3328"
       },
       "streamDate": "2026-04-10",
@@ -1552,7 +1552,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 3707,
-        "endSec": 4131,
+        "endSec": 3899,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=3707"
       },
       "streamDate": "2026-04-10",
@@ -1570,7 +1570,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 4131,
-        "endSec": 4570,
+        "endSec": 4304,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=4131"
       },
       "streamDate": "2026-04-10",
@@ -1588,7 +1588,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 4570,
-        "endSec": 5053,
+        "endSec": 4799,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=4570"
       },
       "streamDate": "2026-04-10",
@@ -1606,7 +1606,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 5053,
-        "endSec": 5432,
+        "endSec": 5252,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=5053"
       },
       "streamDate": "2026-04-10",
@@ -1624,7 +1624,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 5432,
-        "endSec": 5780,
+        "endSec": 5614,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=5432"
       },
       "streamDate": "2026-04-10",
@@ -1642,7 +1642,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 5780,
-        "endSec": 6238,
+        "endSec": 5959,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=5780"
       },
       "streamDate": "2026-04-10",
@@ -1660,7 +1660,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 6238,
-        "endSec": 6599,
+        "endSec": 6422,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=6238"
       },
       "streamDate": "2026-04-10",
@@ -1678,7 +1678,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 6599,
-        "endSec": 6934,
+        "endSec": 6855,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=6599"
       },
       "streamDate": "2026-04-10",
@@ -1697,7 +1697,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 125,
-        "endSec": 735,
+        "endSec": 352,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=125"
       },
       "streamDate": "2026-04-22",
@@ -1717,7 +1717,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 735,
-        "endSec": 1246,
+        "endSec": 949,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=735"
       },
       "streamDate": "2026-04-22",
@@ -1737,7 +1737,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 1246,
-        "endSec": 1962,
+        "endSec": 1446,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1246"
       },
       "streamDate": "2026-04-22",
@@ -1756,7 +1756,8 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 1643,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1643"
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1643",
+        "endSec": 1793
       },
       "streamDate": "2026-04-22",
       "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
@@ -1776,7 +1777,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 1962,
-        "endSec": 2583,
+        "endSec": 2207,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=1962"
       },
       "streamDate": "2026-04-22",
@@ -1795,7 +1796,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 2583,
-        "endSec": 3001,
+        "endSec": 2806,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=2583"
       },
       "streamDate": "2026-04-22",
@@ -1815,7 +1816,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 3001,
-        "endSec": 3524,
+        "endSec": 3259,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3001"
       },
       "streamDate": "2026-04-22",
@@ -1835,7 +1836,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 3524,
-        "endSec": 3993,
+        "endSec": 3720,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3524"
       },
       "streamDate": "2026-04-22",
@@ -1855,7 +1856,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 3993,
-        "endSec": 4619,
+        "endSec": 4258,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=3993"
       },
       "streamDate": "2026-04-22",
@@ -1874,7 +1875,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 4619,
-        "endSec": 5318,
+        "endSec": 4821,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=4619"
       },
       "streamDate": "2026-04-22",
@@ -1883,7 +1884,7 @@
     {
       "id": "20260422-ayane-002",
       "title": "キャットラビング",
-      "artist": "香椎モイミ",
+      "artist": "香椎モイミ feat. 可不",
       "performers": [
         "白砂あやね"
       ],
@@ -1892,7 +1893,8 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 5018,
-        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5018"
+        "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5018",
+        "endSec": 5132
       },
       "streamDate": "2026-04-22",
       "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
@@ -1913,7 +1915,7 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 5318,
-        "endSec": 5988,
+        "endSec": 5556,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5318"
       },
       "streamDate": "2026-04-22",
@@ -1933,12 +1935,15 @@
       "youtube": {
         "videoId": "TJiHLZDFz7g",
         "timestampSec": 5988,
-        "endSec": 6328,
+        "endSec": 6177,
         "url": "https://www.youtube.com/watch?v=TJiHLZDFz7g&t=5988"
       },
       "streamDate": "2026-04-22",
       "unit": "うみゃみー",
-      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
+      "streamTitle": "【うみゃみー / コラボ歌枠】デュエット多め🫶かわいい曲をたくさん歌う！🎤 supported by DAM【白砂あやね / 水面まどか / にじさんじ】",
+      "tags": [
+        "蝸堂みかる"
+      ]
     },
     {
       "id": "20260429-madoka-001",
@@ -1952,7 +1957,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 377,
-        "endSec": 855,
+        "endSec": 665,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=377"
       },
       "streamDate": "2026-04-29",
@@ -1973,7 +1978,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 855,
-        "endSec": 1784,
+        "endSec": 992,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=855"
       },
       "streamDate": "2026-04-29",
@@ -1991,7 +1996,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 1784,
-        "endSec": 2987,
+        "endSec": 2008,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=1784"
       },
       "streamDate": "2026-04-29",
@@ -2012,7 +2017,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 2987,
-        "endSec": 3463,
+        "endSec": 3239,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=2987"
       },
       "streamDate": "2026-04-29",
@@ -2030,7 +2035,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 3463,
-        "endSec": 4235,
+        "endSec": 3692,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=3463"
       },
       "streamDate": "2026-04-29",
@@ -2051,7 +2056,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 4235,
-        "endSec": 4726,
+        "endSec": 4421,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=4235"
       },
       "streamDate": "2026-04-29",
@@ -2069,7 +2074,7 @@
       "youtube": {
         "videoId": "o5s79crPzwo",
         "timestampSec": 4726,
-        "endSec": 5282,
+        "endSec": 4968,
         "url": "https://www.youtube.com/watch?v=o5s79crPzwo&t=4726"
       },
       "streamDate": "2026-04-29",
@@ -2091,12 +2096,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 735,
-        "endSec": 1499,
+        "endSec": 924,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=735"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-002",
@@ -2111,12 +2119,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 1499,
-        "endSec": 2260,
+        "endSec": 1746,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=1499"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-003",
@@ -2131,12 +2142,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 2260,
-        "endSec": 3093,
+        "endSec": 2448,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=2260"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-004",
@@ -2151,12 +2165,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 3093,
-        "endSec": 3604,
+        "endSec": 3283,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=3093"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-005",
@@ -2171,12 +2188,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 3604,
-        "endSec": 4256,
+        "endSec": 3789,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=3604"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-006",
@@ -2191,12 +2211,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 4256,
-        "endSec": 5085,
+        "endSec": 4485,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=4256"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-007",
@@ -2211,12 +2234,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 5085,
-        "endSec": 5543,
+        "endSec": 5276,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=5085"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-008",
@@ -2231,12 +2257,15 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 5543,
-        "endSec": 6187,
+        "endSec": 5731,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=5543"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260516-both-009",
@@ -2251,17 +2280,20 @@
       "youtube": {
         "videoId": "kZxsoR1BmPg",
         "timestampSec": 6187,
-        "endSec": 6854,
+        "endSec": 6443,
         "url": "https://www.youtube.com/watch?v=kZxsoR1BmPg&t=6187"
       },
       "streamDate": "2026-05-16",
       "unit": "うみゃみー",
-      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)"
+      "streamTitle": "【歌枠】にじさんじオリジナル楽曲縛り！歌枠【白砂あやね / 水面まどか / にじさんじ】(白砂あやねのチャンネル)",
+      "tags": [
+        "にじさんじオリ曲"
+      ]
     },
     {
       "id": "20260522-ayane-001",
       "title": "モエチャッカファイア",
-      "artist": "",
+      "artist": "弌誠",
       "performers": [
         "白砂あやね"
       ],
@@ -2270,7 +2302,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 420,
-        "endSec": 845,
+        "endSec": 574,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=420"
       },
       "streamDate": "2026-05-22",
@@ -2279,7 +2311,7 @@
     {
       "id": "20260522-ayane-002",
       "title": "POP IN 2",
-      "artist": "",
+      "artist": "B小町 ルビー(CV:伊駒ゆりえ), 有馬かな(CV:潘めぐみ), MEMちょ(CV:大久保瑠美)",
       "performers": [
         "白砂あやね"
       ],
@@ -2288,7 +2320,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 845,
-        "endSec": 1427,
+        "endSec": 1111,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=845"
       },
       "streamDate": "2026-05-22",
@@ -2306,7 +2338,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 1427,
-        "endSec": 1901,
+        "endSec": 1618,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=1427"
       },
       "streamDate": "2026-05-22",
@@ -2324,7 +2356,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 1901,
-        "endSec": 2494,
+        "endSec": 2155,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=1901"
       },
       "streamDate": "2026-05-22",
@@ -2342,7 +2374,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 2494,
-        "endSec": 2885,
+        "endSec": 2697,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=2494"
       },
       "streamDate": "2026-05-22",
@@ -2360,7 +2392,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 2885,
-        "endSec": 3274,
+        "endSec": 3101,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=2885"
       },
       "streamDate": "2026-05-22",
@@ -2378,7 +2410,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 3274,
-        "endSec": 3774,
+        "endSec": 3522,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=3274"
       },
       "streamDate": "2026-05-22",
@@ -2387,7 +2419,7 @@
     {
       "id": "20260522-ayane-008",
       "title": "モエチャッカファイア",
-      "artist": "",
+      "artist": "弌誠",
       "performers": [
         "白砂あやね"
       ],
@@ -2396,7 +2428,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 3774,
-        "endSec": 4021,
+        "endSec": 3928,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=3774"
       },
       "streamDate": "2026-05-22",
@@ -2414,7 +2446,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 4021,
-        "endSec": 4499,
+        "endSec": 4223,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=4021"
       },
       "streamDate": "2026-05-22",
@@ -2432,7 +2464,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 4499,
-        "endSec": 4870,
+        "endSec": 4698,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=4499"
       },
       "streamDate": "2026-05-22",
@@ -2450,7 +2482,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 4870,
-        "endSec": 5443,
+        "endSec": 5067,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=4870"
       },
       "streamDate": "2026-05-22",
@@ -2468,7 +2500,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 5443,
-        "endSec": 5886,
+        "endSec": 5659,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=5443"
       },
       "streamDate": "2026-05-22",
@@ -2486,7 +2518,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 5886,
-        "endSec": 6263,
+        "endSec": 6138,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=5886"
       },
       "streamDate": "2026-05-22",
@@ -2504,7 +2536,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 6263,
-        "endSec": 6636,
+        "endSec": 6469,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=6263"
       },
       "streamDate": "2026-05-22",
@@ -2522,7 +2554,7 @@
       "youtube": {
         "videoId": "rVt9dqKp5No",
         "timestampSec": 6636,
-        "endSec": 6960,
+        "endSec": 6840,
         "url": "https://www.youtube.com/watch?v=rVt9dqKp5No&t=6636"
       },
       "streamDate": "2026-05-22",
@@ -2540,7 +2572,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 307,
-        "endSec": 900,
+        "endSec": 562,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=307"
       },
       "streamDate": "2026-05-29",
@@ -2558,7 +2590,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 900,
-        "endSec": 1468,
+        "endSec": 1137,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=900"
       },
       "streamDate": "2026-05-29",
@@ -2576,7 +2608,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 1468,
-        "endSec": 2003,
+        "endSec": 1683,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=1468"
       },
       "streamDate": "2026-05-29",
@@ -2594,7 +2626,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 2003,
-        "endSec": 2529,
+        "endSec": 2203,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=2003"
       },
       "streamDate": "2026-05-29",
@@ -2612,7 +2644,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 2529,
-        "endSec": 3027,
+        "endSec": 2785,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=2529"
       },
       "streamDate": "2026-05-29",
@@ -2620,8 +2652,8 @@
     },
     {
       "id": "20260529-madoka-006",
-      "title": "Reply / kz(livetune)",
-      "artist": "かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
+      "title": "Reply",
+      "artist": "kz(livetune)かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
       "performers": [
         "水面まどか"
       ],
@@ -2630,7 +2662,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 3027,
-        "endSec": 3626,
+        "endSec": 3299,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=3027"
       },
       "streamDate": "2026-05-29",
@@ -2648,7 +2680,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 3626,
-        "endSec": 4338,
+        "endSec": 3932,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=3626"
       },
       "streamDate": "2026-05-29",
@@ -2666,7 +2698,7 @@
       "youtube": {
         "videoId": "ACjhatAmWXs",
         "timestampSec": 4338,
-        "endSec": 4826,
+        "endSec": 4610,
         "url": "https://www.youtube.com/watch?v=ACjhatAmWXs&t=4338"
       },
       "streamDate": "2026-05-29",
@@ -2684,7 +2716,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 391,
-        "endSec": 1146,
+        "endSec": 580,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=391"
       },
       "streamDate": "2026-06-21",
@@ -2705,7 +2737,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 1146,
-        "endSec": 1579,
+        "endSec": 1349,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=1146"
       },
       "streamDate": "2026-06-21",
@@ -2723,7 +2755,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 1579,
-        "endSec": 2383,
+        "endSec": 1802,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=1579"
       },
       "streamDate": "2026-06-21",
@@ -2744,7 +2776,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 2383,
-        "endSec": 2881,
+        "endSec": 2580,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=2383"
       },
       "streamDate": "2026-06-21",
@@ -2765,7 +2797,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 2881,
-        "endSec": 3992,
+        "endSec": 3114,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=2881"
       },
       "streamDate": "2026-06-21",
@@ -2783,7 +2815,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 3992,
-        "endSec": 4663,
+        "endSec": 4293,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=3992"
       },
       "streamDate": "2026-06-21",
@@ -2804,7 +2836,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 4663,
-        "endSec": 5410,
+        "endSec": 4892,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=4663"
       },
       "streamDate": "2026-06-21",
@@ -2825,7 +2857,7 @@
       "youtube": {
         "videoId": "Oz1XS2BmfXk",
         "timestampSec": 5410,
-        "endSec": 6114,
+        "endSec": 5638,
         "url": "https://www.youtube.com/watch?v=Oz1XS2BmfXk&t=5410"
       },
       "streamDate": "2026-06-21",
@@ -3224,7 +3256,8 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 1525,
-        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1525"
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1525",
+        "endSec": 1760
       },
       "streamDate": "2026-03-10",
       "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
@@ -3241,7 +3274,8 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 2917,
-        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2917"
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2917",
+        "endSec": 3121
       },
       "streamDate": "2026-03-10",
       "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
@@ -3258,7 +3292,8 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 4770,
-        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=4770"
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=4770",
+        "endSec": 5018
       },
       "streamDate": "2026-03-10",
       "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
@@ -3383,7 +3418,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 2793,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=2793"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=2793",
+        "endSec": 3043
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3400,7 +3436,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 3294,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=3294"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=3294",
+        "endSec": 3521
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3417,7 +3454,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 6033,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6033"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6033",
+        "endSec": 6266
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3434,7 +3472,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 6404,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6404"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6404",
+        "endSec": 6642
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3451,7 +3490,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 6752,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6752"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6752",
+        "endSec": 7035
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3468,7 +3508,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 7218,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7218"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7218",
+        "endSec": 7421
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3485,7 +3526,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 7549,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7549"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7549",
+        "endSec": 7776
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3502,7 +3544,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 7811,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7811"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7811",
+        "endSec": 8053
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3519,7 +3562,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 8144,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8144"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8144",
+        "endSec": 8340
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3536,7 +3580,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 8411,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8411"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8411",
+        "endSec": 8642
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3553,7 +3598,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 8703,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8703"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8703",
+        "endSec": 8905
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3570,7 +3616,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 8956,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8956"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8956",
+        "endSec": 9202
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3587,7 +3634,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 9389,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=9389"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=9389",
+        "endSec": 9611
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3604,7 +3652,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 10133,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=10133"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=10133",
+        "endSec": 10387
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
@@ -3621,7 +3670,8 @@
       "youtube": {
         "videoId": "YQNUqTFRU4o",
         "timestampSec": 10461,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=10461"
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=10461",
+        "endSec": 10763
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
