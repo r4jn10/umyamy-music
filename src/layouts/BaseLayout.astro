@@ -1,5 +1,15 @@
 ---
 import '../styles/global.css';
+// フォントを自前ホスト（@fontsource）。外部送信(Google Fonts)を排除しつつ見た目は維持。
+// ウェイト: Noto Sans JP=400/500/700/800, Outfit=500/600/700/800
+import '@fontsource/noto-sans-jp/400.css';
+import '@fontsource/noto-sans-jp/500.css';
+import '@fontsource/noto-sans-jp/700.css';
+import '@fontsource/noto-sans-jp/800.css';
+import '@fontsource/outfit/500.css';
+import '@fontsource/outfit/600.css';
+import '@fontsource/outfit/700.css';
+import '@fontsource/outfit/800.css';
 
 interface Props {
   title?: string;
@@ -62,20 +72,36 @@ const NOINDEX = true;
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={ogImage} />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
-
   {GA_ID && (
-    <Fragment>
-      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-      <script is:inline define:vars={{ GA_ID }}>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){ dataLayer.push(arguments); }
+    <script is:inline define:vars={{ GA_ID }}>
+      // Cookie 同意を得るまで GA を一切読み込まない（完全デファー）。
+      // 同意するとその時点で gtag.js を注入し計測開始。選択は localStorage に保存。
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      var __CONSENT_KEY = 'umyamy:consent';
+      window.__hasConsentChoice = function(){
+        try { var v = localStorage.getItem(__CONSENT_KEY); return (v === 'granted' || v === 'denied') ? v : null; }
+        catch(e){ return null; }
+      };
+      window.__loadGA = function(){
+        if (window.__gaLoaded) return; window.__gaLoaded = true;
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
         gtag('js', new Date());
         gtag('config', GA_ID);
-      </script>
-    </Fragment>
+      };
+      window.__setConsent = function(v){
+        try { localStorage.setItem(__CONSENT_KEY, v); } catch(e){}
+        var b = document.getElementById('cookieBanner'); if (b) b.classList.add('hidden');
+        if (v === 'granted') window.__loadGA();
+      };
+      window.__showConsentBanner = function(){
+        var b = document.getElementById('cookieBanner'); if (b) b.classList.remove('hidden');
+      };
+      // 既に同意済みなら即ロード（未選択・拒否のときは読み込まない）
+      if (window.__hasConsentChoice() === 'granted') window.__loadGA();
+    </script>
   )}
 </head>
 <body class="min-h-screen flex flex-col">
@@ -89,6 +115,21 @@ const NOINDEX = true;
       <span class="loader-bar"><span class="loader-bar-fill"></span></span>
     </div>
   </div>
+
+  {GA_ID && (
+    <div id="cookieBanner" class="hidden fixed inset-x-0 bottom-0 z-[45] p-3 sm:p-4">
+      <div class="max-w-3xl mx-auto bg-white border border-slate-200 shadow-lg rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+        <p class="text-xs text-slate-500 leading-relaxed flex-1">
+          本サイトはアクセス解析（Google アナリティクス）のため Cookie を使用します。同意いただいた場合のみ計測します。
+          <button type="button" data-open="about" class="underline hover:text-slate-700">詳細</button>
+        </p>
+        <div class="flex gap-2 shrink-0">
+          <button type="button" id="cookieDecline" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 text-slate-500 hover:bg-slate-50">拒否</button>
+          <button type="button" id="cookieAccept" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-white" style="background:linear-gradient(135deg,#ff8184,#54a2e5)">同意する</button>
+        </div>
+      </div>
+    </div>
+  )}
 
   <style>
     .site-loader {
@@ -217,7 +258,9 @@ const NOINDEX = true;
           <li>動画・楽曲などの権利は、ご本人および各権利者に帰属します。本サイトは動画をホストせず、YouTube 公式動画の埋め込み・リンクのみを掲載しています（再アップロード・転載はしていません）。</li>
           <li>非営利・個人運営であり、収益化は行っていません。</li>
           <li>掲載情報（曲名・タイムスタンプ等）は有志の手作業によるもので、正確性は保証できません。誤りのご報告は歓迎します。</li>
-          <li>ご本人・関係者の方からのご要望があれば、速やかに修正・削除いたします。</li>
+          <li>ご本人・関係者の方からのご要望があれば、速やかに修正・削除いたします。ご連絡は
+            <a href="https://marshmallow-qa.com/u9dv88bf3mpjyaa" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">マシュマロ</a>
+            または <a href="https://x.com/teleprompter0" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">X</a> までお願いします。</li>
         </ul>
       </div>
 
@@ -246,7 +289,12 @@ const NOINDEX = true;
 
       <div class="mt-4 rounded-xl bg-slate-50 border border-slate-200 p-4 text-xs text-slate-500 leading-relaxed">
         <p class="font-semibold text-slate-400 mb-1">アクセス解析について</p>
-        本サイトでは品質改善のため Google アナリティクス（GA4）を利用し、Cookie によってアクセス状況を匿名で収集します。氏名など、あなたを直接特定する情報は取得しません。ブラウザの設定で Cookie を無効化することで収集を拒否できます。詳しくは
+        本サイトでは品質改善のため Google アナリティクス（GA4）を利用しています。初回表示時のバナーで<span class="font-medium text-slate-600">同意いただいた場合のみ</span> Cookie を設定し、以下の情報を米国の Google LLC へ送信します：IP アドレス（GA4 の仕様により匿名化）、閲覧ページの URL・リファラ、ブラウザ・OS・端末などの環境情報、Cookie 識別子。利用目的はアクセス状況の把握とサイトの品質改善で、氏名などあなたを直接特定する情報は取得しません。
+        同意は
+        <button type="button" data-cookie-settings class="underline hover:text-slate-600">Cookie 設定</button>
+        からいつでも変更でき、ブラウザの Cookie 無効化や
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">GA オプトアウトアドオン</a>
+        でも停止できます。詳しくは
         <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-600">Google のポリシーとプライバシー</a>
         をご覧ください。
       </div>
@@ -256,11 +304,19 @@ const NOINDEX = true;
         <p class="text-sm text-slate-600 leading-relaxed">
           ご指摘・削除依頼・お問い合わせは下記までご連絡ください。
         </p>
-        <a href="https://x.com/teleprompter0" target="_blank" rel="noopener noreferrer"
-           class="mt-2 inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          @teleprompter0 ▸ X
-        </a>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <a href="https://marshmallow-qa.com/u9dv88bf3mpjyaa" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white transition"
+             style="background:linear-gradient(135deg,#ff8184,#54a2e5)">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.13 2 11.23c0 2.9 1.46 5.49 3.75 7.2V22l3.43-1.9c.9.24 1.85.36 2.82.36 5.52 0 10-4.13 10-9.23S17.52 2 12 2z"/></svg>
+            マシュマロで送る
+          </a>
+          <a href="https://x.com/teleprompter0" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            @teleprompter0 ▸ X
+          </a>
+        </div>
       </div>
 
       <div class="mt-4">
@@ -301,6 +357,14 @@ const NOINDEX = true;
     document.querySelectorAll('[data-close]').forEach(el =>
       el.addEventListener('click', () => el.closest('.modal-root')?.classList.add('hidden')));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAll(); });
+
+    // Cookie 同意バナー（未選択なら表示。同意/拒否で記録、設定リンクで再表示）
+    const w = window as any;
+    if (document.getElementById('cookieBanner') && !w.__hasConsentChoice?.()) w.__showConsentBanner?.();
+    document.getElementById('cookieAccept')?.addEventListener('click', () => w.__setConsent?.('granted'));
+    document.getElementById('cookieDecline')?.addEventListener('click', () => w.__setConsent?.('denied'));
+    document.querySelectorAll('[data-cookie-settings]').forEach(el =>
+      el.addEventListener('click', (e) => { e.preventDefault(); closeAll(); w.__showConsentBanner?.(); }));
   </script>
 </body>
 </html>
