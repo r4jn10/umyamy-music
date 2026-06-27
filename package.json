@@ -7,14 +7,21 @@
   },
   "scripts": {
     "dev": "astro dev",
+    "validate": "node scripts/validate-songs.mjs",
+    "prebuild": "node scripts/validate-songs.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/noto-sans-jp": "^5.2.9",
+    "@fontsource/outfit": "^5.2.8",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^6.4.7",
     "fuse.js": "^7.4.2",
     "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "zod": "^4.4.3"
   }
 }
