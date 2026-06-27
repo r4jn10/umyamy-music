@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-26",
+  "updatedAt": "2026-06-27",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -34,7 +34,7 @@
       "youtube": {
         "videoId": "U45dT7bgv2Q",
         "timestampSec": 124,
-        "endSec": 1608,
+        "endSec": 214,
         "url": "https://www.youtube.com/watch?v=U45dT7bgv2Q&t=124"
       },
       "streamDate": "2026-01-30",
@@ -52,7 +52,7 @@
       "youtube": {
         "videoId": "U45dT7bgv2Q",
         "timestampSec": 1608,
-        "endSec": 1778,
+        "endSec": 1715,
         "url": "https://www.youtube.com/watch?v=U45dT7bgv2Q&t=1608"
       },
       "streamDate": "2026-01-30",
@@ -126,7 +126,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 121,
-        "endSec": 458,
+        "endSec": 276,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=121"
       },
       "streamDate": "2026-02-13",
@@ -144,7 +144,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 458,
-        "endSec": 911,
+        "endSec": 753,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=458"
       },
       "streamDate": "2026-02-13",
@@ -162,7 +162,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 911,
-        "endSec": 1350,
+        "endSec": 1108,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=911"
       },
       "streamDate": "2026-02-13",
@@ -180,7 +180,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 1350,
-        "endSec": 1719,
+        "endSec": 1580,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=1350"
       },
       "streamDate": "2026-02-13",
@@ -198,7 +198,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 1719,
-        "endSec": 2151,
+        "endSec": 2006,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=1719"
       },
       "streamDate": "2026-02-13",
@@ -216,7 +216,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 2151,
-        "endSec": 2527,
+        "endSec": 2406,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=2151"
       },
       "streamDate": "2026-02-13",
@@ -234,7 +234,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 2527,
-        "endSec": 2983,
+        "endSec": 2790,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=2527"
       },
       "streamDate": "2026-02-13",
@@ -252,7 +252,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 2983,
-        "endSec": 3418,
+        "endSec": 3185,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=2983"
       },
       "streamDate": "2026-02-13",
@@ -270,7 +270,7 @@
       "youtube": {
         "videoId": "KUFwkcIICJc",
         "timestampSec": 3418,
-        "endSec": 3724,
+        "endSec": 3631,
         "url": "https://www.youtube.com/watch?v=KUFwkcIICJc&t=3418"
       },
       "streamDate": "2026-02-13",
@@ -308,7 +308,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 119,
-        "endSec": 506,
+        "endSec": 331,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=119"
       },
       "streamDate": "2026-02-15",
@@ -317,7 +317,7 @@
     {
       "id": "20260215-ayane-002",
       "title": "とくベチュ、して",
-      "artist": "",
+      "artist": " =LOVE",
       "performers": [
         "白砂あやね"
       ],
@@ -326,7 +326,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 506,
-        "endSec": 950,
+        "endSec": 749,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=506"
       },
       "streamDate": "2026-02-15",
@@ -344,7 +344,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 950,
-        "endSec": 1269,
+        "endSec": 1144,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=950"
       },
       "streamDate": "2026-02-15",
@@ -362,7 +362,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 1269,
-        "endSec": 1647,
+        "endSec": 1491,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=1269"
       },
       "streamDate": "2026-02-15",
@@ -380,7 +380,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 1647,
-        "endSec": 2082,
+        "endSec": 1894,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=1647"
       },
       "streamDate": "2026-02-15",
@@ -398,7 +398,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 2082,
-        "endSec": 2468,
+        "endSec": 2315,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=2082"
       },
       "streamDate": "2026-02-15",
@@ -416,7 +416,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 2468,
-        "endSec": 3008,
+        "endSec": 2745,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=2468"
       },
       "streamDate": "2026-02-15",
@@ -425,7 +425,7 @@
     {
       "id": "20260215-ayane-008",
       "title": "I WISH",
-      "artist": "AiM",
+      "artist": "モーニング娘。",
       "performers": [
         "白砂あやね"
       ],
@@ -434,7 +434,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 3008,
-        "endSec": 3440,
+        "endSec": 3296,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=3008"
       },
       "streamDate": "2026-02-15",
@@ -452,7 +452,7 @@
       "youtube": {
         "videoId": "qfMRqe6hhxs",
         "timestampSec": 3440,
-        "endSec": 3846,
+        "endSec": 3713,
         "url": "https://www.youtube.com/watch?v=qfMRqe6hhxs&t=3440"
       },
       "streamDate": "2026-02-15",
@@ -470,7 +470,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 428,
-        "endSec": 723,
+        "endSec": 652,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=428"
       },
       "streamDate": "2026-03-02",
@@ -491,7 +491,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 723,
-        "endSec": 1045,
+        "endSec": 961,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=723"
       },
       "streamDate": "2026-03-02",
@@ -512,7 +512,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 1045,
-        "endSec": 1359,
+        "endSec": 1254,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=1045"
       },
       "streamDate": "2026-03-02",
@@ -530,7 +530,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 1359,
-        "endSec": 1673,
+        "endSec": 1604,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=1359"
       },
       "streamDate": "2026-03-02",
@@ -551,7 +551,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 1673,
-        "endSec": 2052,
+        "endSec": 1985,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=1673"
       },
       "streamDate": "2026-03-02",
@@ -572,7 +572,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 2052,
-        "endSec": 2840,
+        "endSec": 2281,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=2052"
       },
       "streamDate": "2026-03-02",
@@ -593,7 +593,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 2840,
-        "endSec": 3218,
+        "endSec": 3083,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=2840"
       },
       "streamDate": "2026-03-02",
@@ -611,7 +611,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 3218,
-        "endSec": 3626,
+        "endSec": 3450,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=3218"
       },
       "streamDate": "2026-03-02",
@@ -632,7 +632,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 3626,
-        "endSec": 4444,
+        "endSec": 3911,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=3626"
       },
       "streamDate": "2026-03-02",
@@ -653,7 +653,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 4444,
-        "endSec": 4782,
+        "endSec": 4647,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=4444"
       },
       "streamDate": "2026-03-02",
@@ -674,7 +674,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 4782,
-        "endSec": 5290,
+        "endSec": 5152,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=4782"
       },
       "streamDate": "2026-03-02",
@@ -692,7 +692,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 5290,
-        "endSec": 6036,
+        "endSec": 5495,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=5290"
       },
       "streamDate": "2026-03-02",
@@ -713,7 +713,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 6036,
-        "endSec": 6472,
+        "endSec": 6332,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=6036"
       },
       "streamDate": "2026-03-02",
@@ -734,7 +734,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 6472,
-        "endSec": 7112,
+        "endSec": 6684,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=6472"
       },
       "streamDate": "2026-03-02",
@@ -755,7 +755,7 @@
       "youtube": {
         "videoId": "M9sPdUnQTtY",
         "timestampSec": 7112,
-        "endSec": 7618,
+        "endSec": 7292,
         "url": "https://www.youtube.com/watch?v=M9sPdUnQTtY&t=7112"
       },
       "streamDate": "2026-03-02",
@@ -763,96 +763,6 @@
       "tags": [
         "緑仙"
       ]
-    },
-    {
-      "id": "20260309-ayane-001",
-      "title": "大志を抱けカルビアンビシャス",
-      "artist": "アンジュルム",
-      "performers": [
-        "白砂あやね"
-      ],
-      "category": "uta_waku",
-      "streamType": "solo",
-      "youtube": {
-        "videoId": "6uamOZjDubU",
-        "timestampSec": 139,
-        "endSec": 1092,
-        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=139"
-      },
-      "streamDate": "2026-03-09",
-      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
-    },
-    {
-      "id": "20260309-ayane-002",
-      "title": "ハムカツ黙示録",
-      "artist": "カントリー・ガールズ",
-      "performers": [
-        "白砂あやね"
-      ],
-      "category": "uta_waku",
-      "streamType": "solo",
-      "youtube": {
-        "videoId": "6uamOZjDubU",
-        "timestampSec": 1092,
-        "endSec": 1829,
-        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1092"
-      },
-      "streamDate": "2026-03-09",
-      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
-    },
-    {
-      "id": "20260309-ayane-003",
-      "title": "青春バスガイド",
-      "artist": "Berryz工房",
-      "performers": [
-        "白砂あやね"
-      ],
-      "category": "uta_waku",
-      "streamType": "solo",
-      "youtube": {
-        "videoId": "6uamOZjDubU",
-        "timestampSec": 1829,
-        "endSec": 3015,
-        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1829"
-      },
-      "streamDate": "2026-03-09",
-      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
-    },
-    {
-      "id": "20260309-ayane-004",
-      "title": "0-week-old",
-      "artist": "ファルル (CV. 佐藤あずさ)",
-      "performers": [
-        "白砂あやね"
-      ],
-      "category": "uta_waku",
-      "streamType": "solo",
-      "youtube": {
-        "videoId": "6uamOZjDubU",
-        "timestampSec": 3015,
-        "endSec": 5906,
-        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=3015"
-      },
-      "streamDate": "2026-03-09",
-      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
-    },
-    {
-      "id": "20260309-ayane-005",
-      "title": "ひたむきシンデレラ",
-      "artist": "蓮ノ空女学院スクールアイドルクラブ",
-      "performers": [
-        "白砂あやね"
-      ],
-      "category": "uta_waku",
-      "streamType": "solo",
-      "youtube": {
-        "videoId": "6uamOZjDubU",
-        "timestampSec": 5906,
-        "endSec": 7470,
-        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=5906"
-      },
-      "streamDate": "2026-03-09",
-      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
     },
     {
       "id": "20260310-both-001",
@@ -867,7 +777,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 233,
-        "endSec": 882,
+        "endSec": 484,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=233"
       },
       "streamDate": "2026-03-10",
@@ -886,7 +796,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 882,
-        "endSec": 1222,
+        "endSec": 1079,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=882"
       },
       "streamDate": "2026-03-10",
@@ -905,7 +815,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 1222,
-        "endSec": 1850,
+        "endSec": 1439,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1222"
       },
       "streamDate": "2026-03-10",
@@ -915,7 +825,7 @@
     {
       "id": "20260310-madoka-002",
       "title": "シカ色デイズ",
-      "artist": "シカ部",
+      "artist": "シカ部 鹿乃子のこ(潘めぐみ),虎視虎子(藤田咲),虎視餡子(田辺留依),馬車芽めめ(和泉風花)",
       "performers": [
         "水面まどか"
       ],
@@ -924,7 +834,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 1850,
-        "endSec": 2198,
+        "endSec": 2053,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1850"
       },
       "streamDate": "2026-03-10",
@@ -943,7 +853,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 2198,
-        "endSec": 2525,
+        "endSec": 2387,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2198"
       },
       "streamDate": "2026-03-10",
@@ -963,7 +873,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 2525,
-        "endSec": 3200,
+        "endSec": 2760,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2525"
       },
       "streamDate": "2026-03-10",
@@ -982,7 +892,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 3200,
-        "endSec": 3600,
+        "endSec": 3428,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=3200"
       },
       "streamDate": "2026-03-10",
@@ -1001,7 +911,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 3600,
-        "endSec": 4135,
+        "endSec": 3771,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=3600"
       },
       "streamDate": "2026-03-10",
@@ -1021,7 +931,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 4135,
-        "endSec": 5191,
+        "endSec": 4376,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=4135"
       },
       "streamDate": "2026-03-10",
@@ -1031,7 +941,7 @@
     {
       "id": "20260310-madoka-004",
       "title": "自己肯定感爆上げ↑↑しゅきしゅきソング",
-      "artist": "初星学園",
+      "artist": " 藤田ことね(飯田ヒカル)",
       "performers": [
         "水面まどか"
       ],
@@ -1040,7 +950,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 5191,
-        "endSec": 5790,
+        "endSec": 5427,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=5191"
       },
       "streamDate": "2026-03-10",
@@ -1059,7 +969,7 @@
       "youtube": {
         "videoId": "aJqUz6SccmA",
         "timestampSec": 5790,
-        "endSec": 6240,
+        "endSec": 5965,
         "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=5790"
       },
       "streamDate": "2026-03-10",
@@ -1096,7 +1006,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 208,
-        "endSec": 551,
+        "endSec": 441,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=208"
       },
       "streamDate": "2026-03-26",
@@ -1114,7 +1024,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 551,
-        "endSec": 890,
+        "endSec": 811,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=551"
       },
       "streamDate": "2026-03-26",
@@ -1132,7 +1042,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 890,
-        "endSec": 1315,
+        "endSec": 1139,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=890"
       },
       "streamDate": "2026-03-26",
@@ -1150,7 +1060,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 1315,
-        "endSec": 1725,
+        "endSec": 1566,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=1315"
       },
       "streamDate": "2026-03-26",
@@ -1168,7 +1078,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 1725,
-        "endSec": 2126,
+        "endSec": 1953,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=1725"
       },
       "streamDate": "2026-03-26",
@@ -1186,7 +1096,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 2126,
-        "endSec": 2561,
+        "endSec": 2386,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=2126"
       },
       "streamDate": "2026-03-26",
@@ -1204,7 +1114,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 2561,
-        "endSec": 3035,
+        "endSec": 2842,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=2561"
       },
       "streamDate": "2026-03-26",
@@ -1222,7 +1132,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 3035,
-        "endSec": 3656,
+        "endSec": 3309,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=3035"
       },
       "streamDate": "2026-03-26",
@@ -1240,7 +1150,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 3656,
-        "endSec": 4075,
+        "endSec": 3910,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=3656"
       },
       "streamDate": "2026-03-26",
@@ -1258,7 +1168,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 4075,
-        "endSec": 4490,
+        "endSec": 4301,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=4075"
       },
       "streamDate": "2026-03-26",
@@ -1276,7 +1186,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 4490,
-        "endSec": 4931,
+        "endSec": 4766,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=4490"
       },
       "streamDate": "2026-03-26",
@@ -1294,7 +1204,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 4931,
-        "endSec": 5343,
+        "endSec": 5204,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=4931"
       },
       "streamDate": "2026-03-26",
@@ -1312,7 +1222,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 5343,
-        "endSec": 5747,
+        "endSec": 5567,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=5343"
       },
       "streamDate": "2026-03-26",
@@ -1330,7 +1240,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 5747,
-        "endSec": 6116,
+        "endSec": 6016,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=5747"
       },
       "streamDate": "2026-03-26",
@@ -1348,7 +1258,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 6116,
-        "endSec": 6528,
+        "endSec": 6386,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=6116"
       },
       "streamDate": "2026-03-26",
@@ -1366,7 +1276,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 6528,
-        "endSec": 6862,
+        "endSec": 6764,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=6528"
       },
       "streamDate": "2026-03-26",
@@ -1384,7 +1294,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 6862,
-        "endSec": 7290,
+        "endSec": 7067,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=6862"
       },
       "streamDate": "2026-03-26",
@@ -1402,7 +1312,7 @@
       "youtube": {
         "videoId": "919f0gO1N6I",
         "timestampSec": 7290,
-        "endSec": 7652,
+        "endSec": 7537,
         "url": "https://www.youtube.com/watch?v=919f0gO1N6I&t=7290"
       },
       "streamDate": "2026-03-26",
@@ -1420,9 +1330,9 @@
       "streamType": "collab",
       "youtube": {
         "videoId": "YQNUqTFRU4o",
-        "timestampSec": 4503,
-        "endSec": 4850,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=4503"
+        "timestampSec": 4519,
+        "endSec": 4731,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=4519"
       },
       "streamDate": "2026-04-09",
       "unit": "うみゃみー",
@@ -1440,9 +1350,9 @@
       "streamType": "collab",
       "youtube": {
         "videoId": "YQNUqTFRU4o",
-        "timestampSec": 4850,
-        "endSec": 5350,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=4850"
+        "timestampSec": 4860,
+        "endSec": 5140,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=4860"
       },
       "streamDate": "2026-04-09",
       "unit": "うみゃみー",
@@ -1460,9 +1370,9 @@
       "streamType": "collab",
       "youtube": {
         "videoId": "YQNUqTFRU4o",
-        "timestampSec": 5350,
-        "endSec": 10812,
-        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=5350"
+        "timestampSec": 5358,
+        "endSec": 5609,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=5358"
       },
       "streamDate": "2026-04-09",
       "unit": "うみゃみー",
@@ -1498,7 +1408,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 266,
-        "endSec": 612,
+        "endSec": 458,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=266"
       },
       "streamDate": "2026-04-10",
@@ -1516,7 +1426,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 612,
-        "endSec": 1175,
+        "endSec": 901,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=612"
       },
       "streamDate": "2026-04-10",
@@ -1534,7 +1444,7 @@
       "youtube": {
         "videoId": "Eu2SuyTTB6Y",
         "timestampSec": 1175,
-        "endSec": 1547,
+        "endSec": 1381,
         "url": "https://www.youtube.com/watch?v=Eu2SuyTTB6Y&t=1175"
       },
       "streamDate": "2026-04-10",
@@ -2941,6 +2851,780 @@
       },
       "streamDate": "2026-06-25",
       "streamTitle": "【 歌ってみた 】とても素敵な六月でした / Eight 【 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-001",
+      "title": "大志を抱け！カルビアンビシャス！",
+      "artist": "わーすた",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 139,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=139",
+        "endSec": 422
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-002",
+      "title": "あの子コンプレックス",
+      "artist": "=LOVE",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 602,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=602",
+        "endSec": 876
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-003",
+      "title": "ハムカツ黙示録",
+      "artist": "BEYOOOOONDS",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 1092,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1092",
+        "endSec": 1308
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-004",
+      "title": "魔性少女",
+      "artist": "ファントムシータ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 1487,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1487",
+        "endSec": 1687
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-005",
+      "title": "青春バスガイド",
+      "artist": "Berryz工房",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 1829,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=1829",
+        "endSec": 2035
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-006",
+      "title": "心にもないこと",
+      "artist": "乃木坂46",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 2203,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=2203",
+        "endSec": 2444
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-007",
+      "title": "恋のワンタイムパスワード",
+      "artist": "調布のりこ(瀬古梨愛) from いきづらい部！",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 2640,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=2640",
+        "endSec": 2885
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-008",
+      "title": "0-week-old",
+      "artist": "ファルル(赤崎千夏)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 3036,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=3036",
+        "endSec": 3278
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-009",
+      "title": "Love marginal",
+      "artist": "Printemps",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 3482,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=3482",
+        "endSec": 3754
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-010",
+      "title": "スペードのQ",
+      "artist": "永吉昴(斉藤佑圭), 双海亜美(下田麻美), エミリー スチュアート(郁原ゆう), 北沢志保(雨宮天)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 3917,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=3917",
+        "endSec": 4149
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-011",
+      "title": "○○ がんばらなくてもええねんで!!",
+      "artist": "スマイレージ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 4328,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=4328",
+        "endSec": 4576
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-012",
+      "title": "空白の花",
+      "artist": "≠ME",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 4719,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=4719",
+        "endSec": 4982
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-013",
+      "title": "ランラルン～あなたに夢中～",
+      "artist": "カントリー・ガールズ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 5168,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=5168",
+        "endSec": 5346
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-014",
+      "title": "Teacher Teacher",
+      "artist": "AKB48",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 5485,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=5485",
+        "endSec": 5751
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-015",
+      "title": "ひたむきシンデレラ！",
+      "artist": "CUTIE STREET",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 5906,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=5906",
+        "endSec": 6132
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-016",
+      "title": "サウスポー",
+      "artist": "ピンク・レディー",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 6270,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=6270",
+        "endSec": 6483
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-017",
+      "title": "みてみて☆こっちっち",
+      "artist": "ももいろクローバーZ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 6556,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=6556",
+        "endSec": 6787
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-018",
+      "title": "恥は人生のかきすて",
+      "artist": "百生吟子(櫻井陽菜), 徒町小鈴(葉山風花) & 安養寺姫芽(来栖りん)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 6830,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=6830",
+        "endSec": 7067
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260627-6uamOZjDubU-019",
+      "title": "超最強",
+      "artist": "超ときめき♡宣伝部",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6uamOZjDubU",
+        "timestampSec": 7119,
+        "url": "https://www.youtube.com/watch?v=6uamOZjDubU&t=7119",
+        "endSec": 7320
+      },
+      "streamDate": "2026-03-06",
+      "streamTitle": "【歌枠】初！アイドル曲縛り歌枠🎤🤍supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260310-aJqUz6SccmA-001",
+      "title": "タッチ",
+      "artist": "岩崎良美",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 591,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=591",
+        "endSec": 779
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260310-aJqUz6SccmA-002",
+      "title": "ウミユリ海底譚",
+      "artist": "n-buna feat. 初音ミク",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 1525,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=1525"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260310-aJqUz6SccmA-003",
+      "title": "アイワナムチュー feat. asmi, すりぃ",
+      "artist": "MAISONdes",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 2917,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=2917"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260310-aJqUz6SccmA-004",
+      "title": "ファンサ",
+      "artist": "mona(夏川椎菜)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "aJqUz6SccmA",
+        "timestampSec": 4770,
+        "url": "https://www.youtube.com/watch?v=aJqUz6SccmA&t=4770"
+      },
+      "streamDate": "2026-03-10",
+      "streamTitle": "【歌枠】初めてのうみゃみーコラボ歌枠です！🫶supported by DAM【白砂あやね / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-001",
+      "title": "恋になりたいAQUARIUM",
+      "artist": "Aqours",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 127,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=127",
+        "endSec": 429
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-002",
+      "title": "軟体恋愛クラゲっ娘",
+      "artist": "渡辺麻友(渡り廊下走り隊)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 649,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=649",
+        "endSec": 846
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-003",
+      "title": "クリフハンガー",
+      "artist": "日向坂46",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 988,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=988",
+        "endSec": 1240
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-004",
+      "title": "パニックラビリンス",
+      "artist": " 黄木あじみ(上田麗奈)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 1430,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=1430",
+        "endSec": 1626
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-005",
+      "title": "モブノデレラ",
+      "artist": "≠ME",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 1798,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=1798",
+        "endSec": 2045
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-006",
+      "title": "botばっか",
+      "artist": "ファントムシータ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 2267,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=2267",
+        "endSec": 2472
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-007",
+      "title": "Star Divine ",
+      "artist": "スタァライト九九組",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 2793,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=2793"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-008",
+      "title": "clumsy trick",
+      "artist": "姫崎莉波(薄井友里)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 3294,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=3294"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-009",
+      "title": "BRAVE GROOVE",
+      "artist": "iLiFE!",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 6033,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6033"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-010",
+      "title": "タルト・タタン",
+      "artist": "もな from AIKATSU☆STARS!",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 6404,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6404"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-011",
+      "title": "ロミオとシンデレラ",
+      "artist": " Doriko feat.初音ﾐｸ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 6752,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=6752"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-012",
+      "title": "まちぶせ",
+      "artist": "石川ひとみ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 7218,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7218"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-013",
+      "title": "愛されルート A or B？",
+      "artist": "アンジュルム",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 7549,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7549"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-014",
+      "title": "ぐるぐるカーテン",
+      "artist": "乃木坂46",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 7811,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=7811"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-015",
+      "title": "Kiss&Bite Me!",
+      "artist": "AVAM",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 8144,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8144"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-016",
+      "title": "オトナモード",
+      "artist": "もな from STAR☆ANIS",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 8411,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8411"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-017",
+      "title": "じゃじゃ馬にさせないで",
+      "artist": "西尾えつ子",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 8703,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8703"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-018",
+      "title": "ヨアケマエ",
+      "artist": "パスピエ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 8956,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=8956"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-019",
+      "title": "君とtea for two♡",
+      "artist": "わーすた",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 9389,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=9389"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-020",
+      "title": "届いてLOVE YOU",
+      "artist": "=LOVE",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 10133,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=10133"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260409-YQNUqTFRU4o-021",
+      "title": "もしも...",
+      "artist": "ハロー!プロジェクト モベキマス",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "YQNUqTFRU4o",
+        "timestampSec": 10461,
+        "url": "https://www.youtube.com/watch?v=YQNUqTFRU4o&t=10461"
+      },
+      "streamDate": "2026-04-09",
+      "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
     }
   ]
 }
