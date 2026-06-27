@@ -215,7 +215,10 @@ const lastUpdated = songsData.updatedAt;
             </div>
           </div>
           <div class="sm:w-2/5 min-h-0 flex flex-col">
-            <p class="text-xs font-bold text-slate-400 mb-2 shrink-0">次の曲</p>
+            <p class="mb-2 shrink-0 flex items-baseline gap-2">
+              <span class="text-xs font-bold text-slate-400">再生キュー</span>
+              <span id="queueMode" class="text-[11px] font-medium text-slate-400"></span>
+            </p>
             <div id="upNext" class="flex-1 overflow-y-auto -mr-1 pr-1 space-y-1 min-h-[120px]"></div>
           </div>
         </div>
@@ -566,7 +569,7 @@ const lastUpdated = songsData.updatedAt;
   type RepeatMode = 'all' | 'one' | 'off';
   let ytPlayer: any = null, pending: any = null;
   let queue: any[] = [], qIndex = -1, isPlaying = false, nowPlaying: any = null;
-  let repeatMode: RepeatMode = 'all';   // 連続再生 → 1曲リピート → オフ
+  let repeatMode: RepeatMode = 'off';   // 既定=1巡で停止。オフ → 連続再生 → 1曲リピート で巡回
   let lastVolume = 100, isMuted = false;
   // 曲は「動画内の [開始秒, 終了秒) 区間」。終了秒は同一動画の次曲の開始秒（最後の曲は動画終端=ENDEDに委譲）
   let segStart = 0, segEnd = Infinity, segHandled = false, currentVideoId: string | null = null, watchTimer: any = null;
@@ -726,31 +729,67 @@ const lastUpdated = songsData.updatedAt;
     document.querySelectorAll('.play-btn-themed').forEach(b => (b as HTMLElement).style.background = grad);
   }
 
-  // ----- 次の曲リスト（YouTube Music風・キューを巡回して表示） -----
+  // ----- 再生キュー表示（前の曲 / 再生中 / 次の曲） -----
+  const QUEUE_PREV_MAX = 8, QUEUE_NEXT_MAX = 40;  // パネルに出す前後の上限（DOMを軽く保つ）
+  function queueRowHtml(s: any, idx: number, dim: boolean) {
+    const thumb = `https://img.youtube.com/vi/${s.youtube.videoId}/default.jpg`;
+    return `
+      <button type="button" data-qindex="${idx}" class="upnext-item w-full flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100 text-left${dim ? ' opacity-60' : ''}">
+        <img src="${thumb}" alt="" loading="lazy" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+        <div class="min-w-0 flex-1">
+          <p class="text-xs font-semibold text-ink truncate">${escHtml(s.title)}</p>
+          <p class="text-[11px] text-slate-400 truncate">${escHtml(s.artist || '')}</p>
+        </div>
+      </button>`;
+  }
+  const queueHint = (txt: string) => `<p class="text-[11px] text-slate-400 px-1.5 py-1.5 text-center">${txt}</p>`;
   function renderUpNext() {
     const el = document.getElementById('upNext');
     if (!el) return;
-    if (queue.length <= 1 || qIndex < 0) {
-      el.innerHTML = '<p class="text-xs text-slate-400 py-4 text-center">次の曲はありません</p>';
+    if (!queue.length || qIndex < 0) {
+      el.innerHTML = '<p class="text-xs text-slate-400 py-4 text-center">再生キューは空です</p>';
       return;
     }
-    // 現在の曲の次から、キューを一周ぶん並べる（末尾付近で再生開始しても十分な数が出る）
-    const items: { song: any; idx: number }[] = [];
-    for (let k = 1; k < queue.length; k++) {
-      const idx = (qIndex + k) % queue.length;
-      items.push({ song: queue[idx], idx });
+    const parts: string[] = [];
+    // 前の曲（直近 QUEUE_PREV_MAX 件。さらに前は件数だけ示す）
+    if (qIndex > 0) {
+      const prevStart = Math.max(0, qIndex - QUEUE_PREV_MAX);
+      parts.push(`<p class="text-[11px] font-semibold text-slate-400 px-1.5 pt-1">前の曲${prevStart > 0 ? `（ほか ${prevStart} 曲）` : ''}</p>`);
+      for (let i = prevStart; i < qIndex; i++) parts.push(queueRowHtml(queue[i], i, true));
     }
-    el.innerHTML = items.map(({ song: s, idx }) => {
-      const thumb = `https://img.youtube.com/vi/${s.youtube.videoId}/default.jpg`;
-      return `
-        <button type="button" data-qindex="${idx}" class="upnext-item w-full flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100 text-left">
-          <img src="${thumb}" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
-          <div class="min-w-0 flex-1">
-            <p class="text-xs font-semibold text-ink truncate">${s.title}</p>
-            <p class="text-[11px] text-slate-400 truncate">${s.artist}</p>
-          </div>
-        </button>`;
-    }).join('');
+    // 再生中（ハイライト）
+    const cur = queue[qIndex];
+    parts.push(`
+      <div data-current class="flex items-center gap-2.5 p-1.5 my-1 rounded-lg bg-slate-50 border border-slate-200">
+        <img src="https://img.youtube.com/vi/${cur.youtube.videoId}/default.jpg" alt="" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+        <div class="min-w-0 flex-1">
+          <p class="text-[10px] font-bold accent-text">▶ 再生中</p>
+          <p class="text-xs font-semibold text-ink truncate">${escHtml(cur.title)}</p>
+        </div>
+      </div>`);
+    // 次の曲（末尾まで。多い場合は QUEUE_NEXT_MAX で打ち切り、残数を表示）
+    const after = queue.length - 1 - qIndex;
+    if (after > 0) {
+      parts.push('<p class="text-[11px] font-semibold text-slate-400 px-1.5 pt-1">次の曲</p>');
+      const nextEnd = Math.min(queue.length, qIndex + 1 + QUEUE_NEXT_MAX);
+      for (let i = qIndex + 1; i < nextEnd; i++) parts.push(queueRowHtml(queue[i], i, false));
+      const rest = queue.length - nextEnd;
+      if (rest > 0) parts.push(queueHint(`…ほか ${rest} 曲`));
+      if (repeatMode === 'all') parts.push(queueHint('↻ 最後まで再生したら先頭へ戻ります'));
+    } else {
+      // 末尾＝キューの終わり。リピート設定ごとに次の動きを示す
+      parts.push(queueHint(
+        repeatMode === 'all' ? '↻ 末尾です（先頭へ戻って繰り返し）'
+        : repeatMode === 'one' ? '🔂 この曲を繰り返します'
+        : 'キューの最後です'));
+    }
+    el.innerHTML = parts.join('');
+    // 現在曲をパネル中央へスクロール（ページ全体は動かさない）
+    const curEl = el.querySelector('[data-current]') as HTMLElement | null;
+    if (curEl) {
+      const cRect = el.getBoundingClientRect(), curRect = curEl.getBoundingClientRect();
+      el.scrollTop += (curRect.top - cRect.top) - el.clientHeight / 2 + curRect.height / 2;
+    }
   }
 
   // ----- 音量 -----
@@ -781,8 +820,9 @@ const lastUpdated = songsData.updatedAt;
     updateVolumeUI();
   }
 
-  // ----- リピート -----
-  const REPEAT_CYCLE: RepeatMode[] = ['all', 'one', 'off'];
+  // ----- リピート（オフ=1巡で停止 → 連続=末尾で先頭へ → 1曲=現在曲を繰り返し） -----
+  const REPEAT_CYCLE: RepeatMode[] = ['off', 'all', 'one'];
+  const REPEAT_LABEL: Record<RepeatMode, string> = { off: '1巡で停止', all: '連続リピート', one: '1曲リピート' };
   function cycleRepeat() {
     repeatMode = REPEAT_CYCLE[(REPEAT_CYCLE.indexOf(repeatMode) + 1) % REPEAT_CYCLE.length];
     updateRepeatUI();
@@ -791,10 +831,12 @@ const lastUpdated = songsData.updatedAt;
   function updateRepeatUI() {
     document.querySelectorAll('.ctl-repeat').forEach(btn => {
       btn.classList.toggle('repeat-active', repeatMode !== 'off');
-      btn.setAttribute('aria-label',
-        repeatMode === 'all' ? 'リピート: 連続再生' : repeatMode === 'one' ? 'リピート: 1曲' : 'リピート: オフ');
+      btn.setAttribute('aria-label', 'リピート: ' + REPEAT_LABEL[repeatMode]);
+      btn.setAttribute('title', 'リピート: ' + REPEAT_LABEL[repeatMode]);
     });
     document.querySelectorAll('.repeat-one').forEach(el => el.classList.toggle('hidden', repeatMode !== 'one'));
+    const qm = document.getElementById('queueMode');
+    if (qm) qm.textContent = '· ' + REPEAT_LABEL[repeatMode];
   }
 
   function handleEnded() {
@@ -841,15 +883,26 @@ const lastUpdated = songsData.updatedAt;
     qIndex = queue.findIndex((s: any) => s.id === song.id);
     current(song);
   }
+  // キュー外へはみ出さないようクランプ（端での循環は呼び出し側が明示的に行う）
   function playIndex(i: number) {
     if (queue.length === 0) return;
-    qIndex = ((i % queue.length) + queue.length) % queue.length;
+    qIndex = Math.max(0, Math.min(queue.length - 1, i));
     current(queue[qIndex]);
   }
-  function next() { if (queue.length) playIndex(qIndex + 1); }
-  function prev() { if (queue.length) playIndex(qIndex - 1); }
+  // 手動「次」：末尾では連続(all)のときだけ先頭へ。オフ/1曲は末尾で停止（何もしない）。
+  function next() {
+    if (!queue.length) return;
+    if (qIndex < queue.length - 1) playIndex(qIndex + 1);
+    else if (repeatMode === 'all') playIndex(0);
+  }
+  // 手動「前」：先頭では連続(all)のときだけ末尾へ。オフ/1曲は先頭で停止。
+  function prev() {
+    if (!queue.length) return;
+    if (qIndex > 0) playIndex(qIndex - 1);
+    else if (repeatMode === 'all') playIndex(queue.length - 1);
+  }
   function shufflePlay() {
-    // 連続再生キューをリセットしてシャッフル（絞り込み中の曲を対象）
+    // キューをリセットしてシャッフル（絞り込み中の曲を対象）。リピート設定は変更しない。
     const base = getFiltered();
     const pool = (base.length ? base : songs).slice();
     for (let i = pool.length - 1; i > 0; i--) {
@@ -859,7 +912,6 @@ const lastUpdated = songsData.updatedAt;
     if (pool.length === 0) return;
     queue = pool;
     qIndex = 0;
-    if (repeatMode === 'off') { repeatMode = 'all'; updateRepeatUI(); }
     current(queue[0]);
   }
   function togglePlay() {
