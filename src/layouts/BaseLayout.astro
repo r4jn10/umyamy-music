@@ -147,6 +147,20 @@ const NOINDEX = true;
     @media (prefers-reduced-motion: reduce) { .loader-bar-fill { animation: none; width: 100%; } }
     /* 日本語の不自然な改行を抑制（句読点・小書き仮名・閉じ括弧の行頭を避け、文節で折り返す） */
     .jp-text { word-break: auto-phrase; line-break: strict; }
+
+    /* トップへ戻るボタン: スクロール時に右下へフェードイン */
+    .back-to-top {
+      position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 30;
+      width: 2.75rem; height: 2.75rem; border-radius: 9999px;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; background: linear-gradient(135deg, #ff8184, #54a2e5);
+      box-shadow: 0 6px 20px rgba(15, 23, 42, .18);
+      opacity: 0; visibility: hidden; transform: translateY(10px);
+      transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+    }
+    .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top.is-visible:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(15, 23, 42, .22); }
+    @media (prefers-reduced-motion: reduce) { .back-to-top { transition: opacity .25s ease, visibility .25s ease; } }
   </style>
 
   <!-- Header -->
@@ -178,6 +192,11 @@ const NOINDEX = true;
   </header>
 
   <slot />
+
+  <!-- トップへ戻る（少しスクロールすると右下に出現） -->
+  <button id="backToTop" type="button" aria-label="ページ上部へ戻る" class="back-to-top">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+  </button>
 
   <!-- うみゃみーについて（メンバー紹介）modal -->
   <div id="membersModal" class="modal-root hidden fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -342,6 +361,18 @@ const NOINDEX = true;
     if (document.readyState === 'complete') hideLoader();
     else window.addEventListener('load', hideLoader);
     setTimeout(hideLoader, 4000);
+
+    // トップへ戻るボタン: 一定量スクロールしたら表示。クリックで先頭へスムーズスクロール。
+    const backToTop = document.getElementById('backToTop');
+    const toggleBackToTop = () => {
+      if (window.scrollY > 300) backToTop?.classList.add('is-visible');
+      else backToTop?.classList.remove('is-visible');
+    };
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    toggleBackToTop();
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    backToTop?.addEventListener('click', () =>
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' }));
 
     // モーダル開閉（うみゃみーについて / このサイトについて）。
     // [data-open="about|members"] で開き、[data-close] と Esc で閉じる。
