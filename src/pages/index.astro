@@ -109,6 +109,21 @@ const lastUpdated = songsData.updatedAt;
         <button id="artistClear" type="button" class="chip" aria-pressed="true"><span id="artistFilterName"></span><span class="ml-1.5 text-slate-400">✕</span></button>
       </div>
 
+      <!-- お気に入りの書き出し／取り込み（お気に入り絞り込み時のみ表示） -->
+      <div id="favToolbar" class="hidden mb-4 flex flex-wrap items-center gap-2">
+        <span class="text-xs text-slate-400 font-semibold">お気に入り</span>
+        <button id="favExport" type="button" class="chip text-xs" aria-label="お気に入りをファイルに書き出し">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          書き出し
+        </button>
+        <button id="favImport" type="button" class="chip text-xs" aria-label="ファイルからお気に入りを取り込み">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          取り込み
+        </button>
+        <span id="favIoMsg" class="text-[11px] font-medium text-slate-400" role="status" aria-live="polite"></span>
+        <input id="favFile" type="file" accept="application/json,.json" class="hidden">
+      </div>
+
       <!-- Song Grid（カードは表示中のぶんだけ JS で描画＝Phase B 軽量化） -->
       <div id="songGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
@@ -385,6 +400,58 @@ const lastUpdated = songsData.updatedAt;
     }
   }
 
+  // ===== お気に入りの書き出し／取り込み（端末間の移行・バックアップ用） =====
+  // お気に入り絞り込み中（曲ビュー）のときだけツールバーを出す
+  function updateFavToolbar() {
+    document.getElementById('favToolbar')?.classList.toggle('hidden', !(filterFav && viewMode === 'songs'));
+  }
+  function setFavIoMsg(text: string, isErr = false) {
+    const el = document.getElementById('favIoMsg');
+    if (!el) return;
+    el.textContent = text;
+    el.classList.toggle('text-rose-500', isErr);
+    el.classList.toggle('text-slate-400', !isErr);
+  }
+  function exportFavorites() {
+    const ids = [...favSet];
+    const payload = { app: 'umyamy-music', type: 'favorites', version: 1, exportedAt: new Date().toISOString(), ids };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const d = new Date();
+    const ymd = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+    const a = document.createElement('a');
+    a.href = url; a.download = `umyamy-favorites-${ymd}.json`;
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setFavIoMsg(ids.length ? `${ids.length}件を書き出しました` : 'お気に入りは空です');
+  }
+  // 取り込みは「既存に追加（マージ）」。現在の曲データに存在するIDのみ採用
+  function importFavorites(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(String(reader.result));
+        const incoming = Array.isArray(data) ? data : (data && Array.isArray(data.ids) ? data.ids : null);
+        if (!incoming) { setFavIoMsg('ファイル形式が正しくありません', true); return; }
+        const known = new Set(songs.map((s: any) => s.id));
+        let added = 0, skipped = 0;
+        for (const id of incoming) {
+          if (typeof id !== 'string' || !known.has(id)) { skipped++; continue; }
+          if (favSet.has(id)) continue;
+          favSet.add(id); added++;
+        }
+        saveFav();
+        refreshFavUI();
+        shownCount = PAGE_SIZE;
+        refresh();
+        setFavIoMsg(`${added}件を追加${skipped ? `（対象外 ${skipped}件）` : ''}`);
+      } catch (_) {
+        setFavIoMsg('読み込みに失敗しました', true);
+      }
+    };
+    reader.readAsText(file);
+  }
+
   const songsDataEl = document.getElementById('songs-data');
   const songs = songsDataEl ? JSON.parse(songsDataEl.getAttribute('data-songs') || '[]') : [];
 
@@ -518,6 +585,7 @@ const lastUpdated = songsData.updatedAt;
     if (viewMode === 'streams') renderStreams();
     else if (viewMode === 'artists') renderArtists();
     else applyDisplay();
+    updateFavToolbar();
   }
 
   // ビュー切替（曲 / 配信 / アーティスト）
@@ -1230,6 +1298,15 @@ const lastUpdated = songsData.updatedAt;
     // 展開シートの★（再生中の曲をお気に入り切替）
     document.getElementById('sheetFav')?.addEventListener('click', () => {
       if (nowPlaying) toggleFav(nowPlaying.id);
+    });
+    // お気に入りの書き出し／取り込み
+    document.getElementById('favExport')?.addEventListener('click', exportFavorites);
+    document.getElementById('favImport')?.addEventListener('click', () => document.getElementById('favFile')?.click());
+    document.getElementById('favFile')?.addEventListener('change', (e) => {
+      const input = e.target as HTMLInputElement;
+      const file = input.files?.[0];
+      if (file) importFavorites(file);
+      input.value = ''; // 同じファイルを連続で選び直せるようにリセット
     });
     // 永続化された状態をカードに反映
     refreshFavUI();
