@@ -324,7 +324,7 @@ const lastUpdated = songsData.updatedAt;
 
   /* 曲カード（JS描画になったため SongCard.astro のscopedからglobalへ移設） */
   :global(.song-card-item:hover) { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,23,42,.08); border-color: #cbd5e1; }
-  :global(.song-card-item.is-playing) { border-color: #ff8184; box-shadow: 0 0 0 2px #ff8184; }
+  :global(.song-card-item.is-playing) { border-color: var(--card-accent, #ff8184); box-shadow: 0 0 0 2px var(--card-accent, #ff8184); }
   :global(.thumb-wrap) { position: relative; aspect-ratio: 16/9; background: #f1f5f9; overflow: hidden; }
   :global(.thumb-wrap img) { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
   :global(.song-card-item:hover .thumb-wrap img) { transform: scale(1.05); }
@@ -332,7 +332,7 @@ const lastUpdated = songsData.updatedAt;
   :global(.song-card-item:hover .play-overlay) { opacity: 1; }
   :global(.play-btn) { width: 46px; height: 46px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.18); border: 2px solid #fff; backdrop-filter: blur(2px); }
   :global(.ts-badge) { position: absolute; bottom: 8px; right: 8px; background: rgba(15,23,42,.78); color: #fff; font-size: .7rem; font-weight: 600; padding: 2px 7px; border-radius: 6px; font-variant-numeric: tabular-nums; }
-  :global(.playing-badge) { background: #ff8184; left: 8px; right: auto; }
+  :global(.playing-badge) { background: var(--card-accent, #ff8184); left: 8px; right: auto; }
   :global(.card-share) { position: absolute; top: 8px; right: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
   :global(.card-share:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
   :global(.card-fav) { position: absolute; top: 8px; left: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s, color .2s; }
@@ -448,8 +448,9 @@ const lastUpdated = songsData.updatedAt;
   // メンバー・カテゴリだけで絞った曲（アーティスト一覧の集計と曲一覧の土台に共用）
   function memberCategoryFiltered() {
     let f = songs;
-    if (filterMember === 'ayane') f = f.filter((s: any) => s.performers.includes('白砂あやね'));
-    else if (filterMember === 'madoka') f = f.filter((s: any) => s.performers.includes('水面まどか'));
+    // メンバー単体ボタンは「ソロ曲のみ」を表示（2人歌唱は「うみゃみー」で絞り込む）
+    if (filterMember === 'ayane') f = f.filter((s: any) => s.performers.length === 1 && s.performers[0] === '白砂あやね');
+    else if (filterMember === 'madoka') f = f.filter((s: any) => s.performers.length === 1 && s.performers[0] === '水面まどか');
     else if (filterMember === 'duet') f = f.filter((s: any) => s.performers.length > 1);
     if (filterCategory !== 'all') f = f.filter((s: any) => s.category === filterCategory);
     if (filterFav) f = f.filter((s: any) => favSet.has(s.id));
@@ -686,9 +687,13 @@ const lastUpdated = songsData.updatedAt;
   }
 
   function markPlayingCard(id: string | null) {
+    // 再生中カードの枠色は歌唱者で変える（プレーヤーのテーマ色と一致）
+    const accent = nowPlaying ? accentFor(nowPlaying).accent : null;
     document.querySelectorAll('.song-card-item').forEach(card => {
       const on = card.getAttribute('data-id') === id;
       card.classList.toggle('is-playing', on);
+      if (on && accent) (card as HTMLElement).style.setProperty('--card-accent', accent);
+      else (card as HTMLElement).style.removeProperty('--card-accent');
       const pb = card.querySelector('.playing-badge');
       const ts = card.querySelector('.ts-badge:not(.playing-badge)');
       if (pb) pb.classList.toggle('hidden', !on);
@@ -714,13 +719,16 @@ const lastUpdated = songsData.updatedAt;
   }
 
   // ----- テーマ色（歌唱者で変化） -----
-  function applyTheme(song: any) {
+  // まどかソロ=コーラル / あやねソロ=ブルー / うみゃみー=中間色＋2色グラデ
+  function accentFor(song: any): { accent: string; grad: string } {
     const p: string[] = song.performers || [];
     const hasM = p.includes('水面まどか'), hasA = p.includes('白砂あやね');
-    let accent: string, grad: string;
-    if (hasM && hasA) { accent = '#b86fb0'; grad = 'linear-gradient(90deg,#ff8184,#54a2e5)'; }
-    else if (hasA) { accent = '#54a2e5'; grad = 'linear-gradient(90deg,#54a2e5,#88c4f1)'; }
-    else { accent = '#ff8184'; grad = 'linear-gradient(90deg,#ff8184,#ffb0b2)'; }
+    if (hasM && hasA) return { accent: '#b86fb0', grad: 'linear-gradient(90deg,#ff8184,#54a2e5)' };
+    if (hasA) return { accent: '#54a2e5', grad: 'linear-gradient(90deg,#54a2e5,#88c4f1)' };
+    return { accent: '#ff8184', grad: 'linear-gradient(90deg,#ff8184,#ffb0b2)' };
+  }
+  function applyTheme(song: any) {
+    const { accent, grad } = accentFor(song);
     const root = document.getElementById('player');
     if (root) {
       root.style.setProperty('--accent', accent);
