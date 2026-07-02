@@ -42,7 +42,7 @@ const lastUpdated = songsData.updatedAt;
       <!-- New videos slider -->
       <section id="newSection" class="mb-8">
         <div class="flex items-center justify-between mb-3">
-          <h2 class="font-display text-sm font-bold text-slate-500 tracking-wide">新着</h2>
+          <h2 class="section-label font-display text-sm font-bold text-slate-500 tracking-wide">新着</h2>
           <div class="flex items-center gap-1">
             <button id="newPrev" type="button" aria-label="前へ"
                     class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition">
@@ -84,9 +84,9 @@ const lastUpdated = songsData.updatedAt;
           <div class="flex flex-wrap gap-2 items-center">
             <span class="text-[11px] text-slate-400 font-semibold mr-1">メンバー</span>
             <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
-            <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか</button>
-            <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね</button>
-            <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー</button>
+            <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか<span class="fan-mark" aria-hidden="true">🪟</span></button>
+            <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね<span class="fan-mark" aria-hidden="true">🏖️</span></button>
+            <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー<span class="fan-mark" aria-hidden="true">🫶</span></button>
           </div>
           <div class="flex flex-wrap gap-2 items-center">
             <span class="text-[11px] text-slate-400 font-semibold mr-1">カテゴリ</span>
@@ -178,6 +178,10 @@ const lastUpdated = songsData.updatedAt;
                 <p id="sheetMeta" class="text-xs text-slate-400 truncate">—</p>
               </div>
               <div class="shrink-0 flex items-center gap-2">
+                <button id="sheetAdd" type="button" aria-label="プレイリストに追加"
+                        class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12H3"/><path d="M16 6H3"/><path d="M16 18H3"/><path d="M18 9v6"/><path d="M21 12h-6"/></svg>
+                </button>
                 <button id="sheetFav" type="button" aria-label="お気に入り" aria-pressed="false"
                         class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -315,6 +319,103 @@ const lastUpdated = songsData.updatedAt;
     </div>
   </div>
 
+  <!-- Playlist modal（一覧 ⇄ 詳細の2画面） -->
+  <div id="plModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="plBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 max-h-[80vh] flex flex-col">
+      <div class="flex items-center gap-2 p-4 border-b border-slate-100 shrink-0">
+        <button id="plBack" type="button" aria-label="一覧へ戻る" class="hidden w-8 h-8 -ml-1 shrink-0 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <h3 id="plModalTitle" class="font-bold text-ink flex-1 truncate">プレイリスト</h3>
+        <button id="plClose" type="button" aria-label="閉じる" class="w-8 h-8 shrink-0 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- 一覧画面 -->
+      <div id="plListView" class="flex flex-col min-h-0">
+        <div class="p-3 border-b border-slate-100 flex gap-2 shrink-0">
+          <input id="plNewName" type="text" maxlength="40" placeholder="新しいプレイリスト名"
+                 class="flex-1 min-w-0 px-3 py-2 border border-slate-200 rounded-xl text-sm bg-slate-50/60 focus:outline-none focus:border-slate-400 focus:bg-white transition">
+          <button id="plCreate" type="button" class="chip text-xs shrink-0">＋ 作成</button>
+        </div>
+        <div id="plList" class="overflow-y-auto p-2"></div>
+      </div>
+
+      <!-- 詳細画面 -->
+      <div id="plDetailView" class="hidden flex-col min-h-0">
+        <div class="p-3 border-b border-slate-100 space-y-2 shrink-0">
+          <input id="plRename" type="text" maxlength="40" aria-label="プレイリスト名"
+                 class="w-full px-3 py-2 border border-slate-200 rounded-xl text-sm font-semibold bg-white focus:outline-none focus:border-slate-400 transition">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button id="plPlay" type="button" class="chip text-xs">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>再生
+            </button>
+            <button id="plShuffle" type="button" class="chip text-xs">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h4c2 0 4-1.2 6-6s4-6 6-6h4"/><path d="m18 2 4 4-4 4"/><path d="M2 6h4c2 0 4 1.2 6 6s4 6 6 6h4"/><path d="m18 14 4 4-4 4"/></svg>シャッフル
+            </button>
+            <button id="plCopyLink" type="button" class="chip text-xs">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>リンクをコピー
+            </button>
+            <button id="plShareX" type="button" class="chip text-xs">
+              <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>共有
+            </button>
+            <button id="plDelete" type="button" class="chip text-xs ml-auto" style="color:#e11d48">削除</button>
+          </div>
+          <p id="plMsg" class="text-[11px] text-slate-400 min-h-[1.1em]" role="status" aria-live="polite"></p>
+        </div>
+        <div id="plSongs" class="overflow-y-auto p-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 「プレイリストに追加」modal -->
+  <div id="plAddModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="plAddBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-200 max-h-[70vh] flex flex-col">
+      <div class="p-4 border-b border-slate-100 shrink-0">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-bold text-ink">プレイリストに追加</h3>
+          <button id="plAddClose" type="button" aria-label="閉じる" class="w-8 h-8 shrink-0 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <p id="plAddSong" class="text-xs text-slate-400 truncate mt-0.5">—</p>
+      </div>
+      <div id="plAddList" class="overflow-y-auto p-2 flex-1"></div>
+      <div class="p-3 border-t border-slate-100 flex gap-2 shrink-0">
+        <input id="plAddNewName" type="text" maxlength="40" placeholder="新しいプレイリスト名"
+               class="flex-1 min-w-0 px-3 py-2 border border-slate-200 rounded-xl text-sm bg-slate-50/60 focus:outline-none focus:border-slate-400 focus:bg-white transition">
+        <button id="plAddCreate" type="button" class="chip text-xs shrink-0">作成して追加</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 共有されたプレイリストの受け取り modal -->
+  <div id="plSharedModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div id="plSharedBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 max-h-[80vh] flex flex-col">
+      <div class="p-4 border-b border-slate-100 shrink-0">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-bold text-ink truncate">共有されたプレイリスト</h3>
+          <button id="plSharedClose" type="button" aria-label="閉じる" class="w-8 h-8 shrink-0 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <p id="plSharedInfo" class="text-xs text-slate-400 mt-0.5"></p>
+      </div>
+      <div id="plSharedSongs" class="overflow-y-auto p-2 flex-1"></div>
+      <div class="p-3 border-t border-slate-100 flex flex-wrap items-center gap-2 shrink-0">
+        <button id="plSharedPlay" type="button" class="chip text-xs">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>再生
+        </button>
+        <button id="plSharedSave" type="button" class="chip text-xs">プレイリストへ保存</button>
+        <span id="plSharedMsg" class="text-[11px] text-slate-400" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+
   <SiteFooter />
 </BaseLayout>
 
@@ -348,8 +449,12 @@ const lastUpdated = songsData.updatedAt;
   :global(.play-btn) { width: 46px; height: 46px; border-radius: 9999px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.18); border: 2px solid #fff; backdrop-filter: blur(2px); }
   :global(.ts-badge) { position: absolute; bottom: 8px; right: 8px; background: rgba(15,23,42,.78); color: #fff; font-size: .7rem; font-weight: 600; padding: 2px 7px; border-radius: 6px; font-variant-numeric: tabular-nums; }
   :global(.playing-badge) { background: var(--card-accent, #ff8184); left: 8px; right: auto; }
+  /* display は .hidden（レイヤー内）に勝たないよう :not(.hidden) のときだけ指定 */
+  :global(.playing-badge:not(.hidden)) { display: inline-flex; align-items: center; }
   :global(.card-share) { position: absolute; top: 8px; right: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
   :global(.card-share:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
+  :global(.card-add) { position: absolute; top: 44px; right: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
+  :global(.card-add:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
   :global(.card-fav) { position: absolute; top: 8px; left: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s, color .2s; }
   :global(.card-fav:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
   :global(.card-fav.is-fav) { color: #fbbf24; }
@@ -383,6 +488,20 @@ const lastUpdated = songsData.updatedAt;
     if (favSet.has(id)) favSet.delete(id); else favSet.add(id);
     saveFav();
     refreshFavUI();
+    // 追加されたときは★をポップさせる（トグル時のみ。再描画では動かさない）
+    if (favSet.has(id)) {
+      const targets = [...document.querySelectorAll(`.card-fav[data-id="${CSS.escape(id)}"] svg`)];
+      if (nowPlaying && nowPlaying.id === id) {
+        const sf = document.querySelector('#sheetFav svg');
+        if (sf) targets.push(sf);
+      }
+      targets.forEach(el => {
+        el.classList.remove('fav-pop');
+        void (el as SVGElement).getBoundingClientRect();
+        el.classList.add('fav-pop');
+        el.addEventListener('animationend', () => el.classList.remove('fav-pop'), { once: true });
+      });
+    }
     // お気に入り絞り込み中なら、外れた曲を一覧から消す
     if (filterFav) { shownCount = PAGE_SIZE; refresh(); }
   }
@@ -457,6 +576,347 @@ const lastUpdated = songsData.updatedAt;
 
   const fuse = new Fuse(songs, { keys: ['title', 'artist', 'tags'], threshold: 0.3 });
 
+  // ===== プレイリスト（自作・並べ替え・共有） =====
+  const PL_KEY = 'umyamy:playlists';
+  let playlists: any[] = [];
+  try { const v = JSON.parse(localStorage.getItem(PL_KEY) || '[]'); if (Array.isArray(v)) playlists = v; } catch (_) {}
+  function savePlaylists() { try { localStorage.setItem(PL_KEY, JSON.stringify(playlists)); } catch (_) {} }
+  const plUid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  const plFind = (id: string | null) => playlists.find(p => p.id === id);
+  const songById = (id: string) => songs.find((s: any) => s.id === id);
+  const plResolveSongs = (pl: any) => pl.ids.map(songById).filter(Boolean);
+
+  let plCurrentId: string | null = null;    // 詳細画面で開いているプレイリスト
+  let plAddTargetId: string | null = null;  // 「プレイリストに追加」モーダルの対象曲
+  let plShared: { name: string; ids: string[] } | null = null; // URLで受け取った共有プレイリスト
+
+  function createPlaylist(name: string): any {
+    const pl = { id: plUid(), name: (name || '').trim() || '新しいプレイリスト', ids: [] as string[], updatedAt: Date.now() };
+    playlists.unshift(pl);
+    savePlaylists();
+    return pl;
+  }
+
+  // --- モーダル開閉（一覧 ⇄ 詳細） ---
+  const show = (id: string) => document.getElementById(id)?.classList.remove('hidden');
+  const hide = (id: string) => document.getElementById(id)?.classList.add('hidden');
+  function openPlModal() { showPlList(); show('plModal'); }
+  function closePlModal() { hide('plModal'); }
+  function showPlList() {
+    plCurrentId = null;
+    document.getElementById('plListView')?.classList.remove('hidden');
+    const d = document.getElementById('plDetailView');
+    d?.classList.add('hidden'); d?.classList.remove('flex');
+    const b = document.getElementById('plBack');
+    b?.classList.add('hidden'); b?.classList.remove('inline-flex');
+    renderPlList();
+  }
+  function showPlDetail(id: string) {
+    plCurrentId = id;
+    document.getElementById('plListView')?.classList.add('hidden');
+    const d = document.getElementById('plDetailView');
+    d?.classList.remove('hidden'); d?.classList.add('flex');
+    const b = document.getElementById('plBack');
+    b?.classList.remove('hidden'); b?.classList.add('inline-flex');
+    setPlMsg('');
+    renderPlDetail();
+  }
+  function setPlMsg(text: string, isErr = false) {
+    const el = document.getElementById('plMsg');
+    if (!el) return;
+    el.textContent = text;
+    (el as HTMLElement).style.color = isErr ? '#e11d48' : '';
+  }
+
+  // --- 描画 ---
+  function plRowThumb(pl: any): string {
+    const first = plResolveSongs(pl)[0];
+    return first
+      ? `<img src="https://img.youtube.com/vi/${encodeURIComponent(first.youtube.videoId)}/default.jpg" alt="" loading="lazy" class="w-12 h-12 rounded-lg object-cover bg-slate-100 shrink-0">`
+      : `<span class="w-12 h-12 rounded-lg shrink-0 inline-flex items-center justify-center text-white" style="background:linear-gradient(135deg,#ff8184,#54a2e5)">
+           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V6"/><path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M12 12H3"/><path d="M16 6H3"/><path d="M12 18H3"/></svg>
+         </span>`;
+  }
+  function renderPlList() {
+    const el = document.getElementById('plList');
+    if (!el) return;
+    if (!playlists.length) {
+      el.innerHTML = `<p class="text-sm text-slate-400 leading-relaxed py-8 text-center">プレイリストはまだありません。<br>上の入力欄から作成できます。</p>`;
+      return;
+    }
+    el.innerHTML = playlists.map(pl => `
+      <button type="button" data-pl-id="${escHtml(pl.id)}" class="pl-row w-full flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 text-left">
+        ${plRowThumb(pl)}
+        <span class="min-w-0 flex-1">
+          <span class="block text-sm font-semibold text-ink truncate">${escHtml(pl.name)}</span>
+          <span class="block text-xs text-slate-400">${pl.ids.length}曲</span>
+        </span>
+        <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>`).join('');
+  }
+  function renderPlDetail() {
+    const pl = plFind(plCurrentId);
+    if (!pl) { showPlList(); return; }
+    // データ更新等で存在しなくなった曲IDは掃除（indexベースの操作を安全にする）
+    const known = pl.ids.filter((id: string) => songById(id));
+    if (known.length !== pl.ids.length) { pl.ids = known; savePlaylists(); }
+    const nameInput = document.getElementById('plRename') as HTMLInputElement | null;
+    if (nameInput) nameInput.value = pl.name;
+    const el = document.getElementById('plSongs');
+    if (!el) return;
+    const list = plResolveSongs(pl);
+    if (!list.length) {
+      el.innerHTML = `<p class="text-sm text-slate-400 leading-relaxed py-8 text-center">曲がありません。<br>曲カードの「＋」からこのプレイリストへ追加できます。</p>`;
+      return;
+    }
+    el.innerHTML = list.map((s: any, i: number) => `
+      <div class="pl-song flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100" data-idx="${i}">
+        <button type="button" data-act="play" class="flex items-center gap-2.5 min-w-0 flex-1 text-left">
+          <span class="text-[11px] text-slate-400 w-5 text-right tabular-nums shrink-0">${i + 1}</span>
+          <img src="https://img.youtube.com/vi/${encodeURIComponent(s.youtube.videoId)}/default.jpg" alt="" loading="lazy" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+          <span class="min-w-0">
+            <span class="block text-xs font-semibold text-ink truncate">${escHtml(s.title)}</span>
+            <span class="block text-[11px] text-slate-400 truncate">${escHtml(s.artist || '')}</span>
+          </span>
+        </button>
+        <span class="shrink-0 flex items-center">
+          <button type="button" data-act="up" aria-label="上へ" ${i === 0 ? 'disabled' : ''} class="w-7 h-7 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-white disabled:opacity-25">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+          </button>
+          <button type="button" data-act="down" aria-label="下へ" ${i === list.length - 1 ? 'disabled' : ''} class="w-7 h-7 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-white disabled:opacity-25">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <button type="button" data-act="remove" aria-label="プレイリストから外す" class="w-7 h-7 inline-flex items-center justify-center rounded-full text-slate-400 hover:text-rose-500 hover:bg-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </span>
+      </div>`).join('');
+  }
+
+  // --- 再生 ---
+  function playPlaylist(pl: any, startIdx = 0, doShuffle = false) {
+    const list = plResolveSongs(pl);
+    if (!list.length) { setPlMsg('再生できる曲がありません', true); return; }
+    if (doShuffle) {
+      for (let i = list.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [list[i], list[j]] = [list[j], list[i]];
+      }
+      startIdx = 0;
+    }
+    queue = list;
+    qIndex = Math.max(0, Math.min(list.length - 1, startIdx));
+    current(queue[qIndex]);
+    closePlModal();
+  }
+
+  // --- 共有リンクの短縮エンコード（?p=） ---
+  // idをそのまま並べると1曲19〜25文字になるため、id構造を利用して圧縮する。
+  // トークン列: M|A|B = 旧形式id（メンバー＋日付）、V = videoId形式id。
+  //   M|A|B + 日数3桁(base36, 2026-01-01起点) + 連番2桁(base36)…
+  //   V + videoId(11文字固定) + 連番2桁(base36)…
+  // 同じ日付メンバー／同じ動画が連続する間は連番(2文字)だけを並べる。
+  // マーカーは大文字MABV・連番は小文字base36なので区切り文字は不要。
+  const PL_EPOCH_UTC = Date.UTC(2026, 0, 1);
+  const OLD_ID_RE = /^(\d{4})(\d{2})(\d{2})-(both|madoka|ayane)-(\d{3})$/;
+  const VID_ID_RE = /^\d{8}-([\w-]{11})-(\d{3})$/;
+  const MEMBER_MARK: Record<string, string> = { both: 'B', madoka: 'M', ayane: 'A' };
+  const MARK_MEMBER: Record<string, string> = { B: 'both', M: 'madoka', A: 'ayane' };
+  const b36 = (n: number, w: number) => n.toString(36).padStart(w, '0');
+
+  // 全idを短縮コード化。1つでも未知の形式があれば null（旧形式 songs= にフォールバック）
+  function encodeShareIds(ids: string[]): string | null {
+    let out = '', prevKey = '';
+    for (const id of ids) {
+      const m = OLD_ID_RE.exec(id);
+      if (m) {
+        const days = Math.round((Date.UTC(+m[1], +m[2] - 1, +m[3]) - PL_EPOCH_UTC) / 86400000);
+        const num = +m[5];
+        if (days < 0 || days >= 36 ** 3 || num >= 36 ** 2) return null;
+        const key = MEMBER_MARK[m[4]] + b36(days, 3);
+        out += (key === prevKey ? '' : key) + b36(num, 2);
+        prevKey = key;
+        continue;
+      }
+      const v = VID_ID_RE.exec(id);
+      if (v) {
+        const num = +v[2];
+        if (num >= 36 ** 2) return null;
+        const key = 'V' + v[1];
+        out += (key === prevKey ? '' : key) + b36(num, 2);
+        prevKey = key;
+        continue;
+      }
+      return null;
+    }
+    return out;
+  }
+
+  // 短縮コード → id配列。videoId形式は日付をidから復元できないため曲データから逆引きする
+  function decodeShareIds(code: string): string[] {
+    const ids: string[] = [];
+    let i = 0, mode: string | null = null, days = 0, videoId = '';
+    while (i < code.length && ids.length < 500) {
+      const c = code[i];
+      if (c === 'M' || c === 'A' || c === 'B') {
+        days = parseInt(code.slice(i + 1, i + 4), 36);
+        if (isNaN(days)) break;
+        mode = c; i += 4;
+      } else if (c === 'V') {
+        videoId = code.slice(i + 1, i + 12);
+        if (videoId.length < 11) break;
+        mode = 'V'; i += 12;
+      } else if (mode && /^[0-9a-z]{2}$/.test(code.slice(i, i + 2))) {
+        const n3 = String(parseInt(code.slice(i, i + 2), 36)).padStart(3, '0');
+        if (mode === 'V') {
+          const song = songs.find((s: any) => s.id.endsWith(`-${videoId}-${n3}`));
+          ids.push(song ? song.id : `unknown-${videoId}-${n3}`);
+        } else {
+          const d = new Date(PL_EPOCH_UTC + days * 86400000);
+          const ymd = `${d.getUTCFullYear()}${String(d.getUTCMonth() + 1).padStart(2, '0')}${String(d.getUTCDate()).padStart(2, '0')}`;
+          ids.push(`${ymd}-${MARK_MEMBER[mode]}-${n3}`);
+        }
+        i += 2;
+      } else break; // 壊れたコード。読めたところまで使う
+    }
+    return ids;
+  }
+
+  // --- 共有（URLに短縮コードを載せる。受け取り側はデータに存在する曲だけ復元） ---
+  function playlistShareUrl(name: string, ids: string[]): string {
+    const valid = ids.filter(id => songById(id));
+    const code = encodeShareIds(valid);
+    const q = code !== null ? `p=${code}` : `songs=${valid.join('.')}`;
+    return `${location.origin}${location.pathname}?pl=${encodeURIComponent(name)}&${q}`;
+  }
+  async function copyText(text: string): Promise<boolean> {
+    try { await navigator.clipboard.writeText(text); return true; } catch (_) {}
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      const ok = document.execCommand('copy');
+      ta.remove();
+      return ok;
+    } catch (_) { return false; }
+  }
+
+  // --- 「プレイリストに追加」モーダル ---
+  function openPlAdd(songId: string) {
+    const s = songById(songId);
+    if (!s) return;
+    plAddTargetId = songId;
+    const label = document.getElementById('plAddSong');
+    if (label) label.textContent = `${s.title}${s.artist ? ' / ' + s.artist : ''}`;
+    renderPlAddList();
+    show('plAddModal');
+  }
+  function renderPlAddList() {
+    const el = document.getElementById('plAddList');
+    if (!el) return;
+    if (!playlists.length) {
+      el.innerHTML = `<p class="text-sm text-slate-400 py-6 text-center leading-relaxed">プレイリストはまだありません。<br>下の入力欄から作成できます。</p>`;
+      return;
+    }
+    el.innerHTML = playlists.map(pl => {
+      const on = !!plAddTargetId && pl.ids.includes(plAddTargetId);
+      return `
+        <button type="button" data-pl-id="${escHtml(pl.id)}" aria-pressed="${on}"
+                class="w-full flex items-center gap-3 p-2 rounded-lg hover:bg-slate-100 text-left">
+          <span class="w-6 h-6 shrink-0 inline-flex items-center justify-center rounded-full ${on ? 'text-white' : 'text-slate-400 border border-slate-200'}"
+                ${on ? 'style="background:linear-gradient(135deg,#ff8184,#54a2e5)"' : ''}>
+            ${on
+              ? '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>'
+              : '<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M12 5v14M5 12h14"/></svg>'}
+          </span>
+          <span class="min-w-0 flex-1">
+            <span class="block text-sm font-semibold text-ink truncate">${escHtml(pl.name)}</span>
+            <span class="block text-xs text-slate-400">${pl.ids.length}曲</span>
+          </span>
+        </button>`;
+    }).join('');
+  }
+  function togglePlAdd(plId: string) {
+    const pl = plFind(plId);
+    if (!pl || !plAddTargetId) return;
+    const i = pl.ids.indexOf(plAddTargetId);
+    if (i >= 0) pl.ids.splice(i, 1); else pl.ids.push(plAddTargetId);
+    pl.updatedAt = Date.now();
+    savePlaylists();
+    renderPlAddList();
+  }
+
+  // --- URLで共有されたプレイリストの受け取り（?pl=名前&p=短縮コード。旧 &songs=id.id… も互換） ---
+  function checkSharedPlaylist() {
+    const params = new URLSearchParams(location.search);
+    const shortRaw = params.get('p');
+    const legacyRaw = params.get('songs');
+    if (!shortRaw && !legacyRaw) return;
+    const name = (params.get('pl') || '共有プレイリスト').slice(0, 40);
+    const ids = shortRaw
+      ? decodeShareIds(shortRaw)
+      : (legacyRaw || '').split('.').filter(Boolean).slice(0, 500);
+    const found = ids.map(songById).filter(Boolean);
+    if (!found.length) return;
+    plShared = { name, ids: found.map((s: any) => s.id) };
+    const info = document.getElementById('plSharedInfo');
+    if (info) {
+      const missing = ids.length - found.length;
+      info.textContent = `「${name}」（${found.length}曲${missing ? `・${missing}曲は見つかりませんでした` : ''}）`;
+    }
+    const el = document.getElementById('plSharedSongs');
+    if (el) el.innerHTML = found.map((s: any, i: number) => `
+      <button type="button" data-idx="${i}" class="pl-shared-row w-full flex items-center gap-2.5 p-1.5 rounded-lg hover:bg-slate-100 text-left">
+        <span class="text-[11px] text-slate-400 w-5 text-right tabular-nums shrink-0">${i + 1}</span>
+        <img src="https://img.youtube.com/vi/${encodeURIComponent(s.youtube.videoId)}/default.jpg" alt="" loading="lazy" class="w-10 h-10 rounded object-cover bg-slate-100 shrink-0">
+        <span class="min-w-0">
+          <span class="block text-xs font-semibold text-ink truncate">${escHtml(s.title)}</span>
+          <span class="block text-[11px] text-slate-400 truncate">${escHtml(s.artist || '')}</span>
+        </span>
+      </button>`).join('');
+    show('plSharedModal');
+  }
+  function playShared(startIdx = 0) {
+    if (!plShared) return;
+    const list = plShared.ids.map(songById).filter(Boolean);
+    if (!list.length) return;
+    queue = list;
+    qIndex = Math.max(0, Math.min(list.length - 1, startIdx));
+    current(queue[qIndex]);
+    hide('plSharedModal');
+  }
+
+  // ===== Media Session API（ロック画面・メディアキー・イヤホン操作に対応） =====
+  function updateMediaMetadata(song: any) {
+    if (!('mediaSession' in navigator) || typeof (window as any).MediaMetadata === 'undefined') return;
+    const vid = song.youtube.videoId;
+    const performers = orderPerformers(song.performers || []).join('・');
+    try {
+      (navigator as any).mediaSession.metadata = new (window as any).MediaMetadata({
+        title: song.title,
+        artist: song.artist ? `${song.artist}${performers ? '（うた：' + performers + '）' : ''}` : performers,
+        album: 'うみゃみーMusic',
+        artwork: [
+          { src: `https://img.youtube.com/vi/${vid}/mqdefault.jpg`, sizes: '320x180', type: 'image/jpeg' },
+          { src: `https://img.youtube.com/vi/${vid}/hqdefault.jpg`, sizes: '480x360', type: 'image/jpeg' },
+        ],
+      });
+    } catch (_) {}
+  }
+  function setupMediaSession() {
+    if (!('mediaSession' in navigator)) return;
+    const ms = (navigator as any).mediaSession;
+    const set = (action: string, fn: any) => { try { ms.setActionHandler(action, fn); } catch (_) {} };
+    set('play', () => ytPlayer?.playVideo?.());
+    set('pause', () => ytPlayer?.pauseVideo?.());
+    set('previoustrack', prev);
+    set('nexttrack', next);
+    // 曲＝動画内の区間なので、シークは区間開始秒を基準に変換
+    set('seekto', (d: any) => {
+      if (d && typeof d.seekTime === 'number' && ytPlayer?.seekTo) ytPlayer.seekTo(segStart + d.seekTime, true);
+    });
+  }
+
   const CAT_LABEL: Record<string, string> = { uta_waku: '歌枠', cover: '歌ってみた', short: 'ショート' };
   const MEMBER_ORDER = ['水面まどか', '白砂あやね'];
 
@@ -480,7 +940,7 @@ const lastUpdated = songsData.updatedAt;
       `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${escHtml(p)}</span>`).join('');
     const tags = (song.tags && song.tags.length)
       ? `<div class="flex gap-1 flex-wrap mt-2.5">${song.tags.slice(0, 3).map((t: string) =>
-          `<span class="text-[10px] text-slate-400 bg-slate-50 border border-slate-100 px-2 py-0.5 rounded">#${escHtml(t)}</span>`).join('')}</div>`
+          `<span class="tag-chip">#${escHtml(t)}</span>`).join('')}</div>`
       : '';
     return `
       <div class="song-card-item card group cursor-pointer overflow-hidden" data-id="${escHtml(song.id)}">
@@ -489,12 +949,15 @@ const lastUpdated = songsData.updatedAt;
           <div class="play-overlay"><div class="play-btn">
             <svg class="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
           </div></div>
-          <span class="playing-badge ts-badge hidden">再生中</span>
+          <span class="playing-badge ts-badge hidden"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>再生中</span>
           <button type="button" class="card-fav" data-id="${escHtml(song.id)}" aria-label="お気に入り" aria-pressed="false">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </button>
           <button type="button" class="card-share" data-id="${escHtml(song.id)}" aria-label="Xで共有">
             <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </button>
+          <button type="button" class="card-add" data-id="${escHtml(song.id)}" aria-label="プレイリストに追加">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 12H3"/><path d="M16 6H3"/><path d="M16 18H3"/><path d="M18 9v6"/><path d="M21 12h-6"/></svg>
           </button>
         </div>
         <div class="p-4">
@@ -658,6 +1121,9 @@ const lastUpdated = songsData.updatedAt;
         onStateChange: (e: any) => {
           isPlaying = (e.data === 1);
           updatePlayIcon();
+          if ('mediaSession' in navigator) {
+            try { (navigator as any).mediaSession.playbackState = isPlaying ? 'playing' : 'paused'; } catch (_) {}
+          }
           // 動画自体の終端（＝最後の曲の区間終わり）。区間監視が拾えない最終曲のみここで処理
           if (e.data === 0 && !segHandled) { segHandled = true; handleEnded(); }
         },
@@ -722,6 +1188,10 @@ const lastUpdated = songsData.updatedAt;
     if (!isSeeking && dur > 0) {
       const v = String(Math.round((cur / dur) * 1000));
       document.querySelectorAll('.seek-range').forEach(el => ((el as HTMLInputElement).value = v));
+    }
+    // ロック画面などのシークバーにも曲内の位置を反映
+    if (dur > 0 && 'mediaSession' in navigator && (navigator as any).mediaSession.setPositionState) {
+      try { (navigator as any).mediaSession.setPositionState({ duration: dur, position: cur, playbackRate: 1 }); } catch (_) {}
     }
   }
 
@@ -930,6 +1400,7 @@ const lastUpdated = songsData.updatedAt;
     loadVideo(song);
     updateBar(song);
     applyTheme(song);
+    updateMediaMetadata(song);
     saveHistory(song);
     markPlayingCard(song.id);
     refreshFavUI();
@@ -1277,6 +1748,136 @@ const lastUpdated = songsData.updatedAt;
       if (id) { closeHistory(); playById(id); }
     });
 
+    // ===== プレイリスト =====
+    setupMediaSession();
+    document.getElementById('playlistBtn')?.addEventListener('click', openPlModal);
+    document.getElementById('plClose')?.addEventListener('click', closePlModal);
+    document.getElementById('plBackdrop')?.addEventListener('click', closePlModal);
+    document.getElementById('plBack')?.addEventListener('click', showPlList);
+
+    // 一覧画面: 作成・詳細へ
+    const createFromInput = () => {
+      const input = document.getElementById('plNewName') as HTMLInputElement | null;
+      const name = input?.value.trim();
+      if (!name) { input?.focus(); return; }
+      const pl = createPlaylist(name);
+      if (input) input.value = '';
+      showPlDetail(pl.id);
+    };
+    document.getElementById('plCreate')?.addEventListener('click', createFromInput);
+    document.getElementById('plNewName')?.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter') createFromInput();
+    });
+    document.getElementById('plList')?.addEventListener('click', (e) => {
+      const row = (e.target as HTMLElement).closest('.pl-row');
+      const id = row?.getAttribute('data-pl-id');
+      if (id) showPlDetail(id);
+    });
+
+    // 詳細画面: 名前変更・再生・共有・削除・曲操作
+    document.getElementById('plRename')?.addEventListener('change', (e) => {
+      const pl = plFind(plCurrentId);
+      if (!pl) return;
+      const input = e.target as HTMLInputElement;
+      const v = input.value.trim();
+      if (v) { pl.name = v.slice(0, 40); pl.updatedAt = Date.now(); savePlaylists(); }
+      else input.value = pl.name;
+    });
+    document.getElementById('plPlay')?.addEventListener('click', () => {
+      const pl = plFind(plCurrentId); if (pl) playPlaylist(pl);
+    });
+    document.getElementById('plShuffle')?.addEventListener('click', () => {
+      const pl = plFind(plCurrentId); if (pl) playPlaylist(pl, 0, true);
+    });
+    document.getElementById('plCopyLink')?.addEventListener('click', async () => {
+      const pl = plFind(plCurrentId); if (!pl) return;
+      if (!pl.ids.length) { setPlMsg('曲が無いため共有できません', true); return; }
+      const ok = await copyText(playlistShareUrl(pl.name, pl.ids));
+      setPlMsg(ok ? '共有リンクをコピーしました' : 'コピーに失敗しました', !ok);
+    });
+    document.getElementById('plShareX')?.addEventListener('click', () => {
+      const pl = plFind(plCurrentId); if (!pl) return;
+      if (!pl.ids.length) { setPlMsg('曲が無いため共有できません', true); return; }
+      const text = `うみゃみーMusic プレイリスト「${pl.name}」（${pl.ids.length}曲）`;
+      const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
+        + `&url=${encodeURIComponent(playlistShareUrl(pl.name, pl.ids))}`;
+      window.open(intent, '_blank', 'noopener,noreferrer');
+    });
+    document.getElementById('plDelete')?.addEventListener('click', () => {
+      const pl = plFind(plCurrentId); if (!pl) return;
+      if (!window.confirm(`プレイリスト「${pl.name}」を削除しますか？`)) return;
+      playlists = playlists.filter(p => p.id !== pl.id);
+      savePlaylists();
+      showPlList();
+    });
+    document.getElementById('plSongs')?.addEventListener('click', (e) => {
+      const pl = plFind(plCurrentId); if (!pl) return;
+      const actBtn = (e.target as HTMLElement).closest('[data-act]');
+      const row = (e.target as HTMLElement).closest('.pl-song');
+      if (!actBtn || !row) return;
+      const idx = Number(row.getAttribute('data-idx'));
+      const act = actBtn.getAttribute('data-act');
+      if (act === 'play') { playPlaylist(pl, idx); return; }
+      if (act === 'up' && idx > 0) {
+        [pl.ids[idx - 1], pl.ids[idx]] = [pl.ids[idx], pl.ids[idx - 1]];
+      } else if (act === 'down' && idx < pl.ids.length - 1) {
+        [pl.ids[idx + 1], pl.ids[idx]] = [pl.ids[idx], pl.ids[idx + 1]];
+      } else if (act === 'remove') {
+        pl.ids.splice(idx, 1);
+      } else return;
+      pl.updatedAt = Date.now();
+      savePlaylists();
+      renderPlDetail();
+    });
+
+    // 「プレイリストに追加」モーダル
+    document.getElementById('plAddClose')?.addEventListener('click', () => hide('plAddModal'));
+    document.getElementById('plAddBackdrop')?.addEventListener('click', () => hide('plAddModal'));
+    document.getElementById('plAddList')?.addEventListener('click', (e) => {
+      const row = (e.target as HTMLElement).closest('[data-pl-id]');
+      const id = row?.getAttribute('data-pl-id');
+      if (id) togglePlAdd(id);
+    });
+    const addCreate = () => {
+      const input = document.getElementById('plAddNewName') as HTMLInputElement | null;
+      const name = input?.value.trim();
+      if (!name) { input?.focus(); return; }
+      const pl = createPlaylist(name);
+      if (plAddTargetId) { pl.ids.push(plAddTargetId); savePlaylists(); }
+      if (input) input.value = '';
+      renderPlAddList();
+    };
+    document.getElementById('plAddCreate')?.addEventListener('click', addCreate);
+    document.getElementById('plAddNewName')?.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Enter') addCreate();
+    });
+    document.getElementById('sheetAdd')?.addEventListener('click', () => {
+      if (nowPlaying) openPlAdd(nowPlaying.id);
+    });
+
+    // 共有されたプレイリストの受け取り
+    document.getElementById('plSharedClose')?.addEventListener('click', () => hide('plSharedModal'));
+    document.getElementById('plSharedBackdrop')?.addEventListener('click', () => hide('plSharedModal'));
+    document.getElementById('plSharedPlay')?.addEventListener('click', () => playShared(0));
+    document.getElementById('plSharedSongs')?.addEventListener('click', (e) => {
+      const row = (e.target as HTMLElement).closest('.pl-shared-row');
+      if (row) playShared(Number(row.getAttribute('data-idx') || 0));
+    });
+    document.getElementById('plSharedSave')?.addEventListener('click', () => {
+      if (!plShared) return;
+      const pl = createPlaylist(plShared.name);
+      pl.ids = [...plShared.ids];
+      savePlaylists();
+      const msg = document.getElementById('plSharedMsg');
+      if (msg) msg.textContent = `「${pl.name}」として保存しました`;
+    });
+    checkSharedPlaylist();
+
+    // Esc でプレイリスト系モーダルを閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closePlModal(); hide('plAddModal'); hide('plSharedModal'); }
+    });
+
     const memberIds = ['btn-m-all', 'btn-m-madoka', 'btn-m-ayane', 'btn-m-duet'];
     const memberVal: Record<string, string> = { 'btn-m-all': 'all', 'btn-m-madoka': 'madoka', 'btn-m-ayane': 'ayane', 'btn-m-duet': 'duet' };
     memberIds.forEach(id => document.getElementById(id)?.addEventListener('click', () => {
@@ -1315,6 +1916,9 @@ const lastUpdated = songsData.updatedAt;
       // ★ボタンが押されたら再生せずお気に入り切替
       const fav = (e.target as HTMLElement).closest('.card-fav');
       if (fav) { const fid = fav.getAttribute('data-id'); if (fid) toggleFav(fid); return; }
+      // ＋ボタンが押されたら再生せず「プレイリストに追加」
+      const add = (e.target as HTMLElement).closest('.card-add');
+      if (add) { const aid = add.getAttribute('data-id'); if (aid) openPlAdd(aid); return; }
       // 共有ボタンが押されたら再生せず共有
       const share = (e.target as HTMLElement).closest('.card-share');
       if (share) {

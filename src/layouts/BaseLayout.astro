@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 // フォントを自前ホスト（@fontsource）。外部送信(Google Fonts)を排除しつつ見た目は維持。
-// ウェイト: Noto Sans JP=400/500/700/800, Outfit=500/600/700/800
+// ウェイト: Noto Sans JP=400/500/700/800, Outfit=500/600/700/800, Zen Maru Gothic=500/700/900（日本語見出し用）
 import '@fontsource/noto-sans-jp/400.css';
 import '@fontsource/noto-sans-jp/500.css';
 import '@fontsource/noto-sans-jp/700.css';
@@ -10,6 +10,9 @@ import '@fontsource/outfit/500.css';
 import '@fontsource/outfit/600.css';
 import '@fontsource/outfit/700.css';
 import '@fontsource/outfit/800.css';
+import '@fontsource/zen-maru-gothic/500.css';
+import '@fontsource/zen-maru-gothic/700.css';
+import '@fontsource/zen-maru-gothic/900.css';
 
 interface Props {
   title?: string;
@@ -171,6 +174,11 @@ const NOINDEX = true;
       </a>
 
       <div class="flex items-center gap-1">
+        <button id="playlistBtn" type="button" aria-label="プレイリスト"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V6"/><path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M12 12H3"/><path d="M16 6H3"/><path d="M12 18H3"/></svg>
+          <span class="hidden sm:inline">プレイリスト</span>
+        </button>
         <button id="historyBtn" type="button" aria-label="再生履歴"
                 class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
@@ -217,7 +225,7 @@ const NOINDEX = true;
         <div class="h-1.5" style="background:#ff8184"></div>
         <div class="p-4">
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-bold text-ink">水面まどか <span class="text-xs font-medium text-slate-400">みなも まどか</span></h3>
+            <h3 class="font-bold text-ink">水面まどか <span class="fan-mark" title="ファンマーク">🪟</span> <span class="text-xs font-medium text-slate-400">みなも まどか</span></h3>
             <div class="flex gap-2 shrink-0">
               <a href="https://www.youtube.com/@MinamoMadoka" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-madoka hover:underline">YouTube</a>
               <a href="https://x.com/Madoka_Minamo" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-madoka hover:underline">X</a>
@@ -234,7 +242,7 @@ const NOINDEX = true;
         <div class="h-1.5" style="background:#54a2e5"></div>
         <div class="p-4">
           <div class="flex items-center justify-between gap-2">
-            <h3 class="font-bold text-ink">白砂あやね <span class="text-xs font-medium text-slate-400">しらさ あやね</span></h3>
+            <h3 class="font-bold text-ink">白砂あやね <span class="fan-mark" title="ファンマーク">🏖️</span> <span class="text-xs font-medium text-slate-400">しらさ あやね</span></h3>
             <div class="flex gap-2 shrink-0">
               <a href="https://www.youtube.com/@ShirasaAyane" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-ayane hover:underline">YouTube</a>
               <a href="https://x.com/shirasa_ayane" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-ayane hover:underline">X</a>
