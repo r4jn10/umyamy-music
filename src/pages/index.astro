@@ -15,26 +15,29 @@ const lastUpdated = songsData.updatedAt;
   <div class="max-w-6xl mx-auto px-4 w-full">
 
     <!-- Stats -->
-    <div class="flex flex-wrap items-center gap-x-8 gap-y-2 py-6 text-sm">
-      <div class="flex items-baseline gap-1.5">
-        <span class="font-display text-2xl font-extrabold text-ink tabular-nums">{totalSongs}</span>
-        <span class="text-slate-400 text-xs font-medium">曲</span>
-      </div>
-      <div class="flex items-baseline gap-1.5">
-        <span class="font-display text-lg font-bold text-ayane tabular-nums">{utaWakuCount}</span>
-        <span class="text-slate-400 text-xs font-medium">歌枠</span>
-      </div>
-      <div class="flex items-baseline gap-1.5">
-        <span class="font-display text-lg font-bold text-madoka tabular-nums">{coverCount}</span>
-        <span class="text-slate-400 text-xs font-medium">歌ってみた</span>
-      </div>
-      {shortCount > 0 && (
-        <div class="flex items-baseline gap-1.5">
-          <span class="font-display text-lg font-bold text-slate-600 tabular-nums">{shortCount}</span>
-          <span class="text-slate-400 text-xs font-medium">ショート</span>
+    <div class="py-6">
+      <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-1 text-sm">
+        <div class="flex items-baseline gap-1 sm:gap-1.5">
+          <span class="font-display text-lg sm:text-2xl font-extrabold text-ink tabular-nums">{totalSongs}</span>
+          <span class="text-slate-400 text-[11px] sm:text-xs font-medium">曲</span>
         </div>
-      )}
-      <span class="ml-auto text-[11px] text-slate-400">最終更新 <span class="font-semibold text-slate-500">{lastUpdated}</span></span>
+        <div class="flex items-baseline gap-1 sm:gap-1.5">
+          <span class="font-display text-sm sm:text-lg font-bold text-ayane tabular-nums">{utaWakuCount}</span>
+          <span class="text-slate-400 text-[11px] sm:text-xs font-medium">歌枠</span>
+        </div>
+        <div class="flex items-baseline gap-1 sm:gap-1.5">
+          <span class="font-display text-sm sm:text-lg font-bold text-madoka tabular-nums">{coverCount}</span>
+          <span class="text-slate-400 text-[11px] sm:text-xs font-medium">歌ってみた</span>
+        </div>
+        {shortCount > 0 && (
+          <div class="flex items-baseline gap-1 sm:gap-1.5">
+            <span class="font-display text-sm sm:text-lg font-bold text-slate-600 tabular-nums">{shortCount}</span>
+            <span class="text-slate-400 text-[11px] sm:text-xs font-medium">ショート</span>
+          </div>
+        )}
+        <span class="hidden sm:inline ml-auto text-[11px] text-slate-400">最終更新 <span class="font-semibold text-slate-500">{lastUpdated}</span></span>
+      </div>
+      <div class="sm:hidden mt-1 text-right text-[10px] text-slate-400">最終更新 <span class="font-semibold text-slate-500">{lastUpdated}</span></div>
     </div>
 
     <main id="songs" class="pb-16">
@@ -81,24 +84,28 @@ const lastUpdated = songsData.updatedAt;
         </div>
 
         <div class="flex flex-col gap-3">
-          <div class="flex flex-wrap gap-2 items-center">
-            <span class="text-[11px] text-slate-400 font-semibold mr-1">メンバー</span>
-            <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
-            <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか<span class="fan-mark" aria-hidden="true">🪟</span></button>
-            <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね<span class="fan-mark" aria-hidden="true">🏖️</span></button>
-            <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー<span class="fan-mark" aria-hidden="true">🫶</span></button>
+          <div class="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
+            <span class="text-[11px] text-slate-400 font-semibold sm:mr-1">メンバー</span>
+            <div class="flex flex-wrap items-center gap-2">
+              <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
+              <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか<span class="fan-mark" aria-hidden="true">🪟</span></button>
+              <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね<span class="fan-mark" aria-hidden="true">🏖️</span></button>
+              <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー<span class="fan-mark" aria-hidden="true">🫶</span></button>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-2 items-center">
-            <span class="text-[11px] text-slate-400 font-semibold mr-1">カテゴリ</span>
-            <button id="btn-c-all" class="chip" aria-pressed="true">ぜんぶ</button>
-            <button id="btn-c-uta_waku" class="chip" aria-pressed="false">歌枠</button>
-            <button id="btn-c-cover" class="chip" aria-pressed="false">歌ってみた</button>
-            <button id="btn-c-short" class="chip" aria-pressed="false">ショート</button>
-            <button id="btn-fav" class="chip chip-fav ml-auto" aria-pressed="false" aria-label="お気に入りで絞り込み">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              お気に入り
-            </button>
-            <span id="resultCount" class="text-[11px] font-medium text-slate-400">{totalSongs} 曲</span>
+          <div class="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
+            <span class="text-[11px] text-slate-400 font-semibold sm:mr-1">カテゴリ</span>
+            <div class="flex flex-wrap items-center gap-2">
+              <button id="btn-c-all" class="chip" aria-pressed="true">ぜんぶ</button>
+              <button id="btn-c-uta_waku" class="chip" aria-pressed="false">歌枠</button>
+              <button id="btn-c-cover" class="chip" aria-pressed="false">歌ってみた</button>
+              <button id="btn-c-short" class="chip" aria-pressed="false">ショート</button>
+              <button id="btn-fav" class="chip chip-fav sm:ml-auto" aria-pressed="false" aria-label="お気に入りで絞り込み">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                お気に入り
+              </button>
+              <span id="resultCount" class="text-[11px] font-medium text-slate-400">{totalSongs} 曲</span>
+            </div>
           </div>
         </div>
       </div>
@@ -340,6 +347,19 @@ const lastUpdated = songsData.updatedAt;
                  class="flex-1 min-w-0 px-3 py-2 border border-slate-200 rounded-xl text-sm bg-slate-50/60 focus:outline-none focus:border-slate-400 focus:bg-white transition">
           <button id="plCreate" type="button" class="chip text-xs shrink-0">＋ 作成</button>
         </div>
+        <!-- プレイリストの書き出し／取り込み -->
+        <div class="px-3 pb-2 flex flex-wrap items-center gap-2 shrink-0">
+          <button id="plExport" type="button" class="chip text-xs" aria-label="プレイリストをファイルに書き出し">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            書き出し
+          </button>
+          <button id="plImport" type="button" class="chip text-xs" aria-label="ファイルからプレイリストを取り込み">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            取り込み
+          </button>
+          <span id="plIoMsg" class="text-[11px] font-medium text-slate-400" role="status" aria-live="polite"></span>
+          <input id="plFile" type="file" accept="application/json,.json" class="hidden">
+        </div>
         <div id="plList" class="overflow-y-auto p-2"></div>
       </div>
 
@@ -481,8 +501,8 @@ const lastUpdated = songsData.updatedAt;
   const FAV_KEY = 'umyamy:favorites';
   let favSet: Set<string> = new Set();
   try { favSet = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')); } catch (_) {}
-  function saveFav() {
-    try { localStorage.setItem(FAV_KEY, JSON.stringify([...favSet])); } catch (_) {}
+  function saveFav(): boolean {
+    try { localStorage.setItem(FAV_KEY, JSON.stringify([...favSet])); return true; } catch (_) { return false; }
   }
   function toggleFav(id: string) {
     if (favSet.has(id)) favSet.delete(id); else favSet.add(id);
@@ -553,13 +573,14 @@ const lastUpdated = songsData.updatedAt;
         const incoming = Array.isArray(data) ? data : (data && Array.isArray(data.ids) ? data.ids : null);
         if (!incoming) { setFavIoMsg('ファイル形式が正しくありません', true); return; }
         const known = new Set(songs.map((s: any) => s.id));
+        const snapshot = new Set(favSet);
         let added = 0, skipped = 0;
         for (const id of incoming) {
           if (typeof id !== 'string' || !known.has(id)) { skipped++; continue; }
           if (favSet.has(id)) continue;
           favSet.add(id); added++;
         }
-        saveFav();
+        if (!saveFav()) { favSet = snapshot; setFavIoMsg('保存に失敗しました。ブラウザの保存容量を確認してください', true); return; }
         refreshFavUI();
         shownCount = PAGE_SIZE;
         refresh();
@@ -580,7 +601,9 @@ const lastUpdated = songsData.updatedAt;
   const PL_KEY = 'umyamy:playlists';
   let playlists: any[] = [];
   try { const v = JSON.parse(localStorage.getItem(PL_KEY) || '[]'); if (Array.isArray(v)) playlists = v; } catch (_) {}
-  function savePlaylists() { try { localStorage.setItem(PL_KEY, JSON.stringify(playlists)); } catch (_) {} }
+  function savePlaylists(): boolean {
+    try { localStorage.setItem(PL_KEY, JSON.stringify(playlists)); return true; } catch (_) { return false; }
+  }
   const plUid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
   const plFind = (id: string | null) => playlists.find(p => p.id === id);
   const songById = (id: string) => songs.find((s: any) => s.id === id);
@@ -628,6 +651,66 @@ const lastUpdated = songsData.updatedAt;
     (el as HTMLElement).style.color = isErr ? '#e11d48' : '';
   }
 
+  // ===== プレイリストの書き出し／取り込み（端末間の移行・バックアップ用） =====
+  function setPlIoMsg(text: string, isErr = false) {
+    const el = document.getElementById('plIoMsg');
+    if (!el) return;
+    el.textContent = text;
+    el.classList.toggle('text-rose-500', isErr);
+    el.classList.toggle('text-slate-400', !isErr);
+  }
+  function exportPlaylists() {
+    const payload = {
+      app: 'umyamy-music', type: 'playlists', version: 1, exportedAt: new Date().toISOString(),
+      playlists: playlists.map(pl => ({ name: pl.name, ids: pl.ids })),
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const d = new Date();
+    const ymd = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+    const a = document.createElement('a');
+    a.href = url; a.download = `umyamy-playlists-${ymd}.json`;
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    setPlIoMsg(playlists.length ? `${playlists.length}件を書き出しました` : 'プレイリストは空です');
+  }
+  // 同名プレイリストがある場合は上書きせず「名前 (2)」のように連番を付けて別名にする
+  function uniquePlName(name: string): string {
+    const base = name || '取り込んだプレイリスト';
+    const existing = new Set(playlists.map(p => p.name));
+    if (!existing.has(base)) return base;
+    let i = 2;
+    while (existing.has(`${base} (${i})`)) i++;
+    return `${base} (${i})`;
+  }
+  // 取り込みは「新規追加」（既存プレイリストは上書きしない）。曲IDは現行の songs.json に無くても保持する
+  function importPlaylists(file: File) {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(String(reader.result));
+        const incoming = Array.isArray(data) ? data : (data && Array.isArray(data.playlists) ? data.playlists : null);
+        if (!incoming) { setPlIoMsg('ファイル形式が正しくありません', true); return; }
+        const snapshot = [...playlists];
+        let added = 0, skipped = 0;
+        for (const item of incoming) {
+          if (!item || typeof item !== 'object' || !Array.isArray(item.ids)) { skipped++; continue; }
+          const ids = item.ids.filter((id: any) => typeof id === 'string');
+          const name = uniquePlName(typeof item.name === 'string' ? item.name.trim().slice(0, 40) : '');
+          playlists.push({ id: plUid(), name, ids, updatedAt: Date.now() });
+          added++;
+        }
+        if (!savePlaylists()) { playlists = snapshot; setPlIoMsg('保存に失敗しました。ブラウザの保存容量を確認してください', true); return; }
+        renderPlList();
+        if (added) setPlIoMsg(`${added}件を取り込みました${skipped ? `（対象外 ${skipped}件）` : ''}`);
+        else setPlIoMsg('取り込めるプレイリストがありませんでした', true);
+      } catch (_) {
+        setPlIoMsg('読み込みに失敗しました', true);
+      }
+    };
+    reader.readAsText(file);
+  }
+
   // --- 描画 ---
   function plRowThumb(pl: any): string {
     const first = plResolveSongs(pl)[0];
@@ -649,7 +732,7 @@ const lastUpdated = songsData.updatedAt;
         ${plRowThumb(pl)}
         <span class="min-w-0 flex-1">
           <span class="block text-sm font-semibold text-ink truncate">${escHtml(pl.name)}</span>
-          <span class="block text-xs text-slate-400">${pl.ids.length}曲</span>
+          <span class="block text-xs text-slate-400">${plResolveSongs(pl).length}曲</span>
         </span>
         <svg class="w-4 h-4 text-slate-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </button>`).join('');
@@ -831,7 +914,7 @@ const lastUpdated = songsData.updatedAt;
           </span>
           <span class="min-w-0 flex-1">
             <span class="block text-sm font-semibold text-ink truncate">${escHtml(pl.name)}</span>
-            <span class="block text-xs text-slate-400">${pl.ids.length}曲</span>
+            <span class="block text-xs text-slate-400">${plResolveSongs(pl).length}曲</span>
           </span>
         </button>`;
     }).join('');
@@ -1772,6 +1855,16 @@ const lastUpdated = songsData.updatedAt;
       const row = (e.target as HTMLElement).closest('.pl-row');
       const id = row?.getAttribute('data-pl-id');
       if (id) showPlDetail(id);
+    });
+
+    // 一覧画面: プレイリストの書き出し／取り込み
+    document.getElementById('plExport')?.addEventListener('click', exportPlaylists);
+    document.getElementById('plImport')?.addEventListener('click', () => document.getElementById('plFile')?.click());
+    document.getElementById('plFile')?.addEventListener('change', (e) => {
+      const input = e.target as HTMLInputElement;
+      const file = input.files?.[0];
+      if (file) importPlaylists(file);
+      input.value = ''; // 同じファイルを連続で選び直せるようにリセット
     });
 
     // 詳細画面: 名前変更・再生・共有・削除・曲操作
