@@ -170,8 +170,8 @@ const NOINDEX = true;
   <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
       <div class="flex items-center gap-2 min-w-0">
-        <a href={`${base}/`} class="flex items-center group shrink-0">
-          <img src={`${base}/logo.svg`} alt="うみゃみーMusic" class="h-8 w-auto transition group-hover:scale-[1.02]" />
+        <a href={`${base}/`} class="flex items-center group min-w-0">
+          <img src={`${base}/logo.svg`} alt="うみゃみーMusic" class="h-8 w-auto max-w-full object-contain object-left transition group-hover:scale-[1.02]" />
         </a>
         <!-- ハーフアニバーサリー記念バッジ（期間中のみJSで hidden を解除） -->
         <span id="annivBadge" class="hidden items-center gap-1 px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-semibold text-white shrink-0"
@@ -181,7 +181,7 @@ const NOINDEX = true;
         </span>
       </div>
 
-      <div class="flex items-center gap-1">
+      <div class="flex items-center gap-1 shrink-0">
         <button id="playlistBtn" type="button" aria-label="プレイリスト"
                 class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15V6"/><path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M12 12H3"/><path d="M16 6H3"/><path d="M12 18H3"/></svg>
