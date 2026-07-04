@@ -595,6 +595,20 @@ const lastUpdated = songsData.updatedAt;
   const songsDataEl = document.getElementById('songs-data');
   const songs = songsDataEl ? JSON.parse(songsDataEl.getAttribute('data-songs') || '[]') : [];
 
+  // 表示順は JSON の並びに依存させず「配信日 → 同日内は配信（動画）ごと → タイムスタンプ」で揃える。
+  // 同日に複数配信がある場合は曲が混ざらないよう、動画単位でまとめる（同日内の動画同士は JSON の登場順を維持）。
+  {
+    const videoOrder = new Map<string, number>();
+    songs.forEach((s: any, i: number) => {
+      const vid = s.youtube?.videoId || '';
+      if (!videoOrder.has(vid)) videoOrder.set(vid, i);
+    });
+    songs.sort((a: any, b: any) =>
+      (a.streamDate || '').localeCompare(b.streamDate || '') ||
+      (videoOrder.get(a.youtube?.videoId || '') || 0) - (videoOrder.get(b.youtube?.videoId || '') || 0) ||
+      (a.youtube?.timestampSec || 0) - (b.youtube?.timestampSec || 0));
+  }
+
   const fuse = new Fuse(songs, { keys: ['title', 'artist', 'tags'], threshold: 0.3 });
 
   // ===== プレイリスト（自作・並べ替え・共有） =====
