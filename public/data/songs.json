@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-28",
+  "updatedAt": "2026-07-05",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -43,7 +43,7 @@
     {
       "id": "20260130-madoka-002",
       "title": "プライド革命",
-      "artist": "CHICO with HoneyWorks",
+      "artist": "CHiCO with HoneyWorks",
       "performers": [
         "水面まどか"
       ],
@@ -316,8 +316,8 @@
     },
     {
       "id": "20260215-ayane-002",
-      "title": "とくベチュ、して",
-      "artist": " =LOVE",
+      "title": "とくべチュ、して",
+      "artist": "=LOVE",
       "performers": [
         "白砂あやね"
       ],
@@ -370,7 +370,7 @@
     },
     {
       "id": "20260215-ayane-005",
-      "title": "GO!GO!MANIAC",
+      "title": "GO! GO! MANIAC",
       "artist": "放課後ティータイム",
       "performers": [
         "白砂あやね"
@@ -563,7 +563,7 @@
     {
       "id": "20260302-madoka-006",
       "title": "chocolate box",
-      "artist": "Dezzy",
+      "artist": "dezzy(一億円P) feat. 鏡音リン、鏡音レン",
       "performers": [
         "水面まどか"
       ],
@@ -805,7 +805,7 @@
     {
       "id": "20260310-both-002",
       "title": "おこちゃま戦争",
-      "artist": "ギガP FEAT.鏡音リン、鏡音レン",
+      "artist": "ギガP feat. 鏡音リン、鏡音レン",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -863,7 +863,7 @@
     {
       "id": "20260310-both-004",
       "title": "unravel",
-      "artist": "TK from/凛として時雨",
+      "artist": "TK from 凛として時雨",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -921,7 +921,7 @@
     {
       "id": "20260310-both-006",
       "title": "恋は渾沌の隷也",
-      "artist": "後ろから這いより隊",
+      "artist": "後ろから這いより隊G",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -941,7 +941,7 @@
     {
       "id": "20260310-madoka-004",
       "title": "自己肯定感爆上げ↑↑しゅきしゅきソング",
-      "artist": " 藤田ことね(飯田ヒカル)",
+      "artist": "藤田ことね(飯田ヒカル)",
       "performers": [
         "水面まどか"
       ],
@@ -1341,7 +1341,7 @@
     {
       "id": "20260409-both-002",
       "title": "Dazzling Game",
-      "artist": "Liella!, 澁谷かのん (CV.伊達さゆり), ウィーン・マルガレーテ (CV.結那), 鬼塚冬毬 (CV.坂倉 花)",
+      "artist": "Liella!, 澁谷かのん(伊達さゆり), ウィーン・マルガレーテ(結那), 鬼塚冬毬(坂倉 花)",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -1452,7 +1452,7 @@
     },
     {
       "id": "20260410-madoka-004",
-      "title": "秒針を嚙む",
+      "title": "秒針を噛む",
       "artist": "ずっと真夜中でいいのに。",
       "performers": [
         "水面まどか"
@@ -1471,7 +1471,7 @@
     {
       "id": "20260410-madoka-005",
       "title": "give it back",
-      "artist": "Cö shu Nie。",
+      "artist": "Cö shu Nie",
       "performers": [
         "水面まどか"
       ],
@@ -1543,7 +1543,7 @@
     {
       "id": "20260410-madoka-009",
       "title": "君色に染まる",
-      "artist": "TOKOTOKO(西沢さんP)feat.GUMI",
+      "artist": "TOKOTOKO(西沢さんP) feat. GUMI",
       "performers": [
         "水面まどか"
       ],
@@ -1579,7 +1579,7 @@
     {
       "id": "20260410-madoka-011",
       "title": "君じゃなきゃダメみたい",
-      "artist": "大石昌良",
+      "artist": "オーイシマサヨシ",
       "performers": [
         "水面まどか"
       ],
@@ -1651,7 +1651,7 @@
     {
       "id": "20260410-madoka-015",
       "title": "トウキョウ・シャンディ・ランデヴ",
-      "artist": "MAISONdes",
+      "artist": "MAISONdes feat. 花譜, ツミキ",
       "performers": [
         "水面まどか"
       ],
@@ -1668,8 +1668,8 @@
     },
     {
       "id": "20260410-madoka-016",
-      "title": "私は、私のことが好き",
-      "artist": "かぐや(cv.夏吉ゆうこ)from 超かぐや姫！",
+      "title": "私は、わたしの事が好き。",
+      "artist": "HoneyWorks / かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
       "performers": [
         "水面まどか"
       ],
@@ -1727,7 +1727,7 @@
     {
       "id": "20260422-both-003",
       "title": "魔性少女",
-      "artist": "ファントムシーター",
+      "artist": "ファントムシータ",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -1806,7 +1806,7 @@
     {
       "id": "20260422-both-005",
       "title": "コットンキャンディえいえいおー!",
-      "artist": "黒澤 ルビィ(降幡愛)",
+      "artist": "黒澤ルビィ(降幡愛) from Aqours",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -1866,7 +1866,7 @@
     {
       "id": "20260422-madoka-002",
       "title": "ラブリー☆えんじぇる!!",
-      "artist": "ave;new feat.あべにゅうぷろじぇくと",
+      "artist": "ave;new feat. あべにゅうぷろじぇくと",
       "performers": [
         "水面まどか"
       ],
@@ -1905,7 +1905,7 @@
     {
       "id": "20260422-both-008",
       "title": "めにしゅき♡ラッシュっしゅ!",
-      "artist": "カレンチャン（CV.篠原侑）スティルインラブ（CV.宮下早紀）フサイチパンドラ（CV.佳原萌枝）アドマイヤグルーヴ（CV.鈴木日菜）ラッキーライラック（CV.中島由貴）ラヴズオンリーユー（CV.久保田未夢）ステイゴールド（CV.松田颯水）",
+      "artist": "カレンチャン(篠原侑), スティルインラブ(宮下早紀), フサイチパンドラ(佳原萌枝), アドマイヤグルーヴ(鈴木日菜), ラッキーライラック(中島由貴), ラヴズオンリーユー(久保田未夢), ステイゴールド(松田颯水)",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -2178,7 +2178,7 @@
     {
       "id": "20260516-both-005",
       "title": "にぎにぎにじたうん！",
-      "artist": "にじさんじ",
+      "artist": "にじさんじ、周央サンゴ",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -2311,7 +2311,7 @@
     {
       "id": "20260522-ayane-002",
       "title": "POP IN 2",
-      "artist": "B小町 ルビー(CV:伊駒ゆりえ), 有馬かな(CV:潘めぐみ), MEMちょ(CV:大久保瑠美)",
+      "artist": "B小町, ルビー(伊駒ゆりえ), 有馬かな(潘めぐみ), MEMちょ(大久保瑠美)",
       "performers": [
         "白砂あやね"
       ],
@@ -2400,7 +2400,7 @@
     },
     {
       "id": "20260522-ayane-007",
-      "title": "GO！GO！MANIAC",
+      "title": "GO! GO! MANIAC",
       "artist": "放課後ティータイム",
       "performers": [
         "白砂あやね"
@@ -2581,7 +2581,7 @@
     {
       "id": "20260529-madoka-002",
       "title": "ワールドイズマイン CPK! Remix (かぐや&月見ヤチヨ ver.)",
-      "artist": "ryo (supercell) / from 超かぐや姫！",
+      "artist": "ryo (supercell) / かぐや(cv.夏吉ゆうこ)&月見ヤチヨ(cv.早見沙織) from 超かぐや姫！",
       "performers": [
         "水面まどか"
       ],
@@ -2671,7 +2671,7 @@
     {
       "id": "20260529-madoka-007",
       "title": "ray 超かぐや姫！Version",
-      "artist": "rかぐや (cv.夏吉ゆうこ)、月見ヤチヨ (cv.早見沙織) from #超かぐや姫！",
+      "artist": "かぐや (cv.夏吉ゆうこ)、月見ヤチヨ (cv.早見沙織) from #超かぐや姫！",
       "performers": [
         "水面まどか"
       ],
@@ -2869,7 +2869,7 @@
     {
       "id": "20260625-eYlfdUpEiNE-001",
       "title": "とても素敵な六月でした",
-      "artist": "Eight",
+      "artist": "Eight feat. 初音ミク",
       "performers": [
         "水面まどか"
       ],
@@ -3264,8 +3264,8 @@
     },
     {
       "id": "20260310-aJqUz6SccmA-003",
-      "title": "アイワナムチュー feat. asmi, すりぃ",
-      "artist": "MAISONdes",
+      "title": "アイワナムチュー",
+      "artist": "MAISONdes feat. asmi, すりぃ",
       "performers": [
         "白砂あやね"
       ],
@@ -3283,7 +3283,7 @@
     {
       "id": "20260310-aJqUz6SccmA-004",
       "title": "ファンサ",
-      "artist": "mona(夏川椎菜)",
+      "artist": "mona(夏川椎菜) feat. HoneyWorks",
       "performers": [
         "白砂あやね"
       ],
@@ -3355,7 +3355,7 @@
     {
       "id": "20260409-YQNUqTFRU4o-004",
       "title": "パニックラビリンス",
-      "artist": " 黄木あじみ(上田麗奈)",
+      "artist": "黄木あじみ(上田麗奈)",
       "performers": [
         "白砂あやね"
       ],
@@ -3408,7 +3408,7 @@
     },
     {
       "id": "20260409-YQNUqTFRU4o-007",
-      "title": "Star Divine ",
+      "title": "Star Divine",
       "artist": "スタァライト九九組",
       "performers": [
         "白砂あやね"
@@ -3481,7 +3481,7 @@
     {
       "id": "20260409-YQNUqTFRU4o-011",
       "title": "ロミオとシンデレラ",
-      "artist": " Doriko feat.初音ﾐｸ",
+      "artist": "doriko feat. 初音ミク",
       "performers": [
         "白砂あやね"
       ],
