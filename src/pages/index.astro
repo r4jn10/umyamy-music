@@ -62,11 +62,11 @@ const lastUpdated = songsData.updatedAt;
 
       <!-- Search & Filter -->
       <div class="card p-5 mb-8" id="searchArea">
-        <div class="flex items-center gap-1.5 mb-4">
+        <div class="flex flex-wrap items-center gap-1.5 mb-4">
           <button id="view-songs" class="chip" aria-pressed="true">🎵 曲</button>
           <button id="view-streams" class="chip" aria-pressed="false">📺 配信</button>
           <button id="view-artists" class="chip" aria-pressed="false">🎤 アーティスト</button>
-          <select id="streamSort" class="hidden ml-auto text-xs border border-slate-200 rounded-lg px-2 py-1.5 bg-white text-slate-500">
+          <select id="listSort" class="ml-auto text-xs border border-slate-200 rounded-lg px-2 py-1.5 bg-white text-slate-500">
             <option value="date_desc">新着順</option>
             <option value="date_asc">古い順</option>
           </select>
@@ -609,6 +609,18 @@ const lastUpdated = songsData.updatedAt;
       (a.youtube?.timestampSec || 0) - (b.youtube?.timestampSec || 0));
   }
 
+  // 新着順の並び（配信が新しい順、配信内はタイムスタンプ順のまま配信単位で逆順にする）
+  const songsDesc = (() => {
+    const videoRank = new Map<string, number>();
+    songs.forEach((s: any) => {
+      const vid = s.youtube?.videoId || '';
+      if (!videoRank.has(vid)) videoRank.set(vid, videoRank.size);
+    });
+    return [...songs].sort((a: any, b: any) =>
+      (videoRank.get(b.youtube?.videoId || '') || 0) - (videoRank.get(a.youtube?.videoId || '') || 0) ||
+      (a.youtube?.timestampSec || 0) - (b.youtube?.timestampSec || 0));
+  })();
+
   const fuse = new Fuse(songs, { keys: ['title', 'artist', 'tags'], threshold: 0.3 });
 
   // ===== プレイリスト（自作・並べ替え・共有） =====
@@ -1073,8 +1085,13 @@ const lastUpdated = songsData.updatedAt;
   }
 
   // メンバー・カテゴリだけで絞った曲（アーティスト一覧の集計と曲一覧の土台に共用）
+  // 並び順セレクトの現在値（曲・配信ビューで共用）
+  function currentSort(): string {
+    return (document.getElementById('listSort') as HTMLSelectElement)?.value || 'date_desc';
+  }
+
   function memberCategoryFiltered() {
-    let f = songs;
+    let f = currentSort() === 'date_asc' ? songs : songsDesc;
     // メンバー単体ボタンは「ソロ曲のみ」を表示（2人歌唱は「うみゃみー」で絞り込む）
     if (filterMember === 'ayane') f = f.filter((s: any) => s.performers.length === 1 && s.performers[0] === '白砂あやね');
     else if (filterMember === 'madoka') f = f.filter((s: any) => s.performers.length === 1 && s.performers[0] === '水面まどか');
@@ -1159,7 +1176,7 @@ const lastUpdated = songsData.updatedAt;
     document.getElementById('songGrid')?.classList.toggle('hidden', !isSongs);
     document.getElementById('streamGrid')?.classList.toggle('hidden', !isStreams);
     document.getElementById('artistGrid')?.classList.toggle('hidden', !isArtists);
-    document.getElementById('streamSort')?.classList.toggle('hidden', !isStreams);
+    document.getElementById('listSort')?.classList.toggle('hidden', isArtists);
     if (!isSongs) {
       document.getElementById('moreWrap')?.classList.add('hidden');
       document.getElementById('emptyState')?.classList.add('hidden');
@@ -1678,9 +1695,7 @@ const lastUpdated = songsData.updatedAt;
         return hay.includes(searchText);
       });
     }
-    const sortVal = (document.getElementById('streamSort') as HTMLSelectElement)?.value || 'date_desc';
-    if (sortVal === 'date_asc') list.sort((a: any, b: any) => a.date.localeCompare(b.date));
-    else if (sortVal === 'views') list.sort((a: any, b: any) => (b.views || 0) - (a.views || 0));
+    if (currentSort() === 'date_asc') list.sort((a: any, b: any) => a.date.localeCompare(b.date));
     else list.sort((a: any, b: any) => b.date.localeCompare(a.date));
     return list;
   }
@@ -2047,7 +2062,7 @@ const lastUpdated = songsData.updatedAt;
     document.getElementById('view-songs')?.addEventListener('click', () => { filterArtist = null; setView('songs'); });
     document.getElementById('view-streams')?.addEventListener('click', () => { filterArtist = null; setView('streams'); });
     document.getElementById('view-artists')?.addEventListener('click', () => { filterArtist = null; setView('artists'); });
-    document.getElementById('streamSort')?.addEventListener('change', renderStreams);
+    document.getElementById('listSort')?.addEventListener('change', () => { shownCount = PAGE_SIZE; refresh(); });
 
     // 配信カードをクリック → その配信まるごと再生キューへ
     document.getElementById('streamGrid')?.addEventListener('click', (e) => {
