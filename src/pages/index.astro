@@ -1351,17 +1351,26 @@ const lastUpdated = songsData.updatedAt;
     });
   }
 
-  // ミニバーの曲名マーキー：見切れる場合だけ .is-scrolling を付けて横に流す
+  // ミニバーの曲名マーキー：見切れる場合だけ .is-scrolling を付けて一方向に流す
+  // （テキストの複製を後ろに足し、1テキスト分＋間隔で先頭に巻き戻すシームレスループ）
   function applyMarquee(el: HTMLElement | null) {
     if (!el) return;
     const span = el.querySelector('span');
     if (!span) return;
     el.classList.remove('is-scrolling');  // 一旦止めてアニメーションを先頭から再開させる
+    span.querySelector('.mq-dup')?.remove();
     requestAnimationFrame(() => {
       const over = span.scrollWidth - el.clientWidth;
       if (over > 4) {
-        el.style.setProperty('--marquee-shift', `${over}px`);
-        el.style.setProperty('--marquee-dur', `${Math.min(24, over / 24 + 4).toFixed(1)}s`);
+        const GAP = 48;  // 本文と複製の間隔。global.css の .mq-dup padding-left と揃える
+        const shift = span.scrollWidth + GAP;
+        const dup = document.createElement('span');
+        dup.className = 'mq-dup';
+        dup.setAttribute('aria-hidden', 'true');
+        dup.textContent = span.textContent;
+        span.appendChild(dup);
+        el.style.setProperty('--marquee-shift', `${shift}px`);
+        el.style.setProperty('--marquee-dur', `${Math.min(30, Math.max(6, shift / 35 + 1)).toFixed(1)}s`);
         el.classList.add('is-scrolling');
       }
     });
