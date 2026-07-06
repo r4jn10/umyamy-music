@@ -100,9 +100,21 @@
 .fav-pop { animation: favPop .35s ease; }
 @keyframes favPop { 0% { transform: scale(1); } 40% { transform: scale(1.35) rotate(8deg); } 100% { transform: scale(1); } }
 
+/* ミニプレーヤーの曲名マーキー（幅に収まらない時だけJSが .is-scrolling を付与） */
+.marquee { overflow: hidden; white-space: nowrap; }
+.marquee > span { display: inline-block; }
+.marquee.is-scrolling > span {
+  animation: marqueePan var(--marquee-dur, 9s) linear infinite alternate;
+}
+@keyframes marqueePan {
+  0%, 12% { transform: translateX(0); }              /* 先頭でひと呼吸置いてから流す */
+  88%, 100% { transform: translateX(calc(-1 * var(--marquee-shift, 0px))); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .eq i { animation: none; height: 7px; }
   .fav-pop { animation: none; }
+  .marquee.is-scrolling > span { animation: none; }
 }
 
 /* ハーフアニバーサリーの紙吹雪（期間限定・初回表示のみ。JS側で createElement して差し込む） */
