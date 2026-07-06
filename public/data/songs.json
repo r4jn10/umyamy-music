@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-05",
+  "updatedAt": "2026-07-06",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -3675,6 +3675,168 @@
       },
       "streamDate": "2026-04-09",
       "streamTitle": "【#白砂あやね誕生日だね2026】誕生日歌枠！ゲストあり🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-001",
+      "title": "カタオモイ",
+      "artist": "Aimer",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 407,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=407",
+        "endSec": 612
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】",
+      "tags": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-002",
+      "title": "ヤミヤミ",
+      "artist": "やくしまるえつこ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 1290,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=1290",
+        "endSec": 1521
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-003",
+      "title": "カブトムシ",
+      "artist": "aiko",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 1754,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=1754",
+        "endSec": 2066
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】",
+      "tags": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-004",
+      "title": "劇薬中毒",
+      "artist": "＝LOVE",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 2393,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=2393",
+        "endSec": 2671
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】",
+      "tags": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-005",
+      "title": "がらくた",
+      "artist": "米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 3380,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=3380",
+        "endSec": 3627
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-006",
+      "title": "クリームソーダとシャンデリア",
+      "artist": "mei×Henrii",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 4330,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=4330",
+        "endSec": 4550
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】",
+      "tags": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-007",
+      "title": "花に亡霊",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 4994,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=4994",
+        "endSec": 5238
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】",
+      "tags": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20260705-jBvMrNRrOYM-008",
+      "title": "蜜月アン・ドゥ・トロワ",
+      "artist": "DATEKEN",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "jBvMrNRrOYM",
+        "timestampSec": 5612,
+        "url": "https://www.youtube.com/watch?v=jBvMrNRrOYM&t=5612",
+        "endSec": 5858
+      },
+      "streamDate": "2026-07-05",
+      "streamTitle": "【 コラボ歌枠 】るりちゃん先輩とほの明るい夜の歌枠🎤supported by DAM【栞葉るり / 水面まどか / にじさんじ】",
+      "tags": [
+        "栞葉るり"
+      ]
     }
   ]
 }
