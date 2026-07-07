@@ -1553,12 +1553,13 @@ const lastUpdated = songsData.updatedAt;
     document.body.style.paddingBottom = '5.75rem';
   }
 
-  // ----- Xで共有（曲名・アーティスト・歌唱者を本文に、URLは該当のYouTube動画） -----
+  // ----- Xで共有（曲名・アーティスト・歌唱者・サイト名を本文に、URLは該当のYouTube動画） -----
   function shareSong(song: any) {
     if (!song) return;
     const performers = orderPerformers(song.performers || []).join('・');
     const lines = ['#NowPlaying', `${song.title}${song.artist ? ' / ' + song.artist : ''}`];
-    if (performers) lines.push(`うた：${performers}`);
+    if (performers) lines.push(`🎤 ${performers}`);
+    lines.push('via うみゃみーMusic'); // ドメインは載せない（YouTubeリンクを目立たせる）
     const text = lines.join('\n');
     const sec = song.youtube?.timestampSec || 0;
     const ytUrl = song.youtube?.url
@@ -1959,7 +1960,13 @@ const lastUpdated = songsData.updatedAt;
     document.getElementById('plShareX')?.addEventListener('click', () => {
       const pl = plFind(plCurrentId); if (!pl) return;
       if (!pl.ids.length) { setPlMsg('曲が無いため共有できません', true); return; }
-      const text = `うみゃみーMusic プレイリスト「${pl.name}」（${pl.ids.length}曲）`;
+      const titles = plResolveSongs(pl).map((s: any) => s.title);
+      const head = titles.slice(0, 3);
+      while (head.length > 1 && head.join('、').length > 45) head.pop(); // 曲名が長いときは列挙を減らす
+      const lines = [`プレイリスト「${pl.name}」（全${pl.ids.length}曲）`];
+      if (head.length) lines.push(`♪ ${head.join('、')}${titles.length > head.length ? ' ほか' : ''}`);
+      lines.push('via うみゃみーMusic（umyamy-music.com）');
+      const text = lines.join('\n');
       const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
         + `&url=${encodeURIComponent(playlistShareUrl(pl.name, pl.ids))}`;
       window.open(intent, '_blank', 'noopener,noreferrer');
