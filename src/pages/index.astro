@@ -9,6 +9,9 @@ const utaWakuCount = songs.filter(s => s.category === 'uta_waku').length;
 const coverCount = songs.filter(s => s.category === 'cover').length;
 const shortCount = songs.filter(s => s.category === 'short').length;
 const lastUpdated = songsData.updatedAt;
+// 表示対象タブに添える件数（配信＝動画単位、アーティスト＝表記の種類数）
+const streamCount = new Set(songs.map(s => s.youtube.videoId)).size;
+const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boolean)).size;
 ---
 
 <BaseLayout>
@@ -62,21 +65,26 @@ const lastUpdated = songsData.updatedAt;
 
       <!-- Search & Filter -->
       <div class="card p-5 mb-8" id="searchArea">
-        <div class="flex flex-wrap items-center gap-1.5 mb-4">
-          <button id="view-songs" class="chip" aria-pressed="true">🎵 曲</button>
-          <button id="view-streams" class="chip" aria-pressed="false">📺 配信</button>
-          <button id="view-artists" class="chip" aria-pressed="false">🎤 アーティスト</button>
+        <!-- A. 表示対象（主表示の切替。絞り込みチップとは別物のセグメントタブ） -->
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <div class="seg-tabs" role="tablist" aria-label="表示対象">
+            <button id="view-songs" type="button" role="tab" aria-selected="true" aria-controls="songGrid">曲<span class="seg-cnt">{totalSongs}</span></button>
+            <button id="view-streams" type="button" role="tab" aria-selected="false" aria-controls="streamGrid">配信<span class="seg-cnt">{streamCount}</span></button>
+            <button id="view-artists" type="button" role="tab" aria-selected="false" aria-controls="artistGrid">アーティスト<span class="seg-cnt">{artistCount}</span></button>
+          </div>
           <select id="listSort" class="ml-auto text-xs border border-slate-200 rounded-lg px-2 py-1.5 bg-white text-slate-500">
             <option value="date_desc">新着順</option>
             <option value="date_asc">古い順</option>
           </select>
         </div>
+        <!-- B. テキスト検索 -->
         <div class="relative mb-4">
+          <label for="searchInput" class="sr-only">曲名・アーティスト・タグで検索</label>
           <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.3-4.3m1.8-4.7a7 7 0 11-14 0 7 7 0 0114 0z"/>
           </svg>
           <input type="text" id="searchInput" placeholder="曲名・アーティスト・タグで検索"
-                 class="w-full pl-10 pr-10 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50/50 focus:outline-none focus:border-slate-400 focus:bg-white transition">
+                 class="w-full pl-10 pr-10 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50/50 focus:border-slate-400 focus:bg-white transition">
           <button id="clearSearch" type="button" aria-label="クリア"
                   class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -84,28 +92,29 @@ const lastUpdated = songsData.updatedAt;
         </div>
 
         <div class="flex flex-col gap-3">
-          <div class="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
-            <span class="text-[11px] text-slate-400 font-semibold sm:mr-1">メンバー</span>
-            <div class="flex flex-wrap items-center gap-2">
-              <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
-              <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか<span class="fan-mark" aria-hidden="true">🪟</span></button>
-              <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね<span class="fan-mark" aria-hidden="true">🏖️</span></button>
-              <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー<span class="fan-mark" aria-hidden="true">🫶</span></button>
-            </div>
+          <!-- C. メンバー -->
+          <div class="filter-row flex flex-wrap items-center gap-2">
+            <span class="hidden sm:inline text-xs text-slate-500 font-semibold mr-1">メンバー</span>
+            <button id="btn-m-all" class="chip" aria-pressed="true">ぜんぶ</button>
+            <button id="btn-m-madoka" class="chip chip-madoka" aria-pressed="false"><span class="dot" style="background:#ff8184"></span>水面まどか<span class="fan-mark" aria-hidden="true">🪟</span></button>
+            <button id="btn-m-ayane" class="chip chip-ayane" aria-pressed="false"><span class="dot" style="background:#54a2e5"></span>白砂あやね<span class="fan-mark" aria-hidden="true">🏖️</span></button>
+            <button id="btn-m-duet" class="chip chip-duet" aria-pressed="false">うみゃみー<span class="fan-mark" aria-hidden="true">🫶</span></button>
           </div>
-          <div class="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-2">
-            <span class="text-[11px] text-slate-400 font-semibold sm:mr-1">カテゴリ</span>
-            <div class="flex flex-wrap items-center gap-2">
-              <button id="btn-c-all" class="chip" aria-pressed="true">ぜんぶ</button>
-              <button id="btn-c-uta_waku" class="chip" aria-pressed="false">歌枠</button>
-              <button id="btn-c-cover" class="chip" aria-pressed="false">歌ってみた</button>
-              <button id="btn-c-short" class="chip" aria-pressed="false">ショート</button>
-              <button id="btn-fav" class="chip chip-fav sm:ml-auto" aria-pressed="false" aria-label="お気に入りで絞り込み">
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                お気に入り
-              </button>
-              <span id="resultCount" class="text-[11px] font-medium text-slate-400">{totalSongs} 曲</span>
-            </div>
+          <!-- D. カテゴリ -->
+          <div class="filter-row flex flex-wrap items-center gap-2">
+            <span class="hidden sm:inline text-xs text-slate-500 font-semibold mr-1">カテゴリ</span>
+            <button id="btn-c-all" class="chip" aria-pressed="true">ぜんぶ</button>
+            <button id="btn-c-uta_waku" class="chip" aria-pressed="false">歌枠</button>
+            <button id="btn-c-cover" class="chip" aria-pressed="false">歌ってみた</button>
+            <button id="btn-c-short" class="chip" aria-pressed="false">ショート</button>
+          </div>
+          <!-- E. お気に入り（カテゴリとは独立のトグル）と結果件数 -->
+          <div class="pt-3 border-t border-slate-100 flex items-center gap-2">
+            <button id="btn-fav" class="chip chip-fav" aria-pressed="false" aria-label="お気に入りで絞り込み">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              お気に入り
+            </button>
+            <span id="resultCount" class="ml-auto text-xs font-semibold text-slate-500 tabular-nums" role="status" aria-live="polite">{totalSongs} 曲</span>
           </div>
         </div>
       </div>
@@ -1175,9 +1184,9 @@ const lastUpdated = songsData.updatedAt;
     viewMode = mode;
     shownCount = PAGE_SIZE;
     const isSongs = mode === 'songs', isStreams = mode === 'streams', isArtists = mode === 'artists';
-    document.getElementById('view-songs')?.setAttribute('aria-pressed', String(isSongs));
-    document.getElementById('view-streams')?.setAttribute('aria-pressed', String(isStreams));
-    document.getElementById('view-artists')?.setAttribute('aria-pressed', String(isArtists));
+    document.getElementById('view-songs')?.setAttribute('aria-selected', String(isSongs));
+    document.getElementById('view-streams')?.setAttribute('aria-selected', String(isStreams));
+    document.getElementById('view-artists')?.setAttribute('aria-selected', String(isArtists));
     document.getElementById('songGrid')?.classList.toggle('hidden', !isSongs);
     document.getElementById('streamGrid')?.classList.toggle('hidden', !isStreams);
     document.getElementById('artistGrid')?.classList.toggle('hidden', !isArtists);

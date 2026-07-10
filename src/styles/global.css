@@ -32,6 +32,12 @@
   }
   h1, h2, h3, .font-display { font-family: var(--font-display); }
 
+  /* キーボード操作向けの統一フォーカスリング（マウス操作では出ない） */
+  :is(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-ayane);
+    outline-offset: 2px;
+  }
+
   /* 控えめなスクロールバー */
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-track { background: transparent; }
@@ -84,6 +90,38 @@
     content: ""; width: .875rem; height: .25rem; border-radius: 9999px;
     background: linear-gradient(90deg, var(--color-madoka), var(--color-ayane));
   }
+
+  /* 表示対象のセグメントタブ（曲／配信／アーティスト）。絞り込みチップとは別物の見た目 */
+  .seg-tabs {
+    display: inline-flex; gap: 2px; padding: 3px;
+    border-radius: .75rem; background: #eef2f7; border: 1px solid #e2e8f0;
+  }
+  .seg-tabs [role="tab"] {
+    position: relative; display: inline-flex; align-items: baseline; gap: .3rem;
+    font-size: .85rem; font-weight: 700; color: #64748b;
+    padding: .42rem .9rem; border-radius: .55rem; white-space: nowrap;
+    cursor: pointer; transition: color .15s ease, background .15s ease;
+  }
+  .seg-tabs [role="tab"]:hover { color: #0f172a; }
+  .seg-tabs [role="tab"][aria-selected="true"] {
+    background: #fff; color: var(--color-ink); box-shadow: 0 1px 3px rgba(15, 23, 42, .12);
+  }
+  .seg-tabs [role="tab"][aria-selected="true"]::after {
+    content: ""; position: absolute; left: .8rem; right: .8rem; bottom: 3px; height: 2.5px;
+    border-radius: 9999px; background: linear-gradient(90deg, var(--color-madoka), var(--color-ayane));
+  }
+  .seg-cnt { font-size: .7rem; font-weight: 600; color: #94a3b8; font-variant-numeric: tabular-nums; }
+  .seg-tabs [role="tab"][aria-selected="true"] .seg-cnt { color: #64748b; }
+}
+
+/* モバイルの絞り込みチップ：ひと回り小さくして「メンバー4つ／カテゴリ4つ」を各1行に収める
+   （横スクロールも折り返しもさせない。ドット・ファンマークは幅の都合で非表示。
+     390px時の行幅≈306pxに チップ計280px＋間隔18px で収まる計算） */
+@media (max-width: 639px) {
+  #searchArea .filter-row { gap: .375rem; }
+  #searchArea .chip { font-size: .75rem; padding: .4rem .4375rem; gap: .25rem; }
+  #searchArea .chip .dot { display: none; }
+  #searchArea .chip .fan-mark { display: none; }
 }
 
 /* メンバー名の色（公式） */
