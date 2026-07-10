@@ -27,6 +27,8 @@
     background: #f8fafc;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* 固定ミニプレーヤー表示中の本文末尾余白（JSが --player-height に実高さを設定） */
+    padding-bottom: var(--player-height, 0px);
   }
   h1, h2, h3, .font-display { font-family: var(--font-display); }
 

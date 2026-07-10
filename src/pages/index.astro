@@ -250,7 +250,7 @@ const lastUpdated = songsData.updatedAt;
     </div>
 
     <!-- Mini bar -->
-    <div class="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-4px_20px_rgba(15,23,42,0.06)]">
+    <div id="playerBar" class="fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-[0_-4px_20px_rgba(15,23,42,0.06)]">
       <div class="accent-bar h-1 w-full"></div>
       <button id="barHandle" aria-label="プレーヤーを開く" class="group w-full flex flex-col items-center pt-1.5 gap-0.5">
         <span class="block w-9 h-1 rounded-full bg-slate-300 group-hover:bg-slate-400 transition"></span>
@@ -1586,8 +1586,17 @@ const lastUpdated = songsData.updatedAt;
     refreshFavUI();
     renderUpNext();
     document.getElementById('player')?.classList.remove('hidden');
-    document.body.style.paddingBottom = '5.75rem';
+    updatePlayerHeight();
   }
+
+  // 固定ミニバーの実高さを CSS 変数に反映（本文末尾の余白とトップへ戻るボタンの位置が連動。指示書§6）
+  function updatePlayerHeight() {
+    const bar = document.getElementById('playerBar');
+    const visible = bar && !document.getElementById('player')?.classList.contains('hidden');
+    const h = visible ? bar.offsetHeight : 0;
+    document.documentElement.style.setProperty('--player-height', `${h}px`);
+  }
+  window.addEventListener('resize', updatePlayerHeight);
 
   // ----- Xで共有（曲名・アーティスト・歌唱者・サイト名を本文に、URLは該当のYouTube動画） -----
   function shareSong(song: any) {
@@ -1684,7 +1693,7 @@ const lastUpdated = songsData.updatedAt;
     if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
     document.getElementById('player')?.classList.add('hidden');
     document.getElementById('playerSheet')?.classList.add('hidden');
-    document.body.style.paddingBottom = '';
+    updatePlayerHeight();
     markPlayingCard(null);
   }
 

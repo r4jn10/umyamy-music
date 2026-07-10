@@ -153,13 +153,14 @@ const NOINDEX = true;
 
     /* トップへ戻るボタン: スクロール時に右下へフェードイン */
     .back-to-top {
-      position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 30;
+      /* プレーヤー表示中はその高さぶん上に退避（--player-height はプレーヤー側JSが設定） */
+      position: fixed; right: 1.25rem; bottom: calc(1.25rem + var(--player-height, 0px)); z-index: 30;
       width: 2.75rem; height: 2.75rem; border-radius: 9999px;
       display: inline-flex; align-items: center; justify-content: center;
       color: #fff; background: linear-gradient(135deg, #ff8184, #54a2e5);
       box-shadow: 0 6px 20px rgba(15, 23, 42, .18);
       opacity: 0; visibility: hidden; transform: translateY(10px);
-      transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+      transition: opacity .25s ease, transform .25s ease, visibility .25s ease, bottom .25s ease;
     }
     .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
     .back-to-top.is-visible:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(15, 23, 42, .22); }
