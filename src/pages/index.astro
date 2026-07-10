@@ -2109,9 +2109,12 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     });
     checkSharedPlaylist();
 
-    // Esc でプレイリスト系モーダルを閉じる
+    // Esc でモーダル類を閉じる（プレイリスト系・履歴・展開プレーヤー）
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') { closePlModal(); hide('plAddModal'); hide('plSharedModal'); }
+      if (e.key === 'Escape') {
+        closePlModal(); hide('plAddModal'); hide('plSharedModal');
+        hide('historyModal'); hide('playerSheet');
+      }
     });
 
     const memberIds = ['btn-m-all', 'btn-m-madoka', 'btn-m-ayane', 'btn-m-duet'];
