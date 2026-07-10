@@ -38,5 +38,6 @@ development/
 /ビルド_ローカル確認.bat
 /起動_ローカル確認.bat
 
-# セトリ管理ツールの自動バックアップ（ローカル専用・公開しない）
+# セトリ管理ツールの自動バックアップ（現在は development/data-backups/ に保存＝development/ごと除外済み）
+# 旧配置の残骸が dist に混入しないよう念のため残す
 public/data/backups/
