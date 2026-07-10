@@ -483,6 +483,13 @@ const lastUpdated = songsData.updatedAt;
   #btn-fav[aria-pressed="true"] svg { fill: #fbbf24; }
   #sheetFav[aria-pressed="true"] { color: #f59e0b; border-color: #fcd34d; background: #fffbeb; }
   #sheetFav[aria-pressed="true"] svg { fill: #fbbf24; }
+
+  /* YouTube API 読み込み中の再生ボタン（初回再生時のみ。指示書§9.2） */
+  .ctl-play.is-loading { animation: playLoading 1s ease-in-out infinite; }
+  @keyframes playLoading { 50% { opacity: .45; } }
+  @media (prefers-reduced-motion: reduce) {
+    .ctl-play.is-loading { animation: none; opacity: .6; }
+  }
 </style>
 
 <script>
@@ -1219,16 +1226,44 @@ const lastUpdated = songsData.updatedAt;
   let segStart = 0, segEnd = Infinity, segHandled = false, currentVideoId: string | null = null, watchTimer: any = null;
   let isSeeking = false; // シークバーをドラッグ中はバー位置を上書きしない
 
-  const apiTag = document.createElement('script');
-  apiTag.src = 'https://www.youtube.com/iframe_api';
-  document.head.appendChild(apiTag);
+  // YouTube IFrame API は初回の再生操作まで読み込まない（初期表示の軽量化。指示書§9.2）
+  let ytApiRequested = false;
+  function ensureYtApi() {
+    if (ytApiRequested) return;
+    ytApiRequested = true;
+    setPlayerLoading(true);
+    const apiTag = document.createElement('script');
+    apiTag.src = 'https://www.youtube.com/iframe_api';
+    apiTag.onerror = () => {
+      setPlayerLoading(false);
+      showPlayerNotice('プレーヤーを読み込めませんでした。右上のYouTubeボタンからご視聴ください');
+    };
+    document.head.appendChild(apiTag);
+  }
+  // APIロード中は再生ボタンを点滅（onReady で解除）
+  function setPlayerLoading(on: boolean) {
+    document.querySelectorAll('.ctl-play').forEach(btn => {
+      btn.classList.toggle('is-loading', on);
+      if (on) btn.setAttribute('aria-busy', 'true'); else btn.removeAttribute('aria-busy');
+    });
+  }
+  // ミニバーの補助行にエラー等を表示（次の曲情報更新で自然に上書きされる）
+  function showPlayerNotice(msg: string) {
+    const el = document.getElementById('barMeta');
+    if (el) el.innerHTML = `<span>${msg}</span>`;
+  }
   (window as any).onYouTubeIframeAPIReady = () => {
     ytPlayer = new (window as any).YT.Player('ytFrame', {
       playerVars: { rel: 0, playsinline: 1, autoplay: 1 },
       events: {
         onReady: () => {
+          setPlayerLoading(false);
           applyVolume();
           if (pending) { loadVideo(pending); pending = null; }
+        },
+        onError: () => {
+          // 動画非公開・埋め込み不可など。リンク（barYoutube/sheetYoutube）は設定済みなので案内のみ
+          showPlayerNotice('この動画は再生できません。YouTubeボタンからご視聴ください');
         },
         onStateChange: (e: any) => {
           isPlaying = (e.data === 1);
@@ -1273,6 +1308,7 @@ const lastUpdated = songsData.updatedAt;
       startWatch();
     } else {
       pending = song;
+      ensureYtApi();
     }
   }
 
