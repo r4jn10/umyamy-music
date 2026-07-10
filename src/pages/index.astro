@@ -22,25 +22,25 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-1 text-sm">
         <div class="flex items-baseline gap-1 sm:gap-1.5">
           <span class="font-display text-lg sm:text-2xl font-extrabold text-ink tabular-nums">{totalSongs}</span>
-          <span class="text-slate-400 text-[11px] sm:text-xs font-medium">曲</span>
+          <span class="text-slate-500 text-xs font-medium">曲</span>
         </div>
         <div class="flex items-baseline gap-1 sm:gap-1.5">
           <span class="font-display text-sm sm:text-lg font-bold text-ayane tabular-nums">{utaWakuCount}</span>
-          <span class="text-slate-400 text-[11px] sm:text-xs font-medium">歌枠</span>
+          <span class="text-slate-500 text-xs font-medium">歌枠</span>
         </div>
         <div class="flex items-baseline gap-1 sm:gap-1.5">
           <span class="font-display text-sm sm:text-lg font-bold text-madoka tabular-nums">{coverCount}</span>
-          <span class="text-slate-400 text-[11px] sm:text-xs font-medium">歌ってみた</span>
+          <span class="text-slate-500 text-xs font-medium">歌ってみた</span>
         </div>
         {shortCount > 0 && (
           <div class="flex items-baseline gap-1 sm:gap-1.5">
             <span class="font-display text-sm sm:text-lg font-bold text-slate-600 tabular-nums">{shortCount}</span>
-            <span class="text-slate-400 text-[11px] sm:text-xs font-medium">ショート</span>
+            <span class="text-slate-500 text-xs font-medium">ショート</span>
           </div>
         )}
-        <span class="hidden sm:inline ml-auto text-[11px] text-slate-400">最終更新 <span class="font-semibold text-slate-500">{lastUpdated}</span></span>
+        <span class="hidden sm:inline ml-auto text-xs text-slate-500">最終更新 <span class="font-semibold text-slate-600">{lastUpdated}</span></span>
       </div>
-      <div class="sm:hidden mt-1 text-right text-[10px] text-slate-400">最終更新 <span class="font-semibold text-slate-500">{lastUpdated}</span></div>
+      <div class="sm:hidden mt-1 text-right text-xs text-slate-500">最終更新 <span class="font-semibold text-slate-600">{lastUpdated}</span></div>
     </div>
 
     <main id="songs" class="pb-16">
@@ -478,11 +478,12 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
   :global(.playing-badge) { background: var(--card-accent, #ff8184); left: 8px; right: auto; }
   /* display は .hidden（レイヤー内）に勝たないよう :not(.hidden) のときだけ指定 */
   :global(.playing-badge:not(.hidden)) { display: inline-flex; align-items: center; }
-  :global(.card-share) { position: absolute; top: 8px; right: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
+  /* 隅の操作ボタンはタッチしやすい40px角（指示書§5。見た目の主張は透過背景で抑える） */
+  :global(.card-share) { position: absolute; top: 6px; right: 6px; z-index: 10; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
   :global(.card-share:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
-  :global(.card-add) { position: absolute; top: 44px; right: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
+  :global(.card-add) { position: absolute; top: 52px; right: 6px; z-index: 10; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s; }
   :global(.card-add:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
-  :global(.card-fav) { position: absolute; top: 8px; left: 8px; z-index: 10; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s, color .2s; }
+  :global(.card-fav) { position: absolute; top: 6px; left: 6px; z-index: 10; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; background: rgba(15,23,42,.55); color: #fff; transition: background .2s, transform .2s, color .2s; }
   :global(.card-fav:hover) { background: rgba(15,23,42,.85); transform: scale(1.08); }
   :global(.card-fav.is-fav) { color: #fbbf24; }
   :global(.card-fav.is-fav svg) { fill: #fbbf24; }
@@ -1066,7 +1067,8 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
           `<span class="tag-chip">#${escHtml(t)}</span>`).join('')}</div>`
       : '';
     return `
-      <div class="song-card-item card group cursor-pointer overflow-hidden" data-id="${escHtml(song.id)}">
+      <div class="song-card-item card group cursor-pointer overflow-hidden" data-id="${escHtml(song.id)}"
+           tabindex="0" role="button" aria-label="${escHtml(song.title)}を再生">
         <div class="thumb-wrap">
           <img src="${thumb}" alt="${escHtml(song.title)}" loading="lazy" decoding="async" />
           <div class="play-overlay"><div class="play-btn">
@@ -1088,10 +1090,10 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
             <h3 class="font-bold text-slate-900 text-[15px] leading-snug flex-1">${escHtml(song.title)}</h3>
             <span class="shrink-0 text-[11px] px-2 py-0.5 rounded-full font-semibold text-slate-500 bg-slate-100 whitespace-nowrap">${escHtml(cat)}</span>
           </div>
-          <p class="text-xs text-slate-400 font-medium mb-3 truncate">${escHtml(song.artist || '')}</p>
+          <p class="text-xs text-slate-500 font-medium mb-3 truncate">${escHtml(song.artist || '')}</p>
           <div class="flex items-center justify-between gap-2">
             <div class="flex gap-1 flex-wrap">${duetBadge}${chips}</div>
-            <span class="text-[11px] font-medium text-slate-400 whitespace-nowrap">${escHtml(song.streamDate || '')}</span>
+            <span class="text-xs font-medium text-slate-500 whitespace-nowrap">${escHtml(song.streamDate || '')}</span>
           </div>
           ${tags}
         </div>
@@ -2151,6 +2153,16 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       }
       const card = (e.target as HTMLElement).closest('.song-card-item');
       const id = card?.getAttribute('data-id');
+      const song = id ? songs.find((s: any) => s.id === id) : null;
+      if (song) playSong(song);
+    });
+    // キーボード再生：カード自体にフォーカスして Enter / Space（内側のボタンは各自のEnterに任せる）
+    document.getElementById('songGrid')?.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const t = e.target as HTMLElement;
+      if (!t.classList.contains('song-card-item')) return;
+      e.preventDefault(); // Spaceのページスクロールを抑止
+      const id = t.getAttribute('data-id');
       const song = id ? songs.find((s: any) => s.id === id) : null;
       if (song) playSong(song);
     });
