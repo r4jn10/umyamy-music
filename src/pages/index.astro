@@ -177,7 +177,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     <!-- Expanded sheet -->
     <div id="playerSheet" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center">
       <div id="sheetBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
-      <div class="relative w-full max-w-4xl bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-slate-200 max-h-[90vh] flex flex-col overflow-hidden">
+      <div class="relative w-full max-w-4xl bg-white sm:rounded-2xl shadow-2xl sm:border border-slate-200 h-[100dvh] sm:h-auto sm:max-h-[90vh] flex flex-col overflow-hidden">
         <div class="accent-bar h-1 w-full shrink-0"></div>
         <div class="flex items-center justify-between px-4 pt-3 pb-1">
           <span class="accent-text text-[11px] font-bold tracking-widest text-madoka">NOW PLAYING</span>
@@ -185,9 +185,9 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
         </div>
-        <div class="flex flex-col sm:flex-row gap-4 p-4 pt-1 min-h-0 overflow-y-auto sm:overflow-hidden">
-          <div class="sm:w-3/5 shrink-0 flex flex-col">
-            <div class="aspect-video bg-black rounded-xl overflow-hidden"><div id="ytFrame" class="w-full h-full"></div></div>
+        <div class="flex flex-col sm:flex-row gap-4 p-4 pt-1 min-h-0 flex-1 overflow-hidden">
+          <div id="sheetNowPane" class="sm:w-3/5 sm:shrink-0 min-h-0 flex flex-col overflow-y-auto overscroll-contain">
+            <div class="aspect-video shrink-0 bg-black rounded-xl overflow-hidden"><div id="ytFrame" class="w-full h-full"></div></div>
             <div class="mt-3">
               <h3 id="sheetTitle" class="font-bold text-ink leading-snug">—</h3>
               <p id="sheetMeta" class="text-xs text-slate-400 mt-0.5">—</p>
@@ -247,12 +247,32 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
               </div>
             </div>
           </div>
-          <div class="sm:w-2/5 min-h-0 flex flex-col">
+          <div id="sheetQueuePane" class="sm:w-2/5 min-h-0 flex-1 flex flex-col">
+            <!-- モバイル：キューの引き上げハンドル（ミニバーのハンドルと同デザイン。タップで全面表示／格納） -->
+            <button type="button" id="sheetQueueToggle" aria-expanded="false" aria-label="再生キューを広げる"
+                    class="sm:hidden group shrink-0 -mx-4 flex flex-col items-center pt-1.5 pb-0.5 gap-0.5 border-t border-slate-200">
+              <span class="block w-9 h-1 rounded-full bg-slate-300 group-hover:bg-slate-400 transition"></span>
+              <svg class="queue-chevron w-3.5 h-3.5 text-slate-300 group-hover:text-slate-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" d="M5 15l7-7 7 7"/></svg>
+            </button>
+            <!-- キュー全面表示中のミニNow Playing行（サムネ・曲名・再生/一時停止。タップで動画表示へ戻る） -->
+            <div id="sheetMiniNow" class="hidden items-center gap-3 shrink-0 pt-1 pb-2">
+              <button type="button" id="sheetMiniInfo" class="flex items-center gap-3 min-w-0 flex-1 text-left" aria-label="再生中の曲を表示">
+                <img id="sheetMiniThumb" src="" alt="" class="w-10 h-10 rounded-lg object-cover bg-slate-100 shrink-0">
+                <span class="min-w-0 flex-1">
+                  <span id="sheetMiniTitle" class="block text-sm font-semibold text-ink truncate">—</span>
+                  <span id="sheetMiniMeta" class="block text-xs text-slate-400 truncate">—</span>
+                </span>
+              </button>
+              <button type="button" class="ctl-play play-btn-themed p-2 rounded-full bg-ink text-white hover:opacity-90 shrink-0" aria-label="再生/一時停止">
+                <svg class="icon-play w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>
+                <svg class="icon-pause w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" fill="currentColor"/><rect x="6" y="4" width="4" height="16" rx="1" fill="currentColor"/></svg>
+              </button>
+            </div>
             <p class="mb-2 shrink-0 flex items-baseline gap-2">
               <span class="text-xs font-bold text-slate-400">再生キュー</span>
               <span id="queueMode" class="text-[11px] font-medium text-slate-400"></span>
             </p>
-            <div id="upNext" class="flex-1 overflow-y-auto -mr-1 pr-1 space-y-1 min-h-[120px] max-h-[40vh] sm:max-h-none"></div>
+            <div id="upNext" class="flex-1 overflow-y-auto overscroll-contain -mr-1 pr-1 space-y-1 min-h-[120px]"></div>
           </div>
         </div>
       </div>
@@ -512,6 +532,17 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
   @keyframes playLoading { 50% { opacity: .45; } }
   @media (prefers-reduced-motion: reduce) {
     .ctl-play.is-loading { animation: none; opacity: .6; }
+  }
+
+  /* 展開シート：モバイル限定・キューは常に下部へ表示し、ハンドルで全面表示に切替。
+     全面表示中の動画側は display:none にしない（環境により YouTube の再生が止まるため、1px に縮めて残す） */
+  @media (max-width: 639px) {
+    #playerSheet.queue-open #sheetNowPane {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      opacity: 0; pointer-events: none;
+    }
+    #playerSheet.queue-open .queue-chevron { transform: rotate(180deg); }
+    #playerSheet.queue-open #sheetMiniNow { display: flex; }
   }
 </style>
 
@@ -1452,6 +1483,9 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     set('sheetTitle', el => el.textContent = song.title);
     set('sheetMeta', el => el.textContent = `${song.artist}${song.streamTitle ? ' — ' + song.streamTitle : ''}`);
     set('sheetYoutube', el => el.href = yurl);
+    set('sheetMiniThumb', el => el.src = `https://img.youtube.com/vi/${song.youtube.videoId}/default.jpg`);
+    set('sheetMiniTitle', el => el.textContent = song.title);
+    set('sheetMiniMeta', el => el.textContent = song.artist);
   }
 
   function updatePlayIcon() {
@@ -1709,6 +1743,12 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     if (song) playSong(song);
   }
 
+  // 展開シート表示中は背面ページのスクロールを止める
+  function lockScroll(on: boolean) {
+    document.documentElement.style.overflow = on ? 'hidden' : '';
+    document.body.style.overflow = on ? 'hidden' : '';
+  }
+
   function closePlayer() {
     stopWatch();
     currentVideoId = null;
@@ -1716,6 +1756,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
     document.getElementById('player')?.classList.add('hidden');
     document.getElementById('playerSheet')?.classList.add('hidden');
+    lockScroll(false);
     updatePlayerHeight();
     markPlayingCard(null);
   }
@@ -1941,8 +1982,21 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       bar.addEventListener('change', () => { seekToRatio(Number(bar.value) / 1000); isSeeking = false; });
     });
 
-    const openSheet = () => { document.getElementById('playerSheet')?.classList.remove('hidden'); renderUpNext(); };
-    const closeSheet = () => document.getElementById('playerSheet')?.classList.add('hidden');
+    // モバイル限定：キューのハンドルで「下部に一部表示 ⇔ 全面表示」を切替
+    const setQueueOpen = (open: boolean) => {
+      document.getElementById('playerSheet')?.classList.toggle('queue-open', open);
+      const t = document.getElementById('sheetQueueToggle');
+      t?.setAttribute('aria-expanded', String(open));
+      t?.setAttribute('aria-label', open ? '再生キューをたたむ' : '再生キューを広げる');
+      // 表示領域が変わるため再描画して現在曲を中央へ
+      if (open) renderUpNext();
+    };
+    document.getElementById('sheetQueueToggle')?.addEventListener('click', () =>
+      setQueueOpen(!document.getElementById('playerSheet')?.classList.contains('queue-open')));
+    document.getElementById('sheetMiniInfo')?.addEventListener('click', () => setQueueOpen(false));
+
+    const openSheet = () => { document.getElementById('playerSheet')?.classList.remove('hidden'); setQueueOpen(false); lockScroll(true); renderUpNext(); };
+    const closeSheet = () => { document.getElementById('playerSheet')?.classList.add('hidden'); lockScroll(false); };
     document.getElementById('barExpand')?.addEventListener('click', openSheet);
     document.getElementById('barHandle')?.addEventListener('click', openSheet);
     document.getElementById('collapseBtn')?.addEventListener('click', closeSheet);
@@ -2113,7 +2167,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closePlModal(); hide('plAddModal'); hide('plSharedModal');
-        hide('historyModal'); hide('playerSheet');
+        hide('historyModal'); hide('playerSheet'); lockScroll(false);
       }
     });
 
