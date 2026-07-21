@@ -174,12 +174,6 @@ const NOINDEX = true;
         <a href={`${base}/`} class="flex items-center group min-w-0">
           <img src={`${base}/logo.svg`} alt="うみゃみーMusic" class="h-8 w-auto max-w-full object-contain object-left transition group-hover:scale-[1.02]" />
         </a>
-        <!-- ハーフアニバーサリー記念バッジ（期間中のみJSで hidden を解除） -->
-        <span id="annivBadge" class="hidden items-center gap-1 px-2 sm:px-2.5 py-1 rounded-full text-[11px] font-semibold text-white shrink-0"
-              style="background:linear-gradient(135deg,#ff8184,#54a2e5)"
-              title="2026.1.29 デビューから半年！おめでとう🎉">
-          <span aria-hidden="true">🎉</span><span class="hidden sm:inline whitespace-nowrap">Half Anniversary</span>
-        </span>
       </div>
 
       <div class="flex items-center gap-1 shrink-0">
@@ -379,55 +373,6 @@ const NOINDEX = true;
     if (document.readyState === 'complete') hideLoader();
     else window.addEventListener('load', hideLoader);
     setTimeout(hideLoader, 4000);
-
-    // ハーフアニバーサリー演出（2026-07-22〜08-05、両端含む、クライアントのローカル日付）
-    // ?anniv=1 で期間外でも強制ON＋紙吹雪の1日1回制限も無視、?anniv=0 で強制OFF。
-    const getLocalDateStr = (d: Date) =>
-      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-    const isHalfAnnivPeriod = () => {
-      const override = new URLSearchParams(location.search).get('anniv');
-      if (override === '1') return true;
-      if (override === '0') return false;
-      const today = getLocalDateStr(new Date());
-      return today >= '2026-07-22' && today <= '2026-08-05';
-    };
-    const ANNIV_KEY = 'umyamy:halfanniv';
-    const shouldShowConfetti = () => {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false;
-      if (new URLSearchParams(location.search).get('anniv') === '1') return true;
-      if (!isHalfAnnivPeriod()) return false;
-      const today = getLocalDateStr(new Date());
-      try {
-        if (localStorage.getItem(ANNIV_KEY) === today) return false;
-        localStorage.setItem(ANNIV_KEY, today);
-      } catch (e) {}
-      return true;
-    };
-    const launchAnnivConfetti = () => {
-      const colors = ['#ff8184', '#54a2e5', '#febf96', '#a2e4c7'];
-      const container = document.createElement('div');
-      container.className = 'anniv-confetti';
-      container.setAttribute('aria-hidden', 'true');
-      for (let i = 0; i < 40; i++) {
-        const piece = document.createElement('span');
-        piece.className = 'anniv-confetti-piece';
-        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-        piece.style.left = `${Math.random() * 100}%`;
-        piece.style.animationDuration = `${(2.5 + Math.random()).toFixed(2)}s`;
-        piece.style.animationDelay = `${(Math.random() * 0.6).toFixed(2)}s`;
-        piece.style.setProperty('--rot', `${Math.floor(Math.random() * 360)}deg`);
-        piece.style.setProperty('--drift', `${Math.floor((Math.random() - 0.5) * 120)}px`);
-        container.appendChild(piece);
-      }
-      document.body.appendChild(container);
-      setTimeout(() => container.remove(), 4300);
-    };
-    const initAnniv = () => {
-      if (isHalfAnnivPeriod()) document.getElementById('annivBadge')?.classList.replace('hidden', 'inline-flex');
-      if (shouldShowConfetti()) launchAnnivConfetti();
-    };
-    if (document.readyState === 'complete') setTimeout(initAnniv, 300);
-    else window.addEventListener('load', () => setTimeout(initAnniv, 300));
 
     // トップへ戻るボタン: 一定量スクロールしたら表示。クリックで先頭へスムーズスクロール。
     const backToTop = document.getElementById('backToTop');
