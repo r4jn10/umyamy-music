@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-06",
+  "updatedAt": "2026-07-22",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4143,6 +4143,24 @@
       "tags": [
         "栞葉るり"
       ]
+    },
+    {
+      "id": "20260722-ovVXX20tXL8-001",
+      "title": "とくベチュ、して",
+      "artist": "=LOVE",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "ovVXX20tXL8",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=ovVXX20tXL8",
+        "endSec": 46
+      },
+      "streamDate": "2026-07-22",
+      "streamTitle": "【 1番 歌ってみた 】とくベチュ、して / =LOVE【 水面まどか / にじさんじ】 #vtuber #みなもに水やり #歌ってみた #にじさんじ"
     }
   ]
 }
