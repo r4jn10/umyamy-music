@@ -50,6 +50,11 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
         <div class="flex items-center justify-between mb-3">
           <h2 class="section-label font-display text-sm font-bold text-slate-500 tracking-wide">新着</h2>
           <div class="flex items-center gap-1">
+            <button id="quizEntry" type="button" aria-haspopup="dialog" class="mr-1">
+              <span class="fnote" aria-hidden="true">♪</span><span class="fnote f2" aria-hidden="true">♪</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              <span><span class="qe-today">今日の</span>イントロクイズ</span>
+            </button>
             <button id="newPrev" type="button" aria-label="前へ"
                     class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 disabled:opacity-30 disabled:hover:bg-transparent transition">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -466,6 +471,75 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     </div>
   </div>
 
+  <!-- イントロクイズ modal（第1問＝今日の一曲、以降はシャッフル出題） -->
+  <div id="quizModal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center" role="dialog" aria-modal="true" aria-label="今日のイントロクイズ">
+    <div id="quizBackdrop" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"></div>
+    <div class="relative w-full sm:max-w-md bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl sm:border border-slate-200 max-h-[92dvh] flex flex-col overflow-hidden">
+      <div class="h-1 w-full shrink-0" style="background:linear-gradient(90deg,#ff8184,#54a2e5)"></div>
+      <div class="flex items-center justify-between px-4 pt-3 pb-1 shrink-0">
+        <span class="font-display text-[11px] font-bold tracking-widest text-madoka">INTRO QUIZ</span>
+        <div class="flex items-center gap-2">
+          <span id="quizScore" class="text-[11px] font-semibold text-slate-400 tabular-nums" role="status" aria-live="polite"></span>
+          <button id="quizClose" type="button" aria-label="閉じる" class="w-8 h-8 inline-flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="px-5 pb-5 pt-1 overflow-y-auto">
+        <!-- 出題ビュー -->
+        <div id="qView">
+          <div class="flex items-center gap-2 mb-3 text-xs font-semibold text-slate-400">
+            <span id="qNoText">第1問</span>
+            <span id="qTodayBadge" class="hidden text-[11px] font-bold text-slate-600 border border-slate-200 bg-slate-50 rounded-full px-2 py-0.5">今日の一曲</span>
+          </div>
+          <div class="flex items-center gap-3.5 mb-4">
+            <button id="quizClipPlay" type="button" aria-label="イントロを再生"
+                    class="w-14 h-14 shrink-0 rounded-full bg-ink text-white inline-flex items-center justify-center hover:opacity-90 transition">
+              <svg id="quizIcoPlay" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+              <svg id="quizIcoPause" class="hidden w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-semibold text-slate-600 mb-1.5">イントロを再生して曲名を選ぶ</p>
+              <div class="h-1.5 rounded-full bg-slate-200 overflow-hidden">
+                <div id="quizClipFill" class="h-full rounded-full" style="width:0%;background:linear-gradient(90deg,#ff8184,#54a2e5)"></div>
+              </div>
+              <p class="text-[11px] text-slate-400 tabular-nums mt-1"><span id="quizClipCur">0:00</span> / <span id="quizClipDur">0:10</span></p>
+            </div>
+          </div>
+          <div id="quizChoices" class="flex flex-col gap-2"></div>
+          <div class="text-center mt-3.5">
+            <button id="quizSkip" type="button" class="text-[13px] font-semibold text-slate-400 underline underline-offset-2 hover:text-slate-600">スキップして答えを見る</button>
+          </div>
+        </div>
+        <!-- 結果ビュー -->
+        <div id="rView" class="hidden">
+          <p id="quizVerdict" class="font-display font-extrabold text-lg mb-3"></p>
+          <div class="border border-slate-200 rounded-xl overflow-hidden mb-4">
+            <img id="quizThumb" src="" alt="" class="w-full aspect-video object-cover bg-slate-100">
+            <div class="p-3.5">
+              <p id="quizTitle" class="font-bold text-ink leading-snug"></p>
+              <p id="quizArtist" class="text-[13px] text-slate-500 mt-0.5"></p>
+              <div id="quizMeta" class="flex flex-wrap items-center gap-1.5 mt-2.5"></div>
+              <p id="quizStream" class="text-[11px] text-slate-400 mt-2 truncate"></p>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <button id="quizListen" type="button" class="flex-1 inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-slate-600 border border-slate-200 rounded-xl px-2 py-2.5 hover:bg-slate-50 transition">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              この曲を聴く
+            </button>
+            <button id="quizNext" type="button" class="flex-1 inline-flex items-center justify-center gap-1.5 text-[13px] font-bold text-white bg-ink rounded-xl px-2 py-2.5 hover:opacity-90 transition">
+              次の問題へ
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- クイズ用プレーヤー（本体のミニバー時と同じく画面外で音声のみ。出題中に動画や曲名を見せない） -->
+  <div style="position:fixed;left:-9999px;top:0;width:320px;height:180px" aria-hidden="true"><div id="quizYtFrame"></div></div>
+
   <SiteFooter />
 </BaseLayout>
 
@@ -544,6 +618,46 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     #playerSheet.queue-open .queue-chevron { transform: rotate(180deg); }
     #playerSheet.queue-open #sheetMiniNow { display: flex; }
   }
+
+  /* ===== イントロクイズ ===== */
+  /* 入口ボタン：公式2色グラデ＋音符スイング＋♪が舞い上がる */
+  #quizEntry {
+    position: relative; display: inline-flex; align-items: center; gap: .45rem;
+    font-size: .8125rem; font-weight: 700; padding: .45rem .95rem; border-radius: 9999px;
+    border: none; background: linear-gradient(135deg, #ff8184, #54a2e5); color: #fff;
+    box-shadow: 0 2px 8px rgba(84, 162, 229, .25); transition: transform .15s ease, box-shadow .15s ease;
+    cursor: pointer; white-space: nowrap;
+  }
+  #quizEntry:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(84, 162, 229, .35); }
+  #quizEntry svg { animation: noteSwing 2.2s ease-in-out infinite; transform-origin: 50% 85%; }
+  @keyframes noteSwing { 0%, 100% { transform: rotate(-10deg); } 50% { transform: rotate(10deg); } }
+  #quizEntry .fnote {
+    position: absolute; left: 16px; top: 4px; font-size: 10px; line-height: 1; color: #fff;
+    opacity: 0; pointer-events: none; animation: floatNote 4.2s ease-out infinite;
+  }
+  #quizEntry .fnote.f2 { left: 24px; font-size: 8px; animation-delay: 2.1s; }
+  @keyframes floatNote {
+    0%   { opacity: 0; transform: translate(0, 4px) rotate(0); }
+    8%   { opacity: .95; }
+    45%  { opacity: 0; transform: translate(7px, -16px) rotate(14deg); }
+    100% { opacity: 0; transform: translate(7px, -16px) rotate(14deg); }
+  }
+  /* モバイルは「今日の」を省いて幅を詰める（チップがドットを隠すのと同じ流儀） */
+  @media (max-width: 639px) {
+    #quizEntry { font-size: .75rem; padding: .4rem .7rem; gap: .3rem; }
+    #quizEntry .qe-today { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #quizEntry svg { animation: none; }
+    #quizEntry .fnote { animation: none; opacity: 0; }
+  }
+  /* 「今日の一曲」バッジ（display は .hidden に勝たないよう :not(.hidden) のときだけ指定） */
+  #qTodayBadge:not(.hidden) { display: inline-flex; align-items: center; }
+  /* 選択肢の回答状態（ボタンは JS 描画のため :global） */
+  :global(.quiz-choice:disabled) { cursor: default; }
+  :global(.quiz-choice.is-correct) { border-color: #34d399; background: #ecfdf5; }
+  :global(.quiz-choice.is-wrong) { border-color: #fda4af; background: #fff1f2; color: #9f1239; }
+  :global(.quiz-choice.is-dim) { opacity: .45; }
 </style>
 
 <script>
@@ -1331,6 +1445,8 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
         },
       },
     });
+    // クイズ側が先に API を要求していた場合はここで専用プレーヤーも作る
+    if (quizWantsPlayer) createQuizPlayer();
   };
 
   // 同一動画で「この曲の開始秒より後にある最も近い曲の開始秒」＝この曲の終了秒。無ければ動画終端(Infinity)
@@ -1761,6 +1877,242 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     markPlayingCard(null);
   }
 
+  // ===== イントロクイズ（今日の一曲） =====
+  // 第1問は日付シードで日替わり固定の「今日の一曲」、以降は全曲プールからシャッフル出題。
+  // 音声は専用プレーヤー（画面外）で流し、本体プレーヤー・履歴・ミニバーには触れない（曲名ネタバレ防止）。
+  const QUIZ_CLIP_SEC = 10;
+  let quizPlayer: any = null, quizPlayerReady = false, quizWantsPlayer = false, quizPendingClip: any = null;
+  let quizClipTimer: any = null, quizClipStart = 0, quizClipEnd = 0, quizClipPlaying = false, quizClipResumes = 0;
+  let quizPool: any[] = [], quizOrder: number[] = [], quizIdx = 0, quizCurrent: any = null;
+  let quizAnswered = 0, quizCorrect = 0, quizLocked = false, quizNeedAdvance = false;
+
+  // 日付シードの乱数（今日の一曲を誰が見ても同じにする）
+  function quizSeededRand(seedStr: string) {
+    let h = 1779033703 ^ seedStr.length;
+    for (let i = 0; i < seedStr.length; i++) {
+      h = Math.imul(h ^ seedStr.charCodeAt(i), 3432918353);
+      h = (h << 13) | (h >>> 19);
+    }
+    return () => {
+      h = Math.imul(h ^ (h >>> 16), 2246822507);
+      h = Math.imul(h ^ (h >>> 13), 3266489909);
+      return ((h ^= h >>> 16) >>> 0) / 4294967296;
+    };
+  }
+
+  // タイトル単位でユニーク化（複数回歌唱の曲はシードで1回ぶんを選ぶ）→ 出題順を決める。先頭＝今日の一曲
+  function quizBuildPool() {
+    const d = new Date();
+    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    const rand = quizSeededRand('umyamy-' + key);
+    const byTitle = new Map<string, any[]>();
+    for (const s of songs) {
+      if (!s.youtube?.videoId) continue;
+      const list = byTitle.get(s.title) || [];
+      list.push(s);
+      byTitle.set(s.title, list);
+    }
+    quizPool = [...byTitle.values()].map(list => list[Math.floor(rand() * list.length)]);
+    const todayIdx = Math.floor(rand() * quizPool.length);
+    const rest = quizPool.map((_, i) => i).filter(i => i !== todayIdx);
+    for (let i = rest.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [rest[i], rest[j]] = [rest[j], rest[i]];
+    }
+    quizOrder = [todayIdx, ...rest];
+  }
+
+  // クイズ専用プレーヤー（本体のミニバー時と同じく画面外・音声のみ）
+  function createQuizPlayer() {
+    if (quizPlayer) return;
+    quizPlayer = new (window as any).YT.Player('quizYtFrame', {
+      width: '320', height: '180',
+      playerVars: { playsinline: 1, controls: 0, disablekb: 1 },
+      events: {
+        onReady: () => {
+          quizPlayerReady = true;
+          if (quizPendingClip) { const c = quizPendingClip; quizPendingClip = null; quizStartClip(c); }
+        },
+        onError: () => { quizClipPlaying = false; quizSetPlayingUI(false); },
+        onStateChange: (e: any) => {
+          if (e.data === 1 && quizClipPlaying) quizWatch();
+          if (e.data === 2 && quizClipPlaying) {
+            const t = quizPlayer.getCurrentTime?.() ?? 0;
+            // 終端近くで止まったら完走扱い
+            if (t >= quizClipEnd - 0.75) { quizStopClip(true); return; }
+            // バッファリング等で勝手に止まることがあるため2回まで自動再開
+            if (quizClipResumes < 2) { quizClipResumes++; quizPlayer.playVideo?.(); return; }
+            // それでも止まるなら再生停止として整える（再タップでやり直せる）
+            quizClipPlaying = false;
+            quizStopWatch();
+            quizSetPlayingUI(false);
+          }
+          // 動画自体の終端（区間が動画末尾の曲）も完走扱い
+          if (e.data === 0 && quizClipPlaying) quizStopClip(true);
+        },
+      },
+    });
+  }
+  function ensureQuizPlayer() {
+    if (quizPlayer) return;
+    if ((window as any).YT?.Player) createQuizPlayer();
+    else { quizWantsPlayer = true; ensureYtApi(); }
+  }
+
+  // 出題クリップの長さ（区間が10秒未満の短い曲はその長さまで）
+  function quizClipDur(song: any): number {
+    const st = song.youtube.timestampSec || 0;
+    const end = computeSegmentEnd(song);
+    return isFinite(end) && end > st ? Math.max(4, Math.min(QUIZ_CLIP_SEC, end - st)) : QUIZ_CLIP_SEC;
+  }
+  function quizStartClip(song: any) {
+    ensureQuizPlayer();
+    if (!quizPlayerReady) { quizPendingClip = song; quizSetPlayingUI(true); return; }
+    // 本体プレーヤーと同時に鳴らさない
+    if (isPlaying && ytPlayer?.pauseVideo) ytPlayer.pauseVideo();
+    const st = song.youtube.timestampSec || 0;
+    quizClipStart = st;
+    quizClipEnd = st + quizClipDur(song);
+    quizClipResumes = 0;
+    quizPlayer.loadVideoById({ videoId: song.youtube.videoId, startSeconds: st });
+    quizClipPlaying = true;
+    quizSetPlayingUI(true);
+  }
+  function quizWatch() {
+    quizStopWatch();
+    quizClipTimer = setInterval(() => {
+      if (!quizPlayer || !quizClipPlaying) { quizStopWatch(); return; }
+      const t = quizPlayer.getCurrentTime?.() ?? 0;
+      const dur = quizClipEnd - quizClipStart;
+      const p = Math.min(1, Math.max(0, (t - quizClipStart) / dur));
+      const fill = document.getElementById('quizClipFill');
+      if (fill) fill.style.width = `${p * 100}%`;
+      const cur = document.getElementById('quizClipCur');
+      if (cur) cur.textContent = fmtClock(Math.min(dur, Math.max(0, t - quizClipStart)));
+      if (t >= quizClipEnd) quizStopClip(true);
+    }, 100);
+  }
+  function quizStopWatch() { if (quizClipTimer) { clearInterval(quizClipTimer); quizClipTimer = null; } }
+  function quizStopClip(finished: boolean) {
+    quizClipPlaying = false;
+    quizPendingClip = null;
+    quizStopWatch();
+    if (quizPlayer?.pauseVideo) { try { quizPlayer.pauseVideo(); } catch (_) {} }
+    quizSetPlayingUI(false);
+    if (finished) {
+      const fill = document.getElementById('quizClipFill');
+      if (fill) fill.style.width = '100%';
+      const cur = document.getElementById('quizClipCur');
+      const dur = document.getElementById('quizClipDur');
+      if (cur && dur) cur.textContent = dur.textContent || '';
+    }
+  }
+  function quizSetPlayingUI(on: boolean) {
+    document.getElementById('quizIcoPlay')?.classList.toggle('hidden', on);
+    document.getElementById('quizIcoPause')?.classList.toggle('hidden', !on);
+  }
+
+  // 4択（正解＋他の曲からランダム3つ）
+  function quizMakeChoices(song: any): string[] {
+    const others = quizPool.filter((s: any) => s.title !== song.title);
+    const picks: any[] = [];
+    while (picks.length < 3 && others.length) {
+      const i = Math.floor(Math.random() * others.length);
+      picks.push(others.splice(i, 1)[0]);
+    }
+    const all = [...picks.map((s: any) => s.title), song.title];
+    for (let i = all.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [all[i], all[j]] = [all[j], all[i]];
+    }
+    return all;
+  }
+
+  function quizUpdateScore() {
+    const el = document.getElementById('quizScore');
+    if (el) el.textContent = quizAnswered ? `正解 ${quizCorrect} / ${quizAnswered}問` : '';
+  }
+
+  function quizShowQuestion() {
+    if (quizIdx >= quizOrder.length) quizIdx = 0; // 全曲出し切ったら一周
+    quizCurrent = quizPool[quizOrder[quizIdx]];
+    quizLocked = false;
+    quizNeedAdvance = false;
+    const qNo = document.getElementById('qNoText');
+    if (qNo) qNo.textContent = `第${quizIdx + 1}問`;
+    document.getElementById('qTodayBadge')?.classList.toggle('hidden', quizIdx !== 0);
+    const fill = document.getElementById('quizClipFill');
+    if (fill) fill.style.width = '0%';
+    const cur = document.getElementById('quizClipCur');
+    if (cur) cur.textContent = '0:00';
+    const dur = document.getElementById('quizClipDur');
+    if (dur) dur.textContent = fmtClock(quizClipDur(quizCurrent));
+    const list = document.getElementById('quizChoices');
+    if (list) list.innerHTML = quizMakeChoices(quizCurrent).map(t => `
+      <button type="button" data-title="${escHtml(t)}"
+              class="quiz-choice text-left text-sm font-semibold text-ink border border-slate-200 rounded-xl px-3.5 py-3 hover:bg-slate-50 transition leading-snug">${escHtml(t)}</button>`).join('');
+    document.getElementById('qView')?.classList.remove('hidden');
+    document.getElementById('rView')?.classList.add('hidden');
+    quizUpdateScore();
+  }
+
+  function quizAnswer(btn: HTMLElement) {
+    if (quizLocked) return;
+    quizLocked = true;
+    const ok = btn.getAttribute('data-title') === quizCurrent.title;
+    quizAnswered++;
+    if (ok) quizCorrect++;
+    document.querySelectorAll('#quizChoices .quiz-choice').forEach(b => {
+      (b as HTMLButtonElement).disabled = true;
+      if (b.getAttribute('data-title') === quizCurrent.title) b.classList.add('is-correct');
+      else if (b === btn) b.classList.add('is-wrong');
+      else b.classList.add('is-dim');
+    });
+    setTimeout(() => quizShowResult(ok ? 'ok' : 'ng'), 650);
+  }
+
+  function quizShowResult(kind: 'ok' | 'ng' | 'skip') {
+    quizStopClip(false);
+    quizNeedAdvance = true; // 答えを見た問題は、次回開いたとき自動で次へ進める
+    const v = document.getElementById('quizVerdict');
+    if (v) {
+      if (kind === 'ok') { v.textContent = '正解！'; v.style.color = '#059669'; }
+      else if (kind === 'ng') { v.textContent = '残念…正解はこちら'; v.style.color = '#e11d48'; }
+      else { v.textContent = '答えはこちら'; v.style.color = '#64748b'; }
+    }
+    const s = quizCurrent;
+    const thumb = document.getElementById('quizThumb') as HTMLImageElement | null;
+    if (thumb) thumb.src = `https://img.youtube.com/vi/${encodeURIComponent(s.youtube.videoId)}/hqdefault.jpg`;
+    const setText = (id: string, text: string) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+    setText('quizTitle', s.title);
+    setText('quizArtist', s.artist || '');
+    setText('quizStream', s.streamTitle || '');
+    const meta = document.getElementById('quizMeta');
+    if (meta) {
+      const chips = orderPerformers(s.performers || []).map((p: string) =>
+        `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${escHtml(p)}</span>`).join('');
+      meta.innerHTML = `${chips}<span class="text-[11px] text-slate-400">${escHtml(s.streamDate || '')}</span>`;
+    }
+    document.getElementById('qView')?.classList.add('hidden');
+    document.getElementById('rView')?.classList.remove('hidden');
+    quizUpdateScore();
+  }
+
+  function openQuiz() {
+    if (!quizOrder.length) quizBuildPool();
+    if (quizNeedAdvance) quizIdx++; // 前回答えまで見た問題はスキップ
+    if (isPlaying && ytPlayer?.pauseVideo) ytPlayer.pauseVideo();
+    quizShowQuestion();
+    document.getElementById('quizModal')?.classList.remove('hidden');
+    lockScroll(true);
+  }
+  function closeQuiz() {
+    if (document.getElementById('quizModal')?.classList.contains('hidden')) return;
+    quizStopClip(false);
+    document.getElementById('quizModal')?.classList.add('hidden');
+    lockScroll(false);
+  }
+
   // ----- 新着スライダー（配信＝動画単位でまとめて新しい順） -----
   function buildStreams() {
     const map = new Map<string, any>();
@@ -2022,6 +2374,31 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       if (id) { closeHistory(); playById(id); }
     });
 
+    // ===== イントロクイズ =====
+    document.getElementById('quizEntry')?.addEventListener('click', openQuiz);
+    document.getElementById('quizClose')?.addEventListener('click', closeQuiz);
+    document.getElementById('quizBackdrop')?.addEventListener('click', closeQuiz);
+    document.getElementById('quizClipPlay')?.addEventListener('click', () => {
+      if (quizClipPlaying) quizStopClip(false);
+      else if (quizCurrent) quizStartClip(quizCurrent);
+    });
+    document.getElementById('quizSkip')?.addEventListener('click', () => {
+      if (quizLocked) return;
+      quizLocked = true;
+      quizAnswered++;
+      quizShowResult('skip');
+    });
+    document.getElementById('quizNext')?.addEventListener('click', () => { quizIdx++; quizShowQuestion(); });
+    document.getElementById('quizListen')?.addEventListener('click', () => {
+      const s = quizCurrent;
+      closeQuiz();
+      if (s) playSong(s);
+    });
+    document.getElementById('quizChoices')?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.quiz-choice');
+      if (btn) quizAnswer(btn as HTMLElement);
+    });
+
     // ===== プレイリスト =====
     setupMediaSession();
     document.getElementById('playlistBtn')?.addEventListener('click', openPlModal);
@@ -2166,6 +2543,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     // Esc でモーダル類を閉じる（プレイリスト系・履歴・展開プレーヤー）
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
+        closeQuiz();
         closePlModal(); hide('plAddModal'); hide('plSharedModal');
         hide('historyModal'); hide('playerSheet'); lockScroll(false);
       }
