@@ -31,6 +31,7 @@ const songSchema = z.object({
   unit: z.string().optional(),
   streamTitle: z.string().optional(),
   tags: z.array(z.string()).optional(),
+  guests: z.array(z.string()).optional(),
 });
 
 const rootSchema = z.object({

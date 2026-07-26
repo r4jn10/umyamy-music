@@ -797,7 +797,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       (a.youtube?.timestampSec || 0) - (b.youtube?.timestampSec || 0));
   })();
 
-  const fuse = new Fuse(songs, { keys: ['title', 'artist', 'tags'], threshold: 0.3 });
+  const fuse = new Fuse(songs, { keys: ['title', 'artist', 'tags', 'guests'], threshold: 0.3 });
 
   // ===== プレイリスト（自作・並べ替え・共有） =====
   const PL_KEY = 'umyamy:playlists';
@@ -1223,6 +1223,10 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       : '';
     const chips = performers.map((p: string) =>
       `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold ${memberChipClass(p)}">${escHtml(p)}</span>`).join('');
+    const guestChips = (song.guests && song.guests.length)
+      ? song.guests.map((g: string) =>
+          `<span class="text-[11px] px-2 py-0.5 rounded-full font-semibold text-slate-600 bg-slate-100">${escHtml(g)}</span>`).join('')
+      : '';
     const tags = (song.tags && song.tags.length)
       ? `<div class="flex gap-1 flex-wrap mt-2.5">${song.tags.slice(0, 3).map((t: string) =>
           `<span class="tag-chip">#${escHtml(t)}</span>`).join('')}</div>`
@@ -1253,7 +1257,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
           </div>
           <p class="text-xs text-slate-500 font-medium mb-3 truncate">${escHtml(song.artist || '')}</p>
           <div class="flex items-center justify-between gap-2">
-            <div class="flex gap-1 flex-wrap">${duetBadge}${chips}</div>
+            <div class="flex gap-1 flex-wrap">${duetBadge}${chips}${guestChips}</div>
             <span class="text-xs font-medium text-slate-500 whitespace-nowrap">${escHtml(song.streamDate || '')}</span>
           </div>
           ${tags}
@@ -1777,9 +1781,9 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
   // ----- Xで共有（曲名・アーティスト・歌唱者・サイト名を本文に、URLは該当のYouTube動画） -----
   function shareSong(song: any) {
     if (!song) return;
-    const performers = orderPerformers(song.performers || []).join('・');
+    const singers = [...orderPerformers(song.performers || []), ...(song.guests || [])].join('・');
     const lines = ['#NowPlaying', `${song.title}${song.artist ? ' / ' + song.artist : ''}`];
-    if (performers) lines.push(`🎤 ${performers}`);
+    if (singers) lines.push(`🎤 ${singers}`);
     lines.push('by うみゃみーMusic'); // ドメインは載せない（YouTubeリンクを目立たせる）
     const text = lines.join('\n');
     const sec = song.youtube?.timestampSec || 0;
@@ -2186,7 +2190,8 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     if (searchText) {
       list = list.filter((g: any) => {
         const hay = [g.title, g.date, g.performers.join(' '),
-          g.songs.map((s: any) => `${s.title} ${s.artist || ''}`).join(' ')].join(' ').toLowerCase();
+          g.songs.map((s: any) => `${s.title} ${s.artist || ''}`).join(' '),
+          g.songs.flatMap((s: any) => s.guests || []).join(' ')].join(' ').toLowerCase();
         return hay.includes(searchText);
       });
     }
