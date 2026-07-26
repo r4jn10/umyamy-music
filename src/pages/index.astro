@@ -19,6 +19,9 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
 
     <!-- Stats -->
     <div class="py-6">
+      <p class="jp-text mb-4 text-[13px] sm:text-sm text-slate-600 leading-relaxed">
+        本サイトは、<button type="button" data-open="members" class="font-semibold text-ink underline decoration-slate-300 underline-offset-2 hover:decoration-slate-500 transition">うみゃみー</button>（<span class="font-semibold text-madoka whitespace-nowrap">水面まどかさん</span>・<span class="font-semibold text-ayane whitespace-nowrap">白砂あやねさん</span>）のお二人の歌をまとめた非公式ファンサイトです🫶<br>歌枠・歌ってみたの検索と再生、プレイリストの作成ができます。歌やプレイリストはXにシェアできます。
+      </p>
       <div class="flex flex-wrap items-center gap-x-4 sm:gap-x-8 gap-y-1 text-sm">
         <div class="flex items-baseline gap-1 sm:gap-1.5">
           <span class="font-display text-lg sm:text-2xl font-extrabold text-ink tabular-nums">{totalSongs}</span>
@@ -1777,7 +1780,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
     const performers = orderPerformers(song.performers || []).join('・');
     const lines = ['#NowPlaying', `${song.title}${song.artist ? ' / ' + song.artist : ''}`];
     if (performers) lines.push(`🎤 ${performers}`);
-    lines.push('via うみゃみーMusic'); // ドメインは載せない（YouTubeリンクを目立たせる）
+    lines.push('by うみゃみーMusic'); // ドメインは載せない（YouTubeリンクを目立たせる）
     const text = lines.join('\n');
     const sec = song.youtube?.timestampSec || 0;
     const ytUrl = song.youtube?.url
@@ -2464,7 +2467,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       while (head.length > 1 && head.join('、').length > 45) head.pop(); // 曲名が長いときは列挙を減らす
       const lines = [`プレイリスト「${pl.name}」（全${pl.ids.length}曲）`];
       if (head.length) lines.push(`♪ ${head.join('、')}${titles.length > head.length ? ' ほか' : ''}`);
-      lines.push('via うみゃみーMusic（umyamy-music.com）');
+      lines.push('by うみゃみーMusic（umyamy-music.com）');
       const text = lines.join('\n');
       const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
         + `&url=${encodeURIComponent(playlistShareUrl(pl.name, pl.ids))}`;
