@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://umyamy-music.com/sitemap.xml
+Sitemap: https://umyamii-music.com/sitemap.xml
