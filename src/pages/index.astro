@@ -2472,7 +2472,7 @@ const artistCount = new Set(songs.map(s => (s.artist || '').trim()).filter(Boole
       while (head.length > 1 && head.join('、').length > 45) head.pop(); // 曲名が長いときは列挙を減らす
       const lines = [`プレイリスト「${pl.name}」（全${pl.ids.length}曲）`];
       if (head.length) lines.push(`♪ ${head.join('、')}${titles.length > head.length ? ' ほか' : ''}`);
-      lines.push('by うみゃみーMusic（umyamii-music.com）');
+      lines.push('by うみゃみーMusic'); // ドメインは載せない（共有リンクと紛らわしいため。曲共有側と同様）
       const text = lines.join('\n');
       const intent = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
         + `&url=${encodeURIComponent(playlistShareUrl(pl.name, pl.ids))}`;
