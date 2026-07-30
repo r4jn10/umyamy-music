@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-29",
+  "updatedAt": "2026-07-30",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4276,7 +4276,7 @@
     {
       "id": "20260729-xuSfoqiN5Cw-006",
       "title": "ハッピーシンセサイザ",
-      "artist": "伊東歌詞太郎",
+      "artist": "EasyPop",
       "performers": [
         "水面まどか",
         "白砂あやね"
@@ -4513,6 +4513,52 @@
       },
       "streamDate": "2026-07-29",
       "streamTitle": "【歌ってみた】Be Selfish / ＝LOVE（イコールラブ）【白砂あやね / にじさんじ】",
+      "tags": [
+        "ハーフアニバ"
+      ]
+    },
+    {
+      "id": "20260730-L1Jv2cUePvQ-001",
+      "title": "ツインズ",
+      "artist": "CHiCO with HoneyWorks",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "L1Jv2cUePvQ",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=L1Jv2cUePvQ",
+        "endSec": 237
+      },
+      "streamDate": "2026-07-30",
+      "unit": "うみゃみー",
+      "streamTitle": "【うみゃみー / 歌ってみた】ツインズ / CHiCO with HoneyWorks 【にじさんじ / 水面まどか / 白砂あやね】",
+      "tags": [
+        "ハーフアニバ"
+      ]
+    },
+    {
+      "id": "20260730-rxrqKsyT5Fc-001",
+      "title": "レディーマーメイド",
+      "artist": "ダイヤレディー",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "rxrqKsyT5Fc",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=rxrqKsyT5Fc",
+        "endSec": 276
+      },
+      "streamDate": "2026-07-30",
+      "unit": "うみゃみー",
+      "streamTitle": "【歌ってみた】レディーマーメイド / ダイヤレディー【 うみゃみー（白砂あやね / 水面まどか） / にじさんじ】",
       "tags": [
         "ハーフアニバ"
       ]
