@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-30",
+  "updatedAt": "2026-08-03",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4562,6 +4562,24 @@
       "tags": [
         "ハーフアニバ"
       ]
+    },
+    {
+      "id": "20260802-zqjUciT7cY4-001",
+      "title": "とくべチュ、して",
+      "artist": "＝LOVE",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "zqjUciT7cY4",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=zqjUciT7cY4",
+        "endSec": 58
+      },
+      "streamDate": "2026-08-02",
+      "streamTitle": "【歌ってみた】とくべチュ、して / ＝LOVE（イコールラブ）【白砂あやね / にじさんじ】"
     }
   ]
 }
