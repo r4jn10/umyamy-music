@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-03",
+  "updatedAt": "2026-08-11",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4580,6 +4580,24 @@
       },
       "streamDate": "2026-08-02",
       "streamTitle": "【歌ってみた】とくべチュ、して / ＝LOVE（イコールラブ）【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260810-h39IjfK2sXU-001",
+      "title": "太陽系デスコ",
+      "artist": "ナユタン星人",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "h39IjfK2sXU",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=h39IjfK2sXU",
+        "endSec": 59
+      },
+      "streamDate": "2026-08-10",
+      "streamTitle": "【原曲キーで歌ってみた】太陽系デスコ / ナユタン星人【白砂あやね / にじさんじ】"
     }
   ]
 }
