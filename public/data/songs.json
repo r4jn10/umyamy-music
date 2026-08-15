@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-11",
+  "updatedAt": "2026-08-15",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4598,6 +4598,24 @@
       },
       "streamDate": "2026-08-10",
       "streamTitle": "【原曲キーで歌ってみた】太陽系デスコ / ナユタン星人【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260815-kJu0yDRDeEk-001",
+      "title": "瞬間、シンフォニー。",
+      "artist": "40mP/かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "kJu0yDRDeEk",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=kJu0yDRDeEk",
+        "endSec": 58
+      },
+      "streamDate": "2026-08-15",
+      "streamTitle": "【 歌ってみた 】瞬間、シンフォニー。covered by 水面まどか 【 にじさんじ 】"
     }
   ]
 }
