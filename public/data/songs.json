@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-15",
+  "updatedAt": "2026-08-17",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4616,6 +4616,24 @@
       },
       "streamDate": "2026-08-15",
       "streamTitle": "【 歌ってみた 】瞬間、シンフォニー。covered by 水面まどか 【 にじさんじ 】"
+    },
+    {
+      "id": "20260816-E1RgCT2W9FE-001",
+      "title": "いますぐ輪廻",
+      "artist": "なきそ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "E1RgCT2W9FE",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=E1RgCT2W9FE",
+        "endSec": 20
+      },
+      "streamDate": "2026-08-16",
+      "streamTitle": "【歌ってみた】いますぐ輪廻 / なきそ【白砂あやね / にじさんじ】"
     }
   ]
 }
