@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-17",
+  "updatedAt": "2026-08-23",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4634,6 +4634,24 @@
       },
       "streamDate": "2026-08-16",
       "streamTitle": "【歌ってみた】いますぐ輪廻 / なきそ【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260823-X2FLr21FsjA-001",
+      "title": "ずうっといっしょ！",
+      "artist": "キタニタツヤ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "X2FLr21FsjA",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=X2FLr21FsjA",
+        "endSec": 181
+      },
+      "streamDate": "2026-08-23",
+      "streamTitle": "【歌ってみた】ずうっといっしょ！/キタニタツヤ【白砂あやね / にじさんじ】"
     }
   ]
 }
