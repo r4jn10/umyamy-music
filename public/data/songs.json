@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-23",
+  "updatedAt": "2026-08-29",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4652,6 +4652,27 @@
       },
       "streamDate": "2026-08-23",
       "streamTitle": "【歌ってみた】ずうっといっしょ！/キタニタツヤ【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260829-Sba-4tCaLx0-001",
+      "title": "大志を抱け！カルビアンビシャス！",
+      "artist": "わーすた",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "Sba-4tCaLx0",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=Sba-4tCaLx0",
+        "endSec": 58
+      },
+      "streamDate": "2026-08-29",
+      "streamTitle": "【歌ってみた】大志を抱け！カルビアンビシャス！ / わーすた【 マグマシスターズ（白砂あやね / 夜牛詩乃） / にじさんじ】",
+      "guests": [
+        "夜牛詩乃"
+      ]
     }
   ]
 }
