@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-29",
+  "updatedAt": "2026-08-31",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4673,6 +4673,24 @@
       "guests": [
         "夜牛詩乃"
       ]
+    },
+    {
+      "id": "20260831-RXKEP7TwZFI-001",
+      "title": "ワニとシャンプー",
+      "artist": "ももいろクローバーZ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "RXKEP7TwZFI",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=RXKEP7TwZFI",
+        "endSec": 37
+      },
+      "streamDate": "2026-08-31",
+      "streamTitle": "【歌ってみた】ワニとシャンプー / ももいろクローバーZ【白砂あやね / にじさんじ】"
     }
   ]
 }
