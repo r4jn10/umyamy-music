@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-04",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -4691,6 +4691,432 @@
       },
       "streamDate": "2026-08-31",
       "streamTitle": "【歌ってみた】ワニとシャンプー / ももいろクローバーZ【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-001",
+      "title": "早送りカレンダー",
+      "artist": "HKT48",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 123,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=123",
+        "endSec": 415
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-002",
+      "title": "桃色スパークリング",
+      "artist": "℃-ute",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 607,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=607",
+        "endSec": 848
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-003",
+      "title": "夏めきペイン",
+      "artist": "蓮ノ空女学院スクールアイドルクラブ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 1052,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=1052",
+        "endSec": 1252
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-004",
+      "title": "夏のOh！バイブス",
+      "artist": "バンドじゃないもん!",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 1471,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=1471",
+        "endSec": 1725
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-005",
+      "title": "トロピカ～ル恋して～る",
+      "artist": "松浦亜弥",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 1931,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=1931",
+        "endSec": 2209
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-006",
+      "title": "ココ☆ナツ",
+      "artist": "ももいろクローバー",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 2411,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=2411",
+        "endSec": 2660
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-007",
+      "title": "君はこの夏、恋をする",
+      "artist": "≠ME",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 2864,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=2864",
+        "endSec": 3122
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-008",
+      "title": "夢見る15歳",
+      "artist": "アンジュルム",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 3304,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=3304",
+        "endSec": 3534
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-009",
+      "title": "トンでもSUMMER ADVENTURE",
+      "artist": "ドレッシングふらわー",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 3665,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=3665",
+        "endSec": 3941
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-010",
+      "title": "君たちキウイ・パパイア・マンゴーだね",
+      "artist": "中原めいこ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 4126,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=4126",
+        "endSec": 4318
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-011",
+      "title": "本気ボンバー！！",
+      "artist": "Berryz工房",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 4436,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=4436",
+        "endSec": 4637
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-012",
+      "title": "真夏日よ",
+      "artist": "乃木坂46",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 4825,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=4825",
+        "endSec": 5091
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-013",
+      "title": "微熱からMystery",
+      "artist": "Lily white",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 5216,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=5216",
+        "endSec": 5411
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-014",
+      "title": "ブルーハワイレモン",
+      "artist": "≒JOY",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 5556,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=5556",
+        "endSec": 5810
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-015",
+      "title": "今夜だけ浮かれたかった",
+      "artist": "つばきファクトリー",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 6069,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=6069",
+        "endSec": 6301
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-8QkwzsGMoFU-016",
+      "title": "秋からもそばにいて",
+      "artist": "南野 陽子",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "8QkwzsGMoFU",
+        "timestampSec": 6562,
+        "url": "https://www.youtube.com/watch?v=8QkwzsGMoFU&t=6562",
+        "endSec": 6836
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "【歌枠】夏のアイドル曲歌枠🏖️🤍 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-001",
+      "title": "だから僕は音楽を辞めた",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 329,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=329",
+        "endSec": 577
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】"
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-002",
+      "title": "ray",
+      "artist": "BUMP OF CHICKEN",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 1938,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=1938",
+        "endSec": 2236
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】",
+      "guests": [
+        "長尾景"
+      ]
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-003",
+      "title": "踊",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 3243,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=3243",
+        "endSec": 3452
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】"
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-004",
+      "title": "バブリン",
+      "artist": "HIMEHINA",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 3570,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=3570",
+        "endSec": 3767
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】",
+      "guests": [
+        "猫屋敷美紅"
+      ]
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-005",
+      "title": "ノマド",
+      "artist": "須田景凪",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 4204,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=4204",
+        "endSec": 4427
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】"
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-006",
+      "title": "ブルーアンビエンス",
+      "artist": "Mrs. GREEN APPLE feat.asmi",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 5481,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=5481",
+        "endSec": 5724
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】",
+      "guests": [
+        "セラフ・ダズルガーデン"
+      ]
+    },
+    {
+      "id": "20260904-UgIYGOicjEc-007",
+      "title": "Hurrah!!",
+      "artist": "にじさんじ",
+      "performers": [],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "UgIYGOicjEc",
+        "timestampSec": 6320,
+        "url": "https://www.youtube.com/watch?v=UgIYGOicjEc&t=6320",
+        "endSec": 6574
+      },
+      "streamDate": "2026-09-04",
+      "streamTitle": "秋のコラボ歌枠【長尾景/セラフ・ダズルガーデン/猫屋敷美紅/水面まどか/にじさんじ】【supported by DAM】",
+      "guests": [
+        "長尾景",
+        "猫屋敷美紅",
+        "セラフ・ダズルガーデン"
+      ]
     }
   ]
 }
