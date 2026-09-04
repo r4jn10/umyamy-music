@@ -5101,7 +5101,9 @@
       "id": "20260904-UgIYGOicjEc-007",
       "title": "Hurrah!!",
       "artist": "にじさんじ",
-      "performers": [],
+      "performers": [
+        "水面まどか"
+      ],
       "category": "uta_waku",
       "streamType": "collab",
       "youtube": {
