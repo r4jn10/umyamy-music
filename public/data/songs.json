@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-06",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5119,6 +5119,222 @@
         "猫屋敷美紅",
         "セラフ・ダズルガーデン"
       ]
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-001",
+      "title": "雲と幽霊",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 124,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=124",
+        "endSec": 443
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-002",
+      "title": "燈 ",
+      "artist": "崎山蒼志",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 696,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=696",
+        "endSec": 935
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-003",
+      "title": "瞬間、シンフォニー。",
+      "artist": "40mP/かぐや(cv.夏吉ゆうこ) from 超かぐや姫！",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 1081,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=1081",
+        "endSec": 1338
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-004",
+      "title": "青春にして已む",
+      "artist": "Cö shu Nie",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 1530,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=1530",
+        "endSec": 1794
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-005",
+      "title": "机さする ",
+      "artist": "青木遥",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 1980,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=1980",
+        "endSec": 2216
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-006",
+      "title": "あの夏が飽和する",
+      "artist": "カンザキイオリ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 2372,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=2372",
+        "endSec": 2744
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-007",
+      "title": "靴の花火",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 2930,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=2930",
+        "endSec": 3233
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-008",
+      "title": "Nighthawks",
+      "artist": "米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 3410,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=3410",
+        "endSec": 3666
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-009",
+      "title": "雛鳥",
+      "artist": "花譜",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 3845,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=3845",
+        "endSec": 4111
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-010",
+      "title": "深海のリトルクライ",
+      "artist": "sasakure.UK feat. 土岐麻子",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 4355,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=4355",
+        "endSec": 4603
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-011",
+      "title": "あの夢をなぞって",
+      "artist": "YOASOBI",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 4828,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=4828",
+        "endSec": 5067
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260905-elSnsaKqKyM-012",
+      "title": "secret base 〜君がくれたもの〜",
+      "artist": "ZONE",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "elSnsaKqKyM",
+        "timestampSec": 5223,
+        "url": "https://www.youtube.com/watch?v=elSnsaKqKyM&t=5223",
+        "endSec": 5521
+      },
+      "streamDate": "2026-09-05",
+      "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
     }
   ]
 }
