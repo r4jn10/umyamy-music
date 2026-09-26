@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-26",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5335,6 +5335,24 @@
       },
       "streamDate": "2026-09-05",
       "streamTitle": "【 歌枠 】プチお披露目あり💕夏の終わりを感じる曲を歌う！🏖️🎤 supported by DAM【水面まどか / にじさんじ】"
+    },
+    {
+      "id": "20260925-VAOczIstaxs-001",
+      "title": "ブリキノダンス",
+      "artist": "日向電工",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "VAOczIstaxs",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=VAOczIstaxs",
+        "endSec": 27
+      },
+      "streamDate": "2026-09-25",
+      "streamTitle": "【原曲キーで歌ってみた】ブリキノダンス / 日向電工【白砂あやね / にじさんじ】"
     }
   ]
 }
