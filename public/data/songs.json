@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-26",
+  "updatedAt": "2026-10-01",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5353,6 +5353,198 @@
       },
       "streamDate": "2026-09-25",
       "streamTitle": "【原曲キーで歌ってみた】ブリキノダンス / 日向電工【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-001",
+      "title": "ドーナツホール",
+      "artist": "米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 117,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=117",
+        "endSec": 321
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "戌亥とこ",
+        "渚トラウト",
+        "白瀬いすみ"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-002",
+      "title": "食虫植物",
+      "artist": "理芽",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 917,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=917",
+        "endSec": 1073
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "白瀬いすみ"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-003",
+      "title": "ウタカタララバイ",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 1904,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=1904",
+        "endSec": 2076
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "渚トラウト"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-004",
+      "title": "CH4NGE",
+      "artist": "Giga",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 2624,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=2624",
+        "endSec": 2759
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "戌亥とこ",
+        "渚トラウト"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-005",
+      "title": "浴槽とネオンテトラ",
+      "artist": "REISAI",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 2851,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=2851",
+        "endSec": 3111
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-006",
+      "title": "レディメイド",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 3331,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=3331",
+        "endSec": 3570
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "戌亥とこ"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-007",
+      "title": "IRIS OUT",
+      "artist": "米津玄師",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 3994,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=3994",
+        "endSec": 4140
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "戌亥とこ"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-008",
+      "title": "Casino",
+      "artist": "Azari",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 4444,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=4444",
+        "endSec": 4584
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "渚トラウト",
+        "白瀬いすみ"
+      ]
+    },
+    {
+      "id": "20260930-eOvcWXRNCXE-009",
+      "title": "唱",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "eOvcWXRNCXE",
+        "timestampSec": 5170,
+        "url": "https://www.youtube.com/watch?v=eOvcWXRNCXE&t=5170",
+        "endSec": 5361
+      },
+      "streamDate": "2026-09-30",
+      "streamTitle": "【 コラボ歌枠 】ちょっと悪くてカッコイイ曲を歌いましょう👿🎤 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "戌亥とこ",
+        "渚トラウト",
+        "白瀬いすみ"
+      ]
     }
   ]
 }
