@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-01",
+  "updatedAt": "2026-10-09",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5545,6 +5545,372 @@
         "渚トラウト",
         "白瀬いすみ"
       ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-001",
+      "title": "私は最強",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 126,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=126",
+        "endSec": 380
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-002",
+      "title": "Sincerely",
+      "artist": "TRUE",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 553,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=553",
+        "endSec": 823
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-003",
+      "title": "Lovers",
+      "artist": "Sumika",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 1105,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=1105",
+        "endSec": 1348
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-004",
+      "title": "RPG",
+      "artist": "SEKAI NO OWARI",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 1735,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=1735",
+        "endSec": 2013
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "月ノ美兎"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-005",
+      "title": "More One Night",
+      "artist": "チト(水瀬いのり)、ユーリ(久保ユリカ)",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 3368,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=3368",
+        "endSec": 3580
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "月ノ美兎"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-006",
+      "title": "ミッドナイト・リフレクション",
+      "artist": "NOMELON NOLEMON",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 3932,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=3932",
+        "endSec": 4150
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-007",
+      "title": "nem...",
+      "artist": "04 Limited Sazabys",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 4797,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=4797",
+        "endSec": 4963
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-008",
+      "title": "ラブヘイト",
+      "artist": " Rain Drops",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 6580,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=6580",
+        "endSec": 6816
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-009",
+      "title": "トウキョウシャンディランデヴ",
+      "artist": "MAISONdes",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 7662,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=7662",
+        "endSec": 7844
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "ぷりん・らら・もーど"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-010",
+      "title": "ポジティブ☆ダンスタイム",
+      "artist": "キノシタ feat. 音街ウナ,鏡音リン",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 9576,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=9576",
+        "endSec": 9810
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "ぷりん・らら・もーど"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-011",
+      "title": "ルージュの伝言",
+      "artist": "松任谷由実",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 10365,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=10365",
+        "endSec": 10539
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "夜牛詩乃",
+        "猫屋敷美紅"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-012",
+      "title": "好きな惣菜発表ドラゴン",
+      "artist": "ンバヂ feat. 重音テト",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 12143,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=12143",
+        "endSec": 12264
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "夜牛詩乃",
+        "猫屋敷美紅"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-013",
+      "title": "天天天国地獄国",
+      "artist": "Aiobahn +81",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 12679,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=12679",
+        "endSec": 12909
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-014",
+      "title": "恋、はじめました。",
+      "artist": "=LOVE",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 14374,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=14374",
+        "endSec": 14591
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "栞葉るり"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-015",
+      "title": "晴る",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 14778,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=14778",
+        "endSec": 15047
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-016",
+      "title": "とくべチュ、して？",
+      "artist": "=LOVE",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 15281,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=15281",
+        "endSec": 15517
+      },
+      "streamDate": "2026-10-08",
+      "unit": "うみゃみー",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "白砂あやね"
+      ]
+    },
+    {
+      "id": "20261008-w5YR3jQo6xM-017",
+      "title": "リベンジ☆がぁらふぁらんど",
+      "artist": "ファララ＆ガァララ",
+      "performers": [
+        "水面まどか",
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "w5YR3jQo6xM",
+        "timestampSec": 17128,
+        "url": "https://www.youtube.com/watch?v=w5YR3jQo6xM&t=17128",
+        "endSec": 17341
+      },
+      "streamDate": "2026-10-08",
+      "unit": "うみゃみー",
+      "streamTitle": "【 #まどちゃバースデー2026 】告知あり⁉ゲストと歌って食べてお喋り🎂お誕生日パーティ！supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "白砂あやね"
+      ]
+    },
+    {
+      "id": "20261008-6OVgEvRX2KU-001",
+      "title": "アルジャーノン",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "cover",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "6OVgEvRX2KU",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=6OVgEvRX2KU",
+        "endSec": 261
+      },
+      "streamDate": "2026-10-08",
+      "streamTitle": "アルジャーノン / ヨルシカ covered by 水面まどか"
     }
   ]
 }
