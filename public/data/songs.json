@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-10",
+  "updatedAt": "2026-10-11",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5911,6 +5911,24 @@
       },
       "streamDate": "2026-10-08",
       "streamTitle": "アルジャーノン / ヨルシカ covered by 水面まどか"
+    },
+    {
+      "id": "20261010-yi_QWFur2o4-001",
+      "title": "愛くださいませ",
+      "artist": "≠ME",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "yi_QWFur2o4",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=yi_QWFur2o4",
+        "endSec": 38
+      },
+      "streamDate": "2026-10-10",
+      "streamTitle": "【歌ってみた】愛くださいませ / ≠ME【白砂あやね / にじさんじ】"
     }
   ]
 }
