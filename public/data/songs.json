@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-11",
+  "updatedAt": "2026-10-18",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5929,6 +5929,42 @@
       },
       "streamDate": "2026-10-10",
       "streamTitle": "【歌ってみた】愛くださいませ / ≠ME【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261018-kjtq_-fjcHs-001",
+      "title": "ラヴィ",
+      "artist": "すりぃ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "kjtq_-fjcHs",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=kjtq_-fjcHs",
+        "endSec": 56
+      },
+      "streamDate": "2026-10-18",
+      "streamTitle": "【原曲キーで歌ってみた】ラヴィ / すりぃ【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261018-RiGP2sxn3hU-001",
+      "title": "ラヴィ",
+      "artist": "すりぃ",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "RiGP2sxn3hU",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=RiGP2sxn3hU",
+        "endSec": 56
+      },
+      "streamDate": "2026-10-18",
+      "streamTitle": "【オク下で歌ってみた】ラヴィ / すりぃ【白砂あやね / にじさんじ】"
     }
   ]
 }
