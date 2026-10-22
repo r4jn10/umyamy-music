@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-18",
+  "updatedAt": "2026-10-22",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -5965,6 +5965,213 @@
       },
       "streamDate": "2026-10-18",
       "streamTitle": "【オク下で歌ってみた】ラヴィ / すりぃ【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-001",
+      "title": "＃ ラブコード",
+      "artist": "iLiFE!",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 128,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=128",
+        "endSec": 397
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-002",
+      "title": "ラブソングに襲われる",
+      "artist": "=LOVE",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 852,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=852",
+        "endSec": 1074
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-003",
+      "title": "淋しい熱帯魚",
+      "artist": "Wink",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 1580,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=1580",
+        "endSec": 1860
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-004",
+      "title": "乙女式れんあい塾",
+      "artist": "矢澤にこ,東條希",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 1990,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=1990",
+        "endSec": 2187
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-005",
+      "title": "Special♡Spell",
+      "artist": "きゅるりんってしてみて",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 2482,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=2482",
+        "endSec": 2657
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-006",
+      "title": "わざとあざとエキスパート",
+      "artist": "いぎなり東北産",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 3649,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=3649",
+        "endSec": 3899
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】"
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-007",
+      "title": "でもでもの涙",
+      "artist": "AKB48",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 4323,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=4323",
+        "endSec": 4540
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-008",
+      "title": "Vampire",
+      "artist": "IZ*ONE",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 4885,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=4885",
+        "endSec": 5118
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-009",
+      "title": "愛くださいませ",
+      "artist": "≠ME",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 5528,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=5528",
+        "endSec": 5788
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261014-m6bEW1Rpp74-010",
+      "title": "クラクラ☆クライマックス",
+      "artist": "Juice=Juice",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "m6bEW1Rpp74",
+        "timestampSec": 6110,
+        "url": "https://www.youtube.com/watch?v=m6bEW1Rpp74&t=6110",
+        "endSec": 6411
+      },
+      "streamDate": "2026-10-22",
+      "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
+      "guests": [
+        "千凛あゆむ"
+      ]
     }
   ]
 }
