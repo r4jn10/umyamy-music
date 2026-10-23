@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-24",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -6171,6 +6171,28 @@
       "streamTitle": "【 コラボ歌枠 】アイドルソング ✦︎ 最高のセトリで盛り上げるよ～！ w/ 白砂あやね先輩 ✦︎ supported by DAM【にじさんじ / 千凛あゆむ】",
       "guests": [
         "千凛あゆむ"
+      ]
+    },
+    {
+      "id": "20261023-WB_8MWy6Fho-001",
+      "title": "ハートフル♡ドリーム",
+      "artist": "",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "cover",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "WB_8MWy6Fho",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=WB_8MWy6Fho",
+        "endSec": 71
+      },
+      "streamDate": "2026-10-23",
+      "streamTitle": "【ぷち歌ってみた】ハートフル♡ドリーム【 白砂あやね / 夜牛詩乃 / 御子神琴音 / にじさんじ 】",
+      "guests": [
+        "夜牛詩乃",
+        "御子神琴音"
       ]
     }
   ]
