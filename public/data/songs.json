@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-24",
+  "updatedAt": "2026-10-26",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -6194,6 +6194,204 @@
         "夜牛詩乃",
         "御子神琴音"
       ]
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-001",
+      "title": "Happy Halloween",
+      "artist": "Junky",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 133,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=133",
+        "endSec": 381
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-002",
+      "title": "ヤミヤミ",
+      "artist": "やくしまるえつこ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 502,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=502",
+        "endSec": 734
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-003",
+      "title": "あぶく",
+      "artist": "ヨルシカ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 904,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=904",
+        "endSec": 1141
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-004",
+      "title": "あだぽしゃ",
+      "artist": "いよわ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 1323,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=1323",
+        "endSec": 1527
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-005",
+      "title": "ラピスのお人形",
+      "artist": "ヰ世界情緒",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 1729,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=1729",
+        "endSec": 1914
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-006",
+      "title": "ヴィラン",
+      "artist": "てにをは",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 2133,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=2133",
+        "endSec": 2335
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-007",
+      "title": "ウタカタララバイ",
+      "artist": "Ado",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 2596,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=2596",
+        "endSec": 2768
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-008",
+      "title": "あなぐらぐらし",
+      "artist": "きくお",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 2992,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=2992",
+        "endSec": 3351
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-009",
+      "title": "魔性少女",
+      "artist": "ファントムシータ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 3580,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=3580",
+        "endSec": 3778
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-010",
+      "title": "Mrs.Pumpkinの滑稽な夢",
+      "artist": "ハチ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 3911,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=3911",
+        "endSec": 4170
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261026-d6emT7rQlIM-011",
+      "title": "仮装狂騒曲",
+      "artist": "初星学園",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "d6emT7rQlIM",
+        "timestampSec": 4476,
+        "url": "https://www.youtube.com/watch?v=d6emT7rQlIM&t=4476",
+        "endSec": 4678
+      },
+      "streamDate": "2026-10-26",
+      "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
     }
   ]
 }
