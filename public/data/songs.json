@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-26",
+  "updatedAt": "2026-10-28",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -6392,6 +6392,276 @@
       },
       "streamDate": "2026-10-26",
       "streamTitle": "【 歌枠 】ハロウィン曲をたくさん歌う！トリックオアトリート🎃 supported by DAM🎤【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-001",
+      "title": "ハピネス ~幸福歓迎！~",
+      "artist": "Berryz工房",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 137,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=137",
+        "endSec": 365
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-002",
+      "title": "ウマすぎ！グルメパレード",
+      "artist": "スペシャルウィーク(CV.和氣あず未)、ミホノブルボン(CV.長谷川育美)、ヒシアケボノ(CV.松嵜麗)、ライスシャワー(CV.石見舞菜香)、ニシノフラワー(CV.河井晴菜)、ビコーペガサス(CV.田中あいみ)、シュヴァルグラン(CV.夏吉ゆうこ)、カツラギエース(CV.藤原夏海)、ヒシミラクル(CV.春日さくら)、シーザリオ(CV.佐藤榛夏)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 590,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=590",
+        "endSec": 788
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-003",
+      "title": "あっぱれ回転ずし！",
+      "artist": "むてん娘。(モーニング娘。)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 1046,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=1046",
+        "endSec": 1280
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-004",
+      "title": "ごはんはおかず",
+      "artist": "放課後ティータイム",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 1616,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=1616",
+        "endSec": 1804
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-005",
+      "title": "お菓子つくっておっかすぃ～！",
+      "artist": "ミニモニ。",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 2011,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=2011",
+        "endSec": 2246
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-006",
+      "title": "くいしんぼハッカー",
+      "artist": "Neko Hacker",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 2552,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=2552",
+        "endSec": 2752
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-007",
+      "title": "雲丹と栗",
+      "artist": "ずっと真夜中でいいのに。",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 2928,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=2928",
+        "endSec": 3200
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-008",
+      "title": "渡月橋~君想ふ~",
+      "artist": "倉木麻衣",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 3441,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=3441",
+        "endSec": 3685
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-009",
+      "title": "まほろばアスタリスク",
+      "artist": "≠ME",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 3851,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=3851",
+        "endSec": 4092
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-010",
+      "title": "ズルいよズルいね",
+      "artist": "=LOVE",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 4423,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=4423",
+        "endSec": 4709
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-011",
+      "title": "きゅんっ！ヴァンパイアガール",
+      "artist": "星井美希(CV.長谷川明子)、四条貴音(CV.原由実)、我那覇響(CV.沼倉愛美)",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 4883,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=4883",
+        "endSec": 5096
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-012",
+      "title": "Dancing stars on me！",
+      "artist": "μ's",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 5325,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=5325",
+        "endSec": 5596
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-013",
+      "title": "11月のアンクレット",
+      "artist": "AKB48",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 5760,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=5760",
+        "endSec": 6018
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-014",
+      "title": "仮装狂騒曲",
+      "artist": "初星学園",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 6218,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=6218",
+        "endSec": 6410
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261028-txxREVFFObw-015",
+      "title": "仮装狂騒曲",
+      "artist": "初星学園",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "txxREVFFObw",
+        "timestampSec": 6622,
+        "url": "https://www.youtube.com/watch?v=txxREVFFObw&t=6622",
+        "endSec": 6811
+      },
+      "streamDate": "2026-10-28",
+      "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
     }
   ]
 }
