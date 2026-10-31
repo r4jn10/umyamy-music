@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-10-31",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -6662,6 +6662,102 @@
       },
       "streamDate": "2026-10-28",
       "streamTitle": "【歌枠】美味しい🤍秋曲縛り歌枠🎃 supported by DAM【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20250826-_iiTXK7Ztpw-001",
+      "title": "リンネ",
+      "artist": "ハチ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "_iiTXK7Ztpw",
+        "timestampSec": 20344,
+        "url": "https://www.youtube.com/watch?v=_iiTXK7Ztpw&t=20344",
+        "endSec": 20602
+      },
+      "streamDate": "2026-10-30",
+      "streamTitle": "歌枠 ｜ ボカロをどうしても100曲歌いたいので楽しい仲間を呼んだよ🐼💭"
+    },
+    {
+      "id": "20250826-_iiTXK7Ztpw-002",
+      "title": "どうぶつ占い",
+      "artist": "すこっぷ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "_iiTXK7Ztpw",
+        "timestampSec": 21807,
+        "url": "https://www.youtube.com/watch?v=_iiTXK7Ztpw&t=21807",
+        "endSec": 22099
+      },
+      "streamDate": "2026-10-30",
+      "streamTitle": "歌枠 ｜ ボカロをどうしても100曲歌いたいので楽しい仲間を呼んだよ🐼💭"
+    },
+    {
+      "id": "20250826-_iiTXK7Ztpw-003",
+      "title": "1/6 -out of the gravity-",
+      "artist": "ぼーかりおどP",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "_iiTXK7Ztpw",
+        "timestampSec": 23333,
+        "url": "https://www.youtube.com/watch?v=_iiTXK7Ztpw&t=23333",
+        "endSec": 23599
+      },
+      "streamDate": "2026-10-30",
+      "streamTitle": "歌枠 ｜ ボカロをどうしても100曲歌いたいので楽しい仲間を呼んだよ🐼💭"
+    },
+    {
+      "id": "20250826-_iiTXK7Ztpw-004",
+      "title": "白い雪のプリンセスは",
+      "artist": "のぼる↑",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "_iiTXK7Ztpw",
+        "timestampSec": 25482,
+        "url": "https://www.youtube.com/watch?v=_iiTXK7Ztpw&t=25482",
+        "endSec": 25746
+      },
+      "streamDate": "2026-10-30",
+      "streamTitle": "歌枠 ｜ ボカロをどうしても100曲歌いたいので楽しい仲間を呼んだよ🐼💭",
+      "guests": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20250826-_iiTXK7Ztpw-005",
+      "title": "脱法ロック",
+      "artist": "Neru",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "_iiTXK7Ztpw",
+        "timestampSec": 25781,
+        "url": "https://www.youtube.com/watch?v=_iiTXK7Ztpw&t=25781",
+        "endSec": 25970
+      },
+      "streamDate": "2026-10-30",
+      "streamTitle": "歌枠 ｜ ボカロをどうしても100曲歌いたいので楽しい仲間を呼んだよ🐼💭",
+      "guests": [
+        "レヴィ・エリファ"
+      ]
     }
   ]
 }
