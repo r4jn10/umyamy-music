@@ -6758,6 +6758,24 @@
       "guests": [
         "レヴィ・エリファ"
       ]
+    },
+    {
+      "id": "20261031-aFZyL_kiwjg-001",
+      "title": "Happy Halloween",
+      "artist": "Junky feat.鏡音リン",
+      "performers": [
+        "白砂あやね"
+      ],
+      "category": "short",
+      "streamType": "solo",
+      "youtube": {
+        "videoId": "aFZyL_kiwjg",
+        "timestampSec": 0,
+        "url": "https://www.youtube.com/watch?v=aFZyL_kiwjg",
+        "endSec": 59
+      },
+      "streamDate": "2026-10-31",
+      "streamTitle": "【歌ってみた】Happy Halloween / Junky feat.鏡音リン【白砂あやね / にじさんじ】"
     }
   ]
 }
