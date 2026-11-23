@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-31",
+  "updatedAt": "2026-11-24",
   "songs": [
     {
       "id": "20260130-both-001",
@@ -6776,6 +6776,179 @@
       },
       "streamDate": "2026-10-31",
       "streamTitle": "【歌ってみた】Happy Halloween / Junky feat.鏡音リン【白砂あやね / にじさんじ】"
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-001",
+      "title": "夜咄ディセイブ",
+      "artist": "じん",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 128,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=128",
+        "endSec": 321
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙",
+        "渚トラウト",
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-002",
+      "title": "T氏の話を信じるな",
+      "artist": "ピノキオピー",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 999,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=999",
+        "endSec": 1159
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "渚トラウト"
+      ]
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-003",
+      "title": "ゴー・トゥ・ヘヴン",
+      "artist": "NOMELON NOLEMON",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 1550,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=1550",
+        "endSec": 1731
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】"
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-004",
+      "title": "ずうっといっしょ",
+      "artist": "キタニタツヤ",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 2190,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=2190",
+        "endSec": 2368
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙",
+        "渚トラウト",
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-005",
+      "title": "世界寿命と最後の一日",
+      "artist": "スズム",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 2833,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=2833",
+        "endSec": 3103
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙"
+      ]
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-006",
+      "title": "人マニア",
+      "artist": "原口沙輔",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 3493,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=3493",
+        "endSec": 3617
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-007",
+      "title": "しんでしまうとはなさけない!",
+      "artist": "じーさすP",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 4233,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=4233",
+        "endSec": 4480
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙",
+        "渚トラウト",
+        "蝸堂みかる"
+      ]
+    },
+    {
+      "id": "20261123-sogNKHE_nRk-008",
+      "title": "旅立ちの日に",
+      "artist": "小嶋登・坂本浩美",
+      "performers": [
+        "水面まどか"
+      ],
+      "category": "uta_waku",
+      "streamType": "collab",
+      "youtube": {
+        "videoId": "sogNKHE_nRk",
+        "timestampSec": 4735,
+        "url": "https://www.youtube.com/watch?v=sogNKHE_nRk&t=4735",
+        "endSec": 4986
+      },
+      "streamDate": "2026-11-23",
+      "streamTitle": "【 コラボ歌枠 】歌枠(嘘)　※歌います。 supported by DAM【 水面まどか / にじさんじ 】",
+      "guests": [
+        "緑仙",
+        "渚トラウト",
+        "蝸堂みかる"
+      ]
     }
   ]
 }
